@@ -1,0 +1,5 @@
+@use '@assets/styles/abstracts' as *;
+
+.container {
+    @include container-grid();
+}

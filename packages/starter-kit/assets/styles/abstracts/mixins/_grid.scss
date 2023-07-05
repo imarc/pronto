@@ -1,0 +1,15 @@
+@use 'sass:map';
+@use 'sass:math';
+@use '@assets/styles/abstracts/config/breakpoints' as *;
+
+$-columns: 12 !default;
+$-row-gap: 1.5rem !default;
+
+
+@mixin container-grid( $columns: $-columns, $row-gap: $-row-gap ) {
+    --_grid-column-gap: var(--grid-column-gap, #{map.get($breakpoints, base, gap)});
+}
+
+@mixin inner-grid() {
+
+}
