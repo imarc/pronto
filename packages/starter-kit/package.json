@@ -1,0 +1,26 @@
+{
+  "name": "starter-kit",
+  "version": "0.0.0",
+  "description": "core elements for the component library",
+  "author": "Tim Spears <timspears@imarc.com>",
+  "homepage": "https://github.com/imarc/component-library#readme",
+  "license": "Apache-2.0",
+  "main": "lib/starter-kit.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imarc/component-library.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/starter-kit.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/imarc/component-library/issues"
+  }
+}
