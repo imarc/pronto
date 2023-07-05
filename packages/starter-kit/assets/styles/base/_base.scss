@@ -1,0 +1,32 @@
+:root {
+    color-scheme: light;
+
+    @media (prefers-color-scheme: dark) {
+        color-scheme: dark;
+    }
+}
+
+:where(body) {
+    background: var(--color-neutral-0);
+    color: var(--color-neutral-950);
+    font-family: var(--font-sans);
+    font-size: var(--paragraph-size-md);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--leading-paragraph);
+}
+
+// what to do about focus vs focus-visible?
+
+:where(a):where(:not([class])) {
+    color: var(--color-link-500);
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+        color: var(--color-link-700);
+    }
+}
+
+::selection {
+    background: var(--color-primary-500);
+}

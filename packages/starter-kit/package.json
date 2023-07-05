@@ -1,26 +1,80 @@
 {
-  "name": "starter-kit",
-  "version": "0.0.0",
-  "description": "core elements for the component library",
-  "author": "Tim Spears <timspears@imarc.com>",
-  "homepage": "https://github.com/imarc/component-library#readme",
-  "license": "Apache-2.0",
-  "main": "lib/starter-kit.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
-  "files": [
-    "lib"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/imarc/component-library.git"
-  },
-  "scripts": {
-    "test": "node ./__tests__/starter-kit.test.js"
-  },
-  "bugs": {
-    "url": "https://github.com/imarc/component-library/issues"
-  }
+    "name": "imarc-component-library-starter-kit",
+    "version": "0.0.1",
+    "description": "A light, customizable frontend starter kit for the component library",
+    "author": "Imarc",
+    "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/imarc/component-library.git"
+    },
+    "bugs": {
+        "url": "https://github.com/imarc/component-library/issues"
+    },
+    "homepage": "https://github.com/imarc/component-library#readme",
+    "scripts": {
+        "lint": "eslint resources",
+        "dev": "vite",
+        "preview": "vite preview",
+        "prod": "vite build",
+        "build": "vite build"
+    },
+    "dependencies": {
+        "sass": "^1.54.9",
+        "vite": "^3.1"
+    },
+    "devDependencies": {
+        "eslint": "^8.23.1",
+        "eslint-config-standard": "^17.0.0",
+        "eslint-plugin-import": "^2.25.4",
+        "eslint-plugin-n": "^15.2.5",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-promise": "^6.0.1",
+        "eslint-plugin-vue": "^9.4.0"
+    },
+    "browserslist": [
+        "defaults"
+    ],
+    "eslintConfig": {
+        "env": {
+            "browser": true,
+            "es6": true,
+            "vue/setup-compiler-macros": true
+        },
+        "extends": [
+            "plugin:vue/vue3-recommended",
+            "standard"
+        ],
+        "globals": {
+            "Atomics": "readonly",
+            "SharedArrayBuffer": "readonly"
+        },
+        "parserOptions": {
+            "ecmaVersion": 2020,
+            "sourceType": "module"
+        },
+        "plugins": [
+            "vue"
+        ],
+        "rules": {
+            "comma-dangle": [
+                "warn",
+                {
+                    "arrays": "always-multiline",
+                    "objects": "always-multiline",
+                    "imports": "never",
+                    "exports": "never",
+                    "functions": "never"
+                }
+            ],
+            "indent": [
+                "warn",
+                4
+            ],
+            "vue/html-indent": [
+                "warn",
+                4
+            ]
+        }
+    }
 }
