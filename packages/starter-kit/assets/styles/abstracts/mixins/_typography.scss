@@ -35,28 +35,28 @@
 
 @mixin paragram-sm() {
     font-family:        var(--font-sans);
-    font-size:          var(--paragraph-sm);
+    font-size:          var(--paragraph-size-sm);
     font-weight:        var(--font-weight-regular);
     line-height:        var(--leading-normal);
 }
 
 @mixin paragraph-md() {
     font-family:        var(--font-sans);
-    font-size:          var(--paragraph-md);
+    font-size:          var(--paragraph-size-md);
     font-weight:        var(--font-weight-regular);
     line-height:        var(--leading-paragraph);
 }
 
 @mixin paragraph-lg() {
     font-family:        var(--font-sans);
-    font-size:          var(--paragraph-lg);
+    font-size:          var(--paragraph-size-lg);
     font-weight:        var(--font-weight-regular);
     line-height:        var(--leading-normal);
 }
 
 @mixin paragraph-tight() {
     font-family:        var(--font-sans);
-    font-size:          var(--paragraph-md);
+    font-size:          var(--paragraph-size-md);
     font-weight:        var(--font-weight-regular);
     line-height:        var(--leading-normal);
 }

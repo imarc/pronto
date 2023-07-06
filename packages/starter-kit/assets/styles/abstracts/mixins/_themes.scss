@@ -1,0 +1,25 @@
+@mixin section-themes() {
+    &.-themeLight {
+        --section-color-background: var(--color-neutral-0);
+        --section-color-heading: var(--color-neutral-900);
+        --section-color-text: var(--color-neutral-500);
+    }
+
+    &.-themeDark {
+        --section-color-background: var(--color-neutral-1000);
+        --section-color-heading: var(--color-neutral-50);
+        --section-color-text: var(--color-neutral-200);
+    }
+
+    &.-themePrimaryLight {
+        --section-color-background: var(--color-primary-100);
+        --section-color-heading: var(--color-primary-900);
+        --section-color-text: var(--color-primary-700);
+    }
+
+    &.-themePrimaryDark {
+        --section-color-background: var(--color-primary-800);
+        --section-color-heading: var(--color-primary-50);
+        --section-color-text: var(--color-primary-100);
+    }
+}

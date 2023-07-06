@@ -66,3 +66,19 @@
 
     @return $result;
 }
+
+// Next Key =============================
+@function next-key($current, $list) {
+    $index: index($list, $current);
+
+    @if $index == length($list) {
+        @return null;
+    }
+    @if $index == null {
+        @return null;
+    }
+
+    $next: $index + 1;
+
+    @return nth($list, $next);
+}

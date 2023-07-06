@@ -1,0 +1,51 @@
+@use '@assets/styles/abstracts/config' as config;
+@use '@assets/styles/abstracts/functions/lists' as *;
+@use 'sass:map';
+
+// Media query mixin. Includes content when matching the breakpoint $bp as
+/// defined in $breakpoints. You can also just pass in a length to create a
+/// one-off breakpoint. It's discouraged, but you can also override the rule
+/// if you're prefer to use max-width instead of min-width.
+@mixin breakpoint($bp, $rule: min-width) {
+    @if map.has-key(config.$breakpoints, $bp, width) {
+        $bp: map.get(config.$breakpoints, $bp, width);
+    }
+    @if $rule == max-width {
+        $bp: $bp - 1;
+    }
+
+    @media screen and (#{$rule}: $bp) {
+        @content;
+    }
+}
+
+// Breakpoint CSS Variable mixins.
+@mixin generate-breakpoint-widths($breakpoints) {
+    @each $bp in map-keys($breakpoints) {
+        --breakpoint-#{ $bp }: #{map.get($breakpoints, $bp, width)};
+    }
+}
+
+@mixin generate-breakpoint-gaps($breakpoints) {
+    @each $bp in map-keys($breakpoints) {
+        --breakpoint-#{ $bp }-gap: #{map.get($breakpoints, $bp, gap)};
+    }
+}
+
+@mixin generate-active-breakpoint-variables($breakpoints) {
+    $keys: map-keys($breakpoints);
+
+    @each $bp in $keys {
+        $next: next-key($bp, $keys);
+
+        @include breakpoint($bp) {
+            --breakpoint-min-width: #{map.get($breakpoints, $bp, width)};
+            @if $next {
+                --breakpoint-max-width: #{map.get($breakpoints, $next, width) - 1};
+            } @else {
+                --breakpoint-max-width: none;
+            }
+            --breakpoint-gap: #{map.get($breakpoints, $bp, gap)};
+        }
+    }
+}

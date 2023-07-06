@@ -1,0 +1,19 @@
+@use '@assets/styles/abstracts' as *;
+
+.section {
+    @include section-themes();
+    --section-padding-y: 2.5rem;
+    background: var(--section-color-background);
+    color: var(--section-color-text);
+    padding: var(--section-padding-y) 0;
+
+    @include breakpoint(lg) {
+        --section-padding-y: 4rem;
+    }
+
+    &__heading {
+        color: var(--section-color-heading);
+        max-width: var(--size-header-3);
+    }
+
+}

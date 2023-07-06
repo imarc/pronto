@@ -1,5 +1,25 @@
 @use '@assets/styles/abstracts' as *;
 
 .container {
-    @include container-grid();
+    &--grid {
+        @include container-grid();
+    }
+
+    &--fluid {
+        @include fluid-container-grid();
+    }
+
+    &--inner {
+        @include inner-grid();
+    }
+
+    &__content {
+        &--main {
+            grid-column: main;
+        }
+
+        &--wide {
+            grid-column: wide;
+        }
+    }
 }
