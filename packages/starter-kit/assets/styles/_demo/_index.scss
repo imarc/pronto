@@ -15,7 +15,7 @@
     padding: var(--size-fluid-3);
 
     &__item {
-        aspect-ratio: var(--ratio-square);
+        aspect-ratio: var(--ratio, var(--ratio-square));
         background: var(--bg);
         display: grid;
         place-items: center;
@@ -38,6 +38,11 @@
         font-size: 0.75vw;
         font-weight: 700;
         text-align: center;
+
+        &.-padded {
+            background: var(--color-neutral-0);
+            padding: var(--size-1);
+        }
     }
 
     &__swatch {
@@ -46,4 +51,19 @@
         height: 50%;
         width: 50%;
     }
+}
+
+.bg-chess {
+    --size: 1.5rem;
+    --half: calc(var(--size) / 2);
+    --opacity: 0.8;
+    background-color: var(--color-neutral-50);
+    background-image:
+        repeating-linear-gradient(45deg, var(--color-neutral-0) 25%, transparent 25%, transparent 75%, var(--color-neutral-0) 75%, var(--color-neutral-0)),
+        repeating-linear-gradient(45deg, var(--color-neutral-0) 25%, transparent 25%, transparent 75%, var(--color-neutral-0) 75%, var(--color-neutral-0)),
+        linear-gradient(45deg, hsl(var(--color-primary-700-hsl) / var(--opacity)), hsl(var(--color-primary-200-hsl) / var(--opacity)), hsl(var(--color-primary-700-hsl) / var(--opacity)));
+    background-position: 0 0, var(--half) var(--half), 0 0;
+    background-repeat: repeat, repeat, no-repeat;
+    background-size: var(--size) var(--size), var(--size) var(--size), 100% 100%;
+    border: 2px solid var(--color-primary-100);
 }

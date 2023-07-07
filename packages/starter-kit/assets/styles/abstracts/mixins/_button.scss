@@ -39,7 +39,8 @@
     gap: var(--size-1);
     line-height: var(--leading-none);
     margin: 0;
-    padding: var(--_button-padding-y) var(--_button-padding-x);
+    padding-block: var(--_button-padding-y);
+    padding-inline: var(--_button-padding-x);
     text-align: center;
     text-decoration: none;
     transition:
@@ -100,11 +101,11 @@
     &.-styleRound,
     &.-styleSquare {
         aspect-ratio: var(--ratio-square);
+        block-size: var(--size-fluid-4);
         display: grid;
-        height: var(--size-fluid-4);
+        inline-size: var(--size-fluid-4);
         padding: 0;
         place-items: center;
-        width: var(--size-fluid-4);
     }
 
     &.-styleRound {
@@ -119,13 +120,13 @@
         aspect-ratio: var(--icon-ratio, var(--_icon-ratio));
         color: var(--_button-color-icon);
         flex: 0 0 auto;
-        max-height: 1em;
-        max-width: 1em;
+        max-block-size: 1em;
+        max-inline-size: 1em;
 
         > svg {
-            height: 100%;
+            block-size: 100%;
+            inline-size: 100%;
             object-fit: contain;
-            width: 100%;
         }
     }
 
