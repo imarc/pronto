@@ -44,6 +44,7 @@ CSS Custom Properties - [ Table of Contents ]
     --border-size-5:            25px;
 
     /* Border Radii ------------------------------------------------------ */
+    --radius-none:              0;
     --radius-1:                 2px;
     --radius-2:                 5px;
     --radius-3:                 1rem;
@@ -77,13 +78,15 @@ CSS Custom Properties - [ Table of Contents ]
     @include generate-color-variables($colors);
     @include generate-color-variables-hsl($colors);
 
+    --focus-outline:        var(--color-info-500);
+
     //==========================================================================
     //==[ 5. Elevations ]=======================================================
     //==========================================================================
 
-    --elevation-low:        0px 1px 2px 0px hsl(var(--elevation-color-hsl, var(--color-neutral-0-hsl)) / 0.20);
-    --elevation-mid:        0px 16px 32px 0px hsl(var(--elevation-color-hsl, var(--color-neutral-0-hsl)) / 0.10);
-    --elevation-high:       0px 16px 64px 0px hsl(var(--elevation-color-hsl, var(--color-neutral-0-hsl)) / 0.05);
+    --elevation-low:        0px 1px 2px 0px hsl(var(--elevation-color-hsl, var(--color-neutral-1000-hsl)) / 0.20);
+    --elevation-mid:        0px 16px 32px 0px hsl(var(--elevation-color-hsl, var(--color-neutral-1000-hsl)) / 0.10);
+    --elevation-high:       0px 16px 64px 0px hsl(var(--elevation-color-hsl, var(--color-neutral-1000-hsl)) / 0.05);
 
     //==========================================================================
     //==[ 6. Motion ]===========================================================
@@ -133,6 +136,10 @@ CSS Custom Properties - [ Table of Contents ]
     --ease-in-out-expo:         cubic-bezier(1, 0, 0, 1);
     --ease-in-out-circ:         cubic-bezier(0.785, 0.135, 0.15, 0.86);
     --ease-in-out-back:         cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+    --ease-in:                  var(--ease-in-cubic);
+    --ease-out:                 var(--ease-out-cubic);
+    --ease-in-out:              var(--ease-in-out-cubic);
 
     //==========================================================================
     //==[ 7. Spacing ]==========================================================

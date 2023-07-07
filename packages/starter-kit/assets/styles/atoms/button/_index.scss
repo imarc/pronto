@@ -1,0 +1,11 @@
+@use '@assets/styles/abstracts/mixins' as *;
+
+.button {
+    @include button();
+}
+
+.buttonGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--size-fluid-2);
+}

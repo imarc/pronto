@@ -1,5 +1,6 @@
 
 @use 'sass:meta';
+@use 'demo'; // only for demo purposes. Remove this folder in your project.
 
 // Set cascade layer order =========================================
 @layer base, utils, plugins, components;

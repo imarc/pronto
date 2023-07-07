@@ -2,13 +2,18 @@
 
 .section {
     @include section-themes();
-    --section-padding-y: 2.5rem;
+    --section-padding-y: var(--size-fluid-4);
+
     background: var(--section-color-background);
     color: var(--section-color-text);
     padding: var(--section-padding-y) 0;
 
-    @include breakpoint(lg) {
-        --section-padding-y: 4rem;
+    &__header {
+        display: grid;
+
+        &--center {
+            justify-items: center;
+        }
     }
 
     &__heading {
