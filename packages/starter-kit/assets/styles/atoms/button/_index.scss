@@ -7,5 +7,5 @@
 .buttonGroup {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--size-fluid-2);
+    gap: var(--button-group-gap, var(--size-fluid-2));
 }

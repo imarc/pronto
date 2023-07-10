@@ -14,10 +14,25 @@
     gap: var(--size-fluid-2);
     padding: var(--size-fluid-3);
 
+    &--flex {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--size-fluid-1);
+
+        > * {
+            flex: 0 0 auto;
+        }
+    }
+
     &__item {
         aspect-ratio: var(--ratio, var(--ratio-square));
         background: var(--bg);
+        block-size: var(--block-size, auto);
+        border: var(--border-width, 0) solid var(--color-primary-700);
+        border-radius: var(--radius, 0);
+        box-shadow: var(--elevation, none);
         display: grid;
+        inline-size: var(--inline-size, auto);
         place-items: center;
 
         &.-round {
@@ -50,6 +65,58 @@
         background: var(--bg);
         height: 50%;
         width: 50%;
+    }
+}
+
+.demo-heading {
+    color: var(--section-color-heading);
+    max-inline-size: var(--inline-size, var(--size-header-3));
+    text-wrap: balance;
+}
+
+.demo-text {
+    color: var(--section-color-text);
+    max-inline-size: var(--inline-size, var(--size-content-4));
+    margin-block-end: var(--size-2);
+}
+
+.demo-columns {
+    --column-min: var(--size-fluid-5);
+    display: grid;
+    gap: var(--size-fluid-2);
+    grid-template-columns: repeat(auto-fill, minmax(var(--column-min), 1fr));
+}
+
+.demo-motion {
+    --play-state: paused;
+    background: var(--color-primary-50);
+    block-size: var(--size-fluid-5);
+    inline-size: var(--size-fluid-10);
+    position: relative;
+
+    &:hover {
+        --play-state: running;
+    }
+
+    @keyframes bounce {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(var(--size-fluid-10) - var(--size-fluid-5)));
+        }
+    }
+
+    span {
+        animation: bounce var(--duration, var(--duration-slow)) var(--play-state, paused) infinite var(--easing, linear) alternate;
+        aspect-ratio: var(--ratio-square);
+        background: var(--color-primary-700);
+        block-size: var(--size-fluid-5);
+        display: block;
+        inset-block-start: 0;
+        inset-inline-start: 0;
+        position: absolute;
     }
 }
 
