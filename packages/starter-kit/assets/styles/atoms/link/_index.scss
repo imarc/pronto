@@ -1,0 +1,5 @@
+@use '@assets/styles/abstracts/mixins/links' as *;
+
+.link {
+    @include block-link();
+}

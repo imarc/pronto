@@ -1,3 +1,5 @@
+@use '@assets/styles/abstracts/' as *;
+
 :root {
     color-scheme: light;
 
@@ -15,18 +17,19 @@
     line-height: var(--leading-paragraph);
 }
 
-// what to do about focus vs focus-visible?
+:where(:focus:not(:focus-visible)) {
+    outline: none;
+}
+
+:where(:focus-visible) {
+    outline: 3px solid var(--focus-outline);
+    outline-offset: 3px;
+}
 
 :where(a):where(:not([class])) {
-    color: var(--color-link-500);
-    text-decoration: none;
-
-    &:hover,
-    &:focus-visible {
-        color: var(--color-link-700);
-    }
+    @include inline-link();
 }
 
 ::selection {
-    background: var(--color-primary-500);
+    background: var(--section-color-highlight, var(--color-primary-100));
 }

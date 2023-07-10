@@ -28,15 +28,15 @@
 :where(p) {
     @include paragraph-md();
 
-    &.-intro {
+    &.text-intro {
         @include paragraph-lg();
     }
 
-    &.-small {
+    &.text-small {
         @include paragram-sm();
     }
 
-    &.-tight {
+    &.text-tight {
         @include paragraph-tight();
     }
 

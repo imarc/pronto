@@ -1,0 +1,42 @@
+@use '@assets/styles/abstracts/mixins/links' as *;
+@use '@assets/styles/abstracts/mixins/typography' as *;
+
+@mixin rich-text($use-base: true) {
+    @if $use-base {
+        @include paragraph-md();
+    }
+
+    --_text-max-inline-size:        var(--text-max-inline-size, var(--size-content-4));
+
+    max-inline-size: var(--_text-max-inline-size);
+    overflow-wrap: break-word;
+    word-break: break-word;
+
+    :where(p) {
+
+    }
+
+    :where(a) {
+        @include inline-link();
+    }
+
+    :where(hr) {
+        border: none;
+        border-block-start: 2px solid var(--hr-color, var(--color-primary-200));
+        margin-block: var(--size-4);
+    }
+
+    //ul
+
+    //ol
+
+    //pre
+
+    //code
+
+    //blockquote
+
+    //hr
+
+
+}

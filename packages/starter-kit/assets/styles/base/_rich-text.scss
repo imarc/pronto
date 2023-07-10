@@ -1,0 +1,5 @@
+@use '@assets/styles/abstracts/mixins/rich-text' as *;
+
+.richText {
+    @include rich-text();
+}

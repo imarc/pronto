@@ -1,3 +1,6 @@
+@use '@assets/styles/abstracts/mixins/interactions' as *;
+@use '@assets/styles/abstracts/mixins/media' as *;
+
 @mixin button-reset() {
     appearance: none;
     background: none;
@@ -22,7 +25,7 @@
     --_button-focus-outline:            var(--button-focus-outline , var(--focus-outline));
     --_button-padding-x:                var(--button-padding-x , var(--size-3));
     --_button-padding-y:                var(--button-padding-y , var(--size-1));
-    --_button-radius:                   var(--button-radius , var(--radius-pill));
+    --_button-radius:                   var(--button-radius , var(--radius-round));
     --_icon-ratio:                      var(--ratio-square);
 
     $b: &;
@@ -48,7 +51,7 @@
         border-color var(--duration-fast) var(--ease-out),
         color var(--duration-fast) var(--ease-out);
 
-    &:hover {
+    @include hover() {
         background-color: var(--_button-color-background-hover);
         border-color: var(--_button-color-border-hover);
         color: var(--_button-color-text-hover);
@@ -59,8 +62,7 @@
     }
 
     &:focus-visible {
-        outline: 3px solid var(--_button-focus-outline);
-        outline-offset: 3px;
+        outline-color: var(--_button-focus-outline);
     }
 
     &.-disabled,
@@ -122,11 +124,10 @@
         flex: 0 0 auto;
         max-block-size: 1em;
         max-inline-size: 1em;
+        transition: color var(--duration-fast) var(--ease-out);
 
         > svg {
-            block-size: 100%;
-            inline-size: 100%;
-            object-fit: contain;
+            @include image-fit(contain);
         }
     }
 

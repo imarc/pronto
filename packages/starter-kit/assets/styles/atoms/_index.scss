@@ -3,3 +3,11 @@
 @layer button {
     @include meta.load-css('button');
 }
+
+@layer link {
+    @include meta.load-css('link');
+}
+
+@layer table {
+    @include meta.load-css('table');
+}

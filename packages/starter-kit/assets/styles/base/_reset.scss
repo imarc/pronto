@@ -79,7 +79,7 @@ pre {
 }
 
 :where(svg:not([width])) {
-    inline-size: var(--size-10); // keep svgs from growing too large.
+    max-inline-size: var(--size-10); // keep svgs from growing too large.
 }
 
 ::placeholder {
