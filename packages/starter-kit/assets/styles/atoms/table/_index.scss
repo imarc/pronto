@@ -1,3 +1,4 @@
+@use '@assets/styles/abstracts/mixins/breakpoints' as *;
 @use '@assets/styles/abstracts/mixins/interactions' as *;
 
 table,
@@ -20,8 +21,8 @@ table,
     inline-size: 100%;
     margin-block-end: var(--size-3);
 
-    &.-styleStriped {
-        :where(tr:nth-child(odd)) {
+    &[table-striped] {
+        :where(tr:nth-child(even)) {
             background-color: var(--_table-color-tr-bg-stripe);
             color: var(--_table-color-tr-text-stripe);
         }
@@ -66,7 +67,8 @@ table,
         }
     }
 
-    &.-scrollable {
+    &[responsive-table='scrollable'],
+    &[responsive-table]:where(:not([responsive-table='stacked'])) {
         display: flex;
         inline-size: calc(100% + (var(--_table-border-width) * 2) * var(--breakpoint-gap));
         margin-inline-start: calc(-1 * var(--breakpoint-gap));
@@ -77,6 +79,46 @@ table,
         &::after {
             content: '';
             min-inline-size: var(--breakpoint-gap);
+        }
+    }
+
+    &[responsive-table='stacked'] {
+        @include breakpoint(md, max-width) {
+            thead,
+            th {
+                display: none;
+            }
+
+            tr {
+                display: block;
+
+                @include hover() {
+                    td {
+                        border-block-end-color: var(--_table-border-color);
+                    }
+                }
+
+                &:where(:first-child) {
+                    border-block-start: var(--_table-border-width) solid var(--_table-border-color);
+
+                }
+            }
+
+            td {
+                align-items: center;
+                border-block-end: var(--_table-border-width) solid var(--_table-color-tr-bg-hover);
+                display: flex;
+                gap: var(--_table-padding-x);
+                justify-content: space-between;
+                text-align: end;
+
+                &::before {
+                    content: attr(data-label);
+                    font-size: 0.8em;
+                    font-weight: var(--font-weight-bold);
+                    text-transform: uppercase;
+                }
+            }
         }
     }
 }
