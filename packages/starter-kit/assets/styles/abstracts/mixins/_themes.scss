@@ -5,7 +5,11 @@
         --section-color-text:                   var(--color-neutral-500);
         --section-color-action:                 var(--color-link-500);
         --section-color-action-hover:           var(--color-link-700);
+        --section-color-accent:                 var(--color-primary-500);
         --section-color-highlight:              var(--color-primary-100);
+
+        --section-color-background-neutral:     var(--color-neutral-0);
+        --section-color-text-neutral:           var(--color-neutral-1000);
     }
 
     &.-themeDark {
@@ -14,7 +18,11 @@
         --section-color-text:                   var(--color-neutral-200);
         --section-color-action:                 var(--color-link-500);
         --section-color-action-hover:           var(--color-link-700);
-        --section-color-highlight:              var(--color-primary-900)
+        --section-color-accent:                 var(--color-primary-300);
+        --section-color-highlight:              var(--color-primary-800);
+
+        --section-color-background-neutral:     var(--color-neutral-1000);
+        --section-color-text-neutral:           var(--color-neutral-0);
     }
 
     &.-themePrimaryLight {
@@ -23,7 +31,10 @@
         --section-color-text:                   var(--color-primary-700);
         --section-color-action:                 var(--color-link-500);
         --section-color-action-hover:           var(--color-link-700);
-        --section-color-highlight:              var(--color-primary-200)
+        --section-color-highlight:              var(--color-primary-200);
+
+        --section-color-background-neutral:     var(--color-neutral-0);
+        --section-color-text-neutral:           var(--color-neutral-1000);
     }
 
     &.-themePrimaryDark {
@@ -32,6 +43,9 @@
         --section-color-text:                   var(--color-primary-100);
         --section-color-action:                 var(--color-link-500);
         --section-color-action-hover:           var(--color-link-700);
-        --section-color-highlight:              var(--color-primary-700)
+        --section-color-highlight:              var(--color-primary-700);
+
+        --section-color-background-neutral:     var(--color-neutral-1000);
+        --section-color-text-neutral:           var(--color-neutral-0);
     }
 }

@@ -979,16 +979,44 @@
                         <p>Suspendisse dignissim lacus in eros convallis porta. Pellentesque hendrerit neque a cursus tristique. Phasellus eleifend consectetur felis, in eleifend nulla vulputate eget. Cras tincidunt urna magna, eget fermentum sapien dignissim id. In at sem ac purus tincidunt feugiat.</p>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <section id="atoms-tags" class="section -themeLight container--grid">
-            <div class="section__header container__content--main">
-                <h2 class="section__heading">[ Tags ]</h2>
-            </div>
-            <div class="section__content container__content--main">
                 <div class="demo-group">
+                    <h3 class="demo-group__title">Horizontal Rule</h3>
+                    <div class="richText">
+                        <p>Suspendisse dignissim lacus in eros convallis porta. Pellentesque hendrerit neque a cursus tristique. Phasellus eleifend consectetur felis, in eleifend nulla vulputate eget. Cras tincidunt urna magna, eget fermentum sapien dignissim id. In at sem ac purus tincidunt feugiat.</p>
+                        <hr />
+                        <p>Suspendisse dignissim lacus in eros convallis porta. Pellentesque hendrerit neque a cursus tristique. Phasellus eleifend consectetur felis, in eleifend nulla vulputate eget. Cras tincidunt urna magna, eget fermentum sapien dignissim id. In at sem ac purus tincidunt feugiat.</p>
+                    </div>
+                </div>
 
+                <div class="demo-group">
+                    <h3 class="demo-group__title">Preformatted Text / Code</h3>
+                    <div class="richText">
+                        <p>Suspendisse dignissim lacus in eros convallis porta. Pellentesque hendrerit <code>function()</code> neque a cursus tristique. Phasellus eleifend consectetur felis, in eleifend nulla vulputate eget. Cras tincidunt urna magna, eget fermentum sapien dignissim id. In at sem ac purus tincidunt feugiat.</p>
+                        <p>Suspendisse dignissim lacus in eros convallis porta. Pellentesque hendrerit neque a cursus tristique. Phasellus eleifend consectetur felis, in eleifend nulla vulputate eget. Cras tincidunt urna magna, eget fermentum sapien dignissim id. In at sem ac purus tincidunt feugiat.</p>
+                        <pre data-lang="typescript"><code>export const useSearchFilters = defineStore('search-filters', () => {
+    const route = useRoute()
+    // this assumes `app.provide('appProvided', 'value')` was called and not removed as sometimes happens.
+    const appProvided = inject('appProvided')
+
+    return {
+        // ...
+    }
+})</code></pre>
+                        <p>Suspendisse dignissim lacus in eros convallis porta. Pellentesque hendrerit neque a cursus tristique. Phasellus eleifend consectetur felis, in eleifend nulla vulputate eget. Cras tincidunt urna magna, eget fermentum sapien dignissim id. In at sem ac purus tincidunt feugiat.</p>
+                    </div>
+                </div>
+
+                <div class="demo-group">
+                    <h3 class="demo-group__title">Blockquote</h3>
+                    <div class="richText">
+                        <p>Suspendisse dignissim lacus in eros convallis porta. Pellentesque hendrerit neque a cursus tristique. Phasellus eleifend consectetur felis, in eleifend nulla vulputate eget. Cras tincidunt urna magna, eget fermentum sapien dignissim id. In at sem ac purus tincidunt feugiat.</p>
+                        <blockquote>
+                            <p>“Suspendisse dignissim lacus in eros convallis porta. Pellentesque hendrerit neque a cursus tristique.”</p>
+                            <cite> - Author</cite>
+                        </blockquote>
+                        <p>Suspendisse dignissim lacus in eros convallis porta. Pellentesque hendrerit neque a cursus tristique. Phasellus eleifend consectetur felis, in eleifend nulla vulputate eget. Cras tincidunt urna magna, eget fermentum sapien dignissim id. In at sem ac purus tincidunt feugiat.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -999,7 +1027,20 @@
             </div>
             <div class="section__content container__content--main">
                 <div class="demo-group">
+                    <h3 class="demo-group__title">Checkbox Inputs</h3>
+                </div>
 
+                <div class="demo-group">
+                    <h3 class="demo-group__title">Radio Inputs</h3>
+                </div>
+
+                <div class="demo-group">
+                    <h3 class="demo-group__title">Toggle Inputs</h3>
+                </div>
+
+                <div class="demo-group">
+                    <h3 class="demo-group__title">Tags</h3>
+                    <p>Tag styles can be applied to checkbox inputs, radio inputs, buttons and spans.</p>
                 </div>
             </div>
         </section>

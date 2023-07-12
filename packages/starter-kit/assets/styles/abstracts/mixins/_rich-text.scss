@@ -19,7 +19,7 @@
     overflow-wrap: break-word;
     word-break: break-word;
 
-    :where(p):where {
+    :where(p) {
         font-family: inherit;
         font-size: inherit;
         font-weight: inherit;
@@ -113,7 +113,7 @@
         :where(li) {
             --_list-marker-block-size:              var(--list-marker-block-size, 0.5em);
             --_list-marker-inline-size:             var(--list-marker-inline-size, 1em);
-            --_list-marker-color-background:        var(--list-marker-color-background, var(--color-primary-500));
+            --_list-marker-color-background:        var(--list-marker-color-background, var(--section-color-accent, var(--color-primary-500)));
 
             &::before {
                 background: var(--_list-marker-color-background);
@@ -125,7 +125,7 @@
             }
 
             li {
-                --list-marker-color-background: var(--color-primary-200);
+                --list-marker-color-background: var(--section-color-highlight, var(--color-primary-200));
                 --list-marker-block-size: 0.25em;
             }
         }
@@ -137,9 +137,8 @@
 
         :where(li) {
             --_list-marker-block-size:              var(--list-marker-block-size, 2.5em);
-            --_list-marker-color-background:        var(--list-marker-color-background, var(--color-primary-500));
-            // ADD SECTION COLORS AS DEFAULTS
-            --_list-marker-color-text:              var(--list-marker-color-text, var(--color-neutral-0));
+            --_list-marker-color-background:        var(--list-marker-color-background, var(--section-color-accent, var(--color-primary-500)));
+            --_list-marker-color-text:              var(--list-marker-color-text, var(--section-color-background-neutral, var(--color-neutral-0)));
             --_list-marker-font-size:               var(--list-marker-font-size, 0.9em);
             --_list-marker-inline-size:             var(--list-marker-inline-size, 2.5em);
             counter-increment: list-counter;
@@ -159,7 +158,8 @@
             }
 
             li {
-                --list-marker-color-background: var(--color-primary-200);
+                --list-marker-color-background:     var(--section-color-highlight, var(--color-primary-200));
+                --list-marker-color-text:           var(--section-color-accent, var(--color-primary-500));
             }
         }
     }
@@ -170,17 +170,124 @@
         }
     }
 
-    //ul
+    :where(hr) {
+        border-width: 0;
+        color: var(--section-color-accent, var(--color-primary-400));
+        display: grid;
+        margin-block: var(--section-padding-y, var(--size-fluid-4));
+        place-items: center;
 
-    //ol
+        &::before,
+        &::after {
+            grid-area: 1 / 1 / 1 / 1;
+        }
 
-    //pre
+        &::before {
+            background: currentColor;
+            block-size: 0.125rem;
+            content: '';
+            inline-size: 100%;
+        }
 
-    //code
+        &::after {
+            --_accent-size: 0.375rem;
+            --_space-size: 0.5rem;
+            --_space-color: var(--section-color-background, var(--color-neutral-0));
+            --_stop-1: var(--_space-size);
+            --_stop-2: calc(var(--_accent-size) + var(--_space-size));
 
-    //blockquote
+            background: repeating-linear-gradient(90deg, var(--_space-color), var(--_space-color) var(--_stop-1), currentColor var(--_stop-1), currentColor var(--_stop-2));
+            block-size: var(--_accent-size);
+            content: '';
+            inline-size: calc((var(--_accent-size) * 3) + (var(--_space-size) * 4));
+        }
+    }
 
-    //hr
+    :where(pre, code) {
+        direction: ltr;
+        text-align: start;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+    }
 
+    :where(code) {
+        background: var(--section-color-highlight, var(--color-neutral-500));
+        border-radius: var(--radius-2);
+        color: var(--section-color-accent, var(--color-neutral-0));
+        font-family: var(--font-mono);
+        font-size: var(--text-font-size, 1em);
+        letter-spacing: var(--tracking-wider);
+        padding: 0.60em;
+    }
 
+    :where(pre) {
+        background: var(--section-color-highlight, var(--color-neutral-500));
+        border-radius: var(--radius-2);
+        display: flex;
+        inline-size: 100%;
+        overflow: hidden;
+        padding: var(--size-fluid-3) 0;
+        position: relative;
+
+        &[data-lang] {
+            padding: var(--size-fluid-4) 0 var(--size-fluid-3);
+
+            &::before {
+                background: var(--section-color-accent, var(--color-neutral-0));
+                border-radius: var(--radius-2);
+                color: var(--section-color-background, var(--color-neutral-500));
+                content: attr(data-lang);
+                font-family: var(--font-mono);
+                font-size: 0.625em;
+                font-weight: var(--font-weight-bold);
+                letter-spacing: var(--tracking-wider);
+                line-height: 1;
+                padding: 1em 0.75em;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+
+        :where(code) {
+            background: none;
+            border-radius: 0;
+            overflow-x: auto;
+            padding: 0 var(--size-fluid-3);
+        }
+    }
+
+    :where(blockquote) {
+        border-left: 0.75rem solid var(--section-color-accent, var(--color-primary-500));
+        color: var(--section-color-accent, var(--color-primary-500));
+        font-family: var(--quote-font-family, var(--font-serif));
+        font-size: var(--quote-font-size, 1.25em);
+        font-style: italic;
+        font-weight: var(--font-weight-bold);
+        padding-inline: var(--size-fluid-3);
+
+        :where(p) {
+            font-family: inherit;
+            font-size: inherit;
+            font-weight: inherit;
+            line-height: inherit;
+        }
+
+        :where(cite) {
+            color: var(--section-color-accent, var(--color-primary-500));
+            font-family: var(--cite-font-family, var(--font-sans));
+            font-size: var(--cite-font-size, 0.75em);
+            font-style: normal;
+            font-weight: var(--font-weight-medium);
+        }
+    }
 }

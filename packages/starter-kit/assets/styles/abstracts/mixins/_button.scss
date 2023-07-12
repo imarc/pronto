@@ -65,8 +65,11 @@
         outline-color: var(--_button-focus-outline);
     }
 
-    &.-disabled,
-    &[disabled] {
+    &:where(
+        .-disabled,
+        [disabled],
+        [aria-disabled="true"]
+    ) {
         --_button-color-background:     var(--button-color-background-disabled, var(--color-neutral-200));
         --_button-color-border:         var(--button-color-border-disabled, var(--color-neutral-200));
         --_button-color-text:           var(--button-color-text-disabled, var(--color-neutral-0));
