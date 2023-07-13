@@ -11,3 +11,7 @@
 @layer table {
     @include meta.load-css('table');
 }
+
+@layer switch {
+    @include meta.load-css('switch');
+}

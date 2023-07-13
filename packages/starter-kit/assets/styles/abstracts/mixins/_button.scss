@@ -1,4 +1,4 @@
-@use '@assets/styles/abstracts/mixins/interactions' as *;
+@use '@assets/styles/abstracts/mixins/media-queries' as *;
 @use '@assets/styles/abstracts/mixins/media' as *;
 
 @mixin button-reset() {
@@ -51,6 +51,18 @@
         border-color var(--duration-fast) var(--ease-out),
         color var(--duration-fast) var(--ease-out);
 
+    &:where(
+        .-disabled,
+        [disabled],
+        [aria-disabled="true"]
+    ) {
+        --_button-color-background:     var(--button-color-background-disabled, var(--color-neutral-200));
+        --_button-color-border:         var(--button-color-border-disabled, var(--color-neutral-200));
+        --_button-color-text:           var(--button-color-text-disabled, var(--color-neutral-0));
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
     @include hover() {
         background-color: var(--_button-color-background-hover);
         border-color: var(--_button-color-border-hover);
@@ -63,17 +75,6 @@
 
     &:focus-visible {
         outline-color: var(--_button-focus-outline);
-    }
-
-    &:where(
-        .-disabled,
-        [disabled],
-        [aria-disabled="true"]
-    ) {
-        --_button-color-background:     var(--button-color-background-disabled, var(--color-neutral-200));
-        --_button-color-border:         var(--button-color-border-disabled, var(--color-neutral-200));
-        --_button-color-text:           var(--button-color-text-disabled, var(--color-neutral-0));
-        pointer-events: none;
     }
 
     &.-styleOutline {
