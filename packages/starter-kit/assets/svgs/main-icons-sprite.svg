@@ -20,6 +20,10 @@
         <path d="M6 12L10 16L18 8" stroke="var(--icon-stroke-color, transparent)" stroke-width="var(--icon-stroke-width, 2)" stroke-linecap="round"/>
     </symbol>
 
+    <symbol id="icon-check" viewBox="0 0 14 11">
+        <path d="M13 1L4.75 9.25L1 5.5" stroke="var(--icon-fill-color, currentColor)" stroke-width="var(--icon-stroke-width, 2)" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
     <symbol id="icon-chevron-left" viewBox="0 0 21 36">
         <path d="M19 2L3 18L19 34" fill="none" stroke="var(--icon-fill-color, currentColor)" stroke-width="var(--icon-stroke-width, 4)" stroke-linecap="round"/>
     </symbol>

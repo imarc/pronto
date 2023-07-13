@@ -4,14 +4,22 @@
     @include meta.load-css('button');
 }
 
+@layer checkbox {
+    @include meta.load-css('checkbox');
+}
+
 @layer link {
     @include meta.load-css('link');
 }
 
-@layer table {
-    @include meta.load-css('table');
+@layer radio {
+    @include meta.load-css('radio');
 }
 
 @layer switch {
     @include meta.load-css('switch');
+}
+
+@layer table {
+    @include meta.load-css('table');
 }

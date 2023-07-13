@@ -9,6 +9,7 @@
 
 .demo-surface {
     box-shadow: var(--elevation-3);
+    border-radius: var(--radius-1);
     display: grid;
     place-items: center;
     padding: var(--size-2);
