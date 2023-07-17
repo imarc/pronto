@@ -1,5 +1,5 @@
-## 0.0.2
+## 0.0.1
 * First build of 90% of the atoms in CSS/SCSS.
 
-## 0.0.1
+## 0.0.0
 * Initial Setup.
