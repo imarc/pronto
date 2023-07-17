@@ -23,3 +23,7 @@
 @layer table {
     @include meta.load-css('table');
 }
+
+@layer tag {
+    @include meta.load-css('tag');
+}

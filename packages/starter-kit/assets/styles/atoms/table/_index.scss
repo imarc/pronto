@@ -1,5 +1,6 @@
 @use '@assets/styles/abstracts/mixins/media-queries' as *;
 
+// TODO: update for container queries.
 table,
 .table {
     --_table-border-color:              var(--table-border-color, var(--color-primary-700));

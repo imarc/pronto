@@ -30,12 +30,6 @@
         @include inline-link();
     }
 
-    :where(hr) {
-        border: none;
-        border-block-start: 2px solid var(--hr-color, var(--color-primary-200));
-        margin-block: var(--size-4);
-    }
-
     :where(ul, ol) {
         --_list-row-gap:            var(--list-row-gap, var(--size-1));
 
