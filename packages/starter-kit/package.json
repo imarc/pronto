@@ -1,12 +1,16 @@
 {
-    "name": "imarc-component-library-starter-kit",
-    "version": "0.0.1",
+    "name": "@imarc/component-library-starter-kit",
+    "version": "0.0.2",
     "description": "A light, customizable frontend starter kit for the component library",
     "author": "Imarc",
     "license": "Apache-2.0",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/imarc/component-library.git"
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://npm.pkg.github.com/"
     },
     "bugs": {
         "url": "https://github.com/imarc/component-library/issues"
