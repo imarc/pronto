@@ -1,6 +1,6 @@
 {
     "name": "@imarc/component-library-starter-kit",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "description": "A light, customizable frontend starter kit for the component library",
     "author": "Imarc",
     "license": "Apache-2.0",
