@@ -1,6 +1,16 @@
 {
   "name": "imarc-component-library",
   "private": true,
+  "author": "Imarc",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imarc/component-library.git"
+  },
+  "bugs": {
+    "url": "https://github.com/imarc/component-library/issues"
+  },
+  "homepage": "https://github.com/imarc/component-library#readme",
   "workspaces": [
     "packages/*"
   ],
