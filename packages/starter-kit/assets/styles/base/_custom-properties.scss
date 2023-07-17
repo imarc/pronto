@@ -58,11 +58,11 @@ CSS Custom Properties - [ Table of Contents ]
     //==========================================================================
 
     /* Generate CSS Variables for all SASS breakpoint variables in five formats: */
-    /* Breakpoint Widths:            --breakpoint-[name]-width:    xpx           */
-    /* Breakpoint Gaps:              --breakpoint-[name]-gap:      xpx           */
-    /* Active Breakpoint Min-Width:  --breakpoint-min-width:       xpx           */
-    /* Active Breakpoint Max-Width:  --breakpoint-max-width:       xpx           */
-    /* Active Breakpoint Gap:        --breakpoint-gap:             xpx           */
+    /* Breakpoint Widths:            --breakpoint-[name]-width:    Xpx           */
+    /* Breakpoint Gaps:              --breakpoint-[name]-gap:      Xpx           */
+    /* Active Breakpoint Min-Width:  --breakpoint-min-width:       Xpx           */
+    /* Active Breakpoint Max-Width:  --breakpoint-max-width:       Xpx           */
+    /* Active Breakpoint Gap:        --breakpoint-gap:             Xpx           */
     @include generate-breakpoint-widths($breakpoints);
     @include generate-breakpoint-gaps($breakpoints);
     @include generate-active-breakpoint-variables($breakpoints);
@@ -72,8 +72,8 @@ CSS Custom Properties - [ Table of Contents ]
     //==========================================================================
 
     /* Generate CSS Variables for all SASS color variables in two formats:    */
-    /* HSL Wrapped:     --color-[name]-[value]:      hsl( xdeg, x% , x% )     */
-    /* HSL Unwrapped:   --color-[name]-[value]-hsl:  xdeg, x%, x%             */
+    /* HSL Wrapped:     --color-[name]-[value]:      hsl( Xdeg, X% , X% )     */
+    /* HSL Unwrapped:   --color-[name]-[value]-hsl:  Xdeg, X%, X%             */
     @include generate-color-variables($colors);
     @include generate-color-variables-hsl($colors);
 

@@ -74,3 +74,12 @@
         outline-color: var(--_link-outline);
     }
 }
+
+@mixin pseudo-link( $z: 0, $pseudo: after) {
+    &::#{$pseudo} {
+        content: '';
+        inset: 0;
+        position: absolute;
+        z-index: $z;
+    }
+}
