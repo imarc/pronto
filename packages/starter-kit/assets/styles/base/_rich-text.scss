@@ -1,4 +1,4 @@
-@use '@assets/styles/abstracts/mixins/rich-text' as *;
+@use '/assets/styles/abstracts/mixins/rich-text' as *;
 
 .richText {
     @include rich-text();

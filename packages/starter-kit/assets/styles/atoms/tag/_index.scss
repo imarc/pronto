@@ -1,5 +1,5 @@
-@use '@assets/styles/abstracts/mixins/links' as *;
-@use '@assets/styles/abstracts/mixins/media-queries' as *;
+@use '/assets/styles/abstracts/mixins/links' as *;
+@use '/assets/styles/abstracts/mixins/media-queries' as *;
 
 // For use on checkboxes, radio switches, buttons, anchors or spans.
 // when used with checkboxs and radio the markup should be the following:

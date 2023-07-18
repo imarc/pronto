@@ -9,12 +9,16 @@ export default defineConfig(async ({ command }) => {
             outDir: 'web/dist',
             assetsDir: '.',
             rollupOptions: {
-                input: 'assets/js/main.js',
+                input: [
+                    'assets/js/main.js',
+                ],
             },
         },
         resolve: {
             alias: {
-                '@assets': path.resolve(__dirname, 'assets'),
+                '@styles': path.resolve(__dirname, 'assets/styles'),
+                '@js': path.resolve(__dirname, 'assets/js'),
+                '@svgs': path.resolve(__dirname, 'assets/svgs'),
             },
         },
     }

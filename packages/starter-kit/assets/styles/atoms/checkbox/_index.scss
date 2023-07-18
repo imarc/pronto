@@ -1,4 +1,4 @@
-@use '@assets/styles/abstracts/mixins/media-queries' as *;
+@use '/assets/styles/abstracts/mixins/media-queries' as *;
 
 .checkbox {
     --_checkbox-border-radius:                  var(--checkbox-border-radius, calc(var(--_checkbox-size) * 0.25));

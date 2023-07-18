@@ -1,5 +1,5 @@
-@use '@assets/styles/abstracts/mixins/media-queries' as *;
-@use '@assets/styles/abstracts/mixins/media' as *;
+@use '/assets/styles/abstracts/mixins/media-queries' as *;
+@use '/assets/styles/abstracts/mixins/media' as *;
 
 @mixin block-link() {
     --_link-color:              var(--link-color, var(--section-color-action, var(--color-link-500)));

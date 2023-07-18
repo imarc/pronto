@@ -1,5 +1,5 @@
-@use '@assets/styles/abstracts/mixins/media-queries' as *;
-@use '@assets/styles/abstracts/mixins/media' as *;
+@use '/assets/styles/abstracts/mixins/media-queries' as *;
+@use '/assets/styles/abstracts/mixins/media' as *;
 
 @mixin button-reset() {
     appearance: none;

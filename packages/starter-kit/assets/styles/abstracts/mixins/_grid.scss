@@ -1,8 +1,8 @@
 @use 'sass:map';
 @use 'sass:math';
-@use '@assets/styles/abstracts/config/breakpoints' as *;
-@use '@assets/styles/abstracts/mixins/media-queries' as *;
-@use '@assets/styles/abstracts/functions/lists' as *;
+@use '/assets/styles/abstracts/config/breakpoints' as *;
+@use '/assets/styles/abstracts/mixins/media-queries' as *;
+@use '/assets/styles/abstracts/functions/lists' as *;
 
 $-columns: 12 !default;
 $-row-gap: 1.5rem !default;
