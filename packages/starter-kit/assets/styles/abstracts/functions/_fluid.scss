@@ -1,8 +1,8 @@
 @use 'sass:math';
 @use "sass:map";
-@use "/assets/styles/abstracts/config/breakpoints" as config;
-@use "/assets/styles/abstracts/functions/strip-units" as *;
-@use '/assets/styles/abstracts/functions/types' as type;
+@use "../config/breakpoints" as config;
+@use "../functions/strip-units" as *;
+@use '../functions/types' as type;
 
 
 @function rnd($number, $places: 0) {

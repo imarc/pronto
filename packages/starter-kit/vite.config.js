@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
-
-const path = require('path')
+import path from 'path'
 
 export default defineConfig(async ({ command }) => {
     const config = {

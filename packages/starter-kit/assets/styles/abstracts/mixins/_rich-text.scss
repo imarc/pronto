@@ -1,5 +1,5 @@
-@use '/assets/styles/abstracts/mixins/links' as *;
-@use '/assets/styles/abstracts/mixins/typography' as *;
+@use '../mixins/links' as *;
+@use '../mixins/typography' as *;
 
 @mixin rich-text() {
     --_list-padding-inline-start:                   var(--list-padding-inline-start, var(--size-fluid-4));

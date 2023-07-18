@@ -1,4 +1,4 @@
-@use '/assets/styles/abstracts/mixins/switch' as *;
+@use '../../abstracts/mixins/switch' as *;
 
 .switch {
     @include switch();

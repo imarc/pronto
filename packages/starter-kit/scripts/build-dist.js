@@ -1,9 +1,11 @@
-const fs = require('fs-extra')
-const chalk = require('chalk')
-const path = require('path')
+import fs from 'fs-extra'
+import chalk from 'chalk'
+import path from 'path'
+import { fileURLToPath } from 'url'
 
 // create dist directory
-
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 const distDir = path.join(__dirname, '..', 'dist')
 fs.mkdirSync(distDir, { recursive: true })
 

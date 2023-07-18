@@ -1,4 +1,4 @@
-@use '/assets/styles/abstracts/config' as config;
+@use '../config' as config;
 @use 'sass:map';
 
 /* === Breakpoint @media query mixin ============================================ */

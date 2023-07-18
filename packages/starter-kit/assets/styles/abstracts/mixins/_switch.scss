@@ -1,4 +1,4 @@
-@use '/assets/styles/abstracts/mixins/media-queries' as *;
+@use '../mixins/media-queries' as *;
 
 @mixin switch() {
     --_switch-direction:                        var(--switch-direction, 1);

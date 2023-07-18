@@ -1,4 +1,4 @@
-@use '/assets/styles/abstracts/mixins/media-queries' as *;
+@use '../../abstracts/mixins/media-queries' as *;
 
 .radio {
     --_radio-border-radius:                  var(--radio-border-radius, var(--radius-round));
