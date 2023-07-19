@@ -25,11 +25,23 @@ To import just the compiled CSS into CSS or SCSS:
 __SCSS__
 
 ```bash
-    @use '@imarc/component-library-starter-kit/dist/main.css' as *;
+    @use '@imarc/component-library-starter-kit/dist/main.css';
 ```
 
 __CSS__
 
 ```bash
-    @import '@imarc/component-library-starter-kit/dist/main.css' as *;
+    @import '@imarc/component-library-starter-kit/dist/main.css';
+```
+
+__OR__
+
+Import the scss and use functions and mixins
+
+```bash
+   @use '@imarc/component-library-starter-kit/dist/scss/main.scss' as *;
+```
+
+```bash
+   @use '@imarc/component-library-starter-kit/dist/scss/abstracts' as *;
 ```
