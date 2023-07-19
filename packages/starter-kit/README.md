@@ -12,8 +12,24 @@ Install with NPM
   npm i @imarc/component-library-starter-kit
 ```
 
-To clone files directly into current folder structure:
+To clone assets (js, scss) and vite.config.js files directly into current folder structure:
 
 ```bash
   npx component-library-starter-kit
+```
+
+### Styles
+
+To import just the compiled CSS into CSS or SCSS:
+
+__SCSS__
+
+```bash
+    @use '@imarc/component-library-starter-kit/dist/main.css' as *;
+```
+
+__CSS__
+
+```bash
+    @import '@imarc/component-library-starter-kit/dist/main.css' as *;
 ```
