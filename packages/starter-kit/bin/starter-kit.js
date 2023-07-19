@@ -1,9 +1,12 @@
 #!/usr/bin/env node
-const chalk = require('chalk')
-const fs = require('fs-extra')
-const path = require('path')
-const json = require('jsonfile')
+import chalk from 'chalk'
+import fs from 'fs-extra'
+import path from 'path'
+import json from 'jsonfile'
+import { fileURLToPath } from 'url'
 
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 const src = path.resolve(__dirname)
 const dest = path.resolve('./')
 const packageJsonPath = path.resolve('./package.json')
