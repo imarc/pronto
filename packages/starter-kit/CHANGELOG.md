@@ -1,4 +1,4 @@
-# 0.0.6 - 0.0.12
+# 0.0.6 - 0.0.14
 * Add JS css-:has polyfills
 * Add JS utilities
 * Add bin script for `npx component-library-starter-kit`
