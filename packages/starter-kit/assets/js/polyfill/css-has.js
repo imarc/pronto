@@ -1,9 +1,9 @@
 /**
  * @module has-polyfill
- * @author timspears
  * @description polyfill for css :has selector
  * @function cssHasPolyfill
- * @param {[string, HTMLElement]} root - provide selector string or HTMLElement to scope querySelectorAll
+ * @param {[string, HTMLElement]} [root=document] - provide selector string or HTMLElement to scope querySelectorAll
+ * @param {string} [prefix="has--"] - prefix for class name
  * @property {string} [data-css-has] - selector name for child element
  *
  * @example .parent:has(.child) { ... }
@@ -25,24 +25,42 @@ const cssHasPolyfill = (root = document, prefix = 'has--') => {
     }
 }
 
-// check if parent has checked input using mutation observer
-// https://stackoverflow.com/questions/3219758/detect-changes-in-the-dom
-// https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
+/**
+ * @module has-polyfill
+ * @description polyfill for css :has(input:checked) selector
+ * @function cssHasInputCheckedPolyfill
+ * @param {[string, HTMLElement]} [root=document] - provide selector string or HTMLElement to scope querySelectorAll
+ * @param {string} [prefix="has--"] - prefix for class name
+ * @param {string} [suffix="-checked"] - suffix for class name
+ * @property {string} [data-css-has-input-checked] - selector name for child element
+ * @example .parent:has(input:checked) { ... }
+ * <div class="parent" data-css-has-input-checked>
+ * which creates `.has--input-checked` class on .parent
+*/
 
-const cssHasInputCheckedPolyfill = (root = document, prefix = 'has--') => {
+const cssHasInputCheckedPolyfill = (root = document, prefix = 'has--', suffix = '-checked') => {
     if (!CSS.supports('selector(:has(*))')) {
         const rootEl = typeof root === 'string' ? document.querySelector(root) : root
         rootEl.querySelectorAll('[data-css-has-input-checked]').forEach((el) => {
-            const inputSelector = el.dataset.cssHasInputChecked
+            const inputSelector = el.dataset.cssHasInputChecked || 'input'
+            const inputs = el.querySelectorAll(inputSelector)
+            if (!inputs.length) return
 
-            const observer = new MutationObserver((mutations) => {
-                mutations.forEach((mutation) => {
-                    if (mutation.type === 'attributes' && mutation.attributeName === 'checked') {
-                        const hasChild = el.querySelector(inputSelector || 'input')
-                        hasChild && !el.classList.contains(prefix + inputSelector) && el.classList.add(prefix + inputSelector)
-                    }
+            // add "has--input" class to parent
+            el.classList.add(`${prefix}${inputSelector}`)
+
+            inputs.forEach((input) => {
+                // add "has--input-checked" class to parent if input is checked on load
+                if (input.checked) {
+                    el.classList.add(`${prefix}${inputSelector}${suffix}`)
+                }
+                // add "has--input-checked" class to parent on input change
+                input.addEventListener('change', (e) => {
+                    e.target.checked
+                        ? el.classList.add(`${prefix}${inputSelector}${suffix}`)
+                        : el.classList.remove(`${prefix}${inputSelector}${suffix}`)
                 })
-            }
+            })
         })
     }
 }
