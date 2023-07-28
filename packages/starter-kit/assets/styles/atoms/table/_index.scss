@@ -1,25 +1,35 @@
 @use '../../abstracts/mixins/media-queries' as *;
+@use '../../abstracts/mixins/container-queries' as *;
 
-// TODO: update for container queries.
 table,
 .table {
-    --_table-border-color:              var(--table-border-color, var(--color-primary-700));
-    --_table-border-width:              var(--table-border-width, 1px);
-    --_table-color-th-bg:               var(--table-color-th-bg, var(--color-primary-700));
-    --_table-color-th-text:             var(--table-color-th-text, var(--color-neutral-0));
+    --_table-border-color:              var(--table-border-color, var(--color-neutral-400));
+    --_table-border-width:              var(--table-border-width, var(--border-size-2));
+    --_table-border-radius:             var(--table-border-radius, var(--radius-3));
+    --_table-cell-border-color:         var(--table-cell-border-color, var(--color-neutral-400));
+    --_table-cell-border-width:         var(--table-cell-border-width, var(--border-size-2));
+    --_table-color-th-bg:               var(--table-color-th-bg, var(--color-neutral-100));
+    --_table-color-th-bg-row:           var(--table-color-th-bg-row, var(--color-neutral-50));
+    --_table-color-th-text:             var(--table-color-th-text, var(--color-neutral-900));
     --_table-color-tr-bg:               var(--table-color-tr-bg, var(--color-neutral-0));
     --_table-color-tr-text:             var(--table-color-tr-text, var(--color-neutral-1000));
-    --_table-color-tr-bg-stripe:        var(--table-color-tr-bg-stripe, var(--color-primary-50));
+    --_table-color-tr-bg-stripe:        var(--table-color-tr-bg-stripe, var(--color-neutral-50));
     --_table-color-tr-text-stripe:      var(--table-color-tr-text-stripe, var(--_table-color-tr-text));
-    --_table-color-tr-bg-hover:         var(--table-color-tr-bg-hover, var(--color-primary-100));
+    --_table-color-tr-bg-hover:         var(--table-color-tr-bg-hover, var(--color-neutral-100));
     --_table-color-tr-text-hover:       var(--table-color-tr-text-hover, var(--_table-color-tr-text));
     --_table-padding-x:                 var(--table-padding-x, var(--size-2));
     --_table-padding-y:                 var(--table-padding-y, var(--size-1));
 
-    border-collapse: collapse;
     border-spacing: 0;
     inline-size: 100%;
     margin-block-end: var(--size-3);
+
+    :where(table) {
+        border: var(--_table-border-width) solid var(--_table-border-color);
+        border-collapse: separate;
+        border-radius: var(--_table-border-radius);
+        overflow: hidden;
+    }
 
     &[table-striped] {
         :where(tr:nth-child(even)) {
@@ -28,11 +38,16 @@ table,
         }
     }
 
-    &__container {
-        border-collapse: collapse;
+    .table__container {
         border-spacing: 0;
         inline-size: 100%;
         margin-block-end: var(--size-3);
+    }
+
+    .table__title {
+        background: var(--color-neutral-200);
+        font-size: var(--header-size-4);
+        line-height: var(--leading-normal);
     }
 
     caption {
@@ -51,10 +66,15 @@ table,
         background-color: var(--_table-color-th-bg);
         color: var(--_table-color-th-text);
         white-space: nowrap;
+
+        &[scope='row'] {
+            background-color: var(--_table-color-th-bg-row);
+        }
     }
 
     tr {
         background-color: var(--_table-color-tr-bg);
+        border-collapse: collapse;
         border-block-end: var(--_table-border-width) solid var(--_table-border-color);
         color: var(--_table-color-tr-text);
         transition:
@@ -67,10 +87,13 @@ table,
         }
     }
 
+    //==========================================================================//
+    //==[ Responsive Tables ]===================================================//
+    //==========================================================================//
     &[responsive-table='scrollable'],
     &[responsive-table]:where(:not([responsive-table='stacked'])) {
         display: flex;
-        inline-size: calc(100% + (var(--_table-border-width) * 2) * var(--breakpoint-gap));
+        inline-size: calc(100% + (var(--_table-cell-border-width) * 2) * var(--breakpoint-gap));
         margin-inline-start: calc(-1 * var(--breakpoint-gap));
         margin-inline-end: calc(-1 * var(--breakpoint-gap));
         overflow-x: auto;
@@ -83,7 +106,11 @@ table,
     }
 
     &[responsive-table='stacked'] {
-        @include breakpoint(md, max-width) {
+        :where(*) > & {
+            container: table-parent / inline-size;
+        }
+
+        @include container(md, table-parent, $rule: max-width) {
             thead,
             th {
                 display: none;
@@ -94,19 +121,19 @@ table,
 
                 @include hover() {
                     td {
-                        border-block-end-color: var(--_table-border-color);
+                        border-block-end-color: var(--_table-cell-border-color);
                     }
                 }
 
                 &:where(:first-child) {
-                    border-block-start: var(--_table-border-width) solid var(--_table-border-color);
+                    border-block-start: var(--_table-cell-border-width) solid var(--_table-cell-border-color);
 
                 }
             }
 
             td {
                 align-items: center;
-                border-block-end: var(--_table-border-width) solid var(--_table-color-tr-bg-hover);
+                border-block-end: var(--_table-cell-border-width) solid var(--_table-color-tr-bg-hover);
                 display: flex;
                 gap: var(--_table-padding-x);
                 justify-content: space-between;

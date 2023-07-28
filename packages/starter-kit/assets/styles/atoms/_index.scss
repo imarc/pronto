@@ -27,3 +27,7 @@
 @layer tag {
     @include meta.load-css('tag');
 }
+
+@layer tooltip {
+    @include meta.load-css('tooltip');
+}

@@ -45,12 +45,13 @@ CSS Custom Properties - [ Table of Contents ]
 
     /* Border Radii ------------------------------------------------------ */
     --radius-none:              0;
-    --radius-1:                 2px;
-    --radius-2:                 4px;
-    --radius-3:                 1rem;
-    --radius-4:                 2rem;
-    --radius-5:                 4rem;
-    --radius-6:                 8rem;
+    --radius-1:                 0.125rem;
+    --radius-2:                 0.25rem;
+    --radius-3:                 0.5rem;
+    --radius-4:                 1rem;
+    --radius-5:                 2rem;
+    --radius-6:                 4rem;
+    --radius-7:                 8rem;
     --radius-round:             1e5px;
 
     //==========================================================================
@@ -185,7 +186,7 @@ CSS Custom Properties - [ Table of Contents ]
     //==========================================================================
 
     /* Font Families ------------------------------------------------------ */
-    --font-sans:    system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+    --font-sans:    Arial, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
     --font-serif:   ui-serif, serif;
     --font-mono:    Dank Mono, Operator Mono, Inconsolata, Fira Mono, ui-monospace, SF Mono, Monaco, Droid Sans Mono, Source Code Pro, monospace;
 
