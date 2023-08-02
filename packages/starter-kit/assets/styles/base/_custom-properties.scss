@@ -79,6 +79,8 @@ CSS Custom Properties - [ Table of Contents ]
     @include generate-color-variables-hsl($colors);
 
     --focus-outline:        var(--color-info-500);
+    --color-text:           var(--color-neutral-500);
+    --color-heading:        var(--color-neutral-900);
 
     //==========================================================================
     //==[ 5. Elevations ]=======================================================
