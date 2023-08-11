@@ -78,13 +78,13 @@
 }
 
 .demo-heading {
-    color: var(--section-color-heading);
+    color: var(--theme-color-heading);
     max-inline-size: var(--inline-size, var(--size-header-3));
     text-wrap: balance;
 }
 
 .demo-text {
-    color: var(--section-color-text);
+    color: var(--theme-color-text);
     max-inline-size: var(--inline-size, var(--size-content-4));
     margin-block-end: var(--size-2);
 }

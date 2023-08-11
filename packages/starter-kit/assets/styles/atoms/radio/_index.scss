@@ -3,19 +3,19 @@
 .radio {
     --_radio-border-radius:                  var(--radio-border-radius, var(--radius-round));
     --_radio-border-color-active:            var(--radio-border-color-active, var(--color-action-600));
-    --_radio-border-color-disabled:          var(--radio-border-color-disabled, hsl( var(--section-color-text-neutral-hsl) / 10% ));
+    --_radio-border-color-disabled:          var(--radio-border-color-disabled, hsl( var(--theme-color-text-neutral-hsl) / 10% ));
     --_radio-border-color-hover:             var(--radio-border-color-hover, var(--color-neutral-700));
     --_radio-border-color-inactive:          var(--radio-border-color-inactive, var(--color-neutral-500));
     --_radio-border-width:                   var(--radio-border-width, calc(var(--_radio-size) * 0.1));
     --_radio-color-active:                   var(--radio-color-active, var(--color-action-600));
-    --_radio-color-disabled:                 var(--radio-color-disabled, hsl( var(--section-color-text-neutral-hsl) / 5% ));
-    --_radio-color-highlight:                var(--radio-color-highlight, hsl( var(--section-color-text-neutral-hsl) / 10% ));
+    --_radio-color-disabled:                 var(--radio-color-disabled, hsl( var(--theme-color-text-neutral-hsl) / 5% ));
+    --_radio-color-highlight:                var(--radio-color-highlight, hsl( var(--theme-color-text-neutral-hsl) / 10% ));
     --_radio-color-hover:                    var(--radio-color-hover, var(--color-neutral-0));
     --_radio-color-inactive:                 var(--radio-color-inactive, var(--color-neutral-50));
     --_radio-flex-direction:                 var(--radio-flex-direction, row);
     --_radio-gap:                            var(--radio-gap, 2ch);
-    --_radio-knob-color-active:              var(--radio-knob-color-active, var(--section-color-text-neutral));
-    --_radio-knob-color-disabled:            var(--radio-knob-color-disabled, hsl( var(--section-color-text-neutral-hsl) / 20% ));
+    --_radio-knob-color-active:              var(--radio-knob-color-active, var(--theme-color-text-neutral));
+    --_radio-knob-color-disabled:            var(--radio-knob-color-disabled, hsl( var(--theme-color-text-neutral-hsl) / 20% ));
     --_radio-knob-color-inactive:            var(--radio-knob-color-inactive, var(--color-neutral-100));
     --_radio-knob-color-hover:               var(--radio-knob-color-hover, var(--color-neutral-200));
     --_radio-knob-size:                      var(--radio-knob-size, calc(var(--_radio-size) * 0.67));

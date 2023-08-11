@@ -2,8 +2,8 @@
 @use '../mixins/media' as *;
 
 @mixin block-link() {
-    --_link-color:              var(--link-color, var(--section-color-action, var(--color-link-500)));
-    --_link-color-hover:        var(--link-color-hover, var(--section-color-action-hover, var(--color-link-700)));
+    --_link-color:              var(--link-color, var(--theme-color-action, var(--color-link-500)));
+    --_link-color-hover:        var(--link-color-hover, var(--theme-color-action-hover, var(--color-link-700)));
     --_link-color-icon:         var(--link-color-icon, var(--_link-color));
     --_link-color-icon-hover:   var(--link-color-icon-hover, var(--_link-color-hover));
     --_link-font-size:          var(--link-font-size, var(--size-1));
@@ -52,8 +52,8 @@
 }
 
 @mixin inline-link() {
-    --_link-color:              var(--link-color, var(--section-color-action, var(--color-link-500)));
-    --_link-color-hover:        var(--link-color-hover, var(--section-color-action-hover, var(--color-link-700)));
+    --_link-color:              var(--link-color, var(--theme-color-action, var(--color-link-500)));
+    --_link-color-hover:        var(--link-color-hover, var(--theme-color-action-hover, var(--color-link-700)));
     --_link-outline:            var(--link-outline, var(--focus-outline));
 
     color: var(--_link-color);

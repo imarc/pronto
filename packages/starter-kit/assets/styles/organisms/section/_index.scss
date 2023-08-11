@@ -1,12 +1,11 @@
 @use '../../abstracts' as *;
 
 .section {
-    @include section-themes();
-    --section-padding-y: var(--size-fluid-4);
+    --_section-padding-y:                                   var(--section-padding-y, var(--size-fluid-4));
 
-    background: var(--section-color-background);
-    color: var(--section-color-text);
-    padding: var(--section-padding-y) 0;
+    background: var(--theme-color-background);
+    color: var(--theme-color-text, var(--color-text));
+    padding: var(--_section-padding-y) 0;
 
     &__header {
         display: grid;
@@ -17,8 +16,7 @@
     }
 
     &__heading {
-        color: var(--section-color-heading);
+        color: var(--theme-color-heading, var(--color-heading));
         max-inline-size: var(--size-header-3);
     }
-
 }

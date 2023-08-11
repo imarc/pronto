@@ -18,7 +18,7 @@ tag,
     --_tag-color-border-active:                     var(--tag-color-border-active, var(--color-action-700));
     --_tag-color-border-hover:                      var(--tag-color-border-hover, var(--color-action-700));
     --_tag-color-border-inactive:                   var(--tag-color-border-inactive, var(--color-action-600));
-    --_tag-color-highlight:                         var(--tag-color-highlight, hsl( var(--section-color-text-neutral-hsl) / 10% ));
+    --_tag-color-highlight:                         var(--tag-color-highlight, hsl( var(--theme-color-text-neutral-hsl) / 10% ));
     --_tag-color-icon-active:                       var(--tag-color-icon-active, var(--color-neutral-0));
     --_tag-color-icon-hover:                        var(--tag-color-icon-hover, var(--color-action-700));
     --_tag-color-icon-inactive:                     var(--tag-color-icon-inactive, var(--color-action-600));

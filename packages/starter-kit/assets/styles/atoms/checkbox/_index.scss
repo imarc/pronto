@@ -3,19 +3,19 @@
 .checkbox {
     --_checkbox-border-radius:                  var(--checkbox-border-radius, calc(var(--_checkbox-size) * 0.25));
     --_checkbox-border-color-active:            var(--checkbox-border-color-active, var(--color-action-600));
-    --_checkbox-border-color-disabled:          var(--checkbox-border-color-disabled, hsl( var(--section-color-text-neutral-hsl) / 10% ));
+    --_checkbox-border-color-disabled:          var(--checkbox-border-color-disabled, hsl( var(--theme-color-text-neutral-hsl) / 10% ));
     --_checkbox-border-color-hover:             var(--checkbox-border-color-hover, var(--color-neutral-700));
     --_checkbox-border-color-inactive:          var(--checkbox-border-color-inactive, var(--color-neutral-500));
     --_checkbox-border-width:                   var(--checkbox-border-width, calc(var(--_checkbox-size) * 0.1));
     --_checkbox-color-active:                   var(--checkbox-color-active, var(--color-action-600));
-    --_checkbox-color-disabled:                 var(--checkbox-color-disabled, hsl( var(--section-color-text-neutral-hsl) / 5% ));
-    --_checkbox-color-highlight:                var(--checkbox-color-highlight, hsl( var(--section-color-text-neutral-hsl) / 10% ));
+    --_checkbox-color-disabled:                 var(--checkbox-color-disabled, hsl( var(--theme-color-text-neutral-hsl) / 5% ));
+    --_checkbox-color-highlight:                var(--checkbox-color-highlight, hsl( var(--theme-color-text-neutral-hsl) / 10% ));
     --_checkbox-color-hover:                    var(--checkbox-color-hover, var(--color-neutral-0));
     --_checkbox-color-inactive:                 var(--checkbox-color-inactive, var(--color-neutral-50));
     --_checkbox-flex-direction:                 var(--checkbox-flex-direction, row);
     --_checkbox-gap:                            var(--checkbox-gap, 2ch);
     --_checkbox-icon-color-active:              var(--checkbox-icon-color-active, var(--color-neutral-1000));
-    --_checkbox-icon-color-disabled:            var(--checkbox-icon-color-disabled, hsl( var(--section-color-text-neutral-hsl) / 20% ));
+    --_checkbox-icon-color-disabled:            var(--checkbox-icon-color-disabled, hsl( var(--theme-color-text-neutral-hsl) / 20% ));
     --_checkbox-icon-color-inactive:            var(--checkbox-icon-color-inactive, var(--color-neutral-100));
     --_checkbox-icon-size:                      var(--checkbox-icon-size, 1rem);
     --_checkbox-padding:                        var(--checkbox-padding, calc(var(--_checkbox-size) * 0.25));

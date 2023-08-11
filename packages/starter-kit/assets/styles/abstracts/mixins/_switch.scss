@@ -6,10 +6,10 @@
     --_switch-gap:                              var(--switch-gap, 2ch);
     --_switch-padding-track:                    calc(var(--_switch-thumb-size) * 0.24);
     --_switch-size-highlight:                   0;
-    --_switch-thumb-color-active:               var(--switch-thumb-color-active, hsl( var(--section-color-text-neutral-hsl) / 100% ));
-    --_switch-thumb-color-disabled:             var(--switch-thumb-color-disabled, hsl( var(--section-color-background-neutral-hsl) / 50% ));
-    --_switch-thumb-color-highlight:            var(--switch-thumb-color-highlight, hsl( var(--section-color-text-neutral-hsl) / 15% ));
-    --_switch-thumb-color-inactive:             var(--switch-thumb-color-inactive, hsl( var(--section-color-text-neutral-hsl) / 60% ));
+    --_switch-thumb-color-active:               var(--switch-thumb-color-active, hsl( var(--theme-color-text-neutral-hsl) / 100% ));
+    --_switch-thumb-color-disabled:             var(--switch-thumb-color-disabled, hsl( var(--theme-color-background-neutral-hsl) / 50% ));
+    --_switch-thumb-color-highlight:            var(--switch-thumb-color-highlight, hsl( var(--theme-color-text-neutral-hsl) / 15% ));
+    --_switch-thumb-color-inactive:             var(--switch-thumb-color-inactive, hsl( var(--theme-color-text-neutral-hsl) / 60% ));
     --_switch-thumb-duration:                   var(--switch-thumb-duration, var(--duration-quick));
     --_switch-thumb-size:                       var(--switch-thumb-size, 1.375rem); // Adjusting this value will scale the entire element.
     --_switch-track-color-active:               var(--switch-track-color-active, var(--color-action-600));

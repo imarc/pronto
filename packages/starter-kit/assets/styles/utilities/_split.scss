@@ -1,0 +1,48 @@
+@use '../abstracts' as *;
+
+.split {
+    --_split-columns:                               var(--split-columns, repeat(2, 1fr));
+    --_split-gap:                                   var(--split-gap, var(--size-fluid-2));
+
+    display: grid;
+    gap: var(--_split-gap);
+    grid-template-areas: 'AREA-1' 'AREA-2';
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+
+    @include breakpoint(md) {
+        grid-template-areas: 'AREA-1 AREA-2';
+        grid-template-columns: var(--_split-columns);
+        grid-template-rows: auto;
+    }
+
+    //=== Flip Modifier =====================================//
+    //=== '.split--flip' : Flip the order of the sections in both vertical (mobile) and horizontal (desktop) layouts.
+    //=== '.split--flip-x' : Flip the order of the sections only in horizontal (desktop) layouts.
+    //=== '.split--flip-y' : Flip the order of the sections only in vertical (mobile) layouts.
+    &--flip,
+    &--flip-y {
+        grid-template-areas: 'AREA-2' 'AREA-1';
+    }
+
+    &--flip-y {
+        @include breakpoint(md) {
+            grid-template-areas: 'AREA-1 AREA-2';
+        }
+    }
+
+    &--flip,
+    &--flip-x {
+        @include breakpoint(md) {
+            grid-template-areas: 'AREA-2 AREA-1';
+        }
+    }
+
+    > *:where(:first-child) {
+        grid-area: AREA-1;
+    }
+
+    > *:where(:last-child) {
+        grid-area: AREA-2;
+    }
+}
