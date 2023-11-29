@@ -64,8 +64,21 @@
 @function c-fluid($min, $max, $c-min, $c-max, $clamp: true) {
     $-min: raw-px($min);
     $-max: raw-px($max);
-    $-c-min: raw-px($c-min);
-    $-c-max: raw-px($c-max);
+
+    $-c-min: null;
+    $-c-max: null;
+
+    @if type.is-breakpoint($c-min) {
+        $-c-min: raw-px(map.get(config.$breakpoints, $c-min, width));
+    } @else {
+        $-c-min: raw-px($c-min);
+    }
+
+    @if type.is-breakpoint($c-max) {
+        $-c-max: raw-px(map.get(config.$breakpoints, $c-max, width));
+    } @else {
+        $-c-max: raw-px($c-max);
+    }
 
     $slope: math.div($-max - $-min, $-c-max - $-c-min);
     $slope-cqw: rnd($slope * 100, 2);

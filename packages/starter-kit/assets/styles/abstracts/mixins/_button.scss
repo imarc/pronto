@@ -15,8 +15,8 @@
     --_button-border-width:             var(--button-border-width , var(--border-size-2));
     --_button-color-background:         var(--button-color-background , var(--color-link-500));
     --_button-color-background-hover:   var(--button-color-background-hover , var(--color-link-700));
-    --_button-color-border:             var(--button-color-border , var(--color-link-500));
-    --_button-color-border-hover:       var(--button-color-border-hover , var(--color-link-700));
+    --_button-color-border:             var(--button-color-border , var(--_button-color-background));
+    --_button-color-border-hover:       var(--button-color-border-hover , var(--_button-color-background-hover));
     --_button-color-icon:               var(--button-color-icon , var(--_button-color-text));
     --_button-color-icon-hover:         var(--button-color-icon-hover , var(--_button-color-text-hover));
     --_button-color-text:               var(--button-color-text , var(--color-neutral-0));
@@ -27,8 +27,6 @@
     --_button-padding-y:                var(--button-padding-y , var(--size-1));
     --_button-radius:                   var(--button-radius , var(--radius-round));
     --_icon-ratio:                      var(--ratio-square);
-
-    $b: &;
 
     -webkit-tap-highlight-color: transparent;
     background: var(--_button-color-background);
@@ -64,13 +62,10 @@
     }
 
     @include hover() {
-        background-color: var(--_button-color-background-hover);
-        border-color: var(--_button-color-border-hover);
-        color: var(--_button-color-text-hover);
-
-        #{$b}__icon {
-            color: var(--_button-color-icon-hover);
-        }
+        --_button-color-background: var(--_button-color-background-hover);
+        --_button-color-border: var(--_button-color-border-hover);
+        --_button-color-text: var(--_button-color-text-hover);
+        --_button-color-icon: var(--_button-color-icon-hover);
     }
 
     &:focus-visible {
@@ -81,6 +76,8 @@
         --button-color-background:              transparent;
         --button-color-background-hover:        transparent;
         --button-color-background-disabled:     transparent;
+        --button-color-border:                  var(--_button-color-text);
+        --button-color-border-hover:            var(--_button-color-text-hover);
         --button-color-text:                    var(--color-link-500);
         --button-color-text-hover:              var(--color-link-700);
         --button-color-text-disabled:           var(--color-neutral-200);
@@ -122,7 +119,7 @@
         --button-radius: var(--radius-none);
     }
 
-    &__icon {
+    .button__icon {
         aspect-ratio: var(--icon-ratio, var(--_icon-ratio));
         color: var(--_button-color-icon);
         flex: 0 0 auto;

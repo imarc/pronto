@@ -82,6 +82,10 @@ $last-bp: last(map-keys($breakpoints));
     display: grid;
     row-gap: var(--grid-row-gap);
 
+    @include breakpoint($last-bp) {
+        --grid-gutter-width: var(--breakpoint-gap);
+    }
+
     @if $columns % 2 == 0 {
         grid-template-columns:
             [wide-start]
