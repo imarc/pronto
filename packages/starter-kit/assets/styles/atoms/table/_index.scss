@@ -1,20 +1,28 @@
+@use '../../abstracts/mixins/container-queries' as *;
 @use '../../abstracts/mixins/media-queries' as *;
-
-// TODO: update for container queries.
 table,
 .table {
-    --_table-border-color:              var(--table-border-color, var(--color-primary-700));
+    --_table-border-color:              var(--table-border-color, var(--color-neutral-200));
     --_table-border-width:              var(--table-border-width, 1px);
-    --_table-color-th-bg:               var(--table-color-th-bg, var(--color-primary-700));
-    --_table-color-th-text:             var(--table-color-th-text, var(--color-neutral-0));
+    --_table-color-th-bg:               var(--table-color-th-bg, var(--color-neutral-100));
+    --_table-color-tr-th-bg:            var(--table-color-tr-th-bg, var(--color-neutral-50));
+    --_table-color-tr-th-bg-hover:      var(--table-color-tr-th-bg-hover, var(--color-primary-100));
+    --_table-color-th-text:             var(--table-color-th-text, var(--color-heading));
     --_table-color-tr-bg:               var(--table-color-tr-bg, var(--color-neutral-0));
-    --_table-color-tr-text:             var(--table-color-tr-text, var(--color-neutral-1000));
-    --_table-color-tr-bg-stripe:        var(--table-color-tr-bg-stripe, var(--color-primary-50));
+    --_table-color-tr-text:             var(--table-color-tr-text, var(--color-text));
+    --_table-color-tr-bg-stripe:        var(--table-color-tr-bg-stripe, var(--color-neutral-50));
     --_table-color-tr-text-stripe:      var(--table-color-tr-text-stripe, var(--_table-color-tr-text));
-    --_table-color-tr-bg-hover:         var(--table-color-tr-bg-hover, var(--color-primary-100));
-    --_table-color-tr-text-hover:       var(--table-color-tr-text-hover, var(--_table-color-tr-text));
+    --_table-color-tr-bg-hover:         var(--table-color-tr-bg-hover, var(--color-primary-50));
+    --_table-color-tr-text-hover:       var(--table-color-tr-text-hover, var(--color-heading));
     --_table-padding-x:                 var(--table-padding-x, var(--size-2));
     --_table-padding-y:                 var(--table-padding-y, var(--size-1));
+
+    --_table-transition:                var(--table-transition, background-color var(--ease-out) var(--duration-fast), color var(--ease-out) var(--duration-fast));
+
+    // If device doesn't hover, bump the text to a darker color.
+    @media (any-hover: none) {
+        --_table-color-tr-text:             var(--table-color-tr-text, var(--color-heading));
+    }
 
     border-collapse: collapse;
     border-spacing: 0;
@@ -51,19 +59,26 @@ table,
         background-color: var(--_table-color-th-bg);
         color: var(--_table-color-th-text);
         white-space: nowrap;
+
+        &[scope="row"] {
+            background-color: var(--_table-color-tr-th-bg);
+            transition: var(--_table-transition);
+        }
     }
 
     tr {
         background-color: var(--_table-color-tr-bg);
         border-block-end: var(--_table-border-width) solid var(--_table-border-color);
         color: var(--_table-color-tr-text);
-        transition:
-            background-color var(--ease-out) var(--duration-fast),
-            color var(--ease-out) var(--duration-fast);
+        transition: var(--_table-transition);
 
         @include hover() {
             background-color: var(--_table-color-tr-bg-hover);
             color: var(--_table-color-tr-text-hover);
+
+            th[scope="row"] {
+                background-color: var(--_table-color-tr-th-bg-hover);
+            }
         }
     }
 
@@ -83,7 +98,8 @@ table,
     }
 
     &[responsive-table='stacked'] {
-        @include breakpoint(md, max-width) {
+
+        @include container(md, $name: content, $rule: max-width) {
             thead,
             th {
                 display: none;

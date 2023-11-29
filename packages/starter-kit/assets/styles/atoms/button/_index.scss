@@ -3,9 +3,3 @@
 .button {
     @include button();
 }
-
-.buttonGroup {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--button-group-gap, var(--size-fluid-2));
-}

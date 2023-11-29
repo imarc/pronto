@@ -5,8 +5,9 @@
 // when used with checkboxs and radio the markup should be the following:
 // <label for="checkbox-id">
 //    Checkbox Label
-//    <input type="checkbox" id="checkbox-id" class="tag__input" />
+//    <input type="checkbox" id="checkbox-id" class="tag" />
 // </label>
+
 
 tag,
 .tag {
@@ -34,8 +35,7 @@ tag,
     --_tag-padding-x:                               var(--tag-padding-x, var(--size-1));
     --_tag-padding-y:                               var(--tag-padding-y, var(--size-0));
     --_tag-size-highlight:                          0;
-    --_tag-transition-duration:                     var(--tag-transition-duration, var(--duration-fast));
-    --_tag-transition-easing:                       var(--tag-transition-easing, var(--ease-out));
+    --_tag-transition:                              var(--tag-transition, var(--transition));
 
     --_tag-block-size:                              calc(var(--_tag-font-size) * var(--_tag-line-height) + var(--_tag-padding-y) * 2);
 
@@ -53,12 +53,7 @@ tag,
         --_tag-color-text:                          var(--_tag-color-text-inactive);
     }
 
-    &:where(
-        button,
-        :has(input),
-        .has--input,
-        [tag-input]
-    ) {
+    &:where(button, :has(input), [tag-input]) {
 
         &:where(:not([disabled])) {
             @include hover() {
@@ -67,14 +62,7 @@ tag,
         }
 
         // hover for interactive elements not currently active.
-        &:where(
-            :not(
-                :has(input:checked),
-                .has--input-checked,
-                [tag-active],
-                [disabled]
-            )
-        ) {
+        &:where(:not(:has(input:checked), [tag-active], [disabled] )) {
             @include hover() {
                 --_tag-color-background:                var(--_tag-color-background-hover);
                 --_tag-color-border:                    var(--_tag-color-border-hover);
@@ -85,25 +73,15 @@ tag,
     }
 
     // non-interactive elements or active inputs
-    &:where(
-        tag,
-        span,
-        [tag-active]
-    ):where(
-        :not(
-            :has(input),
-            .has--input
-        )
-    ),
-    &:where(
-        :has(input:checked),
-        .has--input-checked
-    ) {
+    &:where(tag, span, [tag-active]):where(:not(:has(input))),
+    &:where(:has(input:checked)) {
         --_tag-color-background:                    var(--_tag-color-background-active);
         --_tag-color-border:                        var(--_tag-color-border-active);
         --_tag-color-icon:                          var(--_tag-color-icon-active);
         --_tag-color-text:                          var(--_tag-color-text-active);
     }
+
+    // TODO: Need firefox fallback for :has().
 
     align-items: center;
     background: var(--_tag-color-background);
@@ -121,20 +99,15 @@ tag,
     padding: var(--_tag-padding-y) var(--_tag-padding-x);
     position: relative;
 
-    &:where(
-        button,
-        :has(input),
-        .has--input,
-        [tag-input]
-    ) {
+    &:where(button, :has(input), [tag-input]) {
         box-shadow: 0 0 0 var(--_tag-size-highlight) var(--_tag-color-highlight);
 
         @include prefers-reduced-motion('no-preference') {
             transition:
-                background var(--_tag-transition-duration) var(--_tag-transition-easing),
-                border-color var(--_tag-transition-duration) var(--_tag-transition-easing),
-                box-shadow var(--_tag-transition-duration) var(--_tag-transition-easing),
-                color var(--_tag-transition-duration) var(--_tag-transition-easing);
+                background var(--duration-fast) var(--ease-out),
+                border-color var(--duration-fast) var(--ease-out),
+                box-shadow var(--duration-fast) var(--ease-out),
+                color var(--duration-fast) var(--ease-out);
         }
 
         @include hover() {
@@ -171,12 +144,12 @@ tag,
 
         @include prefers-reduced-motion('no-preference') {
             transition:
-                color var(--_tag-transition-duration) var(--_tag-transition-easing);
+                color var(--duration-fast) var(--ease-out);
         }
 
         > use {
             @include prefers-reduced-motion('no-preference') {
-                transition: opacity var(--_tag-transition-duration) var(--_tag-transition-easing)
+                transition: opacity var(--duration-fast) var(--ease-out)
             }
 
             &:nth-child(2) {
@@ -185,11 +158,7 @@ tag,
         }
     }
 
-    &:where(
-        [tag-active],
-        :has(input:checked),
-        .has--input-checked
-    ):where([tag-dismissable]) {
+    &:where([tag-active], :has(input:checked)):where([tag-dismissable]) {
         svg,
         .tag__icon {
             > use:nth-child(1) {
