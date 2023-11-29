@@ -6,8 +6,8 @@
  * @example until(() => { isLoaded === true }).then(() => console.log('Is loaded!'))
 */
 const until = (conditional) => {
-    const poll = (done) => (conditional ? done() : setTimeout(() => poll(done), 500))
-    return new Promise(poll)
+  const poll = (done) => (conditional ? done() : setTimeout(() => poll(done), 500))
+  return new Promise(poll)
 }
 
 export { until }
