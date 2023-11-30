@@ -46,7 +46,6 @@
     }
 }
 :where(input, textarea) {
-    accent-color: var(--theme-color-accent);
 
     &:where(:not(
         [type="checkbox"],

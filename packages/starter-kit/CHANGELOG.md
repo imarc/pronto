@@ -1,3 +1,7 @@
+# 1.0.0
+* Official release of the component library starter kit.
+* Major cleanup after build out of [Component Library](https://github.com/imarc/craft-component-library/)
+
 # 0.0.16
 * Add `.split` utility class for two column layouts.
 * Change section theme modifier classes to utility classes and remove `section-themes` mixin.

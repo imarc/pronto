@@ -20,17 +20,17 @@ CSS Custom Properties - [ Table of Contents ]
     //==[ 1. Aspect Ratios ]====================================================
     //==========================================================================
     --ratio-square:             1;          // 1
-    --ratio-photo:              4/3;        // 1.333
-    --ratio-film:               3/2;        // 1.5
-    --ratio-widescreen:         16/9;       // 1.778
-    --ratio-univisum:           2/1;        // 2
-    --ratio-panorama:           4/1;        // 4
+    --ratio-photo:              1.333;      // 4/3
+    --ratio-film:               1.5;        // 3/2
+    --ratio-widescreen:         1.778;      // 16/9
+    --ratio-univisum:           2;          // 2/1
+    --ratio-panorama:           4;          // 4/1
 
-    --ratio-photo-y:            3/4;        // 0.75
-    --ratio-film-y:             2/3;        // 0.667
-    --ratio-widescreen-y:       9/16;       // 0.5625
-    --ratio-univisum-y:         1/2;        // 0.5
-    --ratio-panorama-y:         1/4;        // 0.25
+    --ratio-photo-y:            0.75;       // 3/4
+    --ratio-film-y:             0.667;      // 2/3
+    --ratio-widescreen-y:       0.5625;     // 9/16
+    --ratio-univisum-y:         0.5;        // 1/2
+    --ratio-panorama-y:         0.25;       // 1/4
 
     //==========================================================================
     //==[ 2. Borders ]==========================================================
@@ -81,6 +81,7 @@ CSS Custom Properties - [ Table of Contents ]
     --color-heading:        var(--color-neutral-900);
     --color-text:           var(--color-neutral-500);
     --focus-outline:        var(--color-info-500);
+
 
     //==========================================================================
     //==[ 5. Elevations ]=======================================================
@@ -176,7 +177,7 @@ CSS Custom Properties - [ Table of Contents ]
     --size-fluid-2:      clamp(1rem, 2vw, 1.5rem);       // 16px - 24px
     --size-fluid-3:      clamp(1.5rem, 3vw, 2rem);       // 24px - 32px
     --size-fluid-4:      clamp(2rem, 4vw, 3rem);         // 32px - 48px
-    --size-fluid-5:      clamp(4rem, 5vw, 5rem);         // 48px - 80px
+    --size-fluid-5:      clamp(4rem, 5vw, 5rem);         // 64px - 80px
     --size-fluid-6:      clamp(5rem, 7vw, 7.5rem);       // 80px - 120px
     --size-fluid-7:      clamp(7.5rem, 10vw, 10rem);     // 120px - 160px
     --size-fluid-8:      clamp(10rem, 20vw, 15rem);      // 160px - 240px

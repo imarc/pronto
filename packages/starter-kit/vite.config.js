@@ -4,6 +4,7 @@ import path from 'path'
 export default defineConfig(async ({ command }) => {
     const config = {
         build: {
+            target: 'esnext',
             manifest: true,
             outDir: 'web/dist',
             assetsDir: '.',

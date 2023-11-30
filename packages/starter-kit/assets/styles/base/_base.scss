@@ -30,6 +30,14 @@
     @include inline-link();
 }
 
+path {
+    transition: fill var(--duration-fast) var(--ease-out);
+}
+
 ::selection {
     background: var(--theme-color-highlight, var(--color-primary-100));
+}
+
+:where(input) {
+    accent-color: var(--theme-color-accent);
 }

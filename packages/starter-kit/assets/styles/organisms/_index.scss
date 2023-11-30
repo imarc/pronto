@@ -1,5 +1,0 @@
-@use 'sass:meta';
-
-@layer section {
-    @include meta.load-css('section');
-}
