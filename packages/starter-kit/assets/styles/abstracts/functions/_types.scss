@@ -33,7 +33,7 @@
 }
 
 @function is-relative-length($value) {
-    @return is-number($value) and index('em' 'ex' 'ch' 'rem' 'vw' 'vh' 'vmin' 'vmax', 'dvh', 'lvh', 'svh', 'dvw', 'lvw', 'svw', 'dvmin', 'lvmin', 'svmin', 'dvmax', 'lvmax', 'svmax', 'cqw', 'cqh', 'cqi', 'cqb', 'cqmin', 'cqmax' unit($value)) != null;
+    @return is-number($value) and index('em' 'ex' 'ch' 'rem' 'vw' 'vh' 'vmin' 'vmax' 'dvh' 'lvh' 'svh' 'dvw' 'lvw' 'svw' 'dvmin' 'lvmin' 'svmin' 'dvmax' 'lvmax' 'svmax' 'cqw' 'cqh' 'cqi' 'cqb' 'cqmin' 'cqmax', unit($value)) != null;
 }
 
 @function is-absolute-length($value) {
