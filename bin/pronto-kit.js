@@ -23,7 +23,7 @@ files.forEach(file => {
     fs.copySync(path.join(src, file), path.join(dest, file), { overwrite: false })
 })
 
-execSync('npm pkg delete scripts.bin')
+execSync('npm pkg delete bin')
 
 console.log('Done! 🚀')
 console.log('Run `npm install` to get started.')
