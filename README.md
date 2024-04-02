@@ -1,11 +1,11 @@
 
-# Component Library
+# Component Library: Starter Kit
 
-A monorepo for the starter kit and components.
+A light, customizable frontend starter kit for the Imarc Component Library.
 
 
-### Publish with Lerna
+## Installation
 
 ```bash
-  lerna publish --registry=https://npm.pkg.github.com/
+  npx pronto-kit
 ```

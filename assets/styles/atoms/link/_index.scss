@@ -1,0 +1,9 @@
+@use '../../abstracts/mixins/links' as *;
+
+.link {
+    @include block-link();
+}
+
+.inline-link {
+    @include inline-link();
+}

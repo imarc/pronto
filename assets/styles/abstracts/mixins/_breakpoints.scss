@@ -1,0 +1,35 @@
+@use '../config' as config;
+@use '../functions/lists' as *;
+@use '../mixins/media-queries' as *;
+@use 'sass:map';
+
+// Breakpoint CSS Variable mixins.
+@mixin generate-breakpoint-widths($breakpoints) {
+    @each $bp in map-keys($breakpoints) {
+        --breakpoint-#{ $bp }: #{map.get($breakpoints, $bp, width)};
+    }
+}
+
+@mixin generate-breakpoint-gaps($breakpoints) {
+    @each $bp in map-keys($breakpoints) {
+        --breakpoint-#{ $bp }-gap: #{map.get($breakpoints, $bp, gap)};
+    }
+}
+
+@mixin generate-active-breakpoint-variables($breakpoints) {
+    $keys: map-keys($breakpoints);
+
+    @each $bp in $keys {
+        $next: next-key($bp, $keys);
+
+        @include breakpoint($bp) {
+            --breakpoint-min-width: #{map.get($breakpoints, $bp, width)};
+            @if $next {
+                --breakpoint-max-width: #{map.get($breakpoints, $next, width) - 1};
+            } @else {
+                --breakpoint-max-width: none;
+            }
+            --breakpoint-gap: #{map.get($breakpoints, $bp, gap)};
+        }
+    }
+}

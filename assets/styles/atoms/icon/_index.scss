@@ -1,0 +1,5 @@
+@use '../../abstracts/mixins/media' as media;
+
+.icon {
+    @include media.image-fit(contain);
+}
