@@ -1,9 +1,0 @@
-@mixin image-fit($fit: cover, $position: false) {
-    block-size: 100%;
-    inline-size: 100%;
-    object-fit: $fit;
-
-    @if $position {
-        object-position: $position;
-    }
-}

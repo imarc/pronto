@@ -1,5 +1,0 @@
-@use '../abstracts/mixins/rich-text' as *;
-
-.richText {
-    @include rich-text();
-}
