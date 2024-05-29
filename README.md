@@ -1,5 +1,5 @@
 
-# Component Library: Starter Kit
+# Pronto Kit
 
 A light, customizable frontend starter kit for the Imarc Component Library.
 
