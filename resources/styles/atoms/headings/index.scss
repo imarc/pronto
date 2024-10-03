@@ -1,0 +1,24 @@
+h1, h2, h3, h4, h5, h6 {
+  color: var(--root-color-headings);
+  line-height: 1.125;
+}
+
+h1 {
+  font-size: fluid-rems(2, 2.5, 3);
+}
+
+h2 {
+  font-size: fluid-rems(1.5, 2, 2.5);
+}
+
+h3 {
+  font-size: fluid-rems(1.25, 1.5, 2);
+}
+
+h4 {
+  font-size: fluid-rems(1.125, 1.25, 1.5);
+}
+
+h5 {
+  font-size: fluid-rems(1, 1.125, 1.25);
+}

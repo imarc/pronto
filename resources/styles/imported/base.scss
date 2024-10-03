@@ -1,0 +1,29 @@
+/**
+ * Base styles
+ */
+
+/**
+ * Importing modern-normalize for minimal, base styles.
+ */
+@import '/node_modules/modern-normalize/modern-normalize.css';
+
+/**
+ * Use the defined CSS properties;
+ */
+html {
+  color: var(--root-color);
+  font-family: var(--root-font-family);
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+button,
+input,
+optgroup,
+progress,
+select,
+textarea {
+  accent-color: var(--accent-color);
+  line-height: inherit;
+}

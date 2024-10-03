@@ -1,0 +1,27 @@
+.input {
+  --accent-color: var(--color-gray-500);
+  background-color: var(--color-gray-050);
+  border: 2px solid var(--accent-color);
+  color: var(--color);
+  border-radius: 4px;
+  padding: .5em 1em;
+  display: inline-block;
+
+  &:focus {
+    --accent-color: inherit;
+    outline: none;
+  }
+
+  &::placeholder {
+    color: var(--color-gray-400);
+  }
+
+  &[aria-disabled="true"],
+  &[disabled],
+  &.-disabled {
+    color: var(--root-color-inactive);
+    cursor: initial;
+    pointer-events: none;
+    user-select: none;
+  }
+}

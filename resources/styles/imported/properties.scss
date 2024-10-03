@@ -1,0 +1,123 @@
+/**
+ * Use a font stack from https://modernfontstacks.com/ for fallback fonts.
+ */
+--root-font-family {
+  syntax: "*";
+  inherits: true;
+  initial-value: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+}
+
+@property --root-font-family-heading {
+  syntax: "*";
+  inherits: true;
+  initial-value: "Gloock", Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+}
+
+@property --root-font-size {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 16px;
+}
+
+/**
+ * Colors
+ */
+@property --root-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #666666;
+}
+
+@property --root-color-inactive {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #999999;
+}
+
+@property --root-border-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #b3b3b3;
+}
+
+@property --root-background-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ffffff;
+}
+
+@property --root-background-color-inactive {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #cccccc;
+}
+
+/**
+ * Box Shadows
+ */
+@property --root-box-shadow-low {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0px 16px 64px rgba(0, 0, 0, 0.05);
+}
+
+@property --root-box-shadow-med {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0px 16px 32px rgba(0, 0, 0, 0.1);
+}
+
+@property --root-box-shadow-high {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0px 16px 64px rgba(0, 0, 0, 0.05);
+}
+
+
+/**
+ * Breakpoints
+ */
+@property --root-breakpoint-sm {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 320;
+}
+
+@property --root-breakpoint-md {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 744;
+}
+
+@property --root-breakpoint-lg {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1300;
+}
+
+/**
+ * Spacing
+ */
+@property --root-border-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 2px;
+}
+
+@property --root-gap {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 16px;
+}
+
+@property --root-padding-block {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 16px;
+}
+
+@property --root-padding-inline {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 32px;
+}

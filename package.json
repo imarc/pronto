@@ -1,0 +1,77 @@
+{
+    "name": "imarc-pronto-kit",
+    "version": "2.0.0alpha1",
+    "description": "A light, customizable frontend starter kit for the component library",
+    "author": "Imarc",
+    "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/imarc/component-library.git"
+    },
+    "type": "module",
+    "bugs": {
+        "url": "https://github.com/imarc/component-library/issues"
+    },
+    "homepage": "https://github.com/imarc/component-library#readme",
+    "scripts": {
+        "dev": "vite",
+        "prod": "vite build",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "imarc-vitrine": "^0.1.1-1",
+        "modern-normalize": "^2.0.0",
+        "vue": "^3.4.31"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^5.0.5",
+        "sass": "^1.77.8",
+        "vite": "^5.3.4"
+    },
+    "browserslist": [
+        "defaults"
+    ],
+    "eslintConfig": {
+        "env": {
+            "browser": true,
+            "es6": true,
+            "vue/setup-compiler-macros": true
+        },
+        "extends": [
+            "plugin:vue/vue3-recommended",
+            "standard"
+        ],
+        "globals": {
+            "Atomics": "readonly",
+            "SharedArrayBuffer": "readonly"
+        },
+        "parserOptions": {
+            "ecmaVersion": 2020,
+            "sourceType": "module"
+        },
+        "plugins": [
+            "vue"
+        ],
+        "rules": {
+            "comma-dangle": [
+                "warn",
+                {
+                    "arrays": "always-multiline",
+                    "objects": "always-multiline",
+                    "imports": "never",
+                    "exports": "never",
+                    "functions": "never"
+                }
+            ],
+            "indent": [
+                "warn",
+                4
+            ],
+            "vue/html-indent": [
+                "warn",
+                4
+            ]
+        }
+    }
+}

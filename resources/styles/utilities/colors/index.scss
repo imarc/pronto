@@ -1,0 +1,23 @@
+.error {
+  --accent-color-50: var(--root-color-error-50);
+  --accent-color: var(--root-color-error);
+  --accent-color-900: var(--root-color-error-900);
+}
+
+.warning {
+  --accent-color-50: var(--root-color-warning-50);
+  --accent-color: var(--root-color-warning);
+  --accent-color-900: var(--root-color-warning-900);
+}
+
+.success {
+  --accent-color-50: var(--root-color-success-50);
+  --accent-color: var(--root-color-success);
+  --accent-color-900: var(--root-color-success-900);
+}
+
+.info {
+  --accent-color-50: var(--root-color-info-50);
+  --accent-color: var(--root-color-info);
+  --accent-color-900: var(--root-color-info-900);
+}

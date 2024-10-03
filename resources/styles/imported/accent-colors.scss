@@ -1,0 +1,34 @@
+* {
+  --accent-color-50: color-mix(in srgb, var(--accent-color), #fff 90%);
+  --accent-color-100: color-mix(in srgb, var(--accent-color), #fff 80%);
+  --accent-color-200: color-mix(in srgb, var(--accent-color), #fff 60%);
+  --accent-color-300: color-mix(in srgb, var(--accent-color), #fff 40%);
+  --accent-color-400: color-mix(in srgb, var(--accent-color), #fff 20%);
+  --accent-color-500: var(--accent-color);
+  --accent-color-600: color-mix(in srgb, var(--accent-color), #000 20%);
+  --accent-color-700: color-mix(in srgb, var(--accent-color), #000 40%);
+  --accent-color-800: color-mix(in srgb, var(--accent-color), #000 60%);
+  --accent-color-900: color-mix(in srgb, var(--accent-color), #000 80%);
+  --accent-color-950: color-mix(in srgb, var(--accent-color), #000 90%);
+}
+
+.accent-color-scale {
+  --size: 1.5em;
+  font-size: 1.5em;
+  background:
+    conic-gradient(var(--accent-color-50) 1turn, #0000) 0 / 10%,
+    conic-gradient(var(--accent-color-100) 1turn, #0000) 10% / 10%,
+    conic-gradient(var(--accent-color-200) 1turn, #0000) 20% / 10%,
+    conic-gradient(var(--accent-color-300) 1turn, #0000) 30% / 10%,
+    conic-gradient(var(--accent-color-400) 1turn, #0000) 40% / 10%,
+    conic-gradient(var(--accent-color-500) 1turn, #0000) 50% / 10%,
+    conic-gradient(var(--accent-color-600) 1turn, #0000) 60% / 10%,
+    conic-gradient(var(--accent-color-700) 1turn, #0000) 70% / 10%,
+    conic-gradient(var(--accent-color-800) 1turn, #0000) 80% / 10%,
+    conic-gradient(var(--accent-color-900) 1turn, #0000) 90% / 10%,
+    conic-gradient(var(--accent-color-950) 1turn, #0000) 100% / 10%;
+  background-repeat: no-repeat;
+  display: inline grid;
+  height: 1.5em;
+  width: 16.5em;
+}

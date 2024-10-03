@@ -1,0 +1,63 @@
+.button {
+  align-items: center;
+  background-color: var(--accent-color);
+  border-radius: 3em;
+  border: var(--root-border-width) solid var(--accent-color);
+  color: #fff;
+  cursor: pointer;
+  display: inline flex;
+  font-weight: 700;
+  gap: .5em;
+  line-height: 1;
+  padding: .5em 1em;
+  padding: 1em 2em;
+
+  &__icon {
+    width: 1em;
+    height: 1em;
+  }
+
+  &:hover,
+  &:active {
+    background-color: var(--accent-color-700);
+    border-color: var(--accent-color-700);
+  }
+
+  &[aria-disabled="true"],
+  &[disabled],
+  &.-disabled {
+    --accent-color: var(--root-color-inactive);
+    cursor: initial;
+    pointer-events: none;
+  }
+
+  &.-outline {
+    background: #0000;
+    color: var(--accent-color);
+
+    &:hover {
+      color: var(--accent-color-700);
+    }
+  }
+
+  &.-ghost {
+    background: #0000;
+    border-color: #0000;
+    color: var(--accent-color);
+
+    &:hover {
+      background-color: var(--accent-color-50);
+    }
+  }
+
+  &.-square {
+    aspect-ratio: 1;
+    border-radius: 0;
+    padding: var(--root-padding-block);
+  }
+
+  &.-circle {
+    aspect-ratio: 1;
+    padding: var(--root-padding-block);
+  }
+}
