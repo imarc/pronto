@@ -1,16 +1,16 @@
 /**
  * Use a font stack from https://modernfontstacks.com/ for fallback fonts.
  */
---root-font-family {
+@property --root-font-family {
   syntax: "*";
   inherits: true;
-  initial-value: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+  initial-value: system-ui, sans-serif;
 }
 
 @property --root-font-family-heading {
   syntax: "*";
   inherits: true;
-  initial-value: "Gloock", Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+  initial-value: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
 }
 
 @property --root-font-size {
