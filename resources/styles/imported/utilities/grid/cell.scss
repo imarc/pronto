@@ -1,21 +1,21 @@
 .cell {
-  --cell-span: min(var(--columns), round(var(--span, 1) * var(--root-breakpoint-lg) / var(--root-breakpoint-sm)));
+  --cell-span: min(var(--columns, 1), round(var(--span, 1) * var(--root-breakpoint-lg) / var(--root-breakpoint-sm)));
   grid-column: span var(--cell-span);
 
-  &.-start {
+  &.-left {
     grid-column: main / span var(--cell-span);
   }
 
-  &.-last {
+  &.-right {
     grid-column: span var(--cell-span) / main;
   }
 
   &.-center {
-    grid-column-start: round(down, 1 + (var(--columns) - var(--cell-span)) / 2, 1);
-    grid-column-end: span var(--cell-span);
+    grid-column-start: round(down, 1 + (var(--columns, 1) - var(--cell-span)) / 2, 1);
+    grid-column-end: span calc(var(--cell-span) + mod(var(--columns) - var(--cell-span), 2));
 
     :where(.container) > & {
-      grid-column-start: round(down, 2 + (var(--columns) - var(--cell-span)) / 2, 1);
+      grid-column-start: round(down, 2 + (var(--columns, 1) - var(--cell-span)) / 2, 1);
     }
   }
 
@@ -27,7 +27,7 @@
 
 
   @media (min-width: 368px) {
-    --cell-span: min(var(--columns), round(var(--span, 1) * var(--root-breakpoint-lg) / var(--root-breakpoint-md)));
+    --cell-span: min(var(--columns, 1), round(var(--span, 1) * var(--root-breakpoint-lg) / var(--root-breakpoint-md)));
   }
 
   @media (min-width: 808px) {

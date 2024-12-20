@@ -1,7 +1,7 @@
 .container {
   --columns: 1;
   --gap: var(--root-gap, 16px);
-  --width: 320px;
+  --container-width: 320px;
 
   display: grid;
   gap: var(--gap);
@@ -9,7 +9,7 @@
     [wide-start]
       1fr
     [main-start]
-      repeat(var(--columns), minmax(0, calc((var(--width) - (var(--columns) - 1) * var(--gap)) / var(--columns))))
+      repeat(var(--columns), minmax(0, calc((var(--container-width) - (var(--columns) - 1) * var(--gap)) / var(--columns))))
     [main-end]
       1fr
     [wide-end];
@@ -26,11 +26,11 @@
 
   /* should be max mobile columns + tablet outer gutters */
   @media (min-width: 368px) {
-    --width: 744px;
+    --container-width: 744px;
   }
 
   /* should be max tablet columns + desktop outer gutters */
   @media (min-width: 808px) {
-    --width: 1300px;
+    --container-width: 1300px;
   }
 }
