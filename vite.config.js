@@ -7,7 +7,7 @@ export default defineConfig({
     plugins: [
         vue(),
         vitrinePlugin({
-            include: ['/resources/js/index.js']
+            include: ['/resources/styles/index.scss']
         }),
     ],
 })

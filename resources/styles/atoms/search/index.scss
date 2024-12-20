@@ -1,3 +1,5 @@
+@use "../input";
+
 .search {
   @extend .input;
   border-radius: 3em;

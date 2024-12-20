@@ -1,5 +1,4 @@
-@import "button";
-@import "headings";
-@import "input";
-@import "input/checkbox";
-@import "input/search";
+@forward "button";
+@forward "headings";
+@forward "input";
+@forward "search";

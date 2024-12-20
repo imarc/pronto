@@ -106,7 +106,7 @@
 
 @property --root-gap {
   syntax: "<length>";
-  inherits: false;
+  inherits: true;
   initial-value: 16px;
 }
 

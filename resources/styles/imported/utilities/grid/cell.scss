@@ -1,0 +1,36 @@
+.cell {
+  --cell-span: min(var(--columns), round(var(--span, 1) * var(--root-breakpoint-lg) / var(--root-breakpoint-sm)));
+  grid-column: span var(--cell-span);
+
+  &.-start {
+    grid-column: main / span var(--cell-span);
+  }
+
+  &.-last {
+    grid-column: span var(--cell-span) / main;
+  }
+
+  &.-center {
+    grid-column-start: round(down, 1 + (var(--columns) - var(--cell-span)) / 2, 1);
+    grid-column-end: span var(--cell-span);
+
+    :where(.container) > & {
+      grid-column-start: round(down, 2 + (var(--columns) - var(--cell-span)) / 2, 1);
+    }
+  }
+
+  @for $i from 1 through 12 {
+    &.-span-#{$i} {
+      --span: #{$i};
+    }
+  }
+
+
+  @media (min-width: 368px) {
+    --cell-span: min(var(--columns), round(var(--span, 1) * var(--root-breakpoint-lg) / var(--root-breakpoint-md)));
+  }
+
+  @media (min-width: 808px) {
+    --cell-span: var(--span, 1);
+  }
+}

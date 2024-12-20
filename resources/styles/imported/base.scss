@@ -5,7 +5,7 @@
 /**
  * Importing modern-normalize for minimal, base styles.
  */
-@import '/node_modules/modern-normalize/modern-normalize.css';
+@use '/node_modules/modern-normalize/modern-normalize.css';
 
 /**
  * Use the defined CSS properties;
@@ -25,5 +25,35 @@ progress,
 select,
 textarea {
   accent-color: var(--accent-color);
-  line-height: inherit;
+}
+
+p {
+  margin: 0;
+}
+
+canvas,
+img,
+picture,
+svg,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+a[href],
+area,
+button,
+input,
+label[for],
+select,
+summary,
+textarea,
+[tabindex]:not([tabindex*="-"]) {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
 }

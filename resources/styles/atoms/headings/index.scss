@@ -1,25 +1,33 @@
-h1, h2, h3, h4, h5, h6 {
+@use "/resources/styles/imported" as pronto;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--root-color-headings);
-  font-family: var(--root-font-family-heading);
   line-height: 1.125;
+  overflow-wrap: break-word;
+  text-wrap: balance;
 }
 
 h1 {
-  font-size: fluid-rems(2, 2.5, 3);
+  font-size: pronto.fluid-rems(2, 2.5, 3);
 }
 
 h2 {
-  font-size: fluid-rems(1.5, 2, 2.5);
+  font-size: pronto.fluid-rems(1.5, 2, 2.5);
 }
 
 h3 {
-  font-size: fluid-rems(1.25, 1.5, 2);
+  font-size: pronto.fluid-rems(1.25, 1.5, 2);
 }
 
 h4 {
-  font-size: fluid-rems(1.125, 1.25, 1.5);
+  font-size: pronto.fluid-rems(1.125, 1.25, 1.5);
 }
 
 h5 {
-  font-size: fluid-rems(1, 1.125, 1.25);
+  font-size: pronto.fluid-rems(1, 1.125, 1.25);
 }
