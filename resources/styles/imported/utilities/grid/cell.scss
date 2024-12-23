@@ -25,7 +25,6 @@
     }
   }
 
-
   @media (min-width: 368px) {
     --cell-span: min(var(--columns, 1), round(var(--span, 1) * var(--root-breakpoint-lg) / var(--root-breakpoint-md)));
   }
