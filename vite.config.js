@@ -1,13 +1,16 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import vitrinePlugin from 'imarc-vitrine'
+import vitrine from 'imarc-vitrine'
 
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [
         vue(),
-        vitrinePlugin({
-            include: ['/resources/styles/index.scss']
+        vitrine({
+            basePaths: [
+              'resources',
+            ],
+            includes: ['/resources/styles/index.scss'],
         }),
     ],
 })
