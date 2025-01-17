@@ -1,5 +1,5 @@
 {
-    "name": "imarc-pronto-kit",
+    "name": "@imarc/pronto",
     "version": "2.0.0-alpha.2",
     "description": "A light, customizable frontend starter kit for the component library",
     "author": "Imarc",
@@ -27,7 +27,7 @@
     },
     "devDependencies": {
         "@vitejs/plugin-vue": "^5.0.5",
-        "imarc-vitrine": "^0.1.1-1",
+        "imarc-vitrine": "^0.2.1",
         "sass": "^1.77.8",
         "vite": "^5.3.4"
     },
