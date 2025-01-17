@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import vitrine from 'imarc-vitrine'
+import vitrine from '@imarc/vitrine'
 
 // https://vitejs.dev/config/
 export default defineConfig({
