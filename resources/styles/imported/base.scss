@@ -5,7 +5,7 @@
 /**
  * Importing modern-normalize for minimal, base styles.
  */
-@use '/node_modules/modern-normalize/modern-normalize.css';
+@use 'modern-normalize';
 
 /**
  * Use the defined CSS properties;
