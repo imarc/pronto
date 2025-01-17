@@ -4,6 +4,7 @@
     "description": "A light, customizable frontend starter kit for the component library",
     "author": "Imarc",
     "license": "Apache-2.0",
+    "bin": "./bin.js",
     "main": "./index.js",
     "repository": {
         "type": "git",
