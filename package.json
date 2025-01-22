@@ -26,8 +26,9 @@
         "vue": "^3.4.31"
     },
     "devDependencies": {
-        "@vitejs/plugin-vue": "^5.2.1",
+        "@clack/prompts": "^0.9.1",
         "@imarc/vitrine": "^0.2.1",
+        "@vitejs/plugin-vue": "^5.2.1",
         "sass": "^1.83.4",
         "vite": "^6.0.7"
     },
