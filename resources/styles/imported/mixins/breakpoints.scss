@@ -1,0 +1,15 @@
+@use "sass:math";
+
+$breakpoints: (
+  sm: 320px,
+  md: 744px,
+  lg: 1300px
+) !default;
+
+@mixin setBreakpoints($breakpoints: $breakpoints) {
+  $breakpoints: $breakpoints !global;
+  
+  @each $breakpoint, $value in $breakpoints {
+    --root-breakpoint-#{$breakpoint}: math.div($value, $value * 0 + 1);
+  }
+}

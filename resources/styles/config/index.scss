@@ -13,11 +13,12 @@
   --root-font-family: initial;
   --root-font-family-heading: initial;
 
-  --root-font-size-h1: pronto.fluid-rems(    2,   2.5,    3);
-  --root-font-size-h2: pronto.fluid-rems(  1.5,     2,  2.5);
-  --root-font-size-h3: pronto.fluid-rems( 1.25,   1.5,    2);
-  --root-font-size-h4: pronto.fluid-rems(1.125,  1.25,  1.5);
-  --root-font-size-h5: pronto.fluid-rems(    1, 1.125, 1.25);
+  --root-font-size-h1: #{pronto.fluid-rems(    2,   2.5,    3)};
+  --root-font-size-k1: #{pronto.fluid-rems(    2,   2.5,    3)};
+  --root-font-size-h2: #{pronto.fluid-rems(  1.5,     2,  2.5)};
+  --root-font-size-h3: #{pronto.fluid-rems( 1.25,   1.5,    2)};
+  --root-font-size-h4: #{pronto.fluid-rems(1.125,  1.25,  1.5)};
+  --root-font-size-h5: #{pronto.fluid-rems(    1, 1.125, 1.25)};
 
 
   /**
@@ -108,9 +109,11 @@
    * Breakpoints
    */
 
-  --root-breakpoint-sm: 320;
-  --root-breakpoint-md: 744;
-  --root-breakpoint-lg: 1300;
+  @include pronto.setBreakpoints((
+    sm: 320px,
+    md: 744px,
+    lg: 1300px
+  ));
 
   --root-gap: 16px;
 
