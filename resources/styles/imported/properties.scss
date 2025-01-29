@@ -1,5 +1,5 @@
 /**
- * Use a font stack from https://modernfontstacks.com/ for fallback fonts.
+ * Typography: use https://modernfontstacks.com/ for fallback fonts.
  */
 @property --root-font-family {
   syntax: "*";
@@ -17,6 +17,36 @@
   syntax: "<length>";
   inherits: true;
   initial-value: 16px;
+}
+
+@property --root-font-size-h1 {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 48px;
+}
+
+@property --root-font-size-h2 {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 40px;
+}
+
+@property --root-font-size-h3 {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 32px;
+}
+
+@property --root-font-size-h4 {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 24px;
+}
+
+@property --root-font-size-h5 {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 20px;
 }
 
 /**
@@ -53,28 +83,6 @@
 }
 
 /**
- * Box Shadows
- */
-@property --root-box-shadow-low {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0px 16px 64px rgba(0, 0, 0, 0.05);
-}
-
-@property --root-box-shadow-med {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0px 16px 32px rgba(0, 0, 0, 0.1);
-}
-
-@property --root-box-shadow-high {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0px 16px 64px rgba(0, 0, 0, 0.05);
-}
-
-
-/**
  * Breakpoints
  */
 @property --root-breakpoint-sm {
@@ -100,7 +108,7 @@
  */
 @property --root-border-width {
   syntax: "<length>";
-  inherits: false;
+  inherits: true;
   initial-value: 2px;
 }
 
@@ -112,12 +120,75 @@
 
 @property --root-padding-block {
   syntax: "<length>";
-  inherits: false;
+  inherits: true;
   initial-value: 16px;
 }
 
 @property --root-padding-inline {
   syntax: "<length>";
-  inherits: false;
+  inherits: true;
   initial-value: 32px;
+}
+
+/**
+ * Box Shadows
+ */
+@property --root-box-shadow-low {
+  syntax: "*";
+  inherits: true;
+  initial-value: 0px 16px 64px rgba(0, 0, 0, 0.05);
+}
+
+@property --root-box-shadow-med {
+  syntax: "*";
+  inherits: true;
+  initial-value: 0px 16px 32px rgba(0, 0, 0, 0.1);
+}
+
+@property --root-box-shadow-high {
+  syntax: "*";
+  inherits: true;
+  initial-value: 0px 16px 64px rgba(0, 0, 0, 0.05);
+}
+
+/**
+ * Durations 
+ */
+@property --root-duration-fast {
+  syntax: "<time>";
+  inherits: true;
+  initial-value: 150ms;
+}
+
+@property --root-duration-moderate {
+  syntax: "<time>";
+  inherits: true;
+  initial-value: 250ms;
+}
+
+@property --root-duration-slow {
+  syntax: "<time>";
+  inherits: true;
+  initial-value: 400ms;
+}
+
+/**
+ * Easings (timing functions)
+ */ 
+@property --root-ease-in {
+  syntax: "*";
+  inherits: true;
+  initial-value: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+}
+
+@property --root-ease-out {
+  syntax: "*";
+  inherits: true;
+  initial-value: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@property --root-ease-in-out {
+  syntax: "*";
+  inherits: true;
+  initial-value: cubic-bezier(0.86, 0, 0.07, 1);
 }
