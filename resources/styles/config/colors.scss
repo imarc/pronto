@@ -19,10 +19,14 @@
    */
   --color-example: #9933ff;
 
+//   --color-link: #0066FF; // do we need this here? or in it's own file?
+//   --color-active: #00CCCC; // do we need this here? or in it's own file?
+
   /**
    * Default accent color.
    */
   --accent-color: var(--color-example);
+//   --accent-color-secondary: var(--color-example-secondary); do we need to add something like this?
 
   /**
    * Primary text color.
@@ -43,6 +47,20 @@
    * Default background color.
    */
   --root-background-color: #ffffff;
+
+  /** 
+  * Default link colors
+  */
+
+  --root-link-color: #0066FF;
+  --root-link-color-hover: #003D99;
+
+   /** 
+  * Default colors for active elements
+  */
+
+  --root-active-color: #00CCCC;
+  --root-active-color-hover: #009999;
 
   /**
    * Default colors for inactive elements.

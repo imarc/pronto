@@ -1,0 +1,11 @@
+.link {
+    --accent-color: var(--root-link-color);
+    --accent-color-900: var(--root-link-color-hover);
+
+    color: var(--accent-color);
+    font-size: var(--root-font-size);
+
+    &:hover {
+        color: var(--accent-color-900);
+    }
+}

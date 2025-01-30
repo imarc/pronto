@@ -52,6 +52,30 @@
   initial-value: #cccccc;
 }
 
+@property --root-link-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #0066FF;
+}
+
+@property --root-link-color-hover {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #003D99;
+}
+
+@property --root-active-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #00CCCC;
+}
+
+@property --root-active-color-hover {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #009999;
+}
+
 /**
  * Box Shadows
  */

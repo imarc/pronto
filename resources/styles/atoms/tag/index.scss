@@ -1,0 +1,144 @@
+// @use '@styles/abstracts/mixins/links' as links;
+// @use '@styles/abstracts/mixins/media-queries' as mq;
+// @use "../../imported" as pronto;
+
+/**
+ * For use on checkboxes, radio switches, buttons, anchors or spans.
+ * when used with checkboxs and radio the markup should be the following:
+ *
+ * @example
+ * <label for="checkbox-id">
+ *    Checkbox Label
+ *    <input type="checkbox" id="checkbox-id" class="tag" />
+ * </label>
+ */
+
+tag,
+.tag {
+
+    // forced inactive state.
+    &:is([tag-inactive]),
+    :is([tag-inactive]) {
+        background-color: transparent;
+        border-color: var(--root-color-inactive);
+        color: var(--root-color-inactive);
+    }
+
+    &:where(button, :has(input), [tag-input]) {
+
+        &:where(:not([disabled])) {
+            &:hover {
+                --_tag-size-highlight: calc(var(--_tag-block-size) * 0.25);
+            }
+        }
+
+        // hover for interactive elements not currently active.
+        &:where(:not(:has(input:checked), [tag-active], [disabled] )) {
+            &:hover {
+                background-color: transparent;
+                border-color: var(--color-active);
+                // --_tag-color-icon: var(--_tag-color-icon-hover);
+                color: var(--color-active);
+            }
+        }
+    }
+
+    // non-interactive elements or active inputs
+    &:where(tag, .tag, span, [tag-active]):where(:not(:has(input))),
+    &:is(:has(input:checked)) {
+        background-color: transparent;
+        border-color: var(--color-active);
+        // --_tag-color-icon: var(--_tag-color-icon-hover);
+        color: var(--color-active);
+    }
+
+    align-items: center;
+    background: var(--root-background-color);
+    border: var(--root-border-width) solid var(--root-border-color);
+    border-radius: .25rem; // do we need a prop for border radius?
+    color: var(--root-color);
+    display: inline-flex;
+    flex-direction: row;
+    font-family: var(--root-font-family);
+    font-size: var(--root-font-size);
+    gap: var(--root-gap);
+    justify-content: space-between;
+    line-height: 1;  // do we need a prop for line height?
+    margin: 0;
+    padding: var(--root-padding-block) var(--root-padding-block);
+    position: relative;
+
+    &:where(button, :has(input), [tag-input]) {
+        box-shadow: var(--root-box-shadow-low);
+
+        // @include mq.prefers-reduced-motion('no-preference') {
+        //     transition:
+        //         background var(--duration-fast) var(--ease-out),
+        //         border-color var(--duration-fast) var(--ease-out),
+        //         box-shadow var(--duration-fast) var(--ease-out),
+        //         color var(--duration-fast) var(--ease-out);
+        // }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    > * {
+        flex-shrink: 0;
+    }
+
+    > label {
+        // @include links.pseudo-link();
+        cursor: pointer;
+        color: inherit;
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+        margin: 0;
+    }
+
+    input {
+        appearance: none;
+        inset: 0;
+        pointer-events: none;
+        position: absolute;
+    }
+
+    svg,
+    .tag__icon {
+        aspect-ratio: 1;
+        block-size: var(--root-font-size);
+        color: var(--root-color-inactive);
+
+        // @include mq.prefers-reduced-motion('no-preference') {
+        //     transition:
+        //         color var(--duration-fast) var(--ease-out);
+        // }
+
+        > use {
+            // @include mq.prefers-reduced-motion('no-preference') {
+            //     transition: opacity 250ms ease-out;
+            // }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+        }
+    }
+
+    &:is([tag-active], :has(input:checked)):where([tag-dismissable]) {
+        svg,
+        .tag__icon {
+            > use:nth-child(1) {
+                opacity: 0;
+            }
+
+            > use:nth-child(2) {
+                opacity: 1;
+            }
+        }
+    }
+
+}
