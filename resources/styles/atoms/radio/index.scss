@@ -1,0 +1,96 @@
+.radio {
+    --_radio-border-color: var(--color-gray-500);
+    --_radio-size: 1.5rem;
+    --_radio-background-color: var(--color-gray-50);
+    --_radio-flex-direction: row;
+
+    align-items: center;
+    box-sizing: content-box;
+    cursor: pointer;
+    display: flex;
+    flex-direction: var(--_radio-flex-direction);
+    font-family: var(--root-font-family);
+    font-size: 1rem;
+    font-weight: 400;
+    gap: .5rem;
+    justify-content: space-between;
+    line-height: var(--leading-loose, 2);
+    user-select: none;
+    --webkit-tap-highlight-color: transparent;
+
+    input {
+        --_radio-knob-size: calc(var(--_radio-size) * 0.67);
+        --_radio-knob-color: var(--color-gray-100);
+        --_radio-knob-opacity: 0;
+        --_radio-knob-scale: 0; 
+        appearance: none;
+        background: var(--_radio-background-color);
+        block-size: var(--_radio-size);
+        border: 2px solid var(--_radio-border-color);
+        border-radius: 50%;
+        display: grid;
+        flex-shrink: 0;
+        grid: [box] 1fr / [box] 1fr;
+        inline-size: var(--_radio-size);
+        place-items: center;
+        outline-offset: calc(var(--_radio-size) * 0.2);
+        transition:
+            background var(--root-duration-fast) var(--root-ease-out),
+            border-color var(--root-duration-fast) var(--root-ease-out);
+
+        &:hover {
+            &:where(:not(:disabled)) {
+                --_radio-background-color: white;
+                --_radio-border-color: var(--color-gray-700);
+            }
+        }
+
+        &::after {
+            background: var(--_radio-knob-color);
+            width: var(--_radio-knob-size);
+            height: var(--_radio-knob-size);
+            border-radius: 50%;
+            content: '';
+            display: block;
+            grid-area: box;
+            opacity: var(--_radio-knob-opacity);
+            scale: var(--_radio-knob-scale);
+            transition:
+                background var(--root-duration-fast) var(--root-ease-out),
+                opacity var(--root-duration-fast) var(--root-ease-out),
+                scale var(--root-duration-fast) var(--root-ease-out);
+        }
+
+        &:checked {
+            --_radio-background-color: var(--accent-color);
+            --_radio-border-color: var(--accent-color);
+            --_radio-knob-color: var(--color-gray-900);
+
+            &::after {
+                --_radio-knob-opacity: 1;
+                --_radio-knob-scale: 1;
+            }
+        }
+
+        // disabled state needs work
+        &:disabled {
+            --_radio-border-color: var(--color-gray-800);
+            --_radio-knob-color: var(--color-gray-800);
+            cursor: not-allowed;
+        }
+    }
+
+    &.-reversed {
+        --_radio-flex-direction: row-reverse;
+    }
+
+    &.-stacked {
+        --_radio-flex-direction: column;
+    }
+
+    &.-light {
+        --_radio-border-color: var(--color-gray-200);
+        --_radio-knob-color: var(--color-gray-200);
+    }
+
+}
