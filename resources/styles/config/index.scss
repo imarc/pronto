@@ -45,22 +45,27 @@
   --color-example: #9933ff;
 
   /**
-   * default accent color.
+   * Default accent color.
    */
   --accent-color: var(--color-example);
 
   /**
-   * primary text color.
+   * Primary text color.
    */
   --root-color: #666666;
 
   /**
-   * default heading text color.
+   * Text color to use when placed on a dark color. See --accent-color-text.
+   */
+  --accent-color-dark: #222222;
+
+  /**
+   * Default heading text color.
    */
   --root-color-headings: #222222;
 
   /**
-   * default border color.
+   * Default border color.
    */
   --root-border-color: #b3b3b3;
 

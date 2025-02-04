@@ -1,4 +1,7 @@
 * {
+  /**
+   * A scale of accent colors, using color-mix, from 90% white to 90% black.
+   */
   --accent-color-50: color-mix(in srgb, var(--accent-color), #fff 90%);
   --accent-color-100: color-mix(in srgb, var(--accent-color), #fff 80%);
   --accent-color-200: color-mix(in srgb, var(--accent-color), #fff 60%);
@@ -10,4 +13,21 @@
   --accent-color-800: color-mix(in srgb, var(--accent-color), #000 60%);
   --accent-color-900: color-mix(in srgb, var(--accent-color), #000 80%);
   --accent-color-950: color-mix(in srgb, var(--accent-color), #000 90%);
+  
+  /**
+   * This variable is either black or white - whichever has the highest contrast
+   * with the accent color. This uses CIELAB perceptual lightness, a close but
+   * different way to check contrast to the WCAG 2.1 contrast ratio.
+   */
+  --accent-color-contrast: lab(from var(--accent-color) round(105 - L, 100) 0 0);
+
+  /**
+   * This variable based on AccentColorText is either var(--accent-color-dark)
+   * or white. It does not guarantee contrast, but it does represent common web
+   * design patterns.
+   */
+  --accent-color-text: rgb(
+    from color-mix( in srgb, var(--accent-color-contrast), var(--accent-color-dark))
+    calc(2*r) calc(2*g) calc(2*b)
+  );
 }
