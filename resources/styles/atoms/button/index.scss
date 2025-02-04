@@ -3,7 +3,7 @@
   background-color: var(--accent-color);
   border-radius: 3em;
   border: var(--root-border-width) solid var(--accent-color);
-  color: #fff;
+  color: var(--accent-color-text);
   cursor: pointer;
   display: inline flex;
   font-weight: 700;
@@ -19,6 +19,7 @@
 
   &:hover,
   &:active {
+    color: #fff;
     background-color: var(--accent-color-700);
     border-color: var(--accent-color-700);
   }
