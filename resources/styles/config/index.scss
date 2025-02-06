@@ -81,6 +81,12 @@
   --root-background-color-inactive: #cccccc;
 
   /**
+   * Icon defaults.
+   */
+  --icon-fill-color: var(--root-icon-fill-color);
+  --icon-stroke-color: var(--root-icon-stroke-color);
+
+  /**
    * default accent colors for errors and destructive (danger) buttons.
    */
   --root-color-error-50: #fff3f1;

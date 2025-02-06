@@ -83,6 +83,27 @@
 }
 
 /**
+ * Icons
+ */
+@property --root-icon-fill-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: currentColor;
+}
+
+@property --root-icon-stroke-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: currentColor;
+}
+
+@property --root-icon-stroke-width {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 2;
+}
+
+/**
  * Breakpoints
  */
 @property --root-breakpoint-sm {

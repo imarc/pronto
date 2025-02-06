@@ -5,6 +5,8 @@
 }
 
 .accordion {
+    $b: &;
+
     --accordion-height-closed: calc(2rem + var(--root-font-size-h3));
     background: white;
     border-radius: .5rem;
@@ -12,19 +14,11 @@
     height: var(--accordion-height-closed);
     overflow: hidden;
     transition: height var(--root-duration-moderate) var(--root-ease-out);
-    
-    &[open] {
-        box-shadow: var(--root-box-shadow-high);
-        height: fit-content;
-    }
-    
-    &.-closing {
-        height: var(--accordion-height-closed);
-    }
 
     &__summary {
         align-items: center;
         border-radius: .5rem;
+        cursor: pointer;
         display: grid;
         grid-auto-flow: column;
         justify-items: start;
@@ -41,17 +35,33 @@
     
     &__iconWrapper {
         background: var(--accent-color);
-        padding: .5rem;
         display: grid;
         justify-self: end;
+        padding: .5rem;
     }
     
     &__icon {
-        height: var(--root-font-size-h3);
         aspect-ratio: 1;
+        color: var(--accent-color-contrast);
+        height: var(--root-font-size-h3);
+        transition: transform var(--root-duration-moderate) var(--root-ease-out);
     }
     
     &__content {
         padding: 0 1.5rem 1.5rem;
+    }
+    
+    &[open]:not(&.-closing) {
+        height: fit-content;
+        box-shadow: var(--root-box-shadow-high);
+        
+        #{$b}__iconWrapper {
+            background: var(--color-gray-200);
+        }
+        
+        #{$b}__icon {
+            color: #000;
+            transform: rotate(90deg);
+        }
     }
 }

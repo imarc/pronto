@@ -46,7 +46,7 @@ export default {
     return () => h('details', {
       ...attrs,
       ref: details,
-      class: attrs.class || 'accordion',
+      class: 'accordion ' + attrs.class,
       onClick: handleToggle
     }, slots.default?.())
   }
