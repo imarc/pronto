@@ -10,7 +10,15 @@ export default defineConfig({
             basePaths: [
               'resources',
             ],
-            includes: ['/resources/styles/index.scss'],
+            includes: [
+              '/resources/styles/index.scss',
+              '/resources/js/index.js',
+            ],
         }),
     ],
+    resolve: {
+        alias: {
+            'vue': 'vue/dist/vue.esm-bundler.js'
+        }
+    }
 })

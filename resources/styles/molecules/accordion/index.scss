@@ -1,0 +1,53 @@
+@use "/resources/styles/imported" as pronto;
+
+:root {
+    interpolate-size: allow-keywords;
+}
+
+.accordion {
+    --accordion-height-closed: calc(2rem + var(--root-font-size-h3));
+    background: white;
+    border-radius: .5rem;
+    box-shadow: var(--root-box-shadow-low);
+    height: var(--accordion-height-closed);
+    overflow: hidden;
+    transition: height var(--root-duration-moderate) var(--root-ease-out);
+    
+    &[open] {
+        box-shadow: var(--root-box-shadow-high);
+        height: fit-content;
+    }
+    
+    &.closing {
+        height: var(--accordion-height-closed);
+    }
+
+    &__summary {
+        align-items: center;
+        border-radius: .5rem;
+        display: grid;
+        grid-auto-flow: column;
+        justify-items: start;
+        list-style: none;
+        outline-offset: -2px;
+        padding: .5rem;
+        user-select: none;
+    }
+    
+    &__heading {
+        margin: 0;
+        padding: .25rem 1rem;
+    }
+    
+    &__iconWrapper {
+        background: var(--accent-color);
+        padding: .5rem;
+        display: grid;
+        justify-self: end;
+    }
+    
+    &__icon {
+        height: var(--root-font-size-h3);
+        aspect-ratio: 1;
+    }
+}
