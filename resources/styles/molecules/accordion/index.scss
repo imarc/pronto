@@ -18,7 +18,7 @@
         height: fit-content;
     }
     
-    &.closing {
+    &.-closing {
         height: var(--accordion-height-closed);
     }
 
@@ -49,5 +49,9 @@
     &__icon {
         height: var(--root-font-size-h3);
         aspect-ratio: 1;
+    }
+    
+    &__content {
+        padding: 0 1.5rem 1.5rem;
     }
 }
