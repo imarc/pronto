@@ -32,7 +32,7 @@ Custom property names should use the following naming convention:
 
 * Root level custom properties are prefixed with `--root-` and are not meant to overridden by components.
 * Properties that are meant to be overridden should be unprefixed (like `--accent-color`, `--gap`, `--size`)
-* Private, component specific properties should be prefixed with the component name in kebab-case.
+* Private, component specific properties should be prefixed with the component name in kebab-case (`--cell-span`)
 
 ### Component Structure
 

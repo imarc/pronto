@@ -82,28 +82,25 @@
   initial-value: #cccccc;
 }
 
-@property --root-link-color {
+/**
+ * Icons
+ */
+@property --root-icon-fill-color {
   syntax: "<color>";
   inherits: true;
-  initial-value: #0066FF;
+  initial-value: currentColor;
 }
 
-@property --root-link-color-hover {
+@property --root-icon-stroke-color {
   syntax: "<color>";
   inherits: true;
-  initial-value: #003D99;
+  initial-value: currentColor;
 }
 
-@property --root-active-color {
-  syntax: "<color>";
+@property --root-icon-stroke-width {
+  syntax: "<number>";
   inherits: true;
-  initial-value: #00CCCC;
-}
-
-@property --root-active-color-hover {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: #009999;
+  initial-value: 2;
 }
 
 /**

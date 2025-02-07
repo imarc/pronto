@@ -21,27 +21,27 @@
     </symbol>
 
     <symbol id="icon-check" viewBox="0 0 14 11">
-        <path d="M13 1L4.75 9.25L1 5.5" stroke="var(--icon-fill-color, currentColor)" stroke-width="var(--icon-stroke-width, 2)" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13 1L4.75 9.25L1 5.5" stroke="var(--icon-stroke-color, currentColor)" stroke-width="var(--icon-stroke-width, 2)" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
 
     <symbol id="icon-chevron-left" viewBox="0 0 21 36">
-        <path d="M19 2L3 18L19 34" fill="none" stroke="var(--icon-fill-color, currentColor)" stroke-width="var(--icon-stroke-width, 4)" stroke-linecap="round"/>
+        <path d="M19 2L3 18L19 34" fill="none" stroke="var(--icon-stroke-color, currentColor)" stroke-width="var(--icon-stroke-width, 4)" stroke-linecap="round"/>
     </symbol>
 
     <symbol id="icon-chevron-right" viewBox="0 0 21 36">
-        <path d="M2 2L18 18L2 34" fill="none" stroke="var(--icon-fill-color, currentColor)" stroke-width="var(--icon-stroke-width, 4)" stroke-linecap="round"/>
+        <path d="M2 2L18 18L2 34" fill="none" stroke="var(--icon-stroke-color, currentColor)" stroke-width="var(--icon-stroke-width, 4)" stroke-linecap="round"/>
     </symbol>
 
     <symbol id="icon-chevron-up" viewBox="0 0 36 21">
-        <path d="M34 19L18 3L2 19" fill="none" stroke="var(--icon-fill-color, currentColor)" stroke-width="var(--icon-stroke-width, 4)" stroke-linecap="round"/>
+        <path d="M34 19L18 3L2 19" fill="none" stroke="var(--icon-stroke-color, currentColor)" stroke-width="var(--icon-stroke-width, 4)" stroke-linecap="round"/>
     </symbol>
 
     <symbol id="icon-chevron-down" viewBox="0 0 36 21">
-        <path d="M34 2L18 18L2 2" fill="none" stroke="var(--icon-fill-color, currentColor)" stroke-width="var(--icon-stroke-width, 4)" stroke-linecap="round"/>
+        <path d="M34 2L18 18L2 2" fill="none" stroke="var(--icon-stroke-color, currentColor)" stroke-width="var(--icon-stroke-width, 4)" stroke-linecap="round"/>
     </symbol>
 
     <symbol id="icon-close" viewBox="0 0 18 18">
-        <path d="M0.5 17.5L17.4706 0.529438M0.5 0.5L17.4706 17.4706" stroke="var(--icon-fill-color, currentColor)" stroke-width="var(--icon-stroke-width, 1)" stroke-linecap="round"/>
+        <path d="M0.5 17.5L17.4706 0.529438M0.5 0.5L17.4706 17.4706" stroke="var(--icon-stroke-color, currentColor)" stroke-width="var(--icon-stroke-width, 1)" stroke-linecap="round"/>
     </symbol>
 
     <symbol id="icon-error-square" viewBox="0 0 32 32">
@@ -50,8 +50,8 @@
     </symbol>
 
     <symbol id="icon-home" viewBox="0 0 14 13">
-        <path d="M13 7L7 1L1 7" fill="none" stroke="var(--icon-fill-color, currentColor)" stroke-width="var(--icon-stroke-width, 1)" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M3 7V12H11V7" fill="none" stroke="var(--icon-fill-color, currentColor)" stroke-width="var(--icon-stroke-width, 1)" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13 7L7 1L1 7" fill="none" stroke="var(--icon-stroke-color, currentColor)" stroke-width="var(--icon-stroke-width, 1)" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3 7V12H11V7" fill="none" stroke="var(--icon-stroke-color, currentColor)" stroke-width="var(--icon-stroke-width, 1)" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
 
     <symbol id="icon-info-square" viewBox="0 0 32 32">
@@ -135,7 +135,7 @@
     </symbol>
 
     <symbol id="icon-pronto-minus" viewBox="0 0 13 13">
-        <path fill="var(--icon-fill-color, currentColor)" fill-rule="evenodd" clip-rule="evenodd" d="M0 6H1V7H0V6ZM3 6H2V7H3V6ZM4 6H5V7H4V6ZM6 6H7V7H6V6ZM9 6H8V7H9V6ZM10 6H11V7H10V6ZM13 6H12V7H13V6Z" fill="black"/>
+        <path fill="var(--icon-fill-color, currentColor)" fill-rule="evenodd" clip-rule="evenodd" d="M0 6H1V7H0V6ZM3 6H2V7H3V6ZM4 6H5V7H4V6ZM6 6H7V7H6V6ZM9 6H8V7H9V6ZM10 6H11V7H10V6ZM13 6H12V7H13V6Z"/>
     </symbol>
 
     <symbol id="icon-copy" viewBox="0 0 17 16">
