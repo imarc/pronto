@@ -13,8 +13,8 @@
 html {
   color: var(--root-color);
   font-family: var(--root-font-family);
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: var(--root-font-size);
+  line-height: var(--root-line-height);
   -webkit-text-size-adjust: 100%;
 }
 
@@ -28,7 +28,7 @@ textarea {
 }
 
 p {
-  margin: 0;
+  margin: 0 0 2rem;
 }
 
 canvas,
