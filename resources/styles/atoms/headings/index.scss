@@ -1,3 +1,5 @@
+@use "../imported" as pronto;
+
 h1,
 h2,
 h3,
@@ -8,14 +10,17 @@ h6 {
   line-height: 1.125;
   overflow-wrap: break-word;
   text-wrap: balance;
+  margin-bottom: 1rem;
 }
 
 h1 {
   font-size: var(--root-font-size-h1);
+  margin-bottom: #{pronto.fluid-rems(1, 1.5, 2)};
 }
 
 h2 {
   font-size: var(--root-font-size-h2);
+  margin-bottom: #{pronto.fluid-rems(1, 1.5, 1.5)};
 }
 
 h3 {
