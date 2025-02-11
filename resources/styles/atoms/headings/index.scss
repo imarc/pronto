@@ -34,12 +34,3 @@ h4 {
 h5 {
   font-size: var(--root-font-size-h5);
 }
-
-/**
- * Creates utility classses .h1, .h2, .h3, .h4, .h5, and .h6.
- */
-@each $h in h1 h2 h3 h4 h5 h6 {
-  .#{$h} {
-    @extend #{$h};
-  }
-}
