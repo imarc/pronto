@@ -10,6 +10,10 @@ a,
     height: .75em;
   }
 
+  &--bold {
+    font-weight: bold;
+  }
+
   &:hover {
     color: var(--accent-color-700);
   }
