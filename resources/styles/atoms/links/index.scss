@@ -1,0 +1,21 @@
+a,
+.link {
+  --accent-color: blue;
+  align-items: center;
+  color: var(--accent-color);
+  text-decoration: none;
+
+  svg {
+    display: inline;
+    height: .75em;
+  }
+
+  &:hover {
+    color: var(--accent-color-700);
+  }
+
+  &.-wide {
+    display: inline flex;
+    gap: 1rem;
+  }
+}
