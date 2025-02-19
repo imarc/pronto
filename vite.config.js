@@ -9,7 +9,6 @@ export default defineConfig({
         vitrine({
             basePaths: [
               'resources',
-              '/resources/styles/links/index.scss',
             ],
             includes: [
               '/resources/styles/index.scss',
