@@ -1,11 +1,37 @@
-<script>
-import { h, onMounted, ref } from 'vue'
+<script setup>
+import { onMounted, useTemplateRef } from 'vue'
 
-const handleToggle = (event) => {
+/**
+ * BpAccordion is a vue component for the <details> element. It uses the native <details> element
+ * state to determine whether it's open or closed, and merely handles updating CSS properties
+ * to allow the element to use transitions between dynamic closed and [open] heights.
+ * 
+ * @param {number} duration - Duration of the animation in milliseconds.
+ *                            Default: computed transition-duration of the details element.
+ * @param {string} summary - selector for the summary element.
+ *                           Default: 'summary:first-of-type'
+ */
+
+const props = defineProps({
+  duration: { type: Number },
+  summary: { type: String, default: 'summary:first-of-type' }
+})
+const details = useTemplateRef('details')
+
+onMounted(() => {
+  details.value.style.setProperty('--accordion-height-closed', 'auto')
+})
+
+const handleToggle = event => {
   const el = event.currentTarget
-  const duration = parseFloat(getComputedStyle(el).transitionDuration) * 1000
-  const summary = el.querySelector('summary:first-of-type')
-  const summaryHeight = summary.clientHeight
+  const duration = props.duration || parseFloat(getComputedStyle(el).transitionDuration) * 1000 || 0
+  const summary = el.querySelector(props.summary)
+
+  if (!summary) {
+    return
+  }
+
+  const summaryHeight = summary?.clientHeight
 
   if (!summary.contains(event.target)) {
     return
@@ -33,22 +59,10 @@ const handleToggle = (event) => {
     })
   }
 }
-
-export default {
-  name: 'BpAccordion',
-  setup(props, { slots, attrs }) {
-    const details = ref(null)
-
-    onMounted(() => {
-      details?.value.style.setProperty('--accordion-height-closed', 'auto')
-    })
-
-    return () => h('details', {
-      ...attrs,
-      ref: details,
-      class: 'accordion ' + attrs.class,
-      onClick: handleToggle
-    }, slots.default?.())
-  }
-}
 </script>
+
+<template>
+  <details ref="details" class="accordion" @click="handleToggle">
+    <slot />
+  </details>
+</template>
