@@ -1,0 +1,13 @@
+@use "/resources/styles/molecules/lists/index.scss";
+
+.richText {
+
+  /**
+   * Automatically use list component styles even without the class.
+   */
+  dl,
+  ol,
+  ul {
+    @extend .list;
+  }
+}
