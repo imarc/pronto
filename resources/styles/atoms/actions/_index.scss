@@ -1,0 +1,7 @@
+@use "/resources/styles/imported" as pronto;
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}

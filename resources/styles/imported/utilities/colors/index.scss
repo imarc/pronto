@@ -1,3 +1,7 @@
+.primary {
+  --accent-color: var(--color-example);
+}
+
 .error {
   --accent-color-50: var(--root-color-error-50);
   --accent-color: var(--root-color-error);
