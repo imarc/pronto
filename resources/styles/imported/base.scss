@@ -65,6 +65,10 @@ textarea,
   touch-action: manipulation;
 }
 
+button {
+  cursor: pointer;
+}
+
 
 /**
  * Increase margin below block elements and paragraphs before block elements
@@ -96,6 +100,18 @@ blockquote {
     font-style: normal;
     margin-bottom: 1em;
   }
+}
+
+/**
+ * Base <dialog>
+ */
+dialog {
+  inset: 0;
+  padding: var(--root-padding-block) var(--root-padding-inline);
+  border-radius: var(--root-border-radius);
+  border: solid var(--accent-color);
+  border-width: .5rem 0 0;
+  box-shadow: var(--root-box-shadow-med), var(--root-box-shadow-high);
 }
 
 /**

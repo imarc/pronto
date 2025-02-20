@@ -4,7 +4,6 @@
   border-radius: 3em;
   border: var(--root-border-width) solid var(--accent-color);
   color: var(--accent-color-text);
-  cursor: pointer;
   display: inline flex;
   font-weight: 700;
   gap: .5em;
@@ -39,6 +38,15 @@
 
     &:hover {
       color: var(--accent-color-700);
+    }
+  }
+
+  &.-outline-fill {
+    @extend .-outline;
+    &:hover {
+      background-color: var(--accent-color);
+      border-color: var(--accent-color);
+      color: var(--accent-color-text);
     }
   }
 

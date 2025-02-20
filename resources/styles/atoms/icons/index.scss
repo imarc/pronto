@@ -4,5 +4,9 @@
   object-fit: contain;
 
   --icon-stroke-color: #ffffff;
-  --icon-fill-color: var(--accent-color);
+  --icon-fill-color: currentColor;
+
+  &.-heavy {
+    --icon-stroke-width: 2;
+  }
 }
