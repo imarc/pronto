@@ -1,7 +1,5 @@
 a,
 .link {
-  --accent-color: blue;
-  align-items: center;
   color: var(--accent-color);
   text-decoration: none;
 
@@ -15,7 +13,12 @@ a,
   }
 
   &.-wide {
+    align-items: center;
     display: inline flex;
     gap: 1rem;
   }
+}
+
+a:not([class]) {
+  --accent-color: blue;
 }
