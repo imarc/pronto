@@ -9,9 +9,6 @@ const dialog = useTemplateRef('dialog')
 
 const open = ref(sessionStorage[name] !== 'closed')
 const close = () => sessionStorage[name] = 'closed'
-
-console.log(dialog)
-
 </script>
 <template>
   <dialog ref="dialog" :open @close="close">
