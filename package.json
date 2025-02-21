@@ -22,12 +22,12 @@
         "preview": "vite preview"
     },
     "dependencies": {
+        "@imarc/vitrine": "^1.0.0-beta.0",
         "modern-normalize": "^3.0.1",
         "vue": "^3.4.31"
     },
     "devDependencies": {
         "@clack/prompts": "^0.9.1",
-        "@imarc/vitrine": "^1.0.0-beta.0",
         "@vitejs/plugin-vue": "^5.2.1",
         "sass": "^1.83.4",
         "vite": "^6.0.7"
