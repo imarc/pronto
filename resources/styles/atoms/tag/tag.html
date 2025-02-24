@@ -1,0 +1,76 @@
+<div class="actions">
+    <!-- .tag class on <div> element ------------------->
+    <div class="tag">
+        <svg class="tag__icon">
+            <use href="/main-icons-sprite.svg#icon-tag">
+        </svg>
+        .tag class on div
+    </div>
+
+    <!-- Inactive Tag -->
+    <div class="tag" tag-inactive>
+        <svg class="tag__icon">
+            <use href="/main-icons-sprite.svg#icon-tag">
+        </svg>
+        Inactive Tag
+    </div>
+
+    <!-- Button Tag -->
+    <button class="tag">
+        <svg class="tag__icon">
+            <use href="/main-icons-sprite.svg#icon-tag">
+        </svg>
+        Button Tag
+    </button>
+
+    <!-- Checkbox Tag -->
+    <div class="tag">
+        <svg class="tag__icon">
+            <use href="/main-icons-sprite.svg#icon-tag">
+        </svg>
+        <label for="tag-checkbox-inactive">
+            Unchecked Checkbox Tag
+            <input type="checkbox" id="tag-checkbox-inactive">
+        </label>
+    </div>
+
+    <div class="tag">
+        <svg class="tag__icon">
+            <use href="/main-icons-sprite.svg#icon-tag">
+        </svg>
+        <label for="tag-checkbox-active">
+            Checked Checkbox Tag
+            <input type="checkbox" id="tag-checkbox-active" checked>
+        </label>
+    </div>
+
+    <!-- Dismissable Tag -->
+    <div class="tag" tag-dismissable>
+        <svg class="tag__icon">
+            <use href="/main-icons-sprite.svg#icon-tag" />
+            <use href="/main-icons-sprite.svg#icon-close" />
+        </svg>
+        <label for="tag-checkbox-dismissable">
+            Dissmissable Checkbox Tag
+            <input type="checkbox" id="tag-checkbox-dismissable" checked>
+        </label>
+    </div>
+</div>
+
+<!-- Radio Tag -->
+<div class="actions">
+
+    <!-- <tag> element for radio input -->
+    <label class="tag" for="tag-radio-inactive">
+        <svg><use href="/main-icons-sprite.svg#icon-tag"></svg>
+        Inactive Radio Tag
+        <input type="radio" name="radio-tag-group" id="tag-radio-inactive">
+    </label>
+
+    <!-- .tag class on <label> element for radio input -->
+    <label class="tag" for="tag-radio-active">
+        <svg><use href="/main-icons-sprite.svg#icon-tag"></svg>
+        Active Radio Tag
+        <input type="radio" name="radio-tag-group" id="tag-radio-active" checked>
+    </label>
+</div>

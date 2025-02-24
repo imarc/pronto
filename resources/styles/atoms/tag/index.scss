@@ -1,0 +1,132 @@
+// @use '@styles/abstracts/mixins/links' as links;
+// @use '@styles/abstracts/mixins/media-queries' as mq;
+// @use "../../imported" as pronto;
+
+/**
+ * For use on checkboxes, radio switches, buttons, anchors or spans.
+ * when used with checkboxs and radio the markup should be the following:
+ *
+ * @example
+ * <label for="checkbox-id">
+ *    Checkbox Label
+ *    <input type="checkbox" id="checkbox-id" class="tag" />
+ * </label>
+ */
+
+.tag {
+    --accent-color: var(--accent-tertiary);
+    --accent-color-700: var(--accent-tertiary-700);
+
+    align-items: center;
+    background-color: var(--root-background-color);
+    border: 1px solid var(--accent-color);
+    border-radius: .25rem; 
+    color: var(--accent-color);
+    display: inline-flex;
+    flex-direction: row;
+    font-family: var(--root-font-family);
+    font-size: var(--root-font-size);
+    gap: var(--root-gap);
+    justify-content: space-between;
+    line-height: 1;  
+    margin: 0;
+    margin-bottom: calc(var(--root-gap) / 2);
+    margin-right: calc(var(--root-gap) / 2);
+    padding: 0.5rem 1rem;
+    position: relative;
+
+    > * {
+        flex-shrink: 0;
+    }
+
+    > label {
+        // @include links.pseudo-link();
+        cursor: pointer;
+        color: inherit;
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+        margin: 0;
+    }
+
+    input {
+        appearance: none;
+        inset: 0;
+        pointer-events: none;
+        position: absolute;
+    }
+
+    svg,
+    .tag__icon {
+        aspect-ratio: 1;
+        block-size: var(--root-font-size);
+        color: var(--accent-color);
+
+        > use {
+            &:nth-child(2) {
+                opacity: 0;
+            }
+        }
+    }
+
+    &:where(button) {
+        background-color: var(--accent-color);
+        border-color: var(--accent-color);
+        color: #fff;
+        box-shadow: var(--root-box-shadow-low);
+        svg,
+        .tag__icon {
+            color: #fff;
+        }
+        
+        &:hover {
+            background-color: var(--accent-color-700);
+            border-color: var(--accent-color-700);
+            cursor: pointer;
+        }
+    }
+
+    // Active/checked state
+    &:where(:has(input:checked), [tag-active]) {
+        background-color: var(--accent-color-700);
+        border-color: var(--accent-color-700);
+        color: #fff;
+
+        svg,
+        .tag__icon {
+            color: #fff;
+        }
+    }
+
+    &:is([tag-active], 
+    :has(input:checked)):where([tag-dismissable]) {
+        background-color: var(--accent-color-700);
+        border-color: var(--accent-color-700);
+        color: #fff;
+        svg,
+        .tag__icon {
+            color: #fff;
+            > use:nth-child(1) {
+                opacity: 0;
+            }
+
+            > use:nth-child(2) {
+                opacity: 1;
+            }
+        }
+    }
+
+    // forced inactive state.
+    &:is([tag-inactive]),
+    :is([tag-inactive]) {
+        background-color: transparent;
+        border-color: var(--root-color-inactive);
+        color: var(--root-color-inactive);
+        svg,
+        .tag__icon {
+            color: var(--root-color-inactive);
+        }
+    }
+
+}

@@ -44,3 +44,17 @@
   --accent-color: var(--root-color-info);
   --accent-color-900: var(--root-color-info-900);
 }
+
+.accent-primary {
+  --accent-color: var(--accent-color);
+}
+
+.accent-secondary {
+  --accent-color: var(--accent-secondary);
+  --accent-color-900: var(--accent-secondary-700);
+}
+
+.accent-tertiary {
+  --accent-color: var(--accent-tertiary);
+  --accent-color-900: var(--accent-tertiary-700);
+}

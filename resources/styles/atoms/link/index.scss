@@ -1,0 +1,9 @@
+.link {
+
+    color: var(--accent-secondary);
+    font-size: var(--root-font-size);
+
+    &:hover {
+        color: var(--accent-secondary-900);
+    }
+}

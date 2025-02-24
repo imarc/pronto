@@ -45,12 +45,16 @@
   /**
    * site/brand colors
    */
-  --color-example: #9933ff;
+  --color-primary: #9933ff;
 
   /**
    * Default accent color.
    */
-  --accent-color: var(--color-example);
+  --accent-color: var(--color-primary);
+  --accent-secondary: #0066FF;
+  --accent-secondary-700: #003D99;
+  --accent-tertiary: #00CCCC;
+  --accent-tertiary-700: #009999;
 
   /**
    * Primary text color.
