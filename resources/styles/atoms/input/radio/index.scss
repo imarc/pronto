@@ -1,8 +1,8 @@
-input[type=checkbox] {
+input[type=radio] {
   --accent-color: var(--color-secondary);
 }
 
-.checkbox {
+.radio {
   $b: &;
 
   display: inline flex;
@@ -15,14 +15,20 @@ input[type=checkbox] {
     appearance: none;
     background: var(--color-gray-50);
     border: 2px solid var(--color-gray-500);
-    border-radius: 5px;
+    border-radius: 2em;
     display: inline grid;
     height: 1.5em;
     width: 1.5em;
 
-    &:hover {
-      border-color: var(--color-gray-700);
+    &::before {
+      content: '';
+      border-radius: 2em;
+      margin: .125em;
     }
+  }
+
+  &:hover &__input {
+    border-color: var(--color-gray-700);
   }
 
   &.-checked,
@@ -33,17 +39,12 @@ input[type=checkbox] {
 
       &::before {
         background: var(--accent-color-contrast);
-        content: '';
-        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M18 8L9.75 16.25L6 12.5' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
-
       }
     }
 
-    &:hover {
-      #{$b}__input {
-        background: var(--accent-color-600);
-        border-color: var(--accent-color-600);
-      }
+    &:hover #{$b}__input {
+      background-color: var(--accent-color-600);
+      border-color: var(--accent-color-600);
     }
   }
 
@@ -51,19 +52,18 @@ input[type=checkbox] {
   &:has(&__input:disabled) {
     cursor: auto;
 
-    #{$b}__input {
+    #{$b}__input,
+    #{$b}__input:hover {
       background: var(--color-gray-50);
       border-color: var(--color-gray-200);
-
-      &::before {
-        background-color: var(--color-gray-200);
-      }
     }
 
-    &:hover {
+    &.-checked,
+    &:has(#{$b}__input:checked) {
       #{$b}__input {
-        border-color: var(--color-gray-200);
-        background: var(--color-gray-50);
+        &::before {
+          background-color: var(--color-gray-200);
+        }
       }
     }
   }

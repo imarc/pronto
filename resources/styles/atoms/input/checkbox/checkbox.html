@@ -1,9 +1,27 @@
 <h2>Checkboxes</h2>
 
-<label><input type="checkbox"> Default Checkbox</label>
-<label><input type="checkbox" checked> Checked Checkbox</label>
+<div style="display: grid; gap: 1em; grid: auto / repeat(auto-fit, minmax(10rem, 1fr))">
+
+<label class="checkbox"><input class="checkbox__input" type="checkbox"> Default Checkbox</label>
+
+<label class="checkbox"><input class="checkbox__input" type="checkbox" checked> Checked Checkbox</label>
+
+<label class="checkbox"><input class="checkbox__input" type="checkbox" disabled> Disabled Checkbox</label>
+
+<label class="checkbox"><input class="checkbox__input" type="checkbox" checked disabled> Checked Disabled</label>
+
+</div>
 
 <h2>Radios</h2>
 
-<label><input type="radio" name="radio1"> Default Radio</label>
-<label><input type="radio" name="radio1" checked> Checked Radio</label>
+<div style="display: grid; gap: 1em; grid: auto / repeat(auto-fit, minmax(10rem, 1fr))">
+
+<label class="radio"><input class="radio__input" name="example" type="radio"> Default Radio</label>
+
+<label class="radio"><input class="radio__input" name="example" type="radio" checked> Checked Radio</label>
+
+<label class="radio"><input class="radio__input" name="example2" type="radio" disabled> Disabled Radio</label>
+
+<label class="radio"><input class="radio__input" name="example2" type="radio" checked disabled> Checked Disabled</label>
+
+</div>
