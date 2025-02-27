@@ -1,70 +1,51 @@
-input[type=checkbox] {
-  --accent-color: var(--color-secondary);
-}
-
+input[type=checkbox],
 .checkbox {
-  $b: &;
+  appearance: none;
+  background: var(--color-gray-50);
+  border: 2px solid var(--color-gray-500);
+  border-radius: 5px;
+  display: inline grid;
+  height: 1.5em;
+  width: 1.5em;
 
-  display: inline flex;
-  cursor: pointer;
-  user-select: none;
-  gap: .5em;
-  margin-bottom: .25em;
+  &::before {
+    content: '';
+  }
 
-  &__input {
-    appearance: none;
-    background: var(--color-gray-50);
-    border: 2px solid var(--color-gray-500);
-    border-radius: 5px;
-    display: inline grid;
-    height: 1.5em;
-    width: 1.5em;
-
-    &:hover {
-      border-color: var(--color-gray-700);
-    }
+  &:hover {
+    border-color: var(--color-gray-700);
   }
 
   &.-checked,
-  &:has(&__input:checked) {
-    #{$b}__input {
-      background: var(--accent-color);
-      border-color: var(--accent-color);
+  &:checked {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
 
-      &::before {
-        background: var(--accent-color-contrast);
-        content: '';
-        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M18 8L9.75 16.25L6 12.5' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    /* Using mask as this is the only way to make the color of the checkmark dynamic */
+    &::before {
+      background: var(--accent-color-contrast);
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M18 8L9.75 16.25L6 12.5' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
 
-      }
     }
 
     &:hover {
-      #{$b}__input {
-        background: var(--accent-color-600);
-        border-color: var(--accent-color-600);
-      }
+      background: var(--accent-color-600);
+      border-color: var(--accent-color-600);
     }
   }
 
   &.-disabled,
-  &:has(&__input:disabled) {
-    cursor: auto;
+  &:disabled {
+    background: var(--color-gray-50);
+    border-color: var(--color-gray-200);
 
-    #{$b}__input {
-      background: var(--color-gray-50);
-      border-color: var(--color-gray-200);
-
-      &::before {
-        background-color: var(--color-gray-200);
-      }
+    &::before {
+      background-color: var(--color-gray-200);
     }
 
     &:hover {
-      #{$b}__input {
-        border-color: var(--color-gray-200);
-        background: var(--color-gray-50);
-      }
+      border-color: var(--color-gray-200);
+      background: var(--color-gray-50);
     }
   }
 }

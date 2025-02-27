@@ -1,0 +1,29 @@
+.field {
+  $b: &;
+
+  display: inline grid;
+  vertical-align: top;
+  user-select: none;
+  gap: .5em;
+  line-height: 1.5;
+  margin-bottom: 1.25em;
+
+  &__help {
+    font-size: max(.75em, .75rem);
+    color: var(--color-gray-600);
+  }
+
+  &:has(input:not(:disabled)) {
+    cursor: pointer;
+  }
+
+  &.-inline {
+    grid: auto / auto auto;
+    flex-flow: row;
+    align-items: center;
+
+    #{$b}__help {
+      grid-column: 2;
+    }
+  }
+}

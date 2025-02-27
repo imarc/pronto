@@ -1,69 +1,51 @@
-input[type=radio] {
-  --accent-color: var(--color-secondary);
-}
-
+input[type=radio],
 .radio {
-  $b: &;
+  appearance: none;
+  background: var(--color-gray-50);
+  border: 2px solid var(--color-gray-500);
+  border-radius: 2em;
+  display: inline grid;
+  height: 1.5em;
+  width: 1.5em;
 
-  display: inline flex;
-  cursor: pointer;
-  user-select: none;
-  gap: .5em;
-  margin-bottom: .25em;
-
-  &__input {
-    appearance: none;
-    background: var(--color-gray-50);
-    border: 2px solid var(--color-gray-500);
+  &::before {
+    content: '';
     border-radius: 2em;
-    display: inline grid;
-    height: 1.5em;
-    width: 1.5em;
-
-    &::before {
-      content: '';
-      border-radius: 2em;
-      margin: .125em;
-    }
   }
 
-  &:hover &__input {
+  &:hover {
     border-color: var(--color-gray-700);
   }
 
   &.-checked,
-  &:has(&__input:checked) {
-    #{$b}__input {
-      background: var(--accent-color);
-      border-color: var(--accent-color);
+  &:checked {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
 
-      &::before {
-        background: var(--accent-color-contrast);
-      }
+    &::before {
+      background: radial-gradient(var(--accent-color-contrast) .5em, #0000 calc(.5em + 1px));
     }
 
-    &:hover #{$b}__input {
+    &:hover {
       background-color: var(--accent-color-600);
       border-color: var(--accent-color-600);
     }
   }
 
   &.-disabled,
-  &:has(&__input:disabled) {
-    cursor: auto;
+  &:disabled {
+    background: var(--color-gray-50);
+    border-color: var(--color-gray-200);
 
-    #{$b}__input,
-    #{$b}__input:hover {
+    &:hover {
       background: var(--color-gray-50);
       border-color: var(--color-gray-200);
     }
 
     &.-checked,
-    &:has(#{$b}__input:checked) {
-      #{$b}__input {
-        &::before {
-          background-color: var(--color-gray-200);
-        }
+    &:checked {
+      &::before {
+        background-color: var(--color-gray-200);
       }
     }
   }
