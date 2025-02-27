@@ -65,6 +65,9 @@ textarea,
   touch-action: manipulation;
 }
 
+/**
+ * Default to changing the cursor for all buttons.
+ */
 button {
   cursor: pointer;
 }
