@@ -21,7 +21,7 @@
     </symbol>
 
     <symbol id="icon-check" viewBox="0 0 14 11">
-        <path d="M13 1L4.75 9.25L1 5.5" stroke="var(--icon-fill-color, currentColor)" stroke-width="var(--icon-stroke-width, 2)" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13 1L4.75 9.25L1 5.5" fill="none" stroke="var(--icon-fill-color, currentColor)" stroke-width="var(--icon-stroke-width, 2)" stroke-linecap="round"/>
     </symbol>
 
     <symbol id="icon-chevron-left" viewBox="0 0 21 36">
@@ -135,7 +135,7 @@
     </symbol>
 
     <symbol id="icon-pronto-minus" viewBox="0 0 13 13">
-        <path fill="var(--icon-fill-color, currentColor)" fill-rule="evenodd" clip-rule="evenodd" d="M0 6H1V7H0V6ZM3 6H2V7H3V6ZM4 6H5V7H4V6ZM6 6H7V7H6V6ZM9 6H8V7H9V6ZM10 6H11V7H10V6ZM13 6H12V7H13V6Z" fill="black"/>
+        <path fill="var(--icon-fill-color, currentColor)" fill-rule="evenodd" clip-rule="evenodd" d="M0 6H1V7H0V6ZM3 6H2V7H3V6ZM4 6H5V7H4V6ZM6 6H7V7H6V6ZM9 6H8V7H9V6ZM10 6H11V7H10V6ZM13 6H12V7H13V6Z"/>
     </symbol>
 
     <symbol id="icon-copy" viewBox="0 0 17 16">

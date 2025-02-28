@@ -13,11 +13,14 @@
 html {
   color: var(--root-color);
   font-family: var(--root-font-family);
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: var(--root-font-size);
+  line-height: var(--root-line-height);
   -webkit-text-size-adjust: 100%;
 }
 
+/**
+ * Set accent-color for native elements that use it.
+ */
 button,
 input,
 optgroup,
@@ -27,10 +30,17 @@ textarea {
   accent-color: var(--accent-color);
 }
 
+/**
+ * Default paragraph margin, and allow breaks in words if absolutely necessary but avoid it.
+ */
 p {
-  margin: 0;
+  margin: 0 0 2rem;
+  overflow-wrap: break-word;
 }
 
+/**
+ * Set default sizing for media elements.
+ */
 canvas,
 img,
 picture,
@@ -40,6 +50,9 @@ video {
   max-width: 100%;
 }
 
+/**
+ * Disable double-tap to zoom on interative elements to avoid confusion.
+ */
 a[href],
 area,
 button,
@@ -50,10 +63,81 @@ summary,
 textarea,
 [tabindex]:not([tabindex*="-"]) {
   touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
 }
 
+/**
+ * Default to changing the cursor for all buttons.
+ */
+button {
+  cursor: pointer;
+}
+
+
+/**
+ * Increase margin below block elements and paragraphs before block elements
+ */
+blockquote,
+dl,
+hr,
+ol,
+picture,
+pre,
+table,
+ul,
+p:has(+ :where(blockquote, hr, ol, picture, pre, table, ul)) {
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+
+/**
+ * Base <blockquote>
+ */
+blockquote {
+  box-shadow: 4px 0 var(--accent-color-200) inset;
+  margin-left: 1.5em;
+  margin-right: 0;
+  padding-left: 1.5em;
+
+  cite {
+    display: block;
+    font-style: normal;
+    margin-bottom: 1em;
+  }
+}
+
+/**
+ * Base <dialog>
+ */
+dialog {
+  inset: 0;
+  padding: var(--root-padding-block) var(--root-padding-inline);
+  border-radius: var(--root-border-radius);
+  border: solid var(--accent-color);
+  border-width: .5rem 0 0;
+  box-shadow: var(--root-box-shadow-med), var(--root-box-shadow-high);
+}
+
+/**
+ * Base <hr>
+ */
+hr {
+  border: 4px solid var(--accent-color);
+  max-width: 8rem;
+}
+
+/**
+ * Base <code>
+ */
+code {
+  background: var(--accent-color-50);
+  box-shadow: 0 0 0 2px var(--accent-color-50);
+}
+
+/**
+ * Base <pre>
+ */
 pre {
+  color: var(--accent-color);
   white-space: pre-wrap;
   overflow-wrap: break-word;
 }

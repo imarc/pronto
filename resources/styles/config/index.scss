@@ -1,4 +1,4 @@
-@use "../imported" as pronto;
+@use "/resources/styles/imported" as pronto;
 
 /**
  * @imports
@@ -18,6 +18,9 @@
   --root-font-size-h3: #{pronto.fluid-rems( 1.25,   1.5,    2)};
   --root-font-size-h4: #{pronto.fluid-rems(1.125,  1.25,  1.5)};
   --root-font-size-h5: #{pronto.fluid-rems(    1, 1.125, 1.25)};
+
+  --root-font-size-sm: .75rem;
+  --root-font-size-lg: 1.5rem;
 
 
   /**
@@ -45,22 +48,27 @@
   --color-example: #9933ff;
 
   /**
-   * default accent color.
+   * Default accent color.
    */
   --accent-color: var(--color-example);
 
   /**
-   * primary text color.
+   * Primary text color.
    */
   --root-color: #666666;
 
   /**
-   * default heading text color.
+   * Text color to use when placed on a light color. See --accent-color-text.
+   */
+  --accent-color-dark: #222222;
+
+  /**
+   * Default heading text color.
    */
   --root-color-headings: #222222;
 
   /**
-   * default border color.
+   * Default border color.
    */
   --root-border-color: #b3b3b3;
 
@@ -74,6 +82,12 @@
    */
   --root-color-inactive: #999999;
   --root-background-color-inactive: #cccccc;
+
+  /**
+   * Icon defaults.
+   */
+  --icon-fill-color: var(--root-icon-fill-color);
+  --icon-stroke-color: var(--root-icon-stroke-color);
 
   /**
    * default accent colors for errors and destructive (danger) buttons.

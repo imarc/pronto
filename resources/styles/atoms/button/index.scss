@@ -3,14 +3,14 @@
   background-color: var(--accent-color);
   border-radius: 3em;
   border: var(--root-border-width) solid var(--accent-color);
-  color: #fff;
-  cursor: pointer;
+  color: var(--accent-color-text);
   display: inline flex;
   font-weight: 700;
   gap: .5em;
   line-height: 1;
   padding: .5em 1em;
   padding: 1em 2em;
+  text-decoration: none;
 
   &__icon {
     width: 1em;
@@ -19,6 +19,7 @@
 
   &:hover,
   &:active {
+    color: #fff;
     background-color: var(--accent-color-700);
     border-color: var(--accent-color-700);
   }
@@ -37,6 +38,15 @@
 
     &:hover {
       color: var(--accent-color-700);
+    }
+  }
+
+  &.-outline-fill {
+    @extend .-outline;
+    &:hover {
+      background-color: var(--accent-color);
+      border-color: var(--accent-color);
+      color: var(--accent-color-text);
     }
   }
 
