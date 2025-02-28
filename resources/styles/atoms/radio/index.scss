@@ -1,13 +1,9 @@
 .radio {
-    --_radio-border-color: var(--color-gray-500);
-    --_radio-size: 1.5rem;
-    --_radio-background-color: var(--color-gray-50);
-    --_radio-flex-direction: row;
+    --radio-size: 1.5rem;
 
     align-items: center;
-    box-sizing: content-box;
     cursor: pointer;
-    display: flex;
+    display: inline-flex;
     flex-direction: var(--_radio-flex-direction);
     font-family: var(--root-font-family);
     font-size: 1rem;
@@ -16,45 +12,46 @@
     justify-content: space-between;
     line-height: var(--leading-loose, 2);
     user-select: none;
-    --webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+
+    &:has(input:disabled) {
+        cursor: not-allowed;
+    }
 
     input {
-        --_radio-knob-size: calc(var(--_radio-size) * 0.67);
-        --_radio-knob-color: var(--color-gray-100);
-        --_radio-knob-opacity: 0;
-        --_radio-knob-scale: 0; 
+        --radio-knob-size: calc(var(--radio-size) * 0.67);
         appearance: none;
-        background: var(--_radio-background-color);
-        block-size: var(--_radio-size);
-        border: 2px solid var(--_radio-border-color);
+        background: var(--color-gray-50);
+        width: var(--radio-size);
+        height: var(--radio-size);
+        border: 2px solid var(--color-gray-500);
         border-radius: 50%;
         display: grid;
         flex-shrink: 0;
         grid: [box] 1fr / [box] 1fr;
-        inline-size: var(--_radio-size);
         place-items: center;
-        outline-offset: calc(var(--_radio-size) * 0.2);
+        outline-offset: .25em;
         transition:
             background var(--root-duration-fast) var(--root-ease-out),
             border-color var(--root-duration-fast) var(--root-ease-out);
 
         &:hover {
             &:where(:not(:disabled)) {
-                --_radio-background-color: white;
-                --_radio-border-color: var(--color-gray-700);
+                background: white;
+                border-color: var(--color-gray-700);
             }
         }
 
         &::after {
-            background: var(--_radio-knob-color);
-            width: var(--_radio-knob-size);
-            height: var(--_radio-knob-size);
+            background: var(--color-gray-100);
+            width: var(--radio-knob-size);
+            height: var(--radio-knob-size);
             border-radius: 50%;
             content: '';
             display: block;
-            grid-area: box;
-            opacity: var(--_radio-knob-opacity);
-            scale: var(--_radio-knob-scale);
+            grid-area: 1 / 1;
+            opacity: 0;
+            scale: 0;
             transition:
                 background var(--root-duration-fast) var(--root-ease-out),
                 opacity var(--root-duration-fast) var(--root-ease-out),
@@ -62,35 +59,28 @@
         }
 
         &:checked {
-            --_radio-background-color: var(--accent-color);
-            --_radio-border-color: var(--accent-color);
-            --_radio-knob-color: var(--color-gray-900);
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+
+            &:disabled {
+                background: var(--color-gray-50);
+                border-color: var(--color-gray-200);
+             }
 
             &::after {
-                --_radio-knob-opacity: 1;
-                --_radio-knob-scale: 1;
+                opacity: 1;
+                scale: 1;
+                background: var(--color-gray-900);
             }
-        }
-
-        // disabled state needs work
-        &:disabled {
-            --_radio-border-color: var(--color-gray-800);
-            --_radio-knob-color: var(--color-gray-800);
-            cursor: not-allowed;
         }
     }
 
     &.-reversed {
-        --_radio-flex-direction: row-reverse;
+        flex-direction: row-reverse;
     }
 
     &.-stacked {
-        --_radio-flex-direction: column;
-    }
-
-    &.-light {
-        --_radio-border-color: var(--color-gray-200);
-        --_radio-knob-color: var(--color-gray-200);
+        flex-direction: column;
     }
 
 }
