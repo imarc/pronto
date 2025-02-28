@@ -9,7 +9,6 @@
     font-size: 1rem;
     font-weight: 400;
     gap: .5rem;
-    justify-content: space-between;
     line-height: var(--leading-loose, 2);
     user-select: none;
     -webkit-tap-highlight-color: transparent;
@@ -28,7 +27,7 @@
         border-radius: 50%;
         display: grid;
         flex-shrink: 0;
-        grid: [box] 1fr / [box] 1fr;
+        grid: 1fr / 1fr;
         place-items: center;
         outline-offset: .25em;
         transition:
