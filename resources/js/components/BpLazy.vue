@@ -65,7 +65,7 @@
 div {
   container-type: size;
 
-  >>> > * {
+  :deep(> *) {
     width: 100cqw;
     height: 100cqh;
   }
