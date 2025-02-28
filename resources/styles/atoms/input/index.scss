@@ -2,16 +2,16 @@
 @forward "radio";
 
 .input {
-  @layer TemporaryLayerToRefactorAwayLater {
-    --accent-color: var(--color-gray-500);
-  }
-
   background-color: var(--accent-gray-50);
   border: 2px solid var(--accent-color);
   color: var(--color-gray-800);
   border-radius: var(--root-border-radius);
   padding: .5em 1em;
   display: inline-block;
+
+  @layer TemporaryLayerToRefactorAwayLater {
+    --accent-color: var(--color-gray-500);
+  }
 
   &:focus {
     --accent-color: inherit;
