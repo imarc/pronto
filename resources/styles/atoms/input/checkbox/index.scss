@@ -1,4 +1,4 @@
-input[type=checkbox],
+input:where([type=checkbox]),
 .checkbox {
   appearance: none;
   background: var(--color-gray-50);

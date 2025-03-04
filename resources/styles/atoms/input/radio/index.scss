@@ -1,4 +1,5 @@
-input[type=radio] {
+input:where([type=radio]),
+.radio {
   appearance: none;
   background: var(--color-gray-50);
   border: 2px solid var(--color-gray-500);

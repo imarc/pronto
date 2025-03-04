@@ -38,10 +38,7 @@
     }
 
     &__input {
-        appearance: none;
-        inset: 0;
-        pointer-events: none;
-        position: absolute;
+        display: none;
     }
 
     &__icon {
