@@ -28,6 +28,9 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
+      // Note that this alias is only used for development of pronto itself.
+      '@imarc/pronto': __dirname,
+
       'vue': 'vue/dist/vue.esm-bundler.js'
     }
   }
