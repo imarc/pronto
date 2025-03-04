@@ -6,7 +6,9 @@
     <!-- ${template ? `Using template ${template}` : "Using builtin template"} -->
   </head>
   <body>
-    <div id="app">
+    <div
+      id="app"
+      ${component.filename.match(/atoms|molecules/) ? 'style="background: #eee; padding: 2rem"' : ''}>
       ${code}
     </div>
     ${includes}
