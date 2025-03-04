@@ -1,6 +1,7 @@
 .field {
   $b: &;
 
+  cursor: pointer;
   display: inline grid;
   vertical-align: top;
   user-select: none;
@@ -19,10 +20,22 @@
 
   &.-inline {
     grid: auto / auto auto;
-    flex-flow: row;
     align-items: center;
 
     #{$b}__help {
+      grid-column: 2;
+    }
+  }
+
+  &.-stacked {
+    grid-auto-flow: column;
+  }
+
+  &.-reversed {
+    grid-auto-flow: row dense;
+
+    input,
+    #{$b}__input {
       grid-column: 2;
     }
   }
