@@ -1,5 +1,7 @@
 a,
 .link {
+  --accent-color: var(--accent-secondary);
+
   color: var(--accent-color);
   text-decoration: none;
 

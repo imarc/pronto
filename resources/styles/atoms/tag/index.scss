@@ -1,0 +1,117 @@
+
+/**
+ * For use on checkboxes, radio switches, buttons, anchors or spans.
+ * when used with checkboxs and radio the markup should be the following:
+ *
+ * @example
+ * <label for="checkbox-id">
+ *    Checkbox Label
+ *    <input type="checkbox" id="checkbox-id" class="tag" />
+ * </label>
+ */
+
+.tag {
+    --accent-color: var(--accent-tertiary);
+    --accent-color-700: var(--accent-tertiary-700);
+
+    $b: &;
+
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid var(--accent-color);
+    border-radius: .25rem; 
+    color: var(--accent-color);
+    display: inline-flex;
+    flex-direction: row;
+    font-size: var(--root-font-size-sm);
+    gap: 0.5rem;
+    justify-content: space-between;
+    line-height: 1;  
+    margin: 0;
+    margin-bottom: calc(var(--root-gap) / 2);
+    margin-right: calc(var(--root-gap) / 2);
+    padding: 0.5rem 1rem;
+    position: relative;
+
+    &.-label {
+        cursor: pointer;
+    }
+
+    &__input {
+        appearance: none;
+        inset: 0;
+        pointer-events: none;
+        position: absolute;
+    }
+
+    &__icon {
+        aspect-ratio: 1;
+        color: var(--accent-color);
+        flex-shrink: 0;
+        height: 1rem;
+        width: 1rem;
+
+        > use {
+            &:nth-child(2) {
+                opacity: 0;
+            }
+        }
+    }
+
+    // Button tag
+    &:where(button) {
+        background-color: var(--accent-color);
+        border-color: var(--accent-color);
+        color: #fff;
+        box-shadow: var(--root-box-shadow-low);
+        #{$b}__icon {
+            color: #fff;
+        }
+        
+        &:hover {
+            background-color: var(--accent-color-700);
+            border-color: var(--accent-color-700);
+            cursor: pointer;
+        }
+    }
+
+    // Active/checked state
+    &.-active,
+    &:has(input:checked) {
+        background-color: var(--accent-color-700);
+        border-color: var(--accent-color-700);
+        color: #fff;
+
+        #{$b}__icon {
+            color: #fff;
+        }
+    }
+
+    // Dismissabe checkbox
+    &.-dismissable:has(input:checked) {
+        background-color: var(--accent-color-700);
+        border-color: var(--accent-color-700);
+        color: #fff;
+        #{$b}__icon {
+            color: #fff;
+            > use:nth-child(1) {
+                opacity: 0;
+            }
+
+            > use:nth-child(2) {
+                opacity: 1;
+            }
+        }
+    }
+
+    // forced inactive state.
+    &.-inactive {
+        background-color: transparent;
+        border-color: var(--root-color-inactive);
+        color: var(--root-color-inactive);
+        #{$b}__icon {
+            color: var(--root-color-inactive);
+        }
+    }
+
+}

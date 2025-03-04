@@ -43,14 +43,22 @@
   --color-gray-950: #0d0d0d;
 
   /**
-   * site/brand colors
+   * Site/brand colors. Add more as needed.
    */
-  --color-example: #9933ff;
+  --color-primary: #9933ff;
+  --color-blue: #0066FF;
+  --color-blue-700: #003D99;
+  --color-aqua: #00CCCC;
+  --color-aqua-700: #009999;
 
   /**
-   * Default accent color.
+   * Default accent colors. Add more as needed.
    */
-  --accent-color: var(--color-example);
+  --accent-color: var(--color-primary);
+  --accent-secondary: var(--color-blue);
+  --accent-secondary-700: var(--color-blue-700);
+  --accent-tertiary: var(--color-aqua);
+  --accent-tertiary-700: var(--color-aqua-700);
 
   /**
    * Primary text color.
