@@ -127,6 +127,24 @@
   initial-value: 2;
 }
 
+@property --icon-fill-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: currentColor;
+}
+
+@property --icon-stroke-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: currentColor;
+}
+
+@property --icon-stroke-width {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 2;
+}
+
 /**
  * Breakpoints
  */

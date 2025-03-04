@@ -1,15 +1,15 @@
-input[type=checkbox],
-.checkbox {
+input[type=radio] {
   appearance: none;
   background: var(--color-gray-50);
   border: 2px solid var(--color-gray-500);
-  border-radius: 5px;
+  border-radius: 2em;
   display: inline grid;
   height: 1.5em;
   width: 1.5em;
 
   &::before {
     content: '';
+    border-radius: 2em;
   }
 
   &:hover {
@@ -21,15 +21,12 @@ input[type=checkbox],
     background: var(--accent-color);
     border-color: var(--accent-color);
 
-    /* Using mask as this is the only way to make the color of the checkmark dynamic */
     &::before {
-      background: var(--accent-color-contrast);
-      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M18 8L9.75 16.25L6 12.5' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
-
+      background: radial-gradient(var(--accent-color-contrast) .5em, #0000 calc(.5em + 1px));
     }
 
     &:hover {
-      background: var(--accent-color-600);
+      background-color: var(--accent-color-600);
       border-color: var(--accent-color-600);
     }
   }
@@ -38,14 +35,18 @@ input[type=checkbox],
   &:disabled {
     background: var(--color-gray-50);
     border-color: var(--color-gray-200);
-
-    &::before {
-      background-color: var(--color-gray-200);
-    }
+    cursor: not-allowed;
 
     &:hover {
-      border-color: var(--color-gray-200);
       background: var(--color-gray-50);
+      border-color: var(--color-gray-200);
+    }
+
+    &.-checked,
+    &:checked {
+      &::before {
+        background-color: var(--color-gray-200);
+      }
     }
   }
 }
