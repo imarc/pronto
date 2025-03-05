@@ -157,6 +157,19 @@
     --root-duration-slow: 0;
   }
 
+  /**
+   * Just convienence shorthands for duration and easing together.
+   */
+  --root-ease-in-fast: var(--root-duration-fast) var(--root-ease-in);
+  --root-ease-in-moderate: var(--root-duration-moderate) var(--root-ease-in);
+  --root-ease-in-slow: var(--root-duration-slow) var(--root-ease-in);
+  --root-ease-out-fast: var(--root-duration-fast) var(--root-ease-out);
+  --root-ease-out-moderate: var(--root-duration-moderate) var(--root-ease-out);
+  --root-ease-out-slow: var(--root-duration-slow) var(--root-ease-out);
+  --root-ease-in-out-fast: var(--root-duration-fast) var(--root-ease-in-out);
+  --root-ease-in-out-moderate: var(--root-duration-moderate) var(--root-ease-in-out);
+  --root-ease-in-out-slow: var(--root-duration-slow) var(--root-ease-in-out);
+
 
   //
   // Configure other --root- properties here.
