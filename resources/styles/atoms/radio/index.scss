@@ -1,4 +1,4 @@
-input:where([type=radio]) {
+:where(input[type=radio]) {
   --radio-size: 1.5rem;
   --radio-knob-size: calc(var(--radio-size) * 0.67);
 

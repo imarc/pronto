@@ -1,0 +1,41 @@
+.switch {
+  width: 4em;
+  height: 2em;
+  border-radius: 2em;
+  box-shadow: 0px 2px 4px 0px var(--color-gray-500) inset;
+
+  &::before {
+    justify-self: start;
+    margin: 3px;
+    background: var(--color-gray-600);
+    border-radius: 2em;
+    aspect-ratio: 1;
+    mask: unset;
+  }
+
+  &.-checked,
+  &:checked {
+    box-shadow: 0px 2px 4px 0px var(--accent-color-700) inset;
+
+    &::before {
+      background: var(--accent-color-contrast);
+      justify-self: end;
+      box-shadow: 0px 2px 2px 0px var(--accent-color-700);
+    }
+  }
+
+  &.-disabled,
+  &:disabled {
+    box-shadow: 0px 2px 4px 0px var(--color-gray-200) inset;
+    &::before {
+      background: var(--color-gray-200);
+    }
+
+    &.-checked,
+    &:checked {
+      &::before {
+        box-shadow: none;
+      }
+    }
+  }
+}
