@@ -43,4 +43,10 @@
       background-color: var(--accent-color-600);
     }
   }
+
+  a,
+  .link {
+    text-decoration: underline;
+    color: var(--accent-color-contrast);
+  }
 }

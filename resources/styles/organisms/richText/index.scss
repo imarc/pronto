@@ -1,4 +1,5 @@
-@use "@imarc/pronto/resources/styles/molecules/lists/index.scss";
+@use "../../molecules/lists";
+@use "../../molecules/table";
 
 .richText {
 
@@ -9,5 +10,9 @@
   ol,
   ul {
     @extend .list;
+  }
+  
+  table {
+    @extend .table;
   }
 }
