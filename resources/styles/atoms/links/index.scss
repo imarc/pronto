@@ -1,6 +1,6 @@
 a,
 .link {
-  --accent-color: var(--accent-secondary);
+  --accent-color: var(--link-color, --accent-secondary);
 
   color: var(--accent-color);
   text-decoration: none;
@@ -19,8 +19,4 @@ a,
     display: inline flex;
     gap: 1rem;
   }
-}
-
-a:not([class]) {
-  --accent-color: blue;
 }

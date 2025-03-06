@@ -19,6 +19,15 @@
     }
   }
 
+  &.-prioritize {
+    order: -1;
+
+    @media (min-width: 808px) {
+      order: unset;
+    }
+  }
+
+
   @for $i from 1 through 12 {
     &.-span-#{$i} {
       --span: #{$i};

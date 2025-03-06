@@ -1,0 +1,10 @@
+.section {
+  --accent-color: #fff;
+  padding: 5rem 0;
+  background: var(--accent-color);
+  color: var(--accent-color-text);
+
+  &__content {
+    align-self: center;
+  }
+}

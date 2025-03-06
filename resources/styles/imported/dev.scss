@@ -18,3 +18,10 @@
   height: 1.5em;
   width: 16.5em;
 }
+
+.placeholder {
+  aspect-ratio: 1;
+  border: 2px solid var(--accent-color-200);
+  background: linear-gradient(to top right, #0000 calc(50% - 2px), var(--accent-color-200), #0000 calc(50% + 2px)),
+    linear-gradient(to top left, #0000 calc(50% - 2px), var(--accent-color-200), #0000 calc(50% + 2px));
+}
