@@ -8,7 +8,7 @@
   <body>
     <div
       id="app"
-      ${component.filename.match(/atoms|molecules/) ? 'style="background: #eee; padding: 2rem"' : ''}>
+      ${component.url?.match(/atoms|molecules/) ? 'style="padding: 2rem"' : ''}>
       ${code}
     </div>
     ${includes}
