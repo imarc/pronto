@@ -9,3 +9,18 @@
     align-self: center;
   }
 }
+
+.imageWithText {
+  --columns: 2;
+
+  @media (min-width: 808px) {
+    &__image,
+    &__content {
+      grid-column: span 1;
+
+      &:first-child {
+        grid-column: 2;
+      }
+    }
+  }
+}
