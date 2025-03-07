@@ -1,6 +1,8 @@
 .media {
   $b: &;
 
+  aspect-ratio: var(--aspect-ratio);
+  background-color: rgb(from currentColor r g b / .25);
   display: inline grid;
 
   > * {
@@ -41,7 +43,7 @@
   }
 
   &__icon {
-    --icon-stroke-color: var(--accent-color);
+    --icon-stroke-color: var(--accent-color-200);
     filter: drop-shadow(var(--root-box-shadow-med));
     max-height: min(6rem, 50cqmin);
     max-width: min(6rem, 50cqmin);

@@ -1,6 +1,6 @@
 a,
 .link {
-  --accent-color: var(--link-color, --accent-secondary);
+  --accent-color: var(--link-color, var(--color-blue));
 
   color: var(--accent-color);
   text-decoration: none;
@@ -11,7 +11,7 @@ a,
   }
 
   &:hover {
-    color: var(--accent-color-700);
+    color: var(--color-blue-700);
   }
 
   &.-wide {

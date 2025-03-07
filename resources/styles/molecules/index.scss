@@ -1,7 +1,8 @@
-@use "accordion";
-@use "banner";
-@use "checklist";
-@use "tabs";
-@use "field";
-@use "lists";
-@use "table";
+@forward "accordion";
+@forward "actions";
+@forward "banner";
+@forward "checklist";
+@forward "tabs";
+@forward "field";
+@forward "lists";
+@forward "table";
