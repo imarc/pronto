@@ -6,11 +6,13 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  color: var(--root-color-headings);
+  --accent-color: var(--heading-color, --root-color-headings);
+  color: var(--accent-color);
   line-height: 1.125;
+  margin-bottom: 1rem;
   overflow-wrap: break-word;
   text-wrap: balance;
-  margin-bottom: 1rem;
+
 }
 
 h1, .h1 {

@@ -1,7 +1,7 @@
-@use "imported";
-@use "imported/dev";
-@use "config";
-@use "atoms";
-@use "molecules";
-@use "organisms";
-@use "utilities";
+@forward "imported";
+@forward "imported/dev";
+@forward "config";
+@forward "atoms";
+@forward "molecules";
+@forward "organisms";
+@forward "utilities";

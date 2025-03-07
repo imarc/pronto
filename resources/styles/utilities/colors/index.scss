@@ -1,10 +1,14 @@
 .accent-primary {
   --accent-color: var(--color-primary);
+  --link-color: #fff;
+  --heading-color: #fff;
 }
 
 .accent-secondary {
   --accent-color: var(--accent-secondary);
   --accent-color-700: var(--accent-secondary-700);
+  --link-color: #fff;
+  --heading-color: #fff;
 }
 
 .accent-tertiary {
