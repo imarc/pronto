@@ -1,8 +1,10 @@
 <section class="section container">
   <div class="grid -columns-2">
     <div class="cell section__content -prioritize">
-      <h3>Etiam pharetra auctor dolor ac posuere pellentes vulput magna sed ascipit.</h3>
-      <p>Mauris euismod sit amet dolor vel vehicula. Nulla lacinia augue sem, accumsan luctus nunc facilisis Duis ex libero, auctor a semper in, condimentum sit amet enim. Vestibulum et consectetur arcu. <a href="#">Nam nunc justo,</a> varius id metus eu praesent dictum sit amet quam efficitur placerat. </p>
+      <h3>The default section doesn't include it's own background and provides padding.</h3>
+      <p>
+        It will stack on mobile, putting elements with the <code>.-prioritize</code> modifier before others. <a href="#">Links</a> and other components will use their default colors.
+      </p>
     </div>
     <div class="cell section__content media accent-primary" style="--aspect-ratio: 634 / 368">
       <bp-lazy>
@@ -27,16 +29,16 @@
   <div class="grid -columns-2">
     <div class="cell section__content placeholder" style="aspect-ratio: 634 / 368"></div>
     <div class="cell section__content -prioritize">
-      <h3>Etiam pharetra auctor dolor ac posuere pellentes vulput magna sed ascipit.</h3>
+      <h3>This is section is using .accent-primary.</h3>
       <p>Mauris euismod sit amet dolor vel vehicula. Nulla lacinia augue sem, accumsan luctus nunc facilisis Duis ex libero, auctor a semper in, condimentum sit amet enim. Vestibulum et consectetur arcu. <a href="#">Nam nunc justo,</a> varius id metus eu praesent dictum sit amet quam efficitur placerat. </p>
     </div>
   </div>
 </section>
 
 <section class="section accent-secondary container">
-  <div class="grid -columns-2">
-    <div class="cell section__content -prioritize">
-      <h3>Etiam pharetra auctor dolor ac posuere pellentes vulput magna sed ascipit.</h3>
+  <div class="grid -columns-3">
+    <div class="cell -span-2 section__content -prioritize">
+      <h3>This is using .accent-secondary and shows how to do two-thirds content.</h3>
       <p>Mauris euismod sit amet dolor vel vehicula. Nulla lacinia augue sem, accumsan luctus nunc facilisis Duis ex libero, auctor a semper in, condimentum sit amet enim. Vestibulum et consectetur arcu. <a href="#">Nam nunc justo,</a> varius id metus eu praesent dictum sit amet quam efficitur placerat. </p>
     </div>
     <div class="cell section__content placeholder" style="aspect-ratio: 634 / 368"></div>
@@ -47,7 +49,7 @@
   <div class="grid -columns-2">
     <div class="cell section__content placeholder" style="aspect-ratio: 634 / 368"></div>
     <div class="cell section__content -prioritize">
-      <h3>Etiam pharetra auctor dolor ac posuere pellentes vulput magna sed ascipit.</h3>
+      <h3>This is using .accent-tertiary.</h3>
       <p>Mauris euismod sit amet dolor vel vehicula. Nulla lacinia augue sem, accumsan luctus nunc facilisis Duis ex libero, auctor a semper in, condimentum sit amet enim. Vestibulum et consectetur arcu. <a href="#">Nam nunc justo,</a> varius id metus eu praesent dictum sit amet quam efficitur placerat. </p>
     </div>
   </div>
