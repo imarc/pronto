@@ -1,0 +1,35 @@
+.basicSection {
+  --columns: 2;
+
+  // Natural content order for mobile
+  &__image {
+    order: 1;
+  }
+  &__testimonial {
+    order: 2;
+  }
+  &__media {
+    order: 3;
+  }
+  &__text {
+    order: 4;
+  }
+  &__cta {
+    order: 5
+  }
+
+  @media (min-width: 808px) {
+    &__text,
+    &__image,
+    &__media,
+    &__cta,
+    &__testimonial {
+      order: unset;
+      grid-column: span 1;
+
+      &:first-child {
+        grid-column: 2;
+      }
+    }
+  }
+}
