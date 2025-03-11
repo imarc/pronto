@@ -49,6 +49,12 @@
   initial-value: 20px;
 }
 
+@property --root-font-size-h6 {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 16px;
+}
+
 @property --root-font-size {
   syntax: "<length>";
   inherits: true;
