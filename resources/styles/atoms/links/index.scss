@@ -4,6 +4,9 @@ a,
 
   color: var(--accent-color);
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 1em;
 
   svg {
     display: inline;
