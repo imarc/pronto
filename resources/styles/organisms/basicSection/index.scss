@@ -1,5 +1,26 @@
+@use "@imarc/pronto/resources/styles/imported" as *;
+
 .basicSection {
-  --columns: 2;
+  $b: &;
+
+  @include at(md) {
+    --columns: 2;
+  }
+
+  &__content {
+    display: grid;
+    grid: auto / subgrid;
+    gap: 1rem var(--root-gap);
+
+    &.-centered {
+      align-items: center;
+    }
+
+    > :first-child:last-child {
+      grid-column: 1 / -1;
+    }
+  }
+
 
   // Natural content order for mobile
   &__image {
@@ -15,20 +36,29 @@
     order: 4;
   }
   &__cta {
-    order: 5
+    order: 5;
   }
 
-  @media (min-width: 808px) {
-    &__text,
-    &__image,
-    &__media,
-    &__cta,
-    &__testimonial {
+  &__text,
+  &__image,
+  &__media,
+  &__cta,
+  &__testimonial {
+    @include at(md) {
       order: unset;
-      grid-column: span 1;
+      grid-column: span var(--span, 1);
+    }
+  }
 
-      &:first-child {
-        grid-column: 2;
+  &.-wide {
+
+    @include at(md) {
+      --columns: 3;
+
+      :is(#{$b}__text, #{$b}__image, #{$b}__media, #{$b}__cta, #{$b}__testimonial) {
+        &.-wide {
+          grid-column: span var(--span, 2);
+        }
       }
     }
   }
