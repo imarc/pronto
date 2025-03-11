@@ -4,6 +4,9 @@ a,
 
   color: var(--accent-color);
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 1em;
 
   svg {
     display: inline;
@@ -11,7 +14,15 @@ a,
   }
 
   &:hover {
-    color: var(--color-blue-700);
+    color: var(--accent-color-700);
+  }
+
+  &__icon {
+    aspect-ratio: 1.5;
+    color: inherit;
+    flex: 0 0 auto;
+    max-block-size: .75em;
+    transition: color var(--root-duration-fast) var(--root-ease-out);
   }
 
   &.-wide {
