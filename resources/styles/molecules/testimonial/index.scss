@@ -11,9 +11,6 @@
     box-shadow: none;
 
     &__content {
-        grid-row: 1 / 2;
-        font-size: 1rem;
-        color: var(--root-color);
         line-height: 2;
         margin-bottom: 0;
     }
@@ -21,7 +18,7 @@
     &__citationPhotoWrapper {
         height: 4rem;
         aspect-ratio: 1;
-        border-radius: 9999px;
+        border-radius: 4rem;
         overflow: hidden;
         flex-shrink: 0;
     }
@@ -110,7 +107,7 @@
         }
 
         #{$b}__citationPhotoWrapper {
-            block-size: 5.5rem;
+            height: 5.5rem;
         }
 
         #{$b}__citationTitle {

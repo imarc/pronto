@@ -13,11 +13,6 @@
         width: fit-content;
     }
 
-    &__button {
-       --accent-color: var(--accent-secondary-700);
-       --link-color: #fff;
-    }
-
     &__icon {
         aspect-ratio: 1.5;
         block-size: pronto.fluid-rems(.5, 1);
