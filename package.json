@@ -76,5 +76,8 @@
                 4
             ]
         }
+    },
+    "peerDependencies": {
+        "@vueform/multiselect": "^2.6.11"
     }
 }
