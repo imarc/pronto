@@ -1,7 +1,7 @@
 @use "@imarc/pronto/resources/styles/imported" as pronto;
 
 :is(h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6) {
-  --accent-color: var(--heading-color, --root-color-headings);
+  --accent-color: var(--heading-color, var(--root-color-headings));
   color: var(--accent-color);
   line-height: 1.125;
   margin: 0 0 1rem;
