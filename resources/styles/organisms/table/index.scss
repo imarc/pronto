@@ -40,8 +40,9 @@
   &.-scrollable {
     --max-table-fade: 3rem;
 
+    animation-duration: 1ms;
+    animation-name: table-fade;
     animation-timeline: --table;
-    animation: table-fade 1ms;
     max-height: clamp(50vh, 640px, 100vh - 2rem);
     max-width: 100%;
     overflow: scroll;
