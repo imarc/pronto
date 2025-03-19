@@ -2,12 +2,12 @@
 import { ref, useTemplateRef } from 'vue'
 
 const { name } = defineProps({
-  name: { type: String, required: true },
+  name: { type: String },
 })
 
 const dialog = useTemplateRef('dialog')
 
-const open = ref(sessionStorage[name] !== 'closed')
+const open = ref(name ? sessionStorage[name] !== 'closed' : true)
 const close = () => sessionStorage[name] = 'closed'
 </script>
 <template>
