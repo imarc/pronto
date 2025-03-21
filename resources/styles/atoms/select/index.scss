@@ -23,7 +23,7 @@ select {
 
   &::after {
     position: absolute;
-    content: 'a';
+    content: '';
     margin-right: .75em;
     width: 1em;
     background: var(--accent-color);
