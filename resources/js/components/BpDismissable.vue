@@ -1,17 +1,19 @@
 <script setup>
 import { ref, useTemplateRef } from 'vue'
 
-const { name } = defineProps({
-  name: { type: String },
-})
-
-const dialog = useTemplateRef('dialog')
-
-const open = ref(name ? sessionStorage[name] !== 'closed' : true)
-const close = () => sessionStorage[name] = 'closed'
+const { name } = defineProps({ name: { type: String } })
+const dismissable = useTemplateRef('dismissable')
+const open = ref(name ? sessionStorage[name] !== 'dismissed' : true)
+const close = () => {
+  open.value = false
+  if (name) {
+    sessionStorage[name] = 'dismissed'
+  }
+}
 </script>
+
 <template>
-  <dialog ref="dialog" :open @close="close">
-    <slot :close="() => dialog.close()" />
-  </dialog>
+  <div ref="dismissable" v-if="open" @close="close">
+    <slot :close="close" />
+  </div>
 </template>
