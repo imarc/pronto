@@ -1,0 +1,28 @@
+.navigation {
+
+  &__list {
+    display: grid;
+    grid-auto-flow: column;
+    place-content: end space-between;
+  }
+
+  &__link,
+  &__button {
+    border: 0;
+    background: #0000;
+    color: var(--root-color);
+  }
+
+  &__button {
+    display: flex;
+    gap: .5rem;
+
+    &::after {
+      content: '';
+      width: .75rem;
+      height: 1em;
+      background: var(--accent-color);
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 21'%3E%3Cpath d='M34 2L18 18L2 2' fill='none' stroke='black' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E") center no-repeat;
+    }
+  }
+}
