@@ -1,4 +1,5 @@
 import { createApp, defineAsyncComponent } from 'vue'
+import directionals from './directives/vDirectional.js'
 
 createApp({
   components: {
@@ -7,7 +8,11 @@ createApp({
     BpLazy: defineAsyncComponent(() => import('./components/BpLazy.vue')),
     BpOpenable: defineAsyncComponent(() => import('./components/BpOpenable.vue')),
     BpTabs: defineAsyncComponent(() => import('./components/BpTabs.vue')),
+    BpDirectionalKeys: defineAsyncComponent(() => import('./components/BpDirectionalKeys.vue')),
 
     BpSelect: defineAsyncComponent(() => import('@vueform/multiselect/themes/default.css') && import('@vueform/multiselect')),
+  },
+  directives: {
+    directionals,
   },
 }).mount('#app')

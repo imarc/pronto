@@ -1,3 +1,6 @@
+<script>
+  const openableGroups = {}
+</script>
 <script setup>
 import { ref, nextTick, useSlots, useTemplateRef } from 'vue'
 
@@ -15,8 +18,10 @@ const findFocusableElement = elements => {
   }
 }
 
-const { refocus } = defineProps({
+const { refocus, label, name } = defineProps({
   refocus: { type: Boolean, default: true },
+  label: { type: String, default: "" },
+  name: { type: String, default: "global" },
 })
 const emit = defineEmits(['open', 'close'])
 const slots = useSlots()
@@ -29,11 +34,28 @@ const clickOutside = evt => {
     toggle()
   }
 }
+
 const pressEscape = evt => {
-  console.log('here', evt)
   if (evt.key === 'Escape') {
     evt.stopPropagation()
     toggle()
+  }
+}
+
+const updateGroup = (open) => {
+  if (!name) {
+    return
+  }
+
+  if (!(name in openableGroups)) {
+    openableGroups[name] = new Set()
+  }
+
+  if (open) {
+    openableGroups[name].forEach(t => t())
+    openableGroups[name].add(toggle)
+  } else {
+    openableGroups[name].delete(toggle)
   }
 }
 
@@ -41,6 +63,7 @@ const toggle = evt => {
   evt?.stopPropagation()
   emit(open.value ? 'close' : 'open')
   open.value = !open.value
+  updateGroup(open.value)
   nextTick(() => {
     if (open.value) {
       if (refocus) {
@@ -58,13 +81,11 @@ const toggle = evt => {
     }
   })
 }
-
-
 </script>
 
 <template>
   <slot name="toggle" v-bind="{ toggle }">
-    <button v-bind="$attrs" ref="button" @click="toggle">toggle</button>
+    <button v-bind="$attrs" ref="button" @click="toggle">{{ label }}</button>
   </slot>
   <slot v-if="open" />
 </template>
