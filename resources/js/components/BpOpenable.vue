@@ -4,11 +4,16 @@
 <script setup>
 import { ref, nextTick, useSlots, useTemplateRef } from 'vue'
 
+import focusableElements from '../composables/FocusableElements.js'
+
 const FOCUSABLE_SELECTOR = `:not([tabindex^="-"]):not([disabled]):is(a[href],audio[controls],button,details summary,input,map area[href],select,svg a[xlink\:href],[tabindex],textarea,video[controls])`
 
 const findFocusableElement = elements => {
+  console.log('findFocusableElement', elements, openable.value)
+  debugger
   for (const vnode of elements) {
     let el = vnode.el || vnode.value
+    if (!el) continue
     if (el.matches(FOCUSABLE_SELECTOR)) {
       return el
     }
@@ -26,6 +31,7 @@ const { refocus, label, name } = defineProps({
 const emit = defineEmits(['open', 'close'])
 const slots = useSlots()
 const button = useTemplateRef('button')
+const openable = useTemplateRef('openable')
 const open = ref(false)
 
 const clickOutside = evt => {
@@ -67,8 +73,7 @@ const toggle = evt => {
   nextTick(() => {
     if (open.value) {
       if (refocus) {
-        const el = findFocusableElement(slots.default())
-        el.focus()
+        focusableElements(openable)?.[0].focus()
       }
 
       document.documentElement.addEventListener('click', clickOutside)
@@ -76,8 +81,7 @@ const toggle = evt => {
     } else {
       document.documentElement.removeEventListener('click', clickOutside)
       document.documentElement.removeEventListener('keydown', pressEscape)
-      const el = findFocusableElement(slots.toggle?.() || [ button ])
-      el.focus()
+      focusableElements(button)?.[0].focus()
     }
   })
 }
@@ -87,5 +91,7 @@ const toggle = evt => {
   <slot name="toggle" v-bind="{ toggle }">
     <button v-bind="$attrs" ref="button" @click="toggle">{{ label }}</button>
   </slot>
-  <slot v-if="open" />
+  <div ref="openable">
+    <slot v-if="open" />
+  </div>
 </template>

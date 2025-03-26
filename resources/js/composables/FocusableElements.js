@@ -9,5 +9,7 @@ export default function focusableElements(element, includeSelf = true) {
     elements.unshift(element)
   }
 
+  console.log('focus within', element, elements.slice(0, 1))
+
   return elements
 }
