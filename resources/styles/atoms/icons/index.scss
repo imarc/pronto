@@ -1,11 +1,25 @@
 .icon {
   --accent-color: currentColor;
   --icon-stroke-color: #ffffff;
-  --icon-fill-color: var(--accent-color);
+  --icon-color: var(--accent-color);
 
   height: 1.5em;
 
-  &.-heavy {
-    --icon-stroke-width: 2;
+  &.-boxed,
+  &.-circled {
+    aspect-ratio: 1;
+    background: var(--accent-color);
+    --icon-color: #fff;
+    display: inline grid;
+    padding: .3125em;
+  }
+
+  /* Using clip-path to avoid clipping the icons. */
+  &.-boxed {
+    clip-path: rect(auto auto auto auto round .25em);
+  }
+
+  &.-circled {
+    clip-path: circle();
   }
 }
