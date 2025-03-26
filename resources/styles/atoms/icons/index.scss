@@ -3,8 +3,8 @@
   --icon-color: var(--accent-color);
   height: 1.5em;
 
-  &.-boxed,
-  &.-circled {
+  &.-square,
+  &.-circle {
     aspect-ratio: 1;
     background: var(--accent-color);
     --icon-color: var(--icon-stroke-color);
@@ -12,12 +12,12 @@
     padding: .3125em;
   }
 
-  /* Using clip-path to avoid clipping the icons. */
-  &.-boxed {
-    clip-path: rect(auto auto auto auto round .25em);
+  &.-square {
+    border-radius: .25em;
   }
 
-  &.-circled {
-    clip-path: circle();
+  &.-circle {
+    /* Using clip-path to avoid clipping the icons. */
+    clip-path: circle(calc(50% - .5px));
   }
 }
