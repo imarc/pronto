@@ -124,7 +124,7 @@
 @property --root-icon-stroke-color {
   syntax: "<color>";
   inherits: true;
-  initial-value: currentColor;
+  initial-value: #fff;
 }
 
 @property --root-icon-stroke-width {
