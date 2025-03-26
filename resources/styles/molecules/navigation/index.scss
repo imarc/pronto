@@ -35,32 +35,33 @@
     &.-wide {
       position: static;
 
-      .dropdown {
+      #{$b}__dropdown {
         width: 100%;
         left: 0;
       }
     }
 
-    &:has(.dropdown) {
+    &:has(#{$b}__dropdown) {
       background: #fff;
       box-shadow: var(--root-box-shadow-med);
     }
   }
+
+  &__dropdown {
+    background: #fff;
+    box-shadow: var(--root-box-shadow-med);
+    clip-path: rect(-1px 200% 200% -100%);
+    padding: 1.5rem;
+    position: absolute;
+    width: max-content;
+
+    &.-centered {
+      left: 50%;
+      translate: -50%;
+    }
+    &.-rightAligned {
+      right: 0;
+    }
+  }
 }
 
-.dropdown {
-  background: #fff;
-  box-shadow: var(--root-box-shadow-med);
-  clip-path: rect(0 200% 200% -100%);
-  padding: 1.5rem;
-  position: absolute;
-  width: max-content;
-
-  &.-centered {
-    left: 50%;
-    translate: -50%;
-  }
-  &.-rightAligned {
-    right: 0;
-  }
-}
