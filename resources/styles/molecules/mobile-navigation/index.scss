@@ -28,12 +28,24 @@
     border-top: 1px solid var(--color-gray-100);
   }
 
-  &__submenu {
-    height: 3rem;
-    aspect-ratio: 1;
-    background: var(--color-gray-100);
-    color: var(--accent-color);
-    border-radius: 3rem;
-    padding: .75rem;
+  &__buttonIcon {
+    appearance: none;
+    border: 0;
+    padding: 1rem;
+    display: flex;
+    background: #00f1;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    &::after {
+      content: '';
+      height: 3rem;
+      aspect-ratio: 1;
+      background: var(--color-gray-100);
+      color: var(--accent-color);
+      border-radius: 3rem;
+      padding: .75rem;
+    }
   }
 }
