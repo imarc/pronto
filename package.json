@@ -1,6 +1,6 @@
 {
     "name": "@imarc/pronto",
-    "version": "2.0.0-alpha.9",
+    "version": "2.0.0-alpha.10",
     "description": "A light, customizable frontend starter kit for the component library",
     "author": "Imarc",
     "license": "Apache-2.0",
@@ -22,7 +22,7 @@
         "preview": "vite preview"
     },
     "dependencies": {
-        "@imarc/vitrine": "^1.0.0-beta.6",
+        "@imarc/vitrine": "^1.0.0-beta.7",
         "modern-normalize": "^3.0.1",
         "vue": "^3.4.31"
     },
