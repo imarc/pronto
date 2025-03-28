@@ -1,43 +1,101 @@
 <nav class="mobileNavigation">
-  <bp-openable class="mobileNavigation__menu" label="menu" v-slot="{ toggle }">
-    <div class="mobileNavigation__pane">
-      <div class="mobileNavigation__title">
-        Menu
-      </div>
-      <ul class="mobileNavigation__list" v-directionals>
-        <li>
-          <bp-openable class="mobileNavigation__button" name="submenu">
-            <template #toggle>
-              STUFF
-            </template>
-            <template v-slot="{ toggle }">
-              <div class="mobileNavigation__pane">
-                <div class="mobileNavigation__title">
-                  <button class="button accent-secondary -circle -ghost" @click.stopPropagation="toggle" tabindex="-1">
-                    <svg class="icon"><use href="/main-icons-sprite.svg#chevron-left" /></svg>
-                  </button>
-                  Menu
+  <bp-openable class="mobileNavigation__menu button -circle -ghost" label="menu">
+    <template #toggle>
+        <svg class="button__icon icon"><use href="/main-icons-sprite.svg#bars" /></svg>
+    </template>
+    <template v-slot="{ toggle }">
+      <div class="mobileNavigation__pane" v-scrolllock>
+        <div class="mobileNavigation__title">
+          Menu
+        </div>
+        <ul class="mobileNavigation__list" v-directionals>
+          <li>
+            <bp-openable class="mobileNavigation__button" name="submenu">
+              <template #toggle>
+                Submenu
+                <svg class="icon"><use href="/main-icons-sprite.svg#chevron-right" /></svg>
+              </template>
+              <template v-slot="{ toggle }">
+                <div class="mobileNavigation__pane">
+                  <div class="mobileNavigation__title">
+                    <div class="mobileNavigation__actions">
+                      <button class="button -circle -ghost" @click.stopPropagation="toggle" tabindex="-1">
+                        <svg class="icon"><use href="/main-icons-sprite.svg#chevron-left" /></svg>
+                      </button>
+                    </div>
+                    Menu
+                  </div>
+                  <ul class="mobileNavigation__list" v-directionals>
+                    <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link">Consectetur asperiores</a></li>
+                    <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link">Consectetur asperiores</a></li>
+                    <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link">Amet porro.</a></li>
+                    <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link">Ipsum dolorem</a></li>
+                  </ul>
                 </div>
-                <ul class="mobileNavigation__list" v-directionals>
-                  <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link"><span>Consectetur asperiores</span></a></li>
-                  <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link"><span>Consectetur asperiores</span></a></li>
-                  <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link"><span>Amet porro.</span></a></li>
-                  <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link"><span>Ipsum dolorem</span></a></li>
-                </ul>
-              </div>
-            </template>
-          </bp-openable>
-        </li>
-        <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link"><span>Consectetur asperiores</span></a></li>
-        <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link"><span>Amet porro.</span></a></li>
-        <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link"><span>Ipsum dolorem</span></a></li>
-      </ul>
-    </div>
-    <div class="mobileNavigation__closeButton">
-      <button class="button accent-secondary -circle -ghost" @click="toggle">
-        <svg class="icon"><use href="/main-icons-sprite.svg#close" /></svg>
-      </button>
-    </div>
+              </template>
+            </bp-openable>
+          </li>
+          <li>
+            <bp-openable class="mobileNavigation__button" name="submenu">
+              <template #toggle>
+                STUFF
+                <svg class="icon"><use href="/main-icons-sprite.svg#chevron-right" /></svg>
+              </template>
+              <template v-slot="{ toggle }">
+                <div class="mobileNavigation__pane">
+                  <div class="mobileNavigation__title">
+                    <div class="mobileNavigation__actions">
+                      <button class="button -circle -ghost" @click.stopPropagation="toggle" tabindex="-1">
+                        <svg class="icon"><use href="/main-icons-sprite.svg#chevron-left" /></svg>
+                      </button>
+                    </div>
+                    Menu
+                  </div>
+                  <ul class="mobileNavigation__list" v-directionals>
+                    <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link">Consectetur asperiores</a></li>
+                    <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link">Consectetur asperiores</a></li>
+                    <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link">Amet porro.</a></li>
+                    <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link">Ipsum dolorem</a></li>
+                  </ul>
+                </div>
+              </template>
+            </bp-openable>
+          </li>
+          <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link">Consectetur asperiores</a></li>
+          <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link">Amet porro.</a></li>
+          <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link">Ipsum dolorem</a></li>
+          <li class="mobileNavigation__item">
+            <a class="mobileNavigation__link" href="">Amet impedit cumque</a>
+          </li>
+          <li class="mobileNavigation__item">
+            <a class="mobileNavigation__link" href="">Consectetur vitae temporibus!</a>
+          </li>
+          <li class="mobileNavigation__item">
+            <a class="mobileNavigation__link" href="">Consectetur doloremque reiciendis</a>
+          </li>
+          <li class="mobileNavigation__item">
+            <a class="mobileNavigation__link" href="">Dolor pariatur rerum.</a>
+          </li>
+          <li class="mobileNavigation__item">
+            <a class="mobileNavigation__link" href="">Ipsum a officiis.</a>
+          </li>
+          <li class="mobileNavigation__item">
+            <a class="mobileNavigation__link" href="">Dolor unde debitis.</a>
+          </li>
+          <li class="mobileNavigation__item">
+            <a class="mobileNavigation__link" href="">Adipisicing delectus velit</a>
+          </li>
+          <li class="mobileNavigation__item">
+            <a class="mobileNavigation__link" href="">Amet aliquam voluptates</a>
+          </li>
+        </ul>
+      </div>
+      <div class="mobileNavigation__closeButton">
+        <button class="button -circle -ghost" @click="toggle">
+          <svg class="icon"><use href="/main-icons-sprite.svg#close" /></svg>
+        </button>
+      </div>
+    </template>
   </bp-openable>
 </nav>
 

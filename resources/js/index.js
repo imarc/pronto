@@ -1,5 +1,6 @@
 import { createApp, defineAsyncComponent } from 'vue'
 import directionals from './directives/vDirectional.js'
+import scrolllock from './directives/vScrollock.js'
 
 createApp({
   components: {
@@ -14,5 +15,6 @@ createApp({
   },
   directives: {
     directionals,
+    scrolllock,
   },
 }).mount('#app')
