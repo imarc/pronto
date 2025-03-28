@@ -2,50 +2,42 @@
   &__pane {
     background: #fff;
     position: fixed;
-    inset: 0 auto 0 0;
+    inset: 0 4.5rem 0 0;
     z-index: 1;
-    display: grid;
-    grid: auto 1fr / 1fr auto;
-    place-items: start center;
 
-    &::before {
-      content: 'x';
-      grid-area: 1 / 2 / -1;
-    }
+    //mask: url('data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2037%2037%22%3E%3Crect%20x%3D%223%22%20width%3D%2248%22%20height%3D%224%22%20rx%3D%222%22%20transform%3D%22rotate(45%203%200)%22%20fill%3D%22var(--icon-color%2C%20currentColor)%22%3E%3C%2Frect%3E%3Crect%20x%3D%2216%22%20y%3D%2217%22%20width%3D%224%22%20height%3D%224%22%20rx%3D%222%22%20fill%3D%22var(--icon-color%2C%20currentColor)%22%3E%3C%2Frect%3E%3Crect%20y%3D%2234%22%20width%3D%2248%22%20height%3D%224%22%20rx%3D%222%22%20transform%3D%22rotate(-45%200%2034)%22%20fill%3D%22var(--icon-color%2C%20currentColor)%22%3E%3C%2Frect%3E%3C%2Fsvg%3E');
+  }
+
+  &__closeButton {
+    background: var(--color-gray-100);
+    display: grid;
+    inset: 0 0 0 auto;
+    padding: .375rem 0;
+    place-content: start center;
+    position: fixed;
+    width: 4.5rem;
+    z-index: 1;
   }
 
   &__title {
     padding: 1rem 1.5rem;
   }
 
-  &__list > li > a {
+  &__button,
+  &__link {
     padding: 1rem .5rem 1rem 1.5rem;
     display: grid;
-    grid: auto / 1fr auto;
+    place-items: start;
   }
 
-  &__list > li:nth-child(n + 2) > a {
+  &__list > li {
     border-top: 1px solid var(--color-gray-100);
   }
 
-  &__buttonIcon {
+  &__button {
     appearance: none;
     border: 0;
-    padding: 1rem;
-    display: flex;
-    background: #00f1;
-    align-items: center;
-    justify-content: space-between;
     width: 100%;
-
-    &::after {
-      content: '';
-      height: 3rem;
-      aspect-ratio: 1;
-      background: var(--color-gray-100);
-      color: var(--accent-color);
-      border-radius: 3rem;
-      padding: .75rem;
-    }
+    background: #0000;
   }
 }

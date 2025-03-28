@@ -1,11 +1,11 @@
 .icon {
   --accent-color: var(--icon-fill-color);
   --icon-color: var(--accent-color);
+  aspect-ratio: 1;
   height: 1.5em;
 
   &.-square,
   &.-circle {
-    aspect-ratio: 1;
     background: var(--accent-color);
     --icon-color: var(--icon-stroke-color);
     display: inline grid;

@@ -1,29 +1,14 @@
 <script>
   const openableGroups = {}
 </script>
+
 <script setup>
 import { ref, nextTick, useSlots, useTemplateRef } from 'vue'
 
 import focusableElements from '../composables/FocusableElements.js'
 
-const FOCUSABLE_SELECTOR = `:not([tabindex^="-"]):not([disabled]):is(a[href],audio[controls],button,details summary,input,map area[href],select,svg a[xlink\:href],[tabindex],textarea,video[controls])`
-
-const findFocusableElement = elements => {
-  console.log('findFocusableElement', elements, openable.value)
-  debugger
-  for (const vnode of elements) {
-    let el = vnode.el || vnode.value
-    if (!el) continue
-    if (el.matches(FOCUSABLE_SELECTOR)) {
-      return el
-    }
-    if (el = el.querySelector(FOCUSABLE_SELECTOR)) {
-      return el
-    }
-  }
-}
-
-const { refocus, label, name } = defineProps({
+const { closeOnBlur, refocus, label, name } = defineProps({
+  closeOnBlur: { type: Boolean, default: true },
   refocus: { type: Boolean, default: true },
   label: { type: String, default: "" },
   name: { type: String, default: "global" },
@@ -34,9 +19,8 @@ const button = useTemplateRef('button')
 const openable = useTemplateRef('openable')
 const open = ref(false)
 
-const clickOutside = evt => {
-  if (slots.default().map(vnode => vnode.el).every(el => !el.contains(evt.target))) {
-    evt.stopPropagation()
+const targetOutside = evt => {
+  if (openable.value && !openable.value.contains(evt.target)) {
     toggle()
   }
 }
@@ -47,6 +31,8 @@ const pressEscape = evt => {
     toggle()
   }
 }
+
+let escapeHandler = null
 
 const updateGroup = (open) => {
   if (!name) {
@@ -76,11 +62,20 @@ const toggle = evt => {
         focusableElements(openable)?.[0].focus()
       }
 
-      document.documentElement.addEventListener('click', clickOutside)
-      document.documentElement.addEventListener('keydown', pressEscape)
+      document.documentElement.addEventListener('click', targetOutside)
+      openable.value.addEventListener('keydown', pressEscape)
+
+      if (closeOnBlur) {
+        document.documentElement.addEventListener('focusin', targetOutside)
+      }
     } else {
-      document.documentElement.removeEventListener('click', clickOutside)
-      document.documentElement.removeEventListener('keydown', pressEscape)
+      document.documentElement.removeEventListener('click', targetOutside)
+      openable.value.removeEventListener('keydown', pressEscape)
+
+      if (closeOnBlur) {
+        document.documentElement.removeEventListener('focusin', targetOutside)
+      }
+
       focusableElements(button)?.[0].focus()
     }
   })
@@ -88,10 +83,10 @@ const toggle = evt => {
 </script>
 
 <template>
-  <slot name="toggle" v-bind="{ toggle }">
-    <button v-bind="$attrs" ref="button" @click="toggle">{{ label }}</button>
-  </slot>
+  <button v-bind="$attrs" ref="button" @click="toggle">
+    <slot name="toggle" v-bind="{ toggle }">{{ label }}</slot>
+  </button>
   <div ref="openable">
-    <slot v-if="open" />
+    <slot v-if="open" v-bind="{ toggle }" />
   </div>
 </template>

@@ -1,7 +1,7 @@
 <nav class="navigation" v-directionals>
   <ul class="navigation__list">
     <li class="navigation__item" v-directionals>
-      <bp-openable class="navigation__button" label="Default Dropdown">
+      <bp-openable class="navigation__button" label="Default Dropdown" :close-on-blur="false">
         <div class="navigation__dropdown">
           <ul>
             <li><a href=""><span>Consectetur asperiores</span></a></li>
@@ -13,7 +13,7 @@
       </bp-openable>
     </li>
     <li class="navigation__item" v-directionals>
-      <bp-openable class="navigation__button" label="Centered Dropdown">
+      <bp-openable class="navigation__button" label="Centered Dropdown" :close-on-blur="false">
         <div class="navigation__dropdown -centered">
           <ul>
             <li><a href=""><span>Consectetur asperiores</span></a></li>
@@ -25,7 +25,7 @@
       </bp-openable>
     </li>
     <li class="navigation__item -wide" v-directionals>
-      <bp-openable class="navigation__button" label="Full-width Dropdown">
+      <bp-openable class="navigation__button" label="Full-width Dropdown" :close-on-blur="false">
         <div class="navigation__dropdown grid -columns-3">
           <div class="cell">
             <h3>Heading</h3>
@@ -67,7 +67,7 @@
       </bp-openable>
     </li>
     <li class="navigation__item" v-directionals>
-      <bp-openable class="navigation__button" label="Right Aligned Dropdown">
+      <bp-openable class="navigation__button" label="Right Aligned Dropdown" :close-on-blur="false">
         <div class="navigation__dropdown -rightAligned">
           <ul>
             <li><a href=""><span>Consectetur asperiores</span></a></li>

@@ -1,109 +1,44 @@
 <nav class="mobileNavigation">
-  <bp-openable class="mobileNavigation__button" label="menu">
+  <bp-openable class="mobileNavigation__menu" label="menu" v-slot="{ toggle }">
     <div class="mobileNavigation__pane">
-      <div class="mobileNavigation__title">Menu</div>
+      <div class="mobileNavigation__title">
+        Menu
+      </div>
       <ul class="mobileNavigation__list" v-directionals>
         <li>
-          <bp-openable class="mobileNavigation__buttonIcon" label="Submenu" name="submenu">
-            <div class="mobileNavigation__pane">
-              <ul>
-                <li><a href=""><span>Consectetur asperiores</span></a></li>
-                <li><a href=""><span>Consectetur asperiores</span></a></li>
-                <li><a href=""><span>Amet porro.</span></a></li>
-                <li><a href=""><span>Ipsum dolorem</span></a><li>
-              </ul>
-            </div>
+          <bp-openable class="mobileNavigation__button" name="submenu">
+            <template #toggle>
+              STUFF
+            </template>
+            <template v-slot="{ toggle }">
+              <div class="mobileNavigation__pane">
+                <div class="mobileNavigation__title">
+                  <button class="button accent-secondary -circle -ghost" @click.stopPropagation="toggle" tabindex="-1">
+                    <svg class="icon"><use href="/main-icons-sprite.svg#chevron-left" /></svg>
+                  </button>
+                  Menu
+                </div>
+                <ul class="mobileNavigation__list" v-directionals>
+                  <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link"><span>Consectetur asperiores</span></a></li>
+                  <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link"><span>Consectetur asperiores</span></a></li>
+                  <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link"><span>Amet porro.</span></a></li>
+                  <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link"><span>Ipsum dolorem</span></a></li>
+                </ul>
+              </div>
+            </template>
           </bp-openable>
         </li>
-        <li><a href=""><span>Consectetur asperiores</span></a></li>
-        <li><a href=""><span>Amet porro.</span></a></li>
-        <li><a href=""><span>Ipsum dolorem</span></a><li>
+        <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link"><span>Consectetur asperiores</span></a></li>
+        <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link"><span>Amet porro.</span></a></li>
+        <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link"><span>Ipsum dolorem</span></a></li>
       </ul>
     </div>
+    <div class="mobileNavigation__closeButton">
+      <button class="button accent-secondary -circle -ghost" @click="toggle">
+        <svg class="icon"><use href="/main-icons-sprite.svg#close" /></svg>
+      </button>
+    </div>
   </bp-openable>
-</nav>
-
-<nav class="navigation" v-directionals>
-  <ul class="navigation__list">
-    <li class="navigation__item" v-directionals>
-      <bp-openable class="navigation__button" label="Default Dropdown">
-        <div class="navigation__dropdown">
-          <ul>
-            <li><a href=""><span>Consectetur asperiores</span></a></li>
-            <li><a href=""><span>Consectetur asperiores</span></a></li>
-            <li><a href=""><span>Amet porro.</span></a></li>
-            <li><a href=""><span>Ipsum dolorem</span></a><li>
-          </ul>
-        </div>
-      </bp-openable>
-    </li>
-    <li class="navigation__item" v-directionals>
-      <bp-openable class="navigation__button" label="Centered Dropdown">
-        <div class="navigation__dropdown -centered">
-          <ul>
-            <li><a href=""><span>Consectetur asperiores</span></a></li>
-            <li><a href=""><span>Consectetur asperiores</span></a></li>
-            <li><a href=""><span>Amet porro.</span></a></li>
-            <li><a href=""><span>Ipsum dolorem</span></a><li>
-          </ul>
-        </div>
-      </bp-openable>
-    </li>
-    <li class="navigation__item -wide" v-directionals>
-      <bp-openable class="navigation__button" label="Full-width Dropdown">
-        <div class="navigation__dropdown grid -columns-3">
-          <div class="cell">
-            <h3>Heading</h3>
-            <p>
-              Adipisicing obcaecati tempora qui ullam voluptates beatae? Assumenda soluta quae
-            </p>
-            <ul>
-              <li><a href=""><span>Consectetur asperiores</span></a></li>
-              <li><a href=""><span>Consectetur asperiores</span></a></li>
-              <li><a href=""><span>Amet porro.</span></a></li>
-              <li><a href=""><span>Ipsum dolorem</span></a><li>
-            </ul>
-          </div>
-          <div class="cell">
-            <h3>Heading</h3>
-            <p>
-              Adipisicing obcaecati tempora qui ullam voluptates beatae? Assumenda soluta quae
-            </p>
-            <ul>
-              <li><a href=""><span>Consectetur asperiores</span></a></li>
-              <li><a href=""><span>Consectetur asperiores</span></a></li>
-              <li><a href=""><span>Amet porro.</span></a></li>
-              <li><a href=""><span>Ipsum dolorem</span></a><li>
-            </ul>
-          </div>
-          <div class="cell">
-            <h3>Heading</h3>
-            <p>
-              Adipisicing obcaecati tempora qui ullam voluptates beatae? Assumenda soluta quae
-            </p>
-            <ul>
-              <li><a href=""><span>Consectetur asperiores</span></a></li>
-              <li><a href=""><span>Consectetur asperiores</span></a></li>
-              <li><a href=""><span>Amet porro.</span></a></li>
-              <li><a href=""><span>Ipsum dolorem</span></a><li>
-            </ul>
-          </div>
-        </div>
-      </bp-openable>
-    </li>
-    <li class="navigation__item" v-directionals>
-      <bp-openable class="navigation__button" label="Right Aligned Dropdown">
-        <div class="navigation__dropdown -rightAligned">
-          <ul>
-            <li><a href=""><span>Consectetur asperiores</span></a></li>
-            <li><a href=""><span>Consectetur asperiores</span></a></li>
-            <li><a href=""><span>Amet porro.</span></a></li>
-            <li><a href=""><span>Ipsum dolorem</span></a><li>
-          </ul>
-        </div>
-      </bp-openable>
-    </li>
-  </ul>
 </nav>
 
 <p>Elit nesciunt repellat aut exercitationem minus Ea doloribus asperiores quos aliquam repellat Et dolor minima eaque nostrum dolore animi. Debitis expedita assumenda dolores tenetur recusandae Ea nesciunt totam tenetur excepturi</p>
