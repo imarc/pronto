@@ -1,10 +1,11 @@
 .input {
   background-color: var(--accent-gray-50);
+  border-radius: var(--root-border-radius);
   border: 2px solid var(--accent-color);
   color: var(--color-gray-800);
-  border-radius: var(--root-border-radius);
-  padding: .5em 1em;
   display: inline-block;
+  padding: .5em 1em;
+  width: 100%;
 
   @layer TemporaryLayerToRefactorAwayLater {
     --accent-color: var(--color-gray-500);
@@ -30,7 +31,6 @@
 
   &:is(textarea) {
     display: block;
-    width: 100%;
     resize: vertical;
   }
 

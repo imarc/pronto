@@ -54,6 +54,7 @@
     padding: 1.5rem;
     position: absolute;
     width: max-content;
+    z-index: 1;
 
     &.-centered {
       left: 50%;
