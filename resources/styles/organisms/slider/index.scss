@@ -1,27 +1,28 @@
 @use "@imarc/pronto/resources/styles/imported" as *;
 
 .slider {
+  $b: &;
+
   --swiper-theme-color: var(--accent-color);
-  overflow: hidden;
 
   &__content {
     container-type: inline-size;
-    margin-bottom: 6.5rem;
-    padding: 0 7rem;
+    overflow: hidden;
+    padding: 0 7rem 6.5rem;
   }
-  
+
   swiper-slide {
-    width: 100cqmin;
+    width: 100cqw;
     height: auto;
 
     @include at(md) {
       width: auto;
-      height: calc(50cqmin - 1rem);
+      height: calc(50cqw - 1rem);
     }
 
     @include at(lg) {
       width: auto;
-      height: calc(40cqmin - 2rem);
+      height: calc(40cqw - 2rem);
     }
   }
 
@@ -69,5 +70,69 @@
 
   swiper-container::part(button-next) {
     right: -7rem;
+  }
+
+  &.-foobar {
+    #{$b}__content {
+      padding: 0 0 11.5rem;
+    }
+
+    swiper-container::part(button-prev),
+    swiper-container::part(button-next) {
+      top: 100%;
+      margin-top: 5.25rem;
+      z-index: 12;
+    }
+
+    swiper-container::part(button-prev) {
+      left: 0;
+    }
+
+    swiper-container::part(button-next) {
+      right: 0;
+    }
+    swiper-container::part(pagination) {
+      margin-top: 6rem;
+      justify-content: center;
+    }
+
+
+    @include at(lg) {
+      --columns: 3;
+
+      #{$b}__calloutIcon {
+        grid-area: 1 / main;
+      }
+
+      #{$b}__callout {
+        grid-column: main / span 1;
+      }
+      #{$b}__content {
+        grid-column: 3 / main;
+      }
+
+      .swiper-slide-next {
+        mask: linear-gradient(to right, #fff, #0000 50%);
+      }
+    }
+
+    #{$b}__callout {
+      display: grid;
+      gap: 2rem;
+    }
+
+    #{$b}__calloutIcon {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    swiper-slide {
+      width: calc(66.66cqw);
+      height: auto;
+
+      > * {
+        height: 100%;
+      }
+    }
   }
 }
