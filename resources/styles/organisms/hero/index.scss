@@ -12,10 +12,6 @@
     gap: 1rem var(--root-gap);
     align-items: center;
 
-    &.-centered {
-      align-items: center;
-    }
-
     > :first-child:last-child {
       grid-column: 1 / -1;
     }
