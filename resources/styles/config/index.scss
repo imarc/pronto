@@ -45,20 +45,16 @@
   /**
    * Site/brand colors. Add more as needed.
    */
-  --color-primary: #9933ff;
+  --color-purple: #9933ff;
   --color-blue: #0066FF;
   --color-blue-700: #003D99;
   --color-aqua: #00CCCC;
   --color-aqua-700: #009999;
 
   /**
-   * Default accent colors. Add more as needed.
+   * Default accent color.
    */
-  --accent-color: var(--color-primary);
-  --accent-secondary: var(--color-blue);
-  --accent-secondary-700: var(--color-blue-700);
-  --accent-tertiary: var(--color-aqua);
-  --accent-tertiary-700: var(--color-aqua-700);
+  --accent-color: var(--color-purple);
 
   /**
    * Primary text color.

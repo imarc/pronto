@@ -12,6 +12,7 @@ createApp({
     BpDirectionalKeys: defineAsyncComponent(() => import('./components/BpDirectionalKeys.vue')),
 
     BpSelect: defineAsyncComponent(() => import('@vueform/multiselect/themes/default.css') && import('@vueform/multiselect')),
+    BpSlider: defineAsyncComponent(() => import('./components/BpSlider.vue')),
   },
   directives: {
     directionals,
