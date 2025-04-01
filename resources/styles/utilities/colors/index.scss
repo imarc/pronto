@@ -1,19 +1,19 @@
 .accent-primary {
-  --accent-color: var(--color-primary);
+  --accent-color: var(--color-purple);
   --link-color: #fff;
   --heading-color: #fff;
 }
 
 .accent-secondary {
-  --accent-color: var(--accent-secondary);
-  --accent-color-700: var(--accent-secondary-700);
+  --accent-color: var(--color-blue);
+  --accent-color-700: var(--color-blue-700);
   --link-color: #fff;
   --heading-color: #fff;
 }
 
 .accent-tertiary {
-  --accent-color: var(--accent-tertiary);
-  --accent-color-700: var(--accent-tertiary-700);
+  --accent-color: var(--color-aqua);
+  --accent-color-700: var(--color-aqua-700);
 }
 
 .accent-white {
@@ -23,7 +23,7 @@
   --accent-color-300: rgb(255 255 255 / .6);
   --accent-color-400: rgb(255 255 255 / .8);
   --accent-color: #fff;
-  --accent-color-text: var(--color-primary);
+  --accent-color-text: var(--color-purple);
 }
 
 .accent-black {

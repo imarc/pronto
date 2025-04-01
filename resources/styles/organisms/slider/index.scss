@@ -1,0 +1,73 @@
+@use "@imarc/pronto/resources/styles/imported" as *;
+
+.slider {
+  --swiper-theme-color: var(--accent-color);
+  overflow: hidden;
+
+  &__content {
+    container-type: inline-size;
+    margin-bottom: 6.5rem;
+    padding: 0 7rem;
+  }
+  
+  swiper-slide {
+    width: 100cqmin;
+    height: auto;
+
+    @include at(md) {
+      width: auto;
+      height: calc(50cqmin - 1rem);
+    }
+
+    @include at(lg) {
+      width: auto;
+      height: calc(40cqmin - 2rem);
+    }
+  }
+
+  swiper-container::part(bullet) {
+    opacity: 1;
+    width: 16px;
+    height: 16px;
+    background-color: var(--accent-color);
+  }
+
+  swiper-container::part(bullet-active) {
+    background-color: #000;
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  swiper-container::part(container) {
+    overflow: visible;
+  }
+
+  swiper-container::part(pagination) {
+    align-items: center;
+    bottom: auto;
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    text-align: left;
+    top: 100%;
+  }
+
+  swiper-container::part(button-prev),
+  swiper-container::part(button-next) {
+    background: var(--accent-color);
+    width: 1rem;
+    border-radius: 3rem;
+    height: 1rem;
+    padding: 1rem;
+    color: #fff;
+  }
+
+  swiper-container::part(button-prev) {
+    position: absolute;
+    left: -7rem;
+  }
+
+  swiper-container::part(button-next) {
+    right: -7rem;
+  }
+}
