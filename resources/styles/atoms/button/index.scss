@@ -1,9 +1,12 @@
 .button {
+  $b: &;
+
   align-items: center;
   background-color: var(--accent-color);
   border-radius: 3em;
   border: var(--root-border-width) solid var(--accent-color);
   color: var(--accent-color-text);
+  cursor: pointer;
   display: inline flex;
   font-weight: 700;
   gap: .5em;
@@ -15,6 +18,11 @@
   &__icon {
     width: 1em;
     height: 1em;
+
+    &.-large {
+      width: 2em;
+      height: 2em;
+    }
   }
 
   &:hover,
@@ -60,14 +68,16 @@
     }
   }
 
-  &.-square {
-    aspect-ratio: 1;
-    border-radius: 0;
-    padding: var(--root-padding-block);
+  &.-square,
+  &.-circle {
+    display: inline grid;
+    height: 3em;
+    padding: 0;
+    place-content: center;
+    width: 3em;
   }
 
-  &.-circle {
-    aspect-ratio: 1;
-    padding: var(--root-padding-block);
+  &.-square {
+    border-radius: 0;
   }
 }
