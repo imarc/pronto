@@ -94,6 +94,12 @@ p:has(+ :where(blockquote, hr, ol, picture, pre, table, ul)) {
   margin-bottom: 3rem;
 }
 
+address {
+  font-style: normal;
+  line-height: 1.25;
+  margin-bottom: .5em;
+}
+
 /**
  * Base <blockquote>
  */
