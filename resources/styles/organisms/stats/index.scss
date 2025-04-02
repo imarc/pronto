@@ -2,6 +2,8 @@
 
 .stats {
   $b: &;
+
+  background-color: var(--color-gray-50);
   padding: 8rem 0;
 
   @include at(md) {
@@ -11,8 +13,6 @@
   @include at(lg) {
     --columns: 3;
   }
-
-  background-color: var(--color-gray-50);
 
   &__content {
     display: grid;
