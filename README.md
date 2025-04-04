@@ -2,7 +2,7 @@
 
 Pronto is a package of front-end components built by Imarc. The components in Pronto are built to be changed over configured, with an emphasis on the code being simple to read and adapt to individual project needs.
 
-For documentation, see http://localhost:5173/components/Overview
+For documentation, see https://imarc-pronto.netlify.app/components/overview/
 
 
 ## Contributing
