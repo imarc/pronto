@@ -4,16 +4,16 @@
  * when used with checkboxs and radio the markup should be the following:
  *
  * @example
- * <label for="checkbox-id">
- *    Checkbox Label
- *    <input type="checkbox" id="checkbox-id" class="tag" />
- * </label>
+    <label class="tag field -inline" for="tag-checkbox-active">
+        <svg class="tag__icon">
+            <use href="/main-icons-sprite.svg#tag">
+        </svg>
+        Checked Checkbox Tag
+        <input class="tag__input" type="checkbox" id="tag-checkbox-active" checked>
+    </label>
  */
 
 .tag {
-    --accent-color: var(--accent-tertiary);
-    --accent-color-700: var(--accent-tertiary-700);
-
     $b: &;
 
     align-items: center;
@@ -22,20 +22,14 @@
     border-radius: .25rem; 
     color: var(--accent-color);
     display: inline-flex;
-    flex-direction: row;
     font-size: var(--root-font-size-sm);
     gap: 0.5rem;
     justify-content: space-between;
     line-height: 1;  
-    margin: 0;
     margin-bottom: calc(var(--root-gap) / 2);
     margin-right: calc(var(--root-gap) / 2);
     padding: 0.5rem 1rem;
     position: relative;
-
-    &.-label {
-        cursor: pointer;
-    }
 
     &__input {
         display: none;
@@ -102,7 +96,7 @@
     }
 
     // forced inactive state.
-    &.-inactive {
+    &.-inactive, &:has(input:disabled) {
         background-color: transparent;
         border-color: var(--root-color-inactive);
         color: var(--root-color-inactive);

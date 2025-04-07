@@ -1,13 +1,13 @@
 <div class="actions">
     <!-- .tag class on <div> element ------------------->
-    <div class="tag">
+    <div class="tag accent-secondary">
         <svg class="tag__icon">
             <use href="/main-icons-sprite.svg#tag">
         </svg>
         .tag class on div
     </div>
 
-    <div class="tag -active">
+    <div class="tag -active accent-secondary">
         <svg class="tag__icon">
             <use href="/main-icons-sprite.svg#tag">
         </svg>
@@ -15,7 +15,7 @@
     </div>
 
     <!-- Inactive Tag -->
-    <div class="tag -inactive">
+    <div class="tag -inactive accent-secondary">
         <svg class="tag__icon">
             <use href="/main-icons-sprite.svg#tag">
         </svg>
@@ -23,7 +23,7 @@
     </div>
 
     <!-- Button Tag -->
-    <button class="tag">
+    <button class="tag accent-secondary">
         <svg class="tag__icon">
             <use href="/main-icons-sprite.svg#tag">
         </svg>
@@ -35,7 +35,7 @@
 
 <div class="actions">
     <!-- Checkbox Tag -->
-    <label class="tag -label" for="tag-checkbox-inactive">
+    <label class="tag field -inline accent-secondary" for="tag-checkbox-inactive">
         <svg class="tag__icon">
             <use href="/main-icons-sprite.svg#tag">
         </svg>
@@ -44,7 +44,7 @@
         <input class="tag__input" type="checkbox" id="tag-checkbox-inactive">
     </label>
 
-    <label class="tag -label" for="tag-checkbox-active">
+    <label class="tag field -inline accent-secondary" for="tag-checkbox-active">
         <svg class="tag__icon">
             <use href="/main-icons-sprite.svg#tag">
         </svg>
@@ -54,7 +54,7 @@
     </label>
 
     <!-- Dismissable Tag -->
-    <label class="tag -dismissable -label" for="tag-checkbox-dismissable">
+    <label class="tag field -inline -dismissable accent-secondary" for="tag-checkbox-dismissable">
         <svg class="tag__icon">
             <use href="/main-icons-sprite.svg#tag" />
             <use href="/main-icons-sprite.svg#close" />
@@ -62,13 +62,22 @@
         Dissmissable Checkbox Tag
         <input class="tag__input" type="checkbox" id="tag-checkbox-dismissable" checked>
     </label>
+
+    <label class="tag field -inline accent-secondary" for="tag-checkbox-disabled">
+        <svg class="tag__icon">
+            <use href="/main-icons-sprite.svg#tag">
+        </svg>
+        
+        Disabled Checkbox Tag
+        <input class="tag__input" type="checkbox" id="tag-checkbox-disabled" disabled>
+    </label>
 </div>
 
 <!-- Radio Tag -->
 <div class="actions">
 
     <!-- <tag> element for radio input -->
-    <label class="tag -label" for="tag-radio-inactive">
+    <label class="tag field -inline accent-secondary" for="tag-radio-inactive">
         <svg class="tag__icon">
             <use href="/main-icons-sprite.svg#tag">
         </svg>
@@ -77,11 +86,20 @@
     </label>
 
     <!-- .tag class on <label> element for radio input -->
-    <label class="tag -label" for="tag-radio-active">
+    <label class="tag field -inline accent-secondary" for="tag-radio-active">
         <svg class="tag__icon">
             <use href="/main-icons-sprite.svg#tag">
         </svg>
         Active Radio Tag
         <input class="tag__input" type="radio" name="radio-tag-group" id="tag-radio-active" checked>
+    </label>
+
+        <!-- disabled tag for radio input -->
+        <label class="tag field -inline accent-secondary" for="tag-radio-disabled">
+        <svg class="tag__icon">
+            <use href="/main-icons-sprite.svg#tag">
+        </svg>
+        Disabled Radio Tag
+        <input class="tag__input" type="radio" name="radio-tag-group" id="tag-radio-disabled" disabled>
     </label>
 </div>

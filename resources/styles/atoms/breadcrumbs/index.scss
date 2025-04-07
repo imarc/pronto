@@ -9,8 +9,7 @@
   }
 
   &__item:nth-child(n+2) {
-
-    #{$b}__link::before {
+    &::before {
       display: inline grid;
       content: '';
       background: var(--color-gray-300);
@@ -20,7 +19,7 @@
     }
   }
 
-  &__link {
+  &__item {
     display: inline flex;
     align-items: center;
     gap: .667em;
