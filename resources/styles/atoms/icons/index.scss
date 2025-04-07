@@ -16,7 +16,7 @@
   }
 
   &.-circle {
-    /* Using clip-path to avoid clipping the icons. */
-    clip-path: circle(calc(50% - .5px));
+    /* Using mask-image to avoid clipping the icons. */
+    mask: radial-gradient(closest-side, #fff calc(100% - 1px), #0000);
   }
 }
