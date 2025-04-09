@@ -2,7 +2,7 @@
   import { computed, ref, nextTick, useTemplateRef } from 'vue'
 
   /**
-   * BpLazy is a vue component that lazy loads its content after it's been clicked.
+   * PLazy is a vue component that lazy loads its content after it's been clicked.
    *
    * @slot default - the content to lazyload. It will remove inert attributes, change data-src
    *                 attributes to src attributes, and call .load() on videos.

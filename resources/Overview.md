@@ -17,7 +17,7 @@ Pronto's components are organized following [Atomic Design](https://atomicdesign
 * **Utilities** are components that are meant to be used with other components and primarily provide functionality.
 * **Imported** components are not copied into your project by default. They are meant to be consistent across projects.
 
-Every visual component should have its folder. Vue components, composables and directives have folders within resources/js/.
+Every visual component should have its folder. Vue components, composables and directives have folders within resources/js/. The folder name for a component should match the blockName, in lowerCamelCase, as should the naming of example HTML files.
 
 
 ### Naming Conventions

@@ -2,7 +2,7 @@
 import { onMounted, useTemplateRef } from 'vue'
 
 /**
- * BpAccordion is a vue component for the <details> element. It uses the native <details> element
+ * PAccordion is a vue component for the <details> element. It uses the native <details> element
  * state to determine whether it's open or closed, and merely handles updating CSS properties
  * to allow the element to use transitions between dynamic closed and [open] heights.
  * 
