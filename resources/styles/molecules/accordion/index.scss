@@ -40,8 +40,8 @@
     }
     
     &__icon {
+        --icon-color: var(--accent-color-contrast);
         aspect-ratio: 1;
-        color: var(--accent-color-contrast);
         height: var(--root-font-size-h3);
         transition: transform var(--root-duration-moderate) var(--root-ease-out);
     }
@@ -59,7 +59,7 @@
         }
         
         #{$b}__icon {
-            color: #000;
+            --icon-color: #000;
             transform: rotate(90deg);
         }
     }
