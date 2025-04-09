@@ -7,6 +7,7 @@
   margin: 0 0 1rem;
   overflow-wrap: break-word;
   text-wrap: balance;
+  font-weight: 700;
 
   /* Collapse margin between adjacent headings. */
   &:has(+ &) {
