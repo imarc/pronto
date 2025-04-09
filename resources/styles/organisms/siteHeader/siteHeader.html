@@ -8,7 +8,7 @@
     <nav class="siteHeader__utilityNav navigation">
       <ul class="navigation__list">
         <li class="navigation__item">
-          <bp-openable class="navigation__button" label="Utility Dropdown" :close-on-blur="false">
+          <p-openable class="navigation__button" label="Utility Dropdown" :close-on-blur="false">
             <div class="navigation__dropdown">
               <ul>
                 <li>
@@ -28,7 +28,7 @@
                 </li>
               </ul>
             </div>
-          </bp-openable>
+          </p-openable>
         </li>
         <li class="navigation__item">
           <a href="#" class="navigation__link">Contact</a>
@@ -40,7 +40,7 @@
       <input class="search__input input" type="search" placeholder="Search">
     </div>
     <nav class="siteHeader__mobileNav mobileNavigation">
-      <bp-openable class="mobileNavigation__menu button -circle -ghost" label="menu">
+      <p-openable class="mobileNavigation__menu button -circle -ghost" label="menu">
         <template #toggle>
             <svg class="button__icon icon"><use href="/main-icons-sprite.svg#bars" /></svg>
         </template>
@@ -51,7 +51,7 @@
             </div>
             <ul class="mobileNavigation__list" v-directionals>
               <li>
-                <bp-openable class="mobileNavigation__button" name="submenu">
+                <p-openable class="mobileNavigation__button" name="submenu">
                   <template #toggle>
                     Submenu
                     <svg class="icon"><use href="/main-icons-sprite.svg#chevron-right" /></svg>
@@ -74,10 +74,10 @@
                       </ul>
                     </div>
                   </template>
-                </bp-openable>
+                </p-openable>
               </li>
               <li>
-                <bp-openable class="mobileNavigation__button" name="submenu">
+                <p-openable class="mobileNavigation__button" name="submenu">
                   <template #toggle>
                     STUFF
                     <svg class="icon"><use href="/main-icons-sprite.svg#chevron-right" /></svg>
@@ -100,7 +100,7 @@
                       </ul>
                     </div>
                   </template>
-                </bp-openable>
+                </p-openable>
               </li>
               <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link">Consectetur asperiores</a></li>
               <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link">Amet porro.</a></li>
@@ -137,13 +137,13 @@
             </button>
           </div>
         </template>
-      </bp-openable>
+      </p-openable>
     </nav>
 
     <nav class="siteHeader__primaryNav navigation" v-directionals>
       <ul class="navigation__list">
         <li class="navigation__item" v-directionals>
-          <bp-openable class="navigation__button" label="Default Dropdown" :close-on-blur="false">
+          <p-openable class="navigation__button" label="Default Dropdown" :close-on-blur="false">
             <div class="navigation__dropdown">
               <ul>
                 <li><a href=""><span>Consectetur asperiores</span></a></li>
@@ -152,10 +152,10 @@
                 <li><a href=""><span>Ipsum dolorem</span></a><li>
               </ul>
             </div>
-          </bp-openable>
+          </p-openable>
         </li>
         <li class="navigation__item" v-directionals>
-          <bp-openable class="navigation__button" label="Centered Dropdown" :close-on-blur="false">
+          <p-openable class="navigation__button" label="Centered Dropdown" :close-on-blur="false">
             <div class="navigation__dropdown -center">
               <ul>
                 <li><a href=""><span>Consectetur asperiores</span></a></li>
@@ -164,10 +164,10 @@
                 <li><a href=""><span>Ipsum dolorem</span></a><li>
               </ul>
             </div>
-          </bp-openable>
+          </p-openable>
         </li>
         <li class="navigation__item -wide" v-directionals>
-          <bp-openable class="navigation__button" label="Full-width Dropdown" :close-on-blur="false">
+          <p-openable class="navigation__button" label="Full-width Dropdown" :close-on-blur="false">
             <div class="navigation__dropdown grid -columns-3">
               <div class="cell">
                 <h3>Heading</h3>
@@ -206,10 +206,10 @@
                 </ul>
               </div>
             </div>
-          </bp-openable>
+          </p-openable>
         </li>
         <li class="navigation__item" v-directionals>
-          <bp-openable class="navigation__button" label="Right Aligned Dropdown" :close-on-blur="false">
+          <p-openable class="navigation__button" label="Right Aligned Dropdown" :close-on-blur="false">
             <div class="navigation__dropdown -rightAligned">
               <ul>
                 <li><a href=""><span>Consectetur asperiores</span></a></li>
@@ -218,7 +218,7 @@
                 <li><a href=""><span>Ipsum dolorem</span></a><li>
               </ul>
             </div>
-          </bp-openable>
+          </p-openable>
         </li>
       </ul>
     </nav>
