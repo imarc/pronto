@@ -1,5 +1,7 @@
 .breadcrumbs {
   $b: &;
+  --accent-color: var(--link-color, var(--color-blue));
+
   font-size: .75rem;
 
   &__list {
@@ -9,8 +11,7 @@
   }
 
   &__item:nth-child(n+2) {
-
-    #{$b}__link::before {
+    &::before {
       display: inline grid;
       content: '';
       background: var(--color-gray-300);
@@ -21,6 +22,10 @@
   }
 
   &__link {
+    --accent-color: inherit;
+  }
+
+  &__item {
     display: inline flex;
     align-items: center;
     gap: .667em;
