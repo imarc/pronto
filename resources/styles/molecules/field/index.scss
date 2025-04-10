@@ -27,6 +27,10 @@
     }
   }
 
+  &.-wide {
+    width: 100%;
+  }
+
   &.-stacked {
     grid-auto-flow: column;
   }
