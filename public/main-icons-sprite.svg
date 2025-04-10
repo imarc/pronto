@@ -1,6 +1,6 @@
 <svg id="main-icons-sprite" xmlns="http://www.w3.org/2000/svg" focusable="false" style="display:none;">
-  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 8" id="chevron-up">
-    <path d="M1 7L7 1L13 7" stroke="var(--icon-color, currentColor)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+  <symbol viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" id="chevron-up">
+    <path d="M1 11L9 3L17 11" stroke="var(--icon-color, currentColor)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
   <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="clock">
     <path d="M10.002 18.7581C8.27137 18.7581 6.57965 18.2449 5.14072 17.2834C3.70179 16.322 2.58028 14.9554 1.91801 13.3565C1.25574 11.7577 1.08247 9.99835 1.42009 8.30102C1.75771 6.60369 2.59106 5.04459 3.81477 3.82088C5.03848 2.59717 6.59758 1.76381 8.29492 1.42619C9.99225 1.08857 11.7516 1.26185 13.3504 1.92411C14.9493 2.58638 16.3159 3.70789 17.2773 5.14682C18.2388 6.58575 18.752 8.27747 18.752 10.0081C18.752 12.3287 17.8301 14.5543 16.1891 16.1952C14.5482 17.8362 12.3226 18.7581 10.002 18.7581ZM10.002 2.50806C8.5186 2.50806 7.06855 2.94793 5.83518 3.77204C4.60181 4.59615 3.64052 5.76749 3.07286 7.13794C2.5052 8.50838 2.35668 10.0164 2.64607 11.4712C2.93546 12.9261 3.64976 14.2625 4.69866 15.3114C5.74755 16.3603 7.08392 17.0746 8.53878 17.3639C9.99364 17.6533 11.5016 17.5048 12.8721 16.9372C14.2425 16.3695 15.4139 15.4082 16.238 14.1748C17.0621 12.9415 17.502 11.4914 17.502 10.0081C17.502 8.01894 16.7118 6.11128 15.3053 4.70476C13.8987 3.29824 11.9911 2.50806 10.002 2.50806Z" fill="var(--icon-color, currentColor)"></path>
@@ -46,8 +46,8 @@
   <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 32" id="facebook">
     <path d="M16.4375 18H11.75V32H5.5V18H0.375V12.25H5.5V7.8125C5.5 2.8125 8.5 0 13.0625 0C15.25 0 17.5625 0.4375 17.5625 0.4375V5.375H15C12.5 5.375 11.75 6.875 11.75 8.5V12.25H17.3125L16.4375 18Z" fill="var(--icon-color, currentColor)"></path>
   </symbol>
-  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 42" id="play">
-    <path d="M36 21L0 41.7846L0 0.21539L36 21Z" fill="var(--icon-color, currentColor)"></path>
+  <symbol viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg" id="play">
+    <path d="M15.5 8.16228C16.1667 8.54718 16.1667 9.50943 15.5 9.89433L6.5 15.0905C5.83333 15.4754 5 14.9943 5 14.2245L5 3.83215C5 3.06235 5.83333 2.58122 6.5 2.96612L15.5 8.16228Z" fill="var(--icon-color, currentColor)"/>
   </symbol>
   <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 12" id="tag">
     <path d="M0.5 5.90902V1.125C0.5 0.503672 1.00367 0 1.625 0H6.40902C6.70739 1.56018e-06 6.99353 0.118529 7.20451 0.329508L12.1705 5.29549C12.6098 5.73483 12.6098 6.44714 12.1705 6.88648L7.38648 11.6705C6.94714 12.1098 6.23483 12.1098 5.79549 11.6705L0.829508 6.70451C0.618529 6.49353 0.500002 6.20739 0.5 5.90902H0.5ZM3.125 1.5C2.50367 1.5 2 2.00367 2 2.625C2 3.24633 2.50367 3.75 3.125 3.75C3.74633 3.75 4.25 3.24633 4.25 2.625C4.25 2.00367 3.74633 1.5 3.125 1.5Z" fill="var(--icon-color, currentColor)"></path>
@@ -71,14 +71,14 @@
   <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 12" id="arrow-right">
     <path d="M11.5841 11.7801C11.8695 12.0733 12.3323 12.0733 12.6177 11.7801L17.7859 6.47166C17.8634 6.39205 17.9199 6.299 17.9553 6.19982C17.9925 6.09573 18.0065 5.98487 17.9973 5.87569C17.9917 5.80944 17.9778 5.74565 17.9566 5.68544C17.9301 5.61004 17.8915 5.53811 17.8407 5.47287C17.8238 5.45112 17.8055 5.43011 17.7859 5.40997L17.7834 5.40741L12.733 0.219883C12.4475 -0.0732947 11.9848 -0.0732942 11.6993 0.219883C11.4139 0.513061 11.4139 0.988397 11.6993 1.28157L15.5046 5.19009H0.730891C0.327232 5.19009 -8.34465e-07 5.5262 -8.34465e-07 5.94082C-8.34465e-07 6.35543 0.32723 6.69155 0.730889 6.69155L15.5046 6.69155L11.5841 10.7184C11.2987 11.0116 11.2987 11.4869 11.5841 11.7801Z" fill="var(--icon-color, currentColor)"></path>
   </symbol>
-  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 18" id="chevron-left">
-    <path d="M9.01953 1L1.01953 9L9.01953 17" stroke="var(--icon-color, currentColor)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+  <symbol viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" id="chevron-left">
+    <path d="M11 17L3 9L11 1" stroke="var(--icon-color, currentColor)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
-  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 8" id="chevron-down">
-    <path d="M1 1L7 7L13 1" stroke="var(--icon-color, currentColor)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+  <symbol viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" id="chevron-down">
+    <path d="M1 7L9 15L17 7" stroke="var(--icon-color, currentColor)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
-  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 18" id="chevron-right">
-    <path d="M1.01953 17L9.01953 9L1.01953 1" stroke="var(--icon-color, currentColor)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+  <symbol viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" id="chevron-right">
+    <path d="M7 17L15 9L7 1" stroke="var(--icon-color, currentColor)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
   <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" id="home">
     <path d="M13 8L7 2L1 8" stroke="var(--icon-color, currentColor)" stroke-linecap="round" stroke-linejoin="round"></path>

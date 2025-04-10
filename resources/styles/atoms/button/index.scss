@@ -9,15 +9,15 @@
   cursor: pointer;
   display: inline flex;
   font-weight: 700;
-  gap: .5em;
+  gap: 1em;
   line-height: 1;
-  padding: .5em 1em;
-  padding: 1em 2em;
+  padding: calc(1em - var(--root-border-width)) calc(2em - var(--root-border-width));
   text-decoration: none;
 
   &__icon {
     width: 1em;
     height: 1.5em;
+    margin: -.25em 0;
 
     &.-large {
       width: 2em;

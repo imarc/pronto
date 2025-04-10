@@ -7,7 +7,7 @@
   &__list {
     list-style: none;
     display: inline flex;
-    gap: .667em;
+    gap: 1em;
   }
 
   &__item:nth-child(n+2) {
@@ -23,16 +23,17 @@
 
   &__link {
     --accent-color: inherit;
+    align-items: normal;
+    gap: .5rem;
   }
 
   &__item {
     display: inline flex;
     align-items: center;
-    gap: .667em;
+    gap: 1em;
   }
 
   &__icon {
-    height: 1em;
-    width: 1em;
+    height: .875rem;
   }
 }
