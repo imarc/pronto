@@ -10,7 +10,7 @@ a,
 
   svg {
     display: inline;
-    height: .75em;
+    height: 1cap;
   }
 
   &:hover {
@@ -21,7 +21,7 @@ a,
     aspect-ratio: 1.5;
     color: inherit;
     flex: 0 0 auto;
-    max-height: .75em;
+    max-height: 1cap;
     transition: color var(--root-duration-fast) var(--root-ease-out);
   }
 

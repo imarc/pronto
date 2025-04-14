@@ -13,6 +13,7 @@ createApp({
 
     PSelect: defineAsyncComponent(() => import('@vueform/multiselect/themes/default.css') && import('@vueform/multiselect')),
     PSlider: defineAsyncComponent(() => import('./components/PSlider.vue')),
+    PYouTube: defineAsyncComponent(() => import('./components/PYouTube.vue')),
   },
   directives: {
     directionals,
