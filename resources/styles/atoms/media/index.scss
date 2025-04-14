@@ -4,6 +4,7 @@
   aspect-ratio: var(--aspect-ratio);
   background-color: rgb(from currentColor r g b / .25);
   display: inline grid;
+  margin-bottom: 2rem;
 
   > * {
     grid-area: 1 / 1;
