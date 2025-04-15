@@ -30,6 +30,12 @@
 
   const playPause = () => {
     loaded.value = true
+
+    const iframe = mediaEl.value.querySelector('iframe')
+    if (iframe.getAttribute('tabindex') == -1) {
+      iframe.removeAttribute('tabindex')
+    }
+
     if (player.getPlayerState() === 1) {
       player.pauseVideo()
     } else {
