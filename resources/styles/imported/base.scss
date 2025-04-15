@@ -120,12 +120,13 @@ blockquote {
  * Base <dialog>
  */
 dialog {
-  border: solid var(--accent-color);
-  border-radius: var(--root-border-radius);
-  border-width: .5rem 0 0;
-  box-shadow: var(--root-box-shadow-med), var(--root-box-shadow-high);
+  border-radius: 1rem;
+  border: 0;
+  box-shadow: var(--root-box-shadow-med);
   color: var(--root-color);
-  padding: var(--root-padding-block) var(--root-padding-inline);
+  padding: 1.5rem 2rem;
+  max-width: 36rem;
+  inset: 0;
 }
 
 /**
