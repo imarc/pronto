@@ -25,6 +25,7 @@
       width: .75rem;
       height: 1em;
       background: var(--accent-color);
+      transition: rotate var(--root-ease-out-slow);
       mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 21'%3E%3Cpath d='M34 2L18 18L2 2' fill='none' stroke='black' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E") center no-repeat;
     }
   }
@@ -44,17 +45,26 @@
     &:has(#{$b}__dropdown) {
       background: #fff;
       box-shadow: var(--root-box-shadow-med);
+      #{$b}__button {
+        color: #000;
+      }
     }
   }
 
   &__dropdown {
+
     background: #fff;
     box-shadow: var(--root-box-shadow-med);
     clip-path: rect(-1px 200% 200% -100%);
     padding: 1.5rem;
     position: absolute;
+    transition: opacity var(--root-ease-out-moderate);
     width: max-content;
     z-index: 1;
+
+    @starting-style {
+      opacity: 0;
+    }
 
     &.-center {
       left: 50%;
@@ -62,6 +72,65 @@
     }
     &.-rightAligned {
       right: 0;
+    }
+  }
+
+  &.-one {
+
+    #{$b}__dropdown {
+      clip-path: unset;
+    }
+
+    #{$b}__item:has(#{$b}__dropdown) {
+      background: #0000;
+      box-shadow: none;
+
+      &.-wide:has(#{$b}__dropdown) {
+        box-shadow: 0 -.5rem 0 inset var(--accent-color);
+      }
+
+      &.-wide #{$b}__dropdown {
+        border-top: 1px solid var(--accent-color);
+        background: var(--color-gray-50);
+      }
+
+      #{$b}__button::after {
+        background: var(--color-gray-600);
+        rotate: x 180deg;
+      }
+    }
+  }
+
+  &.-two {
+
+    #{$b}__dropdown {
+      clip-path: unset;
+    }
+
+    #{$b}__item:has(#{$b}__dropdown) {
+      background: #0000;
+      box-shadow: none;
+
+      &.-wide:has(#{$b}__dropdown) {
+        box-shadow: 0 -.5rem 0 inset var(--accent-color);
+      }
+
+      &.-wide #{$b}__dropdown {
+        border-top: 1px solid var(--accent-color);
+        background: var(--color-gray-50);
+      }
+
+      #{$b}__button::after {
+        rotate: x 180deg;
+      }
+    }
+
+    &:has(#{$b}__dropdown) {
+      #{$b}__item:not(:has(#{$b}__dropdown)) {
+        #{$b}__button::after {
+          background: var(--color-gray-600);
+        }
+      }
     }
   }
 }
