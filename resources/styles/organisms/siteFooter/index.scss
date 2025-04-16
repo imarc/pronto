@@ -34,7 +34,7 @@
     grid-area: info;
     display: grid;
     gap: var(--root-gap);
-    justify-items: center;
+    justify-items: start;
 
     @include at(md) {
       display: contents;
@@ -59,7 +59,7 @@
 
   &__social {
     grid-area: social;
-    justify-self: center;
+    justify-content: space-between;
 
     @include at(lg) {
       justify-self: start;
