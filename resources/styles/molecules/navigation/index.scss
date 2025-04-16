@@ -39,14 +39,24 @@
       #{$b}__dropdown {
         width: 100%;
         left: 0;
+        border-top: 1px solid var(--accent-color);
+        background: var(--color-gray-50);
+      }
+
+      &:has(#{$b}__dropdown) {
+        box-shadow: 0 -.5rem 0 inset var(--accent-color);
       }
     }
 
     &:has(#{$b}__dropdown) {
-      background: #fff;
-      box-shadow: var(--root-box-shadow-med);
+
       #{$b}__button {
         color: #000;
+
+        &::after {
+          background: var(--color-gray-600);
+          rotate: x 180deg;
+        }
       }
     }
   }
@@ -55,7 +65,6 @@
 
     background: #fff;
     box-shadow: var(--root-box-shadow-med);
-    clip-path: rect(-1px 200% 200% -100%);
     padding: 1.5rem;
     position: absolute;
     transition: opacity var(--root-ease-out-moderate);
@@ -72,65 +81,6 @@
     }
     &.-rightAligned {
       right: 0;
-    }
-  }
-
-  &.-one {
-
-    #{$b}__dropdown {
-      clip-path: unset;
-    }
-
-    #{$b}__item:has(#{$b}__dropdown) {
-      background: #0000;
-      box-shadow: none;
-
-      &.-wide:has(#{$b}__dropdown) {
-        box-shadow: 0 -.5rem 0 inset var(--accent-color);
-      }
-
-      &.-wide #{$b}__dropdown {
-        border-top: 1px solid var(--accent-color);
-        background: var(--color-gray-50);
-      }
-
-      #{$b}__button::after {
-        background: var(--color-gray-600);
-        rotate: x 180deg;
-      }
-    }
-  }
-
-  &.-two {
-
-    #{$b}__dropdown {
-      clip-path: unset;
-    }
-
-    #{$b}__item:has(#{$b}__dropdown) {
-      background: #0000;
-      box-shadow: none;
-
-      &.-wide:has(#{$b}__dropdown) {
-        box-shadow: 0 -.5rem 0 inset var(--accent-color);
-      }
-
-      &.-wide #{$b}__dropdown {
-        border-top: 1px solid var(--accent-color);
-        background: var(--color-gray-50);
-      }
-
-      #{$b}__button::after {
-        rotate: x 180deg;
-      }
-    }
-
-    &:has(#{$b}__dropdown) {
-      #{$b}__item:not(:has(#{$b}__dropdown)) {
-        #{$b}__button::after {
-          background: var(--color-gray-600);
-        }
-      }
     }
   }
 }
