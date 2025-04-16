@@ -4,7 +4,6 @@
   $b: &;
 
   background-color: var(--color-gray-50);
-  padding: 8rem 0;
 
   @include at(md) {
     --columns: 2;
