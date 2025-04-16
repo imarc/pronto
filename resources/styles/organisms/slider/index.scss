@@ -129,7 +129,10 @@
     }
 
     swiper-slide {
-      width: calc(66.66cqw);
+
+      @include at(md) {
+        width: calc(66.66cqw);
+      }
       height: auto;
 
       > * {
