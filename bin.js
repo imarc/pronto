@@ -86,7 +86,8 @@ if (!fs.existsSync(viteConfig)) {
   })
 
   if (createViteConfig) {
-    fs.copyFileSync(import.meta.dirname, 'vite.config.template.js', './vite.config.js')
+    const configPath = path.join(import.meta.dirname, 'vite.config.template.js')
+    fs.copyFileSync(configPath, './vite.config.js')
   }
 
 } else {
