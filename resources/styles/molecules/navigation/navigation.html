@@ -4,9 +4,15 @@
       <p-openable class="navigation__button" label="Default Dropdown" :close-on-blur="false">
         <div class="navigation__dropdown dropdown">
           <ul class="dropdown__list">
+            <li class="dropdown__item"><a href="" class="dropdown__link">Consectetur asperiores</a></li>
+            <li class="dropdown__item"><a href="" class="dropdown__link">Consectetur asperiores</a></li>
             <li class="dropdown__item">
-              <p-openable class="dropdown__button" label="Nested Dropdown" :close-on-blur="false" name="subdropdown">
-                <div class="dropdown">
+              <p-openable class="dropdown__button link" label="Nested Dropdown" :close-on-blur="false" name="subdropdown">
+                <template #toggle>
+                  Dropdown
+                  <svg viewBox="0 0 18 12"><use href="/main-icons-sprite.svg#chevron-right" /></svg>
+                </template>
+                <div class="dropdown -toRight">
                   <ul class="dropdown__list">
                     <li class="dropdown__item"><a href="" class="dropdown__link">Consectetur asperiores</a></li>
                     <li class="dropdown__item"><a href="" class="dropdown__link">Consectetur asperiores</a></li>
@@ -16,8 +22,6 @@
                 </div>
               </p-openable>
             </li>
-            <li class="dropdown__item"><a href="" class="dropdown__link">Consectetur asperiores</a></li>
-            <li class="dropdown__item"><a href="" class="dropdown__link">Consectetur asperiores</a></li>
             <li class="dropdown__item"><a href="" class="dropdown__link">Amet porro.</a></li>
             <li class="dropdown__item"><a href="" class="dropdown__link">Ipsum dolorem</a><li>
           </ul>
@@ -38,7 +42,7 @@
     </li>
     <li class="navigation__item -wide" v-directionals>
       <p-openable class="navigation__button" label="Full-width Dropdown" :close-on-blur="false">
-        <div class="navigation__dropdown grid -columns-3">
+        <div class="navigation__dropdown dropdown grid -columns-3">
           <div class="cell">
             <h3>Heading</h3>
             <p>

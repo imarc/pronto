@@ -8,6 +8,12 @@ a,
   align-items: center;
   gap: 1em;
 
+  &:where(button) {
+    appearance: none;
+    background: #0000;
+    border: 0;
+  }
+
   svg {
     display: inline;
     height: 1cap;

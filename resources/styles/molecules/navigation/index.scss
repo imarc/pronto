@@ -60,39 +60,4 @@
       }
     }
   }
-
-  &__dropdown {
-
-    background: #fff;
-    box-shadow: var(--root-box-shadow-med);
-    padding: 1.5rem;
-    position: absolute;
-    transition: opacity var(--root-ease-out-moderate);
-    width: max-content;
-    z-index: 1;
-
-    @starting-style {
-      opacity: 0;
-    }
-
-    &.-center {
-      left: 50%;
-      translate: -50%;
-    }
-    &.-rightAligned {
-      right: 0;
-    }
-  }
-}
-
-.dropdown {
-
-  &__list {
-    display: grid;
-    gap: 1rem;
-  }
-
-  &__link {
-    display: block;
-  }
 }
