@@ -3,7 +3,7 @@ import process from 'node:process'
 import path from 'node:path'
 import fs from 'node:fs'
 
-import { isCancel, cancel, text, confirm, intro, outro } from '@clack/prompts'
+import { isCancel, cancel, text, confirm, intro, outro, log } from '@clack/prompts'
 
 const checkCancel = value => {
   if (isCancel(value)) {
@@ -77,6 +77,20 @@ if (addDeps) {
       console.error(`npm stderr: ${stderr}`)
     }
   })
+}
+
+const viteConfig = path.join(process.cwd(), 'vite.config.js')
+if (!fs.existsSync(viteConfig)) {
+  const createViteConfig = await confirm({
+    message: 'Should I create a vite.config.js for you?'
+  })
+
+  if (createViteConfig) {
+    fs.copyFileSync(import.meta.dirname, 'vite.config.template.js', './vite.config.js')
+  }
+
+} else {
+  log.info(`You already have a vite.config.js, skipping creating one for you...`)
 }
 
 outro(`You're all set!`)
