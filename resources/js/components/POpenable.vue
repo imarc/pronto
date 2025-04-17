@@ -7,11 +7,20 @@ import { ref, nextTick, useSlots, useTemplateRef } from 'vue'
 
 import focusableElements from '../composables/FocusableElements.js'
 
-const { closeOnBlur, refocus, label, name } = defineProps({
+const {
+  closeOnBlur,
+  refocus,
+  label,
+  name,
+  openOnHover,
+  hoverOrClick
+} = defineProps({
   closeOnBlur: { type: Boolean, default: true },
   refocus: { type: Boolean, default: true },
   label: { type: String, default: "" },
   name: { type: String, default: "global" },
+  openOnHover: { type: Boolean, default: false },
+  hoverOrClick: { type: Boolean, default: false },
 })
 const emit = defineEmits(['open', 'close'])
 const slots = useSlots()
@@ -51,14 +60,14 @@ const updateGroup = (open) => {
   }
 }
 
-const toggle = evt => {
+const toggle = (evt, { noFocus = false } = {}) => {
   evt?.stopPropagation()
   emit(open.value ? 'close' : 'open')
   open.value = !open.value
   updateGroup(open.value)
   nextTick(() => {
     if (open.value) {
-      if (refocus) {
+      if (refocus && !noFocus) {
         focusableElements(openable)?.[0].focus()
       }
 
@@ -76,17 +85,60 @@ const toggle = evt => {
         document.documentElement.removeEventListener('focusin', targetOutside)
       }
 
-      focusableElements(button)?.[0].focus()
+      if (refocus && !noFocus) {
+        focusableElements(button)?.[0].focus()
+      }
     }
   })
 }
+
+
+let timeout = null
+
+const mouseover = () => {
+  if (timeout) {
+    clearTimeout(timeout)
+  }
+
+  timeout = setTimeout(() => {
+    if (!open.value) {
+      toggle(undefined, { noFocus: true })
+    }
+  }, 450)
+}
+
+const mouseout = () => {
+  if (timeout) {
+    clearTimeout(timeout)
+  }
+
+  timeout = setTimeout(() => {
+    if (open.value) {
+      toggle(undefined, { noFocus: true })
+    }
+  }, 450)
+}
+
+const keypress = evt => {
+  if (evt.key == ' ' || evt.key == 'Enter') {
+    toggle()
+  }
+}
+
+let bindings = { click: toggle }
+if (openOnHover) {
+  bindings = { mouseover, mouseout, keypress }
+} if (hoverOrClick) {
+  bindings = { click: toggle, mouseover, mouseout }
+}
+
 </script>
 
 <template>
-  <button v-bind="$attrs" ref="button" @click="toggle">
-    <slot name="toggle" v-bind="{ toggle }">{{ label }}</slot>
+  <button v-bind="$attrs" ref="button" v-on="bindings">
+    <slot name="toggle" v-bind="bindings">{{ label }}</slot>
   </button>
-  <div ref="openable">
-    <slot v-if="open" v-bind="{ toggle }" />
+  <div ref="openable" v-on="(openOnHover || hoverOrClick) ? { mouseover, mouseout } : {}">
+    <slot v-if="open" v-bind="bindings" />
   </div>
 </template>

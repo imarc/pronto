@@ -3,7 +3,7 @@
     <template #toggle>
         <svg class="button__icon icon"><use href="/main-icons-sprite.svg#bars" /></svg>
     </template>
-    <template v-slot="{ toggle }">
+    <template v-slot="{ click }">
       <div class="mobileNavigation__pane" v-scrolllock>
         <div class="mobileNavigation__title">
           Menu
@@ -15,11 +15,11 @@
                 Submenu
                 <svg class="icon"><use href="/main-icons-sprite.svg#chevron-right" /></svg>
               </template>
-              <template v-slot="{ toggle }">
+              <template v-slot="{ click }">
                 <div class="mobileNavigation__pane">
                   <div class="mobileNavigation__title">
                     <div class="mobileNavigation__actions">
-                      <button class="button -circle -ghost" @click.stopPropagation="toggle" tabindex="-1">
+                      <button class="button -circle -ghost" @click.stopPropagation="click" tabindex="-1">
                         <svg class="icon"><use href="/main-icons-sprite.svg#chevron-left" /></svg>
                       </button>
                     </div>
@@ -41,11 +41,11 @@
                 STUFF
                 <svg class="icon"><use href="/main-icons-sprite.svg#chevron-right" /></svg>
               </template>
-              <template v-slot="{ toggle }">
+              <template v-slot="{ click }">
                 <div class="mobileNavigation__pane">
                   <div class="mobileNavigation__title">
                     <div class="mobileNavigation__actions">
-                      <button class="button -circle -ghost" @click.stopPropagation="toggle" tabindex="-1">
+                      <button class="button -circle -ghost" @click.stopPropagation="click" tabindex="-1">
                         <svg class="icon"><use href="/main-icons-sprite.svg#chevron-left" /></svg>
                       </button>
                     </div>
@@ -91,7 +91,7 @@
         </ul>
       </div>
       <div class="mobileNavigation__closeButton">
-        <button class="button -circle -ghost" @click="toggle">
+        <button class="button -circle -ghost" @click="click">
           <svg class="icon"><use href="/main-icons-sprite.svg#close" /></svg>
         </button>
       </div>
