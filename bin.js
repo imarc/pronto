@@ -2,6 +2,7 @@
 import process from 'node:process'
 import path from 'node:path'
 import fs from 'node:fs'
+import { exec } from 'node:child_process'
 
 import { isCancel, cancel, text, confirm, intro, outro, log } from '@clack/prompts'
 
