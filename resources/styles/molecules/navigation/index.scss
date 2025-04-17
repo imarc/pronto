@@ -85,3 +85,14 @@
   }
 }
 
+.dropdown {
+
+  &__list {
+    display: grid;
+    gap: 1rem;
+  }
+
+  &__link {
+    display: block;
+  }
+}

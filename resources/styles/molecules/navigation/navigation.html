@@ -2,24 +2,36 @@
   <ul class="navigation__list">
     <li class="navigation__item" v-directionals>
       <p-openable class="navigation__button" label="Default Dropdown" :close-on-blur="false">
-        <div class="navigation__dropdown">
-          <ul>
-            <li><a href=""><span>Consectetur asperiores</span></a></li>
-            <li><a href=""><span>Consectetur asperiores</span></a></li>
-            <li><a href=""><span>Amet porro.</span></a></li>
-            <li><a href=""><span>Ipsum dolorem</span></a><li>
+        <div class="navigation__dropdown dropdown">
+          <ul class="dropdown__list">
+            <li class="dropdown__item">
+              <p-openable class="dropdown__button" label="Nested Dropdown" :close-on-blur="false" name="subdropdown">
+                <div class="dropdown">
+                  <ul class="dropdown__list">
+                    <li class="dropdown__item"><a href="" class="dropdown__link">Consectetur asperiores</a></li>
+                    <li class="dropdown__item"><a href="" class="dropdown__link">Consectetur asperiores</a></li>
+                    <li class="dropdown__item"><a href="" class="dropdown__link">Amet porro.</a></li>
+                    <li class="dropdown__item"><a href="" class="dropdown__link">Ipsum dolorem</a><li>
+                  </ul>
+                </div>
+              </p-openable>
+            </li>
+            <li class="dropdown__item"><a href="" class="dropdown__link">Consectetur asperiores</a></li>
+            <li class="dropdown__item"><a href="" class="dropdown__link">Consectetur asperiores</a></li>
+            <li class="dropdown__item"><a href="" class="dropdown__link">Amet porro.</a></li>
+            <li class="dropdown__item"><a href="" class="dropdown__link">Ipsum dolorem</a><li>
           </ul>
         </div>
       </p-openable>
     </li>
     <li class="navigation__item" v-directionals>
       <p-openable class="navigation__button" label="Centered Dropdown" :close-on-blur="false">
-        <div class="navigation__dropdown -center">
-          <ul>
-            <li><a href=""><span>Consectetur asperiores</span></a></li>
-            <li><a href=""><span>Consectetur asperiores</span></a></li>
-            <li><a href=""><span>Amet porro.</span></a></li>
-            <li><a href=""><span>Ipsum dolorem</span></a><li>
+        <div class="navigation__dropdown -center dropdown">
+          <ul class="dropdown__list">
+            <li class="dropdown__item"><a href="" class="dropdown__link">Consectetur asperiores</a></li>
+            <li class="dropdown__item"><a href="" class="dropdown__link">Consectetur asperiores</a></li>
+            <li class="dropdown__item"><a href="" class="dropdown__link">Amet porro.</a></li>
+            <li class="dropdown__item"><a href="" class="dropdown__link">Ipsum dolorem</a><li>
           </ul>
         </div>
       </p-openable>
@@ -32,11 +44,11 @@
             <p>
               Adipisicing obcaecati tempora qui ullam voluptates beatae? Assumenda soluta quae
             </p>
-            <ul>
-              <li><a href=""><span>Consectetur asperiores</span></a></li>
-              <li><a href=""><span>Consectetur asperiores</span></a></li>
-              <li><a href=""><span>Amet porro.</span></a></li>
-              <li><a href=""><span>Ipsum dolorem</span></a><li>
+            <ul class="dropdown__list">
+              <li class="dropdown__item"><a href="" class="dropdown__link">Consectetur asperiores</a></li>
+              <li class="dropdown__item"><a href="" class="dropdown__link">Consectetur asperiores</a></li>
+              <li class="dropdown__item"><a href="" class="dropdown__link">Amet porro.</a></li>
+              <li class="dropdown__item"><a href="" class="dropdown__link">Ipsum dolorem</a><li>
             </ul>
           </div>
           <div class="cell">
@@ -44,11 +56,11 @@
             <p>
               Adipisicing obcaecati tempora qui ullam voluptates beatae? Assumenda soluta quae
             </p>
-            <ul>
-              <li><a href=""><span>Consectetur asperiores</span></a></li>
-              <li><a href=""><span>Consectetur asperiores</span></a></li>
-              <li><a href=""><span>Amet porro.</span></a></li>
-              <li><a href=""><span>Ipsum dolorem</span></a><li>
+            <ul class="dropdown__list">
+              <li class="dropdown__item"><a href="" class="dropdown__link">Consectetur asperiores</a></li>
+              <li class="dropdown__item"><a href="" class="dropdown__link">Consectetur asperiores</a></li>
+              <li class="dropdown__item"><a href="" class="dropdown__link">Amet porro.</a></li>
+              <li class="dropdown__item"><a href="" class="dropdown__link">Ipsum dolorem</a><li>
             </ul>
           </div>
           <div class="cell">
@@ -56,11 +68,11 @@
             <p>
               Adipisicing obcaecati tempora qui ullam voluptates beatae? Assumenda soluta quae
             </p>
-            <ul>
-              <li><a href=""><span>Consectetur asperiores</span></a></li>
-              <li><a href=""><span>Consectetur asperiores</span></a></li>
-              <li><a href=""><span>Amet porro.</span></a></li>
-              <li><a href=""><span>Ipsum dolorem</span></a><li>
+            <ul class="dropdown__list">
+              <li class="dropdown__item"><a href="" class="dropdown__link">Consectetur asperiores</a></li>
+              <li class="dropdown__item"><a href="" class="dropdown__link">Consectetur asperiores</a></li>
+              <li class="dropdown__item"><a href="" class="dropdown__link">Amet porro.</a></li>
+              <li class="dropdown__item"><a href="" class="dropdown__link">Ipsum dolorem</a><li>
             </ul>
           </div>
         </div>
@@ -68,12 +80,12 @@
     </li>
     <li class="navigation__item" v-directionals>
       <p-openable class="navigation__button" label="Right Aligned Dropdown" :close-on-blur="false">
-        <div class="navigation__dropdown -rightAligned">
-          <ul>
-            <li><a href=""><span>Consectetur asperiores</span></a></li>
-            <li><a href=""><span>Consectetur asperiores</span></a></li>
-            <li><a href=""><span>Amet porro.</span></a></li>
-            <li><a href=""><span>Ipsum dolorem</span></a><li>
+        <div class="navigation__dropdown -rightAligned dropdown">
+          <ul class="dropdown__list">
+            <li class="dropdown__item"><a href="" class="dropdown__link">Consectetur asperiores</a></li>
+            <li class="dropdown__item"><a href="" class="dropdown__link">Consectetur asperiores</a></li>
+            <li class="dropdown__item"><a href="" class="dropdown__link">Amet porro.</a></li>
+            <li class="dropdown__item"><a href="" class="dropdown__link">Ipsum dolorem</a><li>
           </ul>
         </div>
       </p-openable>
