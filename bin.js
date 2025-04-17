@@ -42,8 +42,6 @@ const copyPath = shouldCopy ? await text({
 
 checkCancel(copyPath)
 
-console.log(import.meta)
-
 if (shouldCopy && copyPath) {
   const sourcePath = path.join(import.meta.dirname, 'resources', 'styles');
   const destinationPath = path.join(copyPath);
