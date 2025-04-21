@@ -1,11 +1,11 @@
-@use "@imarc/pronto/resources/styles/imported" as pronto;
+@use "@imarc/pronto/resources/styles/imported" as *;
 
 .logoCloud {
     $b: &;
     
     &.-reduced {
         #{$b}__logo {
-            height: pronto.fluid-rems(2, 3);
+            height: fluid-rems(2, 3);
         }
     }
 
@@ -13,12 +13,12 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        gap: pronto.fluid-rems(2, 3);
+        gap: fluid-rems(2, 3);
         justify-content: center;
     }
 
     &__logo {
-        height: pronto.fluid-rems(5, 7.5);
+        height: fluid-rems(5, 7.5);
         width: auto;
         position: relative;
     }
@@ -30,6 +30,6 @@
     }
 
     &__link {
-        @include pronto.pseudo-link();
+        @include pseudo-link();
     }
 }

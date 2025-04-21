@@ -1,4 +1,4 @@
-@use "@imarc/pronto/resources/styles/imported" as pronto;
+@use "@imarc/pronto/resources/styles/imported" as *;
 
 :is(h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6) {
   --accent-color: var(--heading-color, var(--root-color-headings));
@@ -17,12 +17,12 @@
 
 h1, .h1 {
   font-size: var(--root-font-size-h1);
-  margin-bottom: #{pronto.fluid-rems(1, 1.5, 2)};
+  margin-bottom: #{fluid-rems(1, 1.5, 2)};
 }
 
 h2, .h2 {
   font-size: var(--root-font-size-h2);
-  margin-bottom: #{pronto.fluid-rems(1, 1.5, 1.5)};
+  margin-bottom: #{fluid-rems(1, 1.5, 1.5)};
 }
 
 h3, .h3 {

@@ -1,4 +1,4 @@
-@use "@imarc/pronto/resources/styles/imported" as pronto;
+@use "@imarc/pronto/resources/styles/imported" as *;
 
 .card {
     $b: &;
@@ -18,7 +18,7 @@
     }
 
     &__image {
-        @include pronto.image-fit(cover);
+        @include image-fit(cover);
     }
 
     &__tagList {
@@ -62,7 +62,7 @@
     }
 
     &__title {
-        font-size: pronto.fluid-rems(1.5, 2);
+        font-size: fluid-rems(1.5, 2);
         margin: .5rem 0;
     }
 
