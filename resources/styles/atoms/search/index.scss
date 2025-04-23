@@ -2,12 +2,14 @@
 
 .search {
   @extend .input;
+
+  align-items: center;
   border-radius: 3em;
-  padding: 0;
   display: inline grid;
   grid: auto / auto auto;
-  align-items: center;
   justify-content: start;
+  overflow: hidden;
+  padding: 0;
 
   &__icon {
     color: var(--color-gray-400);
