@@ -32,13 +32,13 @@
     padding: .375rem 0;
     place-content: start center;
     position: fixed;
-    transition: translate var(--root-ease-out-fast);
+    transition: opacity var(--root-ease-out-fast);
     translate: 0;
     width: 4.5rem;
     z-index: 1;
 
     @starting-style {
-      translate: 100%;
+      opacity: 0;
     }
   }
 
