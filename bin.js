@@ -38,17 +38,26 @@ checkCancel(shouldCopy)
 
 const copyPath = shouldCopy ? await text({
     message: 'Where to?',
-    initialValue: './resources/styles',
+    initialValue: './resources',
   }) : false
 
 checkCancel(copyPath)
 
 if (shouldCopy && copyPath) {
-  const sourcePath = path.join(import.meta.dirname, 'resources', 'styles');
-  const destinationPath = path.join(copyPath);
-
   try {
-    copyFolderSync(sourcePath, destinationPath)
+    copyFolderSync(
+      path.join(import.meta.dirname, 'resources', 'styles'),
+      path.join(copyPath, 'styles')
+    )
+    copyFolderSync(
+      path.join(import.meta.dirname, 'resources', 'js'),
+      path.join(copyPath, 'js')
+    )
+
+    fs.copyFileSync(
+      path.join(import.meta.dirname, 'resources', 'index.md'),
+      path.join(copyPath, 'index.md')
+    )
   } catch (error) {
     console.error(`Failed to copy files: ${error.message}`)
     process.exit(1)
