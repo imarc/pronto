@@ -17,4 +17,8 @@
       --columns: #{$i};
     }
   }
+
+  &.-tight {
+    row-gap: 0;
+  }
 }
