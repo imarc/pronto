@@ -1,5 +1,5 @@
 .cell {
-  --cell-span: min(var(--columns, 1), round(var(--span, 1) * var(--root-breakpoint-lg) / var(--root-breakpoint-sm)));
+  --cell-span: clamp(1, round(var(--span, 1) * 3), var(--columns));
   grid-column: span var(--cell-span);
 
   &.-left {
@@ -35,7 +35,7 @@
   }
 
   @media (min-width: 368px) {
-    --cell-span: min(var(--columns, 1), round(var(--span, 1) * var(--root-breakpoint-lg) / var(--root-breakpoint-md)));
+    --cell-span: clamp(1, round(var(--span, 1) * 1.5), var(--columns));
   }
 
   @media (min-width: 808px) {
