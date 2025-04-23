@@ -4,11 +4,17 @@ Pronto is a package of front-end components built by Imarc. The components in Pr
 
 For documentation, see https://imarc-pronto.netlify.app/components/overview/
 
+## Installation
+
+To install Pronto into your project, you can run:
+
+```
+npx @imarc/pronto
+```
 
 ## Contributing
 
 Pronto is being developed as an open source project and welcomes contributions. Please read through Pronto's goals before contributing. We will be judicious about adding new dependencies to Pronto, however Pronto may leverage Vue, Vite, and Pinia.
-
 
 ### Working on Pronto
 
