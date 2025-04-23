@@ -7,7 +7,7 @@
   display: inline grid;
   grid: auto / auto auto;
   align-items: center;
-  justify-content: end;
+  justify-content: start;
 
   &__icon {
     color: var(--color-gray-400);
