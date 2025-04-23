@@ -20,11 +20,6 @@
     }
   }
 
-  &__menu {
-    position: fixed;
-    inset: .5rem .75rem 0 auto;
-  }
-
   &__closeButton {
     background: var(--color-gray-100);
     display: grid;
