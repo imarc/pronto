@@ -44,6 +44,7 @@
     animation-name: table-fade;
     animation-timeline: --table;
     max-height: clamp(50vh, 640px, 100vh - 2rem);
+    border: 1px solid blue;
     max-width: 100%;
     overflow: scroll;
     position: relative;
