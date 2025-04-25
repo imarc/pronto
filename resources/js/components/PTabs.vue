@@ -25,11 +25,29 @@
     buttonId: `tab-${i + 1}`,
     panelId: `tabpanel-${i + 1}`,
   })))
+
+  const prev = () => {
+    const selected = tabs.value.findIndex(e => e.selected)
+    if (selected) {
+      focusedElement.value = tablist.value[selected - 1]
+    }
+  }
+
+  const next = () => {
+    const selected = tabs.value.findIndex(e => e.selected)
+    if (selected < tabs.value.length) {
+      focusedElement.value = tablist.value[selected + 1]
+    }
+  }
 </script>
 
 <template>
   <div class="tabs">
     <div class="tabs__tablist" role="tablist" aria-label="Sample Tabs">
+      <button class="tabs__prev button -circle" @click="prev">
+        <span class="srOnly">previous</span>
+        <svg class="button__icon"><use href="/main-icons-sprite.svg#chevron-left" /></svg>
+      </button>
       <button
         class="tabs__button"
         :class="{ '-selected': tab.selected }"
@@ -42,6 +60,10 @@
         :tabindex="tab.tabindex"
         v-text="tab.title"
       ></button>
+      <button class="tabs__next button -circle" @click="next">
+        <span class="srOnly">next</span>
+        <svg class="button__icon"><use href="/main-icons-sprite.svg#chevron-right" /></svg>
+      </button>
     </div>
 
     <div
