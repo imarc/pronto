@@ -1,7 +1,7 @@
 .dropdown {
   background: #fff;
   box-shadow: var(--root-box-shadow-med);
-  padding: .75rem;
+  padding: 1.5rem;
   position: absolute;
   width: max-content;
   z-index: 1;
@@ -38,7 +38,8 @@
 
   &.-toRight {
     left: 100%;
-    top: 0;
+    top: -.75rem;
+    padding-top: .75rem;
   }
 
   &.-center {
