@@ -17,7 +17,7 @@
   &__icon {
     aspect-ratio: 1.5;
     block-size: fluid-rems(.5, 1);
-    color: var(--accent-color-text);
+    color: inherit;
   }
 
   &__button,

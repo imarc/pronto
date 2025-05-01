@@ -9,29 +9,29 @@
       <ul class="navigation__list">
         <li class="navigation__item">
           <p-openable class="navigation__button" label="Utility Dropdown" :close-on-blur="false">
-            <div class="navigation__dropdown">
-              <ul>
-                <li>
-                  <a href=""><span>Elit?</span></a>
+            <div class="navigation__dropdown dropdown">
+              <ul class"dropdown__list">
+                <li class="dropdown__item">
+                  <a class="dropdown__link" href=""><span>Elit?</span></a>
                 </li>
-                <li>
-                  <a href=""><span>Dolor.</span></a>
+                <li class="dropdown__item">
+                  <a class="dropdown__link" href=""><span>Dolor.</span></a>
                 </li>
-                <li>
-                  <a href=""><span>Adipisicing!</span></a>
+                <li class="dropdown__item">
+                  <a class="dropdown__link" href=""><span>Adipisicing!</span></a>
                 </li>
-                <li>
-                  <a href=""><span>Amet</span></a>
+                <li class="dropdown__item">
+                  <a class="dropdown__link" href=""><span>Amet</span></a>
                 </li>
-                <li>
-                  <a href=""><span>Adipisicing</span></a>
+                <li class="dropdown__item">
+                  <a class="dropdown__link" href=""><span>Adipisicing</span></a>
                 </li>
               </ul>
             </div>
           </p-openable>
         </li>
         <li class="navigation__item">
-          <a href="#" class="navigation__link">Contact</a>
+          <a class="dropdown__link" href="#" class="navigation__link">Contact</a>
         </li>
       </ul>
     </nav>
@@ -50,7 +50,7 @@
               Menu
             </div>
             <ul class="mobileNavigation__list" v-directionals>
-              <li>
+              <li class="dropdown__item">
                 <p-openable class="mobileNavigation__button" name="submenu">
                   <template #toggle>
                     Submenu
@@ -76,7 +76,7 @@
                   </template>
                 </p-openable>
               </li>
-              <li>
+              <li class="dropdown__item">
                 <p-openable class="mobileNavigation__button" name="submenu">
                   <template #toggle>
                     STUFF
@@ -144,41 +144,41 @@
       <ul class="navigation__list">
         <li class="navigation__item" v-directionals>
           <p-openable class="navigation__button" label="Default Dropdown" :close-on-blur="false">
-            <div class="navigation__dropdown">
-              <ul>
-                <li><a href=""><span>Consectetur asperiores</span></a></li>
-                <li><a href=""><span>Consectetur asperiores</span></a></li>
-                <li><a href=""><span>Amet porro.</span></a></li>
-                <li><a href=""><span>Ipsum dolorem</span></a><li>
+            <div class="navigation__dropdown dropdown">
+              <ul class="dropdown__list">
+                <li class="dropdown__item"><a class="dropdown__link" href=""><span>Consectetur asperiores</span></a></li>
+                <li class="dropdown__item"><a class="dropdown__link" href=""><span>Consectetur asperiores</span></a></li>
+                <li class="dropdown__item"><a class="dropdown__link" href=""><span>Amet porro.</span></a></li>
+                <li class="dropdown__item"><a class="dropdown__link" href=""><span>Ipsum dolorem</span></a></li>
               </ul>
             </div>
           </p-openable>
         </li>
         <li class="navigation__item" v-directionals>
           <p-openable class="navigation__button" label="Centered Dropdown" :close-on-blur="false">
-            <div class="navigation__dropdown -center">
-              <ul>
-                <li><a href=""><span>Consectetur asperiores</span></a></li>
-                <li><a href=""><span>Consectetur asperiores</span></a></li>
-                <li><a href=""><span>Amet porro.</span></a></li>
-                <li><a href=""><span>Ipsum dolorem</span></a><li>
+            <div class="navigation__dropdown dropdown -center">
+              <ul class="dropdown__list">
+                <li class="dropdown__item"><a class="dropdown__link" href=""><span>Consectetur asperiores</span></a></li>
+                <li class="dropdown__item"><a class="dropdown__link" href=""><span>Consectetur asperiores</span></a></li>
+                <li class="dropdown__item"><a class="dropdown__link" href=""><span>Amet porro.</span></a></li>
+                <li class="dropdown__item"><a class="dropdown__link" href=""><span>Ipsum dolorem</span></a></li>
               </ul>
             </div>
           </p-openable>
         </li>
         <li class="navigation__item -wide" v-directionals>
           <p-openable class="navigation__button" label="Full-width Dropdown" :close-on-blur="false">
-            <div class="navigation__dropdown grid -columns-3">
+            <div class="navigation__dropdown dropdown grid -columns-3">
               <div class="cell">
                 <h3>Heading</h3>
                 <p>
                   Adipisicing obcaecati tempora qui ullam voluptates beatae? Assumenda soluta quae
                 </p>
-                <ul>
-                  <li><a href=""><span>Consectetur asperiores</span></a></li>
-                  <li><a href=""><span>Consectetur asperiores</span></a></li>
-                  <li><a href=""><span>Amet porro.</span></a></li>
-                  <li><a href=""><span>Ipsum dolorem</span></a><li>
+                <ul class="dropdown__list">
+                  <li class="dropdown__item"><a class="dropdown__link" href=""><span>Consectetur asperiores</span></a></li>
+                  <li class="dropdown__item"><a class="dropdown__link" href=""><span>Consectetur asperiores</span></a></li>
+                  <li class="dropdown__item"><a class="dropdown__link" href=""><span>Amet porro.</span></a></li>
+                  <li class="dropdown__item"><a class="dropdown__link" href=""><span>Ipsum dolorem</span></a></li>
                 </ul>
               </div>
               <div class="cell">
@@ -186,11 +186,11 @@
                 <p>
                   Adipisicing obcaecati tempora qui ullam voluptates beatae? Assumenda soluta quae
                 </p>
-                <ul>
-                  <li><a href=""><span>Consectetur asperiores</span></a></li>
-                  <li><a href=""><span>Consectetur asperiores</span></a></li>
-                  <li><a href=""><span>Amet porro.</span></a></li>
-                  <li><a href=""><span>Ipsum dolorem</span></a><li>
+                <ul class="dropdown__list">
+                  <li class="dropdown__item"><a class="dropdown__link" href=""><span>Consectetur asperiores</span></a></li>
+                  <li class="dropdown__item"><a class="dropdown__link" href=""><span>Consectetur asperiores</span></a></li>
+                  <li class="dropdown__item"><a class="dropdown__link" href=""><span>Amet porro.</span></a></li>
+                  <li class="dropdown__item"><a class="dropdown__link" href=""><span>Ipsum dolorem</span></a></li>
                 </ul>
               </div>
               <div class="cell">
@@ -198,11 +198,11 @@
                 <p>
                   Adipisicing obcaecati tempora qui ullam voluptates beatae? Assumenda soluta quae
                 </p>
-                <ul>
-                  <li><a href=""><span>Consectetur asperiores</span></a></li>
-                  <li><a href=""><span>Consectetur asperiores</span></a></li>
-                  <li><a href=""><span>Amet porro.</span></a></li>
-                  <li><a href=""><span>Ipsum dolorem</span></a><li>
+                <ul class="dropdown__list">
+                  <li class="dropdown__item"><a class="dropdown__link" href=""><span>Consectetur asperiores</span></a></li>
+                  <li class="dropdown__item"><a class="dropdown__link" href=""><span>Consectetur asperiores</span></a></li>
+                  <li class="dropdown__item"><a class="dropdown__link" href=""><span>Amet porro.</span></a></li>
+                  <li class="dropdown__item"><a class="dropdown__link" href=""><span>Ipsum dolorem</span></a></li>
                 </ul>
               </div>
             </div>
@@ -210,12 +210,12 @@
         </li>
         <li class="navigation__item" v-directionals>
           <p-openable class="navigation__button" label="Right Aligned Dropdown" :close-on-blur="false">
-            <div class="navigation__dropdown -rightAligned">
-              <ul>
-                <li><a href=""><span>Consectetur asperiores</span></a></li>
-                <li><a href=""><span>Consectetur asperiores</span></a></li>
-                <li><a href=""><span>Amet porro.</span></a></li>
-                <li><a href=""><span>Ipsum dolorem</span></a><li>
+            <div class="navigation__dropdown dropdown -rightAligned">
+              <ul class="dropdown__list">
+                <li class="dropdown__item"><a class="dropdown__link" href=""><span>Consectetur asperiores</span></a></li>
+                <li class="dropdown__item"><a class="dropdown__link" href=""><span>Consectetur asperiores</span></a></li>
+                <li class="dropdown__item"><a class="dropdown__link" href=""><span>Amet porro.</span></a></li>
+                <li class="dropdown__item"><a class="dropdown__link" href=""><span>Ipsum dolorem</span></a></li>
               </ul>
             </div>
           </p-openable>

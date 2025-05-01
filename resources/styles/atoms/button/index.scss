@@ -36,7 +36,8 @@
   &[aria-disabled="true"],
   &[disabled],
   &.-disabled {
-    --accent-color: var(--root-color-inactive);
+    --accent-color: var(--root-background-color-inactive);
+    --accent-color-text: white;
     cursor: initial;
     pointer-events: none;
   }
