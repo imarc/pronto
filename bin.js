@@ -6,6 +6,8 @@ import { exec } from 'node:child_process'
 
 import { isCancel, cancel, text, confirm, intro, outro, log } from '@clack/prompts'
 
+const yes = value => ['yes', 'y', 1, true].includes(value.toLowerCase())
+
 const checkCancel = value => {
   if (isCancel(value)) {
     cancel('Okay, nevermind.')
@@ -27,23 +29,9 @@ const copyFolderSync = (from, to) => {
   });
 }
 
-intro('@imarc/pronto')
+const copyComponents = copyPath => {
+  log.info(`Copying components into ${copyPath}...`)
 
-const shouldCopy = await confirm({
-  message: 'Should I copy components from Pronto into your project?'
-})
-
-checkCancel(shouldCopy)
-
-
-const copyPath = shouldCopy ? await text({
-    message: 'Where to?',
-    initialValue: './resources',
-  }) : false
-
-checkCancel(copyPath)
-
-if (shouldCopy && copyPath) {
   try {
     copyFolderSync(
       path.join(import.meta.dirname, 'resources', 'styles'),
@@ -64,13 +52,9 @@ if (shouldCopy && copyPath) {
   }
 }
 
-const addDeps = await confirm({
-  message: 'Should I add @imarc/pronto as a dependency for you?'
-})
+const addDependency = () => {
+  log.info(`Adding dependency to package.json...`)
 
-checkCancel(addDeps)
-
-if (addDeps) {
   const packageJson = path.join(process.cwd(), 'package.json')
 
   if (!fs.existsSync(packageJson)) {
@@ -89,17 +73,69 @@ if (addDeps) {
   })
 }
 
+const createViteConfig = () => {
+  log.info(`Creating a vite.config.js...`)
+
+  const configPath = path.join(import.meta.dirname, 'vite.config.template.js')
+  fs.copyFileSync(configPath, './vite.config.js')
+}
+
+
+if (process.argv.includes('--non-interactive')) {
+  const args = process.argv.slice(process.argv.indexOf('--non-interactive') + 1)
+
+  console.log(args)
+
+  if (yes(args[0])) copyComponents(args[1])
+  if (yes(args[2])) addDependency()
+  if (yes(args[3])) createViteConfig()
+
+  process.exit()
+}
+
+/******************************************************************************
+ * Interactive prompts
+ ******************************************************************************/
+
+intro('@imarc/pronto')
+
+const askCopy = await confirm({
+  message: 'Should I copy components from Pronto into your project?'
+})
+
+checkCancel(askCopy)
+
+const askCopyPath = askCopy ? await text({
+    message: 'Where to?',
+    initialValue: './resources',
+  }) : false
+
+checkCancel(askCopyPath)
+
+if (askCopy && askCopyPath) {
+  copyComponents(askCopyPath)
+}
+
+const askAddDependency = await confirm({
+  message: 'Should I add @imarc/pronto as a dependency for you?'
+})
+
+checkCancel(askAddDependency)
+
+if (askAddDependency) {
+  addDependency()
+}
+
 const viteConfig = path.join(process.cwd(), 'vite.config.js')
+
 if (!fs.existsSync(viteConfig)) {
-  const createViteConfig = await confirm({
+  const askCreateViteConfig = await confirm({
     message: 'Should I create a vite.config.js for you?'
   })
 
-  if (createViteConfig) {
-    const configPath = path.join(import.meta.dirname, 'vite.config.template.js')
-    fs.copyFileSync(configPath, './vite.config.js')
+  if (askCreateViteConfig) {
+    createViteConfig()
   }
-
 } else {
   log.info(`You already have a vite.config.js, skipping creating one for you...`)
 }

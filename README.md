@@ -12,6 +12,16 @@ To install Pronto into your project, you can run:
 npx @imarc/pronto
 ```
 
+### Advanced, non-interactive installation
+
+There is a non-interactive way to install pronto that works, but you should expect changes in future versions:
+
+```
+npx @imarc/pronto --non-interactive <copy components> <copy path> <add dependency> <create vite.config.js>
+```
+
+Other than `<copy path>` each argument should be `y` or `n`, and correspond to the interactive prompts.
+
 ## Contributing
 
 Pronto is being developed as an open source project and welcomes contributions. Please read through Pronto's goals before contributing. We will be judicious about adding new dependencies to Pronto, however Pronto may leverage Vue, Vite, and Pinia.
