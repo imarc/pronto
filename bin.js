@@ -80,6 +80,20 @@ const createViteConfig = () => {
   fs.copyFileSync(configPath, './vite.config.js')
 }
 
+const copySpriteSheet = spritePath => {
+  log.info(`Copying main-icons-sprite.svg to ${spritePath}...`)
+
+  fs.mkdirSync(spritePath, { recursive: true })
+
+  const spriteFile = path.join(import.meta.dirname, 'public', 'main-icons-sprite.svg')
+  const dest = path.join(spritePath, 'main-icons-sprite.svg')
+  fs.copyFileSync(spriteFile, dest)
+}
+
+
+/******************************************************************************
+ * Non-interactive
+ ******************************************************************************/
 
 if (process.argv.includes('--non-interactive')) {
   const args = process.argv.slice(process.argv.indexOf('--non-interactive') + 1)
@@ -89,6 +103,7 @@ if (process.argv.includes('--non-interactive')) {
   if (yes(args[0])) copyComponents(args[1])
   if (yes(args[2])) addDependency()
   if (yes(args[3])) createViteConfig()
+  if (yes(args[4])) copySpriteSheet(args[5])
 
   process.exit()
 }
@@ -138,6 +153,21 @@ if (!fs.existsSync(viteConfig)) {
   }
 } else {
   log.info(`You already have a vite.config.js, skipping creating one for you...`)
+}
+
+const askCopySpriteSheet = await confirm({
+  message: 'Should I copy the SVG spritesheet into your project?'
+})
+
+checkCancel(askCopySpriteSheet)
+
+const askSpritePath = askCopySpriteSheet ? await text({
+  message: 'Where to?',
+  initialValue: './',
+}) : false
+
+if (askCopySpriteSheet && askSpritePath) {
+  copySpriteSheet(askSpritePath)
 }
 
 outro(`You're all set!`)
