@@ -163,7 +163,7 @@ checkCancel(askCopySpriteSheet)
 
 const askSpritePath = askCopySpriteSheet ? await text({
   message: 'Where to?',
-  initialValue: './',
+  initialValue: './public',
 }) : false
 
 if (askCopySpriteSheet && askSpritePath) {
