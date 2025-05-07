@@ -29,7 +29,7 @@
         "vue": "^3.4.31"
     },
     "devDependencies": {
-        "@vitejs/plugin-vue": "^5.2.1",
+        "@vitejs/plugin-vue": "*",
         "sass": "^1.83.4",
         "vite": "^6.0.7"
     },
@@ -79,6 +79,8 @@
         }
     },
     "peerDependencies": {
-        "@vueform/multiselect": "^2.6.11"
+        "@vitejs/plugin-vue": "^5.2.3",
+        "@vueform/multiselect": "^2.6.11",
+        "sass-embedded": "^1.87.0"
     }
 }
