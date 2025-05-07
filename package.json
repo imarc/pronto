@@ -23,7 +23,7 @@
     },
     "dependencies": {
         "@clack/prompts": "^0.9.1",
-        "@imarc/vitrine": "^1.0.4",
+        "@imarc/vitrine": "^1.0.6",
         "modern-normalize": "^3.0.1",
         "swiper": "^11.2.6",
         "vue": "^3.4.31"
