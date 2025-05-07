@@ -1,3 +1,6 @@
+# 2.0.0
+* Complete rework.
+
 # 1.0.0
 * Official release of the component library starter kit.
 * Major cleanup after build out of [Component Library](https://github.com/imarc/craft-component-library/)
