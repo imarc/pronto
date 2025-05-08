@@ -37,5 +37,19 @@ export default defineConfig({
     alias: {
       'vue': 'vue/dist/vue.esm-bundler.js'
     }
+  },
+  server: {
+    allowedHosts: [
+        '.imarc.io',
+        '.imarc.host',
+    ],
+    cors: {
+        origin: [
+            /* Allow localhost, 127.0.0.1, ::1 */
+            /^https?:\/\/(?:(?:[^:]+\.)?localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$/,
+            /* Allow imarc.io and imarc.host */
+            /^https?:\/\/[^\.]+\.imarc\.(io|host)$/,
+        ]
+    }
   }
 })
