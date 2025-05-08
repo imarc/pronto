@@ -17,7 +17,7 @@ npx @imarc/pronto@latest
 There is a non-interactive way to install pronto that works, but you should expect changes in future versions:
 
 ```
-npx @imarc/pronto --non-interactive <copy components> <copy path> <add dependency> <create vite.config.js> <copy sprite sheet> <sprite sheet path>
+npx @imarc/pronto@latest --non-interactive <copy components> <copy path> <add dependency> <create vite.config.js> <copy sprite sheet> <sprite sheet path>
 ```
 
 Other than `<copy path>` and `<sprite sheet path>`, each argument should be `y` or `n`, and correspond to the interactive prompts.
