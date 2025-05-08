@@ -9,7 +9,7 @@ For documentation, see https://imarc-pronto.netlify.app/components/overview/
 To install Pronto into your project, you can run:
 
 ```
-npx @imarc/pronto
+npx @imarc/pronto@latest
 ```
 
 ### Advanced, non-interactive installation
