@@ -73,11 +73,14 @@ const addDependency = () => {
   })
 }
 
-const createViteConfig = () => {
+const createViteConfig = (componentPath, spritePath) => {
   log.info(`Creating a vite.config.js...`)
 
   const configPath = path.join(import.meta.dirname, 'vite.config.template.js')
-  fs.copyFileSync(configPath, './vite.config.js')
+  let config = fs.readFileSync(configPath, 'utf8')
+  config = config.replace(/{RESOURCES_PATH}/g, componentPath)
+                 .replace(/{PUBLIC_PATH}/g, spritePath)
+  fs.writeFileSync('./vite.config.js', config)
 }
 
 const copySpriteSheet = spritePath => {
@@ -102,7 +105,7 @@ if (process.argv.includes('--non-interactive')) {
 
   if (yes(args[0])) copyComponents(args[1])
   if (yes(args[2])) addDependency()
-  if (yes(args[3])) createViteConfig()
+  if (yes(args[3])) createViteConfig(args[1], args[5])
   if (yes(args[4])) copySpriteSheet(args[5])
 
   process.exit()
@@ -141,20 +144,6 @@ if (askAddDependency) {
   addDependency()
 }
 
-const viteConfig = path.join(process.cwd(), 'vite.config.js')
-
-if (!fs.existsSync(viteConfig)) {
-  const askCreateViteConfig = await confirm({
-    message: 'Should I create a vite.config.js for you?'
-  })
-
-  if (askCreateViteConfig) {
-    createViteConfig()
-  }
-} else {
-  log.info(`You already have a vite.config.js, skipping creating one for you...`)
-}
-
 const askCopySpriteSheet = await confirm({
   message: 'Should I copy the SVG spritesheet into your project?'
 })
@@ -169,5 +158,20 @@ const askSpritePath = askCopySpriteSheet ? await text({
 if (askCopySpriteSheet && askSpritePath) {
   copySpriteSheet(askSpritePath)
 }
+
+const viteConfig = path.join(process.cwd(), 'vite.config.js')
+
+if (!fs.existsSync(viteConfig)) {
+  const askCreateViteConfig = await confirm({
+    message: 'Should I create a vite.config.js for you?'
+  })
+
+  if (askCreateViteConfig) {
+    createViteConfig(askCopyPath, askSpritePath)
+  }
+} else {
+  log.info(`You already have a vite.config.js, skipping creating one for you...`)
+}
+
 
 outro(`You're all set!`)
