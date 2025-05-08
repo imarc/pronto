@@ -8,7 +8,11 @@
   &__content {
     container-type: inline-size;
     overflow: hidden;
-    padding: 0 7rem 6.5rem;
+    padding: 0 2rem 4.5rem;
+
+    @include at(md) {
+      padding: 0 7rem 6.5rem;
+    }
   }
 
   swiper-slide {
@@ -63,6 +67,11 @@
     height: 1rem;
     padding: 1rem;
     color: #fff;
+    display: none;
+
+    @include at(md) {
+      display: block;
+    }
   }
 
   swiper-container::part(button-prev) {
@@ -76,45 +85,53 @@
 
   &.-withCallout {
     #{$b}__content {
-      padding: 0 0 11.5rem;
+      padding: 0 0 2.5rem;
+
+      @include at(md) {
+        padding: 0 0 11.5rem;
+      }
     }
 
     swiper-container::part(button-prev),
     swiper-container::part(button-next) {
-      top: 100%;
-      margin-top: 5.25rem;
+      top: 1.5rem;
       z-index: 12;
+      display: block;
+
+      @include at(md) {
+        top: 100%;
+        margin-top: 5.25rem;
+      }
     }
 
     swiper-container::part(button-prev) {
-      left: 0;
+      right: 4rem;
+      left: auto;
+
+      @include at(md) {
+        left: 0;
+      }
     }
 
     swiper-container::part(button-next) {
       right: 0;
     }
+
     swiper-container::part(pagination) {
-      margin-top: 6rem;
-      justify-content: center;
+      display: none;
+
+      @include at(md) {
+        display: flex;
+        margin-top: 6rem;
+        justify-content: center;
+      }
     }
 
+    swiper-slide {
+      padding-top: 4rem;
 
-    @include at(lg) {
-      --columns: 3;
-
-      #{$b}__calloutIcon {
-        grid-area: 1 / main;
-      }
-
-      #{$b}__callout {
-        grid-column: main / span 1;
-      }
-      #{$b}__content {
-        grid-column: 3 / main;
-      }
-
-      .swiper-slide-next {
-        mask: linear-gradient(to right, #fff, #0000 50%);
+      @include at(md) {
+        padding-top: 0;
       }
     }
 
@@ -137,6 +154,25 @@
 
       > * {
         height: 100%;
+      }
+    }
+
+    @include at(lg) {
+      --columns: 3;
+
+      #{$b}__calloutIcon {
+        grid-area: 1 / main;
+      }
+
+      #{$b}__callout {
+        grid-column: main / span 1;
+      }
+      #{$b}__content {
+        grid-column: 3 / main;
+      }
+
+      .swiper-slide-next {
+        mask: linear-gradient(to right, #fff, #0000 50%);
       }
     }
   }

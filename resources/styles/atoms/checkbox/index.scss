@@ -17,13 +17,15 @@
     display: none;
   }
 
-  &:hover {
-    border-color: var(--accent-color-700);
+  @media (any-hover: hover) and (any-pointer: fine) {
+    &:hover {
+      border-color: var(--accent-color-700);
 
-    &:not(.-disabled, :disabled) {
-      &::before {
-        display: block;
-        background: var(--color-gray-200);
+      &:not(.-disabled, :disabled) {
+        &::before {
+          display: block;
+          background: var(--color-gray-200);
+        }
       }
     }
   }
@@ -37,9 +39,11 @@
       display: block;
     }
 
-    &:hover {
-      background: var(--accent-color-600);
-      border-color: var(--accent-color-600);
+    @media (any-hover: hover) and (any-pointer: fine) {
+      &:hover {
+        background: var(--accent-color-600);
+        border-color: var(--accent-color-600);
+      }
     }
   }
 
@@ -53,9 +57,11 @@
       background-color: var(--color-gray-200);
     }
 
-    &:hover {
-      border-color: var(--color-gray-200);
-      background: var(--color-gray-50);
+    @media (any-hover: hover) and (any-pointer: fine) {
+      &:hover {
+        border-color: var(--color-gray-200);
+        background: var(--color-gray-50);
+      }
     }
   }
 }
