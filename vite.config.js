@@ -17,7 +17,9 @@ export default defineConfig({
   plugins: [
     vue(),
     vitrine({
-      name: '<img src="/pronto.svg" alt="Pronto">',
+      name: `Pronto, a frontend framework built by Imarc`,
+      version: `Pronto ${require('./package.json').version}`,
+      logo: '<img src="/pronto.svg" alt="Pronto, a frontend framework built by Imarc">',
       basePaths: [
         'resources',
       ],

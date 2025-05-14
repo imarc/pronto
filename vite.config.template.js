@@ -20,6 +20,7 @@ export default defineConfig({
        * This shows in the top left of your pattern library sidebar.
        */
       name: 'Example.com',
+      version: require('./package.json')?.version,
 
       basePaths: [
 
