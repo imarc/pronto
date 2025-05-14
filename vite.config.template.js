@@ -16,6 +16,11 @@ export default defineConfig({
   plugins: [
     vue(),
     vitrine({
+      /**
+       * This shows in the top left of your pattern library sidebar.
+       */
+      name: 'Example.com',
+
       basePaths: [
 
         /**
@@ -24,6 +29,7 @@ export default defineConfig({
         'resources',
       ],
       includes: [
+
         /**
          * These are the entry points to include. These will also need to get
          * included into your project.

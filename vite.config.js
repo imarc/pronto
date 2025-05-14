@@ -17,6 +17,7 @@ export default defineConfig({
   plugins: [
     vue(),
     vitrine({
+      name: '<img src="/pronto.svg" alt="Pronto">',
       basePaths: [
         'resources',
       ],
