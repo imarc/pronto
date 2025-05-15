@@ -5,6 +5,8 @@ import vitrine from '@imarc/vitrine'
 export default defineConfig({
   build: {
     manifest: true,
+    outDir: '{PUBLIC_PATH}/dist',
+    emptyOutDir: true,
     rollupOptions: {
       input: [
         '{RESOURCES_PATH}/styles/index.scss',
