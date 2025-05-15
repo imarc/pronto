@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import vitrine from '@imarc/vitrine'
 
 export default defineConfig({
+  publicDir: '{PUBLIC_PATH}',
   build: {
     manifest: true,
     outDir: '{PUBLIC_PATH}/dist',
@@ -23,6 +24,8 @@ export default defineConfig({
        */
       name: 'Example.com',
       version: require('./package.json')?.version,
+
+      outDir: '{PUBLIC_PATH}',
 
       basePaths: [
 
