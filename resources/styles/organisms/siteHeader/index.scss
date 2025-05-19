@@ -8,6 +8,7 @@
     grid: "logo search mobile-nav" auto / auto 1fr auto;
     align-items: center;
     gap: 0 var(--gap);
+    position: relative;
   }
 
   &__logo {
