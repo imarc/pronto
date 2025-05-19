@@ -41,6 +41,7 @@
         left: 0;
         border-top: 1px solid var(--accent-color);
         background: var(--color-gray-50);
+        max-width: 100%;
       }
 
       &:has(#{$b}__dropdown) {
