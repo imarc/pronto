@@ -1,7 +1,6 @@
 .media {
   $b: &;
 
-  aspect-ratio: var(--aspect-ratio);
   background-color: rgb(from currentColor r g b / .25);
   display: inline grid;
   margin-bottom: 2rem;
@@ -84,6 +83,22 @@
         padding: min(4cqmin, .5rem);
       }
     }
+  }
 
+  /**
+   * hacks to target and better style iframes from youtube/vimeo embeds from CKEditor.
+   */
+  &:has(iframe) {
+    display: grid;
+
+    /* these divs are using a padding-bottom hack for the aspect ratio. */
+    div[style]:has(> iframe) {
+      position: relative;
+
+      > iframe {
+        position: absolute;
+        inset: 0;
+      }
+    }
   }
 }
