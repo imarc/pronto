@@ -64,7 +64,7 @@
         --icon-fill-color: var(--accent-color-600);
         grid-area: icon;
         height: 2.0625rem;
-        width: 2rem;
+        justify-self: end;
         min-width: 2rem;
         transform: translateY(-50%);
     }
