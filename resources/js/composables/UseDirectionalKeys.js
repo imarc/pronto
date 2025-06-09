@@ -101,5 +101,5 @@ export default function useDirectionalKeys (element) {
     }
   }
 
-  element.addEventLisenter('keydown', handler)
+  element.addEventListener('keydown', handler)
 }
