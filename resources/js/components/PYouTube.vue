@@ -17,7 +17,7 @@
 
   if (typeof window?.YT?.Player === 'undefined') {
     const yt = document.createElement('script')
-    yt.src = 'https:///www.youtube.com/iframe_api'
+    yt.src = 'https://www.youtube.com/iframe_api'
     document.body.append(yt)
   }
 
