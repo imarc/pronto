@@ -52,7 +52,7 @@ useComposableName.js
 
 * Vue directive files should be named in UpperCamelCase and prefixed with 'v'. *Example: vDirectionals.js.*
 * Pronto's Vue components should be prefixed with P and follow Vue naming conventions. Other components do not need to use the P prefix. *Example: PAccordion.vue.*
-* Vue composables only need to folow Vue naming conventions.
+* Vue composables only need to follow Vue naming conventions.
 
 ## Goals
 

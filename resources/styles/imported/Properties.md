@@ -43,4 +43,4 @@ The default block and inline padding for elements.
 
 `--accent-color` is meant to be overridden, and represent the accent color for a component, similar to the `accent-color` CSS property. Pronto components will try to use this color, and expect that the contrast between this color and white to be sufficient for accessibility.
 
-It works with the color utilities (imported/utilities/colors) to allow all Pronto components to be re-colorable with the color utility classes. It's recommended that, instead of component-specific modifiers for changing the color of components, that you use `--accent-color` and define as necessary addditional color utility classes.
+It works with the color utilities (imported/utilities/colors) to allow all Pronto components to be re-colorable with the color utility classes. It's recommended that, instead of component-specific modifiers for changing the color of components, that you use `--accent-color` and define as necessary additional color utility classes.
