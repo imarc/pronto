@@ -12,11 +12,11 @@ $breakpoints: (
 ) !default;
 
 /**
- * Handles both changin $breakpoints as well as defining the CSS properties for
+ * Handles both changing $breakpoints as well as defining the CSS properties for
  * the breakpoints. Usage:
  *
  * @param $breakpoints  map of breakpoints, with the keys being used as the
- *                      breakpoint names. If not specified, used the global
+ *                      breakpoint names. If not specified, use the global
  *                      $breakpoints value.
  * Usage:
  *
