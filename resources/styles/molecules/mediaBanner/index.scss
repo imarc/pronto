@@ -1,33 +1,49 @@
 .mediaBanner {
   position: relative;
   width: 100%;
-  height: 100vh;
-  max-height: 400px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-areas: "media";
 
-  // When inside a container, use 630px height instead of 400px max
+  // When inside a container, add border radius
   .container & {
-    height: 630px;
-    max-height: 630px;
     border-radius: var(--root-border-radius);
+  }
 
+  // Target p-lazy wrapper div to be in grid area
+  > div:first-child {
+    grid-area: media;
+    position: relative;
+    width: 100%;
+    
+    video {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 65 / 24;
+      display: block;
+    }
+  }
+  
+  .media {
+    grid-area: media;
+    display: grid;
+    width: 100%;
+    // Override section's --accent-color: #fff to use default purple for icons
+    --accent-color: var(--color-purple, #9933ff);
   }
 
   &__content {
-    position: absolute;
-    top: 0;
-    left: 0;
+    grid-area: media;
     width: 100%;
-    height: 100%;
+    height: auto;
+    aspect-ratio: 65 / 24;
     object-fit: cover;
     display: block;
     z-index: 0;
 
     // Content overlay styling (when used for text content)
     &.-white {
+      grid-area: media;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -92,21 +108,23 @@
   }
 
   &__mask {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+
+    .media & {
+      grid-area: 1 / 1;
+    }
+    
+    grid-area: media;
+    position: relative;
     z-index: 1;
     background: white;
     margin: 0;
-    display: grid;
     transition: opacity 0.3s ease;
     border-radius: var(--root-border-radius);
 
     img {
       width: 100%;
-      height: 100%;
+      height: auto;
+      aspect-ratio: 65 / 24;
       object-fit: cover;
     }
 
@@ -117,6 +135,16 @@
   }
 
   &__trigger {
+    // When inside media class, use media's grid system (media__trigger handles positioning)
+    .media & {
+      grid-area: 1 / 1;
+    }
+    
+    grid-area: media;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 2;
     appearance: none;
     background: transparent;
@@ -125,14 +153,8 @@
     padding: 0;
   }
 
-  &__icon {
-    width: 80px;
-    height: 80px;
-    fill: white;
-    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
-  }
-
   &__overlay {
+    grid-area: media;
     position: absolute;
     top: 0;
     left: 0;
@@ -140,6 +162,7 @@
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.3);
     pointer-events: none;
+    z-index: 1;
   }
 
   // Modifier for different overlay styles
