@@ -4,6 +4,7 @@
   overflow: hidden;
   display: grid;
   grid-template-areas: "media";
+  --media-banner-aspect-ratio: 65 / 24;
 
   // When inside a container, add border radius
   .container & {
@@ -19,7 +20,7 @@
     video {
       width: 100%;
       height: auto;
-      aspect-ratio: 65 / 24;
+      aspect-ratio: var(--media-banner-aspect-ratio);
       display: block;
     }
   }
@@ -29,14 +30,14 @@
     display: grid;
     width: 100%;
     // Override section's --accent-color: #fff to use default purple for icons
-    --accent-color: var(--color-purple, #9933ff);
+    --accent-color: var(--color-purple);
   }
 
   &__content {
     grid-area: media;
     width: 100%;
     height: auto;
-    aspect-ratio: 65 / 24;
+    aspect-ratio: var(--media-banner-aspect-ratio);
     object-fit: cover;
     display: block;
     z-index: 0;
@@ -94,14 +95,9 @@
   }
 
   &__title {
-    margin-bottom: 0;
-  }
-
-  // Only add text shadow for banner styles (not default style)
-  &:not(.container &) &__title {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     margin-bottom: 1.5rem;
-  }
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+ }
 
   &__actions {
     margin-top: 1rem;
@@ -124,7 +120,7 @@
     img {
       width: 100%;
       height: auto;
-      aspect-ratio: 65 / 24;
+      aspect-ratio: var(--media-banner-aspect-ratio);
       object-fit: cover;
     }
 
@@ -155,11 +151,6 @@
 
   &__overlay {
     grid-area: media;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     background-color: rgba(0, 0, 0, 0.3);
     pointer-events: none;
     z-index: 1;
