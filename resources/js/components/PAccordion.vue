@@ -18,10 +18,6 @@ const props = defineProps({
 })
 const details = useTemplateRef('details')
 
-onMounted(() => {
-  details.value.style.setProperty('--accordion-height-closed', 'auto')
-})
-
 const handleToggle = event => {
   const el = event.currentTarget
   const duration = props.duration || parseFloat(getComputedStyle(el).transitionDuration) * 1000 || 0
@@ -31,31 +27,26 @@ const handleToggle = event => {
     return
   }
 
-  const summaryHeight = summary?.clientHeight
-
   if (!summary.contains(event.target)) {
     return
   }
 
-  event.preventDefault()
+  el.style.removeProperty('--accordion-height')
 
-  if (el.open) {
-    el.classList.add('-closing')
-    el.style.setProperty('--accordion-height-closed', `${summaryHeight}px`)
+  if (!el.open) {
+    const startingHeight = el.clientHeight
 
-    setTimeout(() => {
-      el.open = false
-      el.classList.remove('-closing')
-      el.style.setProperty('--accordion-height-closed', 'auto')
-    }, duration)
-
-  } else {
-    el.style.transitionDuration = '0s'
-    el.style.setProperty('--accordion-height-closed', `${summaryHeight}px`)
+    el.style.setProperty('--accordion-transition-duration', 0)
 
     requestAnimationFrame(() => {
-      el.style.transitionDuration = ''
-      el.open = true
+      const endingHeight = el.clientHeight
+
+      el.style.removeProperty('--accordion-transition-duration', 0)
+      el.style.setProperty('--accordion-height', 0)
+
+      requestAnimationFrame(() => {
+        el.style.setProperty('--accordion-height', `${endingHeight - startingHeight}px`)
+      })
     })
   }
 }

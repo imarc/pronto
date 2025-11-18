@@ -11,12 +11,21 @@
 
     &::details-content {
       height: 0;
-      transition: content-visibility var(--root-duration-slow) allow-discrete,
-        height var(--root-duration-slow) var(--root-ease-out);
+      transition: height var(--accordion-transition-duration, var(--root-duration-slow)) var(--root-ease-out);
+
+      @supports (interpolate-size: allow-keywords) {
+        transition: content-visibility var(--root-duration-slow) allow-discrete,
+          height var(--root-duration-slow) var(--root-ease-out);
+      }
     }
 
     &[open]::details-content {
-      height: auto;
+      height: var(--accordion-height);
+
+
+      @supports (interpolate-size: allow-keywords) {
+        height: auto;
+      }
     }
 
     &__summary {
