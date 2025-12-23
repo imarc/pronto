@@ -6,7 +6,7 @@
     </video>
     <template #placeholder="{ load, modifier }">
       <picture class="media__mask" :class="modifier">
-          <img srcset="https://unsplash.it/320/176?random&gravity=center" alt="">
+          <img srcset="https://unsplash.it/320/176?random&gravity=center" alt="" width="320" height="176">
       </picture>
       <button class="media__trigger" @click="load" :class="modifier">
         <span class="srOnly">play</span>
@@ -26,7 +26,7 @@
         <picture class="media__mask" :class="modifier">
             <source srcset="https://unsplash.it/320/176?random&gravity=center" media="(min-width: 768px)">
             <source srcset="https://unsplash.it/320/176?random&gravity=center" media="(min-width: 480px)">
-            <img class="lazyload" srcset="https://unsplash.it/320/176?random&gravity=center" alt="">
+            <img class="lazyload" srcset="https://unsplash.it/320/176?random&gravity=center" alt="" width="320" height="176">
         </picture>
       <button class="media__trigger" :class="modifier" @click="load">
         <span class="srOnly">play</span>
@@ -44,7 +44,7 @@
       <picture class="media__mask" :class="modifier">
         <source srcset="https://unsplash.it/267/150?random&gravity=center" media="(min-width: 768px)">
         <source srcset="https://unsplash.it/267/150?random&gravity=center" media="(min-width: 480px)">
-        <img class="lazyload" srcset="https://unsplash.it/267/150?random&gravity=center" alt="">
+        <img class="lazyload" srcset="https://unsplash.it/267/150?random&gravity=center" alt="" width="267" height="150">
       </picture>
       <button class="media__trigger" :class="modifier" @click="load">
         <span class="srOnly">play</span>

@@ -53,6 +53,6 @@
 
 <style scoped>
 div {
-  container-type: size;
+  container-type: size;;
 }
 </style>
