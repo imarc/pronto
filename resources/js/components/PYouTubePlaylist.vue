@@ -1,0 +1,35 @@
+<script setup>
+  import { computed, onMounted, ref, useTemplateRef } from 'vue'
+
+  const mediaEl = useTemplateRef('video')
+  const mounted = ref(false)
+  const loaded = ref(false)
+  const modifier = computed(() => loaded.value ? '-loaded' : '')
+
+  onMounted(() => mounted.value = true)
+
+  const playPause = () => {
+    loaded.value = true
+
+    const iframe = mediaEl.value.querySelector('iframe')
+    if (iframe && iframe.getAttribute('tabindex') == -1) {
+      iframe.removeAttribute('tabindex')
+    }
+  }
+</script>
+
+<template>
+  <div ref="video" class="p-youtube-playlist-wrapper">
+    <slot name="default" />
+  </div>
+  <slot name="placeholder" v-bind="{ playPause, loaded, modifier }">
+    <button @click="playPause">play</button>
+  </slot>
+</template>
+
+<style scoped>
+.p-youtube-playlist-wrapper {
+  container-type: size;
+}
+</style>
+
