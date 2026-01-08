@@ -1,0 +1,54 @@
+@use "@imarc/pronto/resources/styles/imported" as *;
+
+.cards {
+  $b: &;
+
+  --columns: 1;
+  --gap: var(--root-gap, 16px);
+
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  // Responsive defaults: 1 mobile, 2 tablet+
+  @include at(md) {
+    --columns: 2;
+  }
+
+  // Column modifiers (2-5 columns on tablet+)
+  @for $i from 2 through 5 {
+    &.-columns-#{$i} {
+      @include at(md) {
+        --columns: #{$i};
+      }
+    }
+  }
+
+
+  // Centered single card
+  &.-centered {
+    justify-items: center;
+
+    > .card {
+      max-width: 25.75rem;
+    }
+  }
+
+  // Tight gap modifier
+  &.-tight {
+    --gap: calc(var(--root-gap, 16px) / 2);
+  }
+
+  // Wide gap modifier
+  &.-wide-gap {
+    --gap: calc(var(--root-gap, 16px) * 2);
+  }
+
+  // Cards fill available height
+  &.-stretch {
+    > .card {
+      height: 100%;
+    }
+  }
+}
+
