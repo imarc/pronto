@@ -1,0 +1,90 @@
+<section class="tiles">
+    <div class="container">
+        <div class="tiles__grid -featured">
+            <!-- 
+                Thirds grid: 3 columns at desktop
+                - (no modifier) = 1×1 small square
+                - -featured = 2×2 large square  
+                - -wide = 2×1 horizontal
+                - -tall = 1×2 vertical
+            -->
+            <div class="tiles__set -thirds">
+                <div class="tiles__tile">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1557683316-973673baf926?w=400&h=400&fit=crop" alt="">
+                    </div>
+                </div>
+
+                <div class="tiles__tile -featured -dark -has-content">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?w=800&h=800&fit=crop" alt="">
+                    </div>
+                    <div class="tiles__overlay"></div>
+                    <div class="tiles__content">
+                        <h3 class="tiles__heading">Featured tile</h3>
+                        <p class="tiles__description">This tile uses -featured to span 2×2</p>
+                        <div class="tiles__actions">
+                            <a href="#" class="button -outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tiles__tile">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=400&h=400&fit=crop" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 
+                3-column grid with staggered -short and -fill modifiers
+                -fill spans 2 grid rows, -short spans 1 row: 
+
+                Grid rows:    Col 1      Col 2      Col 3
+                Row 1:      [fill-top] [short]  [fill-top]
+                Row 2:      [fill-bot] [fill-top] [fill-bot]
+                Row 3:      [short] [fill-bot] [short]
+            -->
+
+            <h2 class="tiles__heading">Staggered</h2>
+            <div class="tiles__set -thirds -staggered">
+                <!-- Tile order: fill, short, fill, fill, short, short -->
+                <div class="tiles__tile -fill">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1557683316-973673baf926?w=400&h=600&fit=crop" alt="">
+                    </div>
+                </div>
+
+                <div class="tiles__tile -short">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?w=800&h=450&fit=crop" alt="">
+                    </div>
+                </div>
+
+                <div class="tiles__tile -fill">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=400&h=600&fit=crop" alt="">
+                    </div>
+                </div>
+
+                <div class="tiles__tile -fill">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=800&h=450&fit=crop" alt="">
+                    </div>
+                </div>
+
+                <div class="tiles__tile -short">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=600&fit=crop" alt="">
+                    </div>
+                </div>
+
+                <div class="tiles__tile -short">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?w=800&h=450&fit=crop" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
