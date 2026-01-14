@@ -1,0 +1,188 @@
+<section class="tiles">
+    <div class="container">
+        <div class="tiles__grid -featured">
+            <!-- 
+                Thirds grid: 3 columns at desktop
+                - (no modifier) = 1×1 small square
+                - -featured = 2×2 large square  
+                - -wide = 2×1 horizontal
+                - -tall = 1×2 vertical
+            -->
+            <div class="tiles__set -thirds">
+                <div class="tiles__tile">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1557683316-973673baf926?w=400&h=400&fit=crop" alt="">
+                    </div>
+                </div>
+
+                <div class="tiles__tile -featured -dark -has-content">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?w=800&h=800&fit=crop" alt="">
+                    </div>
+                    <div class="tiles__overlay"></div>
+                    <div class="tiles__content">
+                        <h3 class="tiles__heading">Featured tile</h3>
+                        <p class="tiles__description">This tile uses -featured to span 2×2</p>
+                        <div class="tiles__actions">
+                            <a href="#" class="button -outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tiles__tile">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=400&h=400&fit=crop" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 
+                Halves grid: 4 columns at desktop
+                Add any number of tiles, any combination of modifiers
+            -->
+            <div class="tiles__set -halves">
+                <div class="tiles__tile -featured">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=800&h=800&fit=crop" alt="">
+                    </div>
+                    <button class="tiles__more">
+                        <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M480 80c8.8 0 16 7.2 16 16l0 256c0 8.8-7.2 16-16 16l-320 0c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l320 0zM160 32c-35.3 0-64 28.7-64 64l0 256c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64L160 32zm80 112a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm140.7 3.8c-4.3-7.3-12.2-11.8-20.7-11.8s-16.4 4.5-20.7 11.8l-46.5 79-17.2-24.6c-4.5-6.4-11.8-10.2-19.7-10.2s-15.2 3.8-19.7 10.2l-56 80c-5.1 7.3-5.8 16.9-1.6 24.8S191.1 320 200 320l240 0c8.6 0 16.6-4.6 20.8-12.1s4.2-16.7-.1-24.1l-80-136zM48 152c0-13.3-10.7-24-24-24S0 138.7 0 152L0 448c0 35.3 28.7 64 64 64l360 0c13.3 0 24-10.7 24-24s-10.7-24-24-24L64 464c-8.8 0-16-7.2-16-16l0-296z"/></svg>
+                        View 10 More Images
+                    </button>
+                </div>
+
+                <div class="tiles__tile">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=400&fit=crop" alt="">
+                    </div>
+                </div>
+
+                <div class="tiles__tile">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?w=400&h=400&fit=crop" alt="">
+                    </div>
+                </div>
+
+                <div class="tiles__tile -wide">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?w=600&h=300&fit=crop" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 
+                3-column grid with mixed layout:
+                Row 1: Wide (2 cols) + Tall (1 col, spans 2 rows)
+                Row 2: Small + Small + Tall continues
+            -->
+            <div class="tiles__set -thirds">
+                <div class="tiles__tile -wide -dark -has-content">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop" alt="">
+                    </div>
+                    <div class="tiles__overlay"></div>
+                    <div class="tiles__content">
+                        <h3 class="tiles__heading">Wide tile</h3>
+                        <p class="tiles__description">Spans 2 columns horizontally</p>
+                    </div>
+                </div>
+
+                <div class="tiles__tile -tall -dark">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=400&h=800&fit=crop" alt="">
+                    </div>
+                    <div class="tiles__overlay"></div>
+                    <div class="tiles__content">
+                        <h3 class="tiles__heading">Tall tile</h3>
+                        <p class="tiles__description">Spans 2 rows</p>
+                    </div>
+                </div>
+
+                <div class="tiles__tile">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&h=400&fit=crop" alt="">
+                    </div>
+                </div>
+
+                <div class="tiles__tile">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=400&fit=crop" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 
+                4-column grid: Small + Wide + Small (1+2+1 = 4 cols)
+                Visually continues from the section above (no extra gap)
+            -->
+            <div class="tiles__set -halves">
+                <div class="tiles__tile">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=400&h=400&fit=crop" alt="">
+                    </div>
+                </div>
+
+                <div class="tiles__tile -wide">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&h=400&fit=crop" alt="">
+                    </div>
+                </div>
+
+                <div class="tiles__tile">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=400&h=400&fit=crop" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 
+                3-column grid with staggered -short and -fill modifiers
+                -fill spans 2 grid rows, -short spans 1 row: 
+
+                Grid rows:    Col 1      Col 2      Col 3
+                Row 1:      [fill-top] [short]  [fill-top]
+                Row 2:      [fill-bot] [fill-top] [fill-bot]
+                Row 3:      [short] [fill-bot] [short]
+            -->
+            <div class="tiles__set -thirds -staggered">
+                <!-- Tile order: fill, short, fill, fill, short, short -->
+                <div class="tiles__tile -fill">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1557683316-973673baf926?w=400&h=600&fit=crop" alt="">
+                    </div>
+                </div>
+
+                <div class="tiles__tile -short">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?w=800&h=450&fit=crop" alt="">
+                    </div>
+                </div>
+
+                <div class="tiles__tile -fill">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=400&h=600&fit=crop" alt="">
+                    </div>
+                </div>
+
+                <div class="tiles__tile -fill">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=800&h=450&fit=crop" alt="">
+                    </div>
+                </div>
+
+                <div class="tiles__tile -short">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=600&fit=crop" alt="">
+                    </div>
+                </div>
+
+                <div class="tiles__tile -short">
+                    <div class="tiles__media">
+                        <img src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?w=800&h=450&fit=crop" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
