@@ -1,0 +1,18 @@
+@use "@imarc/pronto/resources/styles/imported" as *;
+
+.logoCloud {
+    $b: &;
+    
+    &.-reduced {
+        .logoGrid__item {
+            height: fluid-rems(2, 3);
+        }
+    }
+
+    &.-center {
+        #{$b}__title,
+        #{$b}__description {
+            text-align: center;
+        }
+    }
+}
