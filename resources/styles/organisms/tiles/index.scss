@@ -182,9 +182,9 @@
         }
 
         // =======================================================================
-        // Tile modifiers - control spanning behavior
-        // Small/Featured tiles use aspect-ratio: 1 for square
-        // Wide/Tall tiles stretch to fill their grid area
+        // Tile modifiers - control spanning behavior (mobile-first)
+        // Default: 1×1 square tile on all screens
+        // Modifiers add spanning at md breakpoint and above
         // =======================================================================
 
         // Default: 1×1 square tile
@@ -192,68 +192,47 @@
             aspect-ratio: 1;
         }
 
-        // Featured: Large 2×2 tile (still square)
+        // Featured: Large 2×2 tile at md+ (square on mobile)
         #{$b}__tile.-featured {
-            grid-column: span 2;
-            grid-row: span 2;
-            aspect-ratio: 1;
-
-            @include at(md, max-width) {
-                grid-column: span 1;
-                grid-row: span 1;
+            @include at(md) {
+                grid-column: span 2;
+                grid-row: span 2;
             }
         }
 
-        // Wide: Horizontal 2×1 tile
+        // Wide: Horizontal 2×1 tile at md+ (square on mobile)
         #{$b}__tile.-wide {
-            grid-column: span 2;
-            aspect-ratio: auto;
-            align-self: stretch;
-            // Minimum height ensures correct sizing when alone in a row
-            min-height: var(--_tile-size, 200px);
-
-            @include at(md, max-width) {
-                grid-column: span 1;
-                aspect-ratio: 1;
-                min-height: unset;
+            @include at(md) {
+                grid-column: span 2;
+                aspect-ratio: auto;
+                align-self: stretch;
+                min-height: var(--_tile-size, 200px);
             }
         }
 
-        // Tall: Vertical 1×2 tile
-        // Same width as a square tile, spans 2 rows
+        // Tall: Vertical 1×2 tile at md+ (square on mobile)
         #{$b}__tile.-tall {
-            grid-row: span 2;
-            aspect-ratio: auto;
-            align-self: stretch;
-            // Minimum height ensures correct sizing when determining grid flow
-            min-height: calc(var(--_tile-size, 200px) * 2 + var(--gap));
-
-            @include at(md, max-width) {
-                grid-row: span 1;
-                aspect-ratio: 1;
-                min-height: unset;
+            @include at(md) {
+                grid-row: span 2;
+                aspect-ratio: auto;
+                align-self: stretch;
+                min-height: calc(var(--_tile-size, 200px) * 2 + var(--gap));
             }
         }
 
-        // Short: Compressed height tile (16:9 landscape)
-        // Height = 9/16 of normal tile (56.25%)
+        // Short: 16:9 landscape tile at md+ (square on mobile)
         #{$b}__tile.-short {
-            aspect-ratio: 16 / 9;
-
-            @include at(md, max-width) {
-                aspect-ratio: 1;
+            @include at(md) {
+                aspect-ratio: 16 / 9;
             }
         }
 
-        // Fill: Spans 2 grid rows, pairs with -short tiles
+        // Fill: Spans 2 grid rows at md+, pairs with -short tiles (square on mobile)
         #{$b}__tile.-fill {
-            grid-row: span 2;
-            aspect-ratio: auto;
-            align-self: stretch;
-
-            @include at(md, max-width) {
-                grid-row: span 1;
-                aspect-ratio: 1;
+            @include at(md) {
+                grid-row: span 2;
+                aspect-ratio: auto;
+                align-self: stretch;
             }
         }
     }
