@@ -1,18 +1,15 @@
 <script setup>
-  import { computed, onMounted, ref, useTemplateRef } from 'vue'
+  import { computed, ref, useTemplateRef } from 'vue'
 
   const mediaEl = useTemplateRef('video')
-  const mounted = ref(false)
   const loaded = ref(false)
   const modifier = computed(() => loaded.value ? '-loaded' : '')
-
-  onMounted(() => mounted.value = true)
 
   const playPause = () => {
     loaded.value = true
 
     const iframe = mediaEl.value.querySelector('iframe')
-    if (iframe && iframe.getAttribute('tabindex') == -1) {
+    if (iframe && iframe.getAttribute('tabindex') === -1) {
       iframe.removeAttribute('tabindex')
     }
 
