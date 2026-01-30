@@ -1,6 +1,7 @@
 @use "@imarc/pronto/resources/styles/imported" as *;
 
 .siteHeader {
+  --gap: var(--root-gap, 16px);
   padding: var(--gap) 0;
 
   &__content {

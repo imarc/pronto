@@ -6,13 +6,21 @@
   grid-template-areas: "media";
   --media-banner-aspect-ratio: 65 / 24;
 
-  // When inside a container, add border radius
-  .container & {
+  // Container instance - grid and border radius
+  &__container {
+    display: grid;
+    grid-template-areas: "media";
     border-radius: var(--root-border-radius);
   }
 
-  // Target p-lazy wrapper div to be in grid area
-  > div:first-child {
+  // When inside container, position within container's grid
+  .container > &__container {
+    grid-column: main / main;
+  }
+
+  // Target p-lazy wrapper div to be in grid area (works for both full-width and container)
+  > div:first-child,
+  &__container > div:first-child {
     grid-area: media;
     position: relative;
     width: 100%;
@@ -25,10 +33,14 @@
     }
   }
   
-  .media {
+  // Media class (works for both full-width and container)
+  .media,
+  &__container .media {
     grid-area: media;
     display: grid;
     width: 100%;
+    margin-bottom: 0; 
+    aspect-ratio: var(--media-banner-aspect-ratio);
     // Override section's --accent-color: #fff to use default purple for icons
     --accent-color: var(--color-purple);
   }
@@ -134,14 +146,12 @@
     // When inside media class, use media's grid system (media__trigger handles positioning)
     .media & {
       grid-area: 1 / 1;
+      align-self: center;
+      justify-self: center;
+      z-index: 2; // Above the mask (z-index: 1)
+      position: relative;
     }
     
-    grid-area: media;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
     appearance: none;
     background: transparent;
     border: 0;
@@ -163,3 +173,4 @@
     }
   }
 } 
+
