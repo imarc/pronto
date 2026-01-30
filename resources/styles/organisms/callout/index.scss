@@ -1,6 +1,4 @@
 .callout {
-  background: var(--color-gray-100);
-  padding: 5rem 0;
   text-align: center;
 
   &__title {
@@ -18,5 +16,22 @@
     flex-flow: row wrap;
     justify-content: center;
     gap: 1rem;
+  }
+
+  .grid {
+    align-items: center;
+  }
+
+  // When buttons have accent-white, use the section's accent color for text
+  &.accent-secondary {
+    .button.accent-white {
+      --accent-color-text: var(--color-blue);
+    }
+  }
+
+  &.accent-tertiary {
+    .button.accent-white {
+      --accent-color-text: var(--color-aqua);
+    }
   }
 }

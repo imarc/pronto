@@ -3,14 +3,21 @@
 .basicSection {
   $b: &;
 
+  &__content {
+    --columns: 1;
+    --gap: var(--root-gap, 16px);
+
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: repeat(var(--columns, 1), minmax(0, 1fr));
+
   @include at(md) {
     --columns: 2;
   }
 
-  &__content {
-    display: grid;
-    grid: auto / subgrid;
-    gap: 1rem var(--root-gap);
+    > * {
+      min-width: 0;
+    }
 
     &.-center {
       align-items: center;
@@ -19,6 +26,11 @@
     > :first-child:last-child {
       grid-column: 1 / -1;
     }
+  }
+
+  // When inside container, position within container's grid
+  .container > &__content {
+    grid-column: main / main;
   }
 
 
@@ -51,10 +63,13 @@
   }
 
   &.-wide {
+    #{$b}__content {
+      @include at(md) {
+        --columns: 3;
+      }
+    }
 
     @include at(md) {
-      --columns: 3;
-
       :is(#{$b}__text, #{$b}__image, #{$b}__media, #{$b}__cta, #{$b}__testimonial) {
         &.-wide {
           grid-column: span var(--span, 2);

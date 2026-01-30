@@ -8,6 +8,30 @@
   position: relative;
   z-index: 0;
 
+  &__grid {
+    --columns: 1;
+    --gap: var(--root-gap, 16px);
+    --container-width: 320px;
+
+    display: grid;
+    gap: var(--gap);
+    grid: auto / [wide-start] 1fr [main-start] repeat(var(--columns), minmax(0, calc((var(--container-width) - (var(--columns) - 1) * var(--gap)) / var(--columns)))) [main-end] 1fr [wide-end];
+
+    > .container {
+      grid-column: wide / wide;
+    }
+
+    /* should be max mobile columns + tablet outer gutters */
+    @media (min-width: 368px) {
+      --container-width: 744px;
+    }
+
+    /* should be max tablet columns + desktop outer gutters */
+    @media (min-width: 808px) {
+      --container-width: 1300px;
+    }
+  }
+
   &__bg {
     container-type: size;
     display: grid;
@@ -20,7 +44,7 @@
       grid-area: 1 / 1;
     }
 
-    + #{$b}__content {
+    + .container {
       grid-row: 1 / 2;
     }
 
@@ -97,15 +121,32 @@
   }
 
   &__content {
+    --columns: 1;
+    --gap: var(--root-gap, 16px);
+
     display: grid;
-    grid: auto / subgrid;
-    gap: 1rem var(--root-gap);
+    gap: var(--gap);
+    grid-template-columns: repeat(var(--columns, 1), minmax(0, 1fr));
     align-items: center;
     z-index: 1;
 
+    @include at(md) {
+      --columns: 2;
+    }
+
+    > * {
+      min-width: 0;
+    }
+
+    // Single child should span full width
     > :first-child:last-child {
       grid-column: 1 / -1;
     }
+  }
+
+  // When inside container, use subgrid to access container's named lines
+  .container > &__content {
+    grid-column: main / main;
   }
 
 
@@ -151,12 +192,12 @@
   }
 
   &.-bleed {
-    #{$b}__content {
+    .container > #{$b}__content {
       grid-column: main / wide;
+    }
 
-      > :nth-child(2) {
-        grid-column: span 2;
-      }
+    #{$b}__image {
+      grid-column: 2 / -1;
     }
   }
 

@@ -5,4 +5,8 @@
   padding: 5rem 0;
   background: var(--accent-color);
   color: var(--accent-color-text);
+
+  .container {
+    row-gap: 16px;
+  }
 }
