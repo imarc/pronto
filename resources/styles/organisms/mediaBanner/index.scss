@@ -6,6 +6,7 @@
   overflow: hidden;
   display: grid;
   grid-template-areas: 'media';
+
   --media-banner-aspect-ratio: 65 / 24;
 
   // Container instance - grid and border radius
