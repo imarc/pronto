@@ -1,7 +1,7 @@
 .media {
   $b: &;
 
-  background-color: rgb(from currentColor r g b / 0.25);
+  background-color: rgb(from currentcolor r g b / 0.25);
   display: inline grid;
   margin-bottom: 2rem;
   width: 267px;
@@ -89,7 +89,6 @@
     &.-loaded {
       place-self: start end;
       height: min(25cqmin, 3rem);
-      justify-self: end;
       margin: 0.5rem;
       opacity: 0;
       pointer-events: none;
