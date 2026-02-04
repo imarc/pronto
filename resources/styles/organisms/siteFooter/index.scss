@@ -16,6 +16,7 @@
         'utility utility'
         / auto 1fr;
     }
+
     @include at(lg) {
       grid:
         'info nav     nav   ' auto

@@ -3,7 +3,7 @@
 @use 'sass:meta';
 
 /**
- * Default breakpoints. Make sure to set setBreakpoints when changing these.
+ * Default breakpoints. Make sure to set set-breakpoints when changing these.
  */
 $breakpoints: (
   sm: 320px,
@@ -20,15 +20,15 @@ $breakpoints: (
  *                      $breakpoints value.
  * Usage:
  *
- *     @include setBreakpoints(( sm: 320px, md: 744px));
+ *     @include set-breakpoints(( sm: 320px, md: 744px));
  *
  * or
  *
  *     $breakpoints: ( sm: 320px, md: 744px ); 
- *     @include setBreakpoints;
+ *     @include set-breakpoints;
  *
  */
-@mixin setBreakpoints($breakpoints: $breakpoints) {
+@mixin set-breakpoints($breakpoints: $breakpoints) {
   $breakpoints: $breakpoints !global;
 
   @each $breakpoint, $value in $breakpoints {
@@ -54,6 +54,7 @@ $breakpoints: (
   @if map.has-key($breakpoints, $breakpoint) {
     $breakpoint: map.get($breakpoints, $breakpoint);
   }
+
   @media screen and (#{$property}: #{$breakpoint}) {
     @content;
   }

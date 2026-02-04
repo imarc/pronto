@@ -34,9 +34,8 @@
   }
 
   &__button {
-    background: #0000;
+    background: #00000000;
     border: 0;
-
     color: inherit;
     cursor: pointer;
     display: none;
@@ -54,6 +53,7 @@
 
       &:hover {
         --tab__button-box-shadow: -2px;
+
         box-shadow: 0 var(--tab__button-box-shadow) var(--accent-color-400) inset;
         color: var(--color-gray-900);
       }
@@ -61,7 +61,9 @@
 
     &.-selected {
       display: block;
+
       --tab__button-box-shadow: -8px;
+
       color: var(--color-gray-900);
     }
   }
@@ -116,25 +118,25 @@
         white-space: nowrap;
         background: var(--color-gray-100);
         border-radius: 0.5rem;
-        box-shadow: 0px 1px 1px 0px var(--color-gray-200);
+        box-shadow: 0 1px 1px 0 var(--color-gray-200);
         padding: 0.5rem 1rem;
         margin-bottom: 0.5rem;
 
         &:hover {
-          background: #fff;
+          background: #ffffff;
           box-shadow: var(--root-box-shadow-med);
           border-radius: 8px;
         }
 
         &.-selected {
-          background: #fff;
+          background: #ffffff;
           border-radius: 8px 8px 0 0;
-          box-shadow: 0 0.5rem 0 #fff;
+          box-shadow: 0 0.5rem 0 #ffffff;
         }
       }
 
       #{$b}__panel {
-        background: #fff;
+        background: #ffffff;
         padding: 1rem;
       }
     }

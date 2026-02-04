@@ -11,7 +11,7 @@
   &__link,
   &__button {
     border: 0;
-    background: #0000;
+    background: #00000000;
     color: var(--root-color);
     padding: 1.5rem;
   }
@@ -51,7 +51,7 @@
 
     &:has(#{$b}__dropdown) {
       #{$b}__button {
-        color: #000;
+        color: #000000;
 
         &::after {
           background: var(--color-gray-600);

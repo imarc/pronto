@@ -30,7 +30,7 @@
 
   &:hover,
   &:active {
-    color: #fff;
+    color: #ffffff;
     background-color: var(--accent-color-700);
     border-color: var(--accent-color-700);
   }
@@ -40,12 +40,13 @@
   &.-disabled {
     --accent-color: var(--root-background-color-inactive);
     --accent-color-text: white;
+
     cursor: initial;
     pointer-events: none;
   }
 
   &.-outline {
-    background: #0000;
+    background: #00000000;
     color: var(--accent-color);
 
     &:hover {
@@ -55,6 +56,7 @@
 
   &.-outline-fill {
     @extend .-outline;
+
     &:hover {
       background-color: var(--accent-color);
       border-color: var(--accent-color);
@@ -63,8 +65,8 @@
   }
 
   &.-ghost {
-    background: #0000;
-    border-color: #0000;
+    background: #00000000;
+    border-color: #00000000;
     color: var(--accent-color);
 
     &:hover {

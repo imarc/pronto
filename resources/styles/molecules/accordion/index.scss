@@ -31,12 +31,11 @@
   &__summary {
     --heading-color: var(--root-color-headings);
 
-    align-items: center;
+    place-items: center start;
     border-radius: 0.5rem;
     cursor: pointer;
     display: grid;
     grid-auto-flow: column;
-    justify-items: start;
     list-style: none;
     outline-offset: -2px;
     padding: 0.5rem;
@@ -61,6 +60,7 @@
 
   &__icon {
     --icon-color: var(--accent-color-contrast);
+
     aspect-ratio: 1;
     height: var(--root-font-size-h3);
     transition: transform var(--root-duration-moderate) var(--root-ease-out);
@@ -78,7 +78,8 @@
     }
 
     #{$b}__icon {
-      --icon-color: #000;
+      --icon-color: #000000;
+
       transform: rotate(90deg);
     }
   }

@@ -51,11 +51,11 @@
     scroll-timeline: --table x;
 
     &.-fadeRight {
-      mask-image: linear-gradient(90deg, #fff calc(100% - var(--table-fade)), #0000 100%);
+      mask-image: linear-gradient(90deg, #ffffff calc(100% - var(--table-fade)), #00000000 100%);
     }
 
     &.-fadeBoth {
-      mask-image: linear-gradient(90deg, #0000, #fff var(--table-starting-fade) calc(100% - var(--table-fade)), #0000 100%);
+      mask-image: linear-gradient(90deg, #00000000, #ffffff var(--table-starting-fade) calc(100% - var(--table-fade)), #00000000 100%);
     }
 
     &.-stickHead {
@@ -108,12 +108,15 @@
     --table-starting-fade: 0;
     --table-fade: var(--max-table-fade);
   }
+
   10% {
     --table-starting-fade: var(--max-table-fade);
   }
+
   90% {
     --table-fade: var(--max-table-fade);
   }
+
   100% {
     --table-starting-fade: var(--max-table-fade);
     --table-fade: 0;

@@ -2,9 +2,9 @@
 
 .logoGrid {
   $b: &;
+
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   gap: fluid-rems(2, 3);
   justify-content: center;
   align-items: center;
@@ -30,6 +30,6 @@
   }
 
   &__link {
-    @include pseudo-link();
+    @include pseudo-link;
   }
 }

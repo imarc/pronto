@@ -63,10 +63,10 @@
   &:where(button) {
     background-color: var(--accent-color);
     border-color: var(--accent-color);
-    color: #fff;
+    color: #ffffff;
     box-shadow: var(--root-box-shadow-low);
     #{$b}__icon {
-      color: #fff;
+      color: #ffffff;
     }
 
     &:hover {
@@ -85,10 +85,10 @@
   &:has(input:checked) {
     background-color: var(--accent-color-700);
     border-color: var(--accent-color-700);
-    color: #fff;
+    color: #ffffff;
 
     #{$b}__icon {
-      color: #fff;
+      color: #ffffff;
     }
   }
 
@@ -96,9 +96,9 @@
   &.-dismissable:has(input:checked) {
     background-color: var(--accent-color-700);
     border-color: var(--accent-color-700);
-    color: #fff;
+    color: #ffffff;
     #{$b}__icon {
-      color: #fff;
+      color: #ffffff;
       padding: 0.1667em;
 
       > use:nth-child(1) {

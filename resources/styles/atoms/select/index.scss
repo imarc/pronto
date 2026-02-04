@@ -15,9 +15,8 @@ select {
 .select {
   $b: &;
 
-  align-items: center;
+  place-items: center end;
   display: inline grid;
-  justify-items: end;
   margin-bottom: 1em;
 
   &::after {

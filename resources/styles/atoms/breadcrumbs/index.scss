@@ -1,5 +1,6 @@
 .breadcrumbs {
   $b: &;
+
   --accent-color: var(--link-color, var(--color-blue));
 
   font-size: 0.75rem;
@@ -23,6 +24,7 @@
 
   &__link {
     --accent-color: inherit;
+
     align-items: normal;
     gap: 0.5rem;
   }

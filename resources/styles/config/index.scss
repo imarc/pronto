@@ -3,7 +3,7 @@
 /**
  * @imports
  */
-@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Inter:wght@100..900&display=swap');
+@import 'https://fonts.googleapis.com/css2?family=Gloock&family=Inter:wght@100..900&display=swap';
 
 :root {
   /**
@@ -12,13 +12,11 @@
 
   --root-font-family: initial;
   --root-font-family-heading: initial;
-
   --root-font-size-h1: #{fluid-rems(2, 2.5, 3)};
   --root-font-size-h2: #{fluid-rems(1.5, 2, 2.5)};
   --root-font-size-h3: #{fluid-rems(1.25, 1.5, 2)};
   --root-font-size-h4: #{fluid-rems(1.125, 1.25, 1.5)};
   --root-font-size-h5: #{fluid-rems(1, 1.125, 1.25)};
-
   --root-font-size-sm: 0.75rem;
   --root-font-size-lg: 1.5rem;
 
@@ -137,7 +135,7 @@
    * Breakpoints
    */
 
-  @include setBreakpoints(
+  @include set-breakpoints(
     (
       sm: 320px,
       md: 744px,
@@ -148,12 +146,12 @@
   --root-gap: 16px;
 
   /* should be max mobile width + tablet outer gutters */
-  @media (min-width: 368px) {
+  @media (width >= 368px) {
     --root-gap: 24px;
   }
 
   /* should be max tablet width + desktop outer gutters */
-  @media (min-width: 808px) {
+  @media (width >= 808px) {
     --root-gap: 32px;
   }
 
@@ -166,7 +164,5 @@
     --root-duration-slow: 0;
   }
 
-  //
   // Configure other --root- properties here.
-  //
 }

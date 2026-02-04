@@ -26,12 +26,12 @@
   }
 
   /* should be max mobile columns + tablet outer gutters */
-  @media (min-width: 368px) {
+  @media (width >= 368px) {
     --container-width: 744px;
   }
 
   /* should be max tablet columns + desktop outer gutters */
-  @media (min-width: 808px) {
+  @media (width >= 808px) {
     --container-width: 1300px;
   }
 }

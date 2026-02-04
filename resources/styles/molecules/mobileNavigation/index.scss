@@ -2,7 +2,7 @@
   --link-color: var(--accent-color);
 
   &__pane {
-    background: #fff;
+    background: #ffffff;
     box-shadow: var(--root-box-shadow-med);
     inset: 0 4.5rem 0 0;
     overflow-x: auto;
@@ -67,6 +67,6 @@
     appearance: none;
     border: 0;
     width: 100%;
-    background: #0000;
+    background: #00000000;
   }
 }
