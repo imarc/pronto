@@ -10,9 +10,9 @@ Pronto uses [Vite](https://vite.dev/) and [Vitrine](https://github.com/imarc/vit
 
 Pronto's components are organized following [Atomic Design](https://atomicdesign.bradfrost.com/):
 
-* **Atoms** are the smallest components, and should not contain any other components. *Examples: buttons, inputs, tags, headings.*
-* **Molecules** are the next smallest, and should only depend on atoms. *Examples: banners, accordions, lists, pagination.*
-* **Organisms** can depend on both atoms and molecules. These often represent a full slice across the page. *Examples: hero, section, site header, site footer.*
+- **Atoms** are the smallest components, and should not contain any other components. _Examples: buttons, inputs, tags, headings._
+- **Molecules** are the next smallest, and should only depend on atoms. _Examples: banners, accordions, lists, pagination._
+- **Organisms** can depend on both atoms and molecules. These often represent a full slice across the page. _Examples: hero, section, site header, site footer._
 * **Pages** are full example compositions (for example under `resources/styles/pages/`) built from existing primitives. They are listed in the pattern library like other HTML examples.
 * Pronto does not ship **Templates** as a separate layer yet; but these groups should be created as appropriate.
 * **Utilities** are components that are meant to be used with other components and primarily provide functionality.
