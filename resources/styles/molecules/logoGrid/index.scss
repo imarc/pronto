@@ -2,7 +2,6 @@
 
 .logoGrid {
   $b: &;
-
   display: flex;
   flex-flow: row wrap;
   gap: fluid-rems(2, 3);
