@@ -1,4 +1,4 @@
-@use "@imarc/pronto/resources/styles/imported" as *;
+@use "@/core" as *;
 
 :is(h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6) {
   --accent-color: var(--heading-color, var(--root-color-headings));
