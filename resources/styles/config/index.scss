@@ -1,9 +1,9 @@
-@use "@/core/mixins/breakpoints" as *;
+@use '@/core/mixins/breakpoints' as *;
 
 /**
  * @imports
  */
-@import url("https://fonts.googleapis.com/css2?family=Gloock&family=Inter:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Inter:wght@100..900&display=swap');
 
 :root {
   /**
@@ -13,15 +13,14 @@
   --root-font-family: initial;
   --root-font-family-heading: initial;
 
-  --root-font-size-h1: #{fluid-rems(    2,   2.5,    3)};
-  --root-font-size-h2: #{fluid-rems(  1.5,     2,  2.5)};
-  --root-font-size-h3: #{fluid-rems( 1.25,   1.5,    2)};
-  --root-font-size-h4: #{fluid-rems(1.125,  1.25,  1.5)};
-  --root-font-size-h5: #{fluid-rems(    1, 1.125, 1.25)};
+  --root-font-size-h1: #{fluid-rems(2, 2.5, 3)};
+  --root-font-size-h2: #{fluid-rems(1.5, 2, 2.5)};
+  --root-font-size-h3: #{fluid-rems(1.25, 1.5, 2)};
+  --root-font-size-h4: #{fluid-rems(1.125, 1.25, 1.5)};
+  --root-font-size-h5: #{fluid-rems(1, 1.125, 1.25)};
 
-  --root-font-size-sm: .75rem;
+  --root-font-size-sm: 0.75rem;
   --root-font-size-lg: 1.5rem;
-
 
   /**
    * Colors
@@ -30,7 +29,7 @@
   /**
    * a default neutral color scale.
    */
-  --color-gray-50:  #f2f2f2;
+  --color-gray-50: #f2f2f2;
   --color-gray-100: #e5e5e5;
   --color-gray-200: #cccccc;
   --color-gray-300: #b3b3b3;
@@ -46,9 +45,9 @@
    * Site/brand colors. Add more as needed.
    */
   --color-purple: #9933ff;
-  --color-blue: #0066FF;
-  --color-blue-700: #003D99;
-  --color-aqua: #00CCCC;
+  --color-blue: #0066ff;
+  --color-blue-700: #003d99;
+  --color-aqua: #00cccc;
   --color-aqua-700: #009999;
 
   /**
@@ -121,7 +120,6 @@
   --root-color-info: #1ba9f0;
   --root-color-info-900: #002233;
 
-
   /**
    * Easings
    */
@@ -135,16 +133,17 @@
   --root-ease-in-out-moderate: var(--root-duration-moderate) var(--root-ease-in-out);
   --root-ease-in-out-slow: var(--root-duration-slow) var(--root-ease-in-out);
 
-
   /**
    * Breakpoints
    */
 
-  @include setBreakpoints((
-    sm: 320px,
-    md: 744px,
-    lg: 1300px
-  ));
+  @include setBreakpoints(
+    (
+      sm: 320px,
+      md: 744px,
+      lg: 1300px,
+    )
+  );
 
   --root-gap: 16px;
 

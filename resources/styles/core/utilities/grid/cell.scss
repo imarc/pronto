@@ -27,7 +27,6 @@
     }
   }
 
-
   @for $i from 1 through 12 {
     &.-span-#{$i} {
       --span: #{$i};

@@ -1,4 +1,4 @@
-@use "@/core" as *;
+@use '@/core' as *;
 
 .dropdown {
   background: #fff;
@@ -22,7 +22,7 @@
     color: var(--accent-color);
     display: block;
     font-weight: 700;
-    padding: .5rem 0;
+    padding: 0.5rem 0;
   }
 
   &__item {
@@ -35,15 +35,15 @@
 
   &__button {
     display: flex;
-    gap: .5rem;
+    gap: 0.5rem;
     justify-content: space-between;
     width: 100%;
   }
 
   &.-toRight {
     left: 100%;
-    top: -.75rem;
-    padding-top: .75rem;
+    top: -0.75rem;
+    padding-top: 0.75rem;
   }
 
   &.-center {

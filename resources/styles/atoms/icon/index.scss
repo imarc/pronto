@@ -8,11 +8,11 @@
     background: var(--accent-color);
     --icon-color: var(--icon-stroke-color);
     display: inline grid;
-    padding: .3125em;
+    padding: 0.3125em;
   }
 
   &.-square {
-    border-radius: .25em;
+    border-radius: 0.25em;
   }
 
   &.-circle {

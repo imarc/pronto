@@ -1,12 +1,6 @@
 import { ref, toValue, watchEffect } from 'vue'
 
-export default function focusWithArrows(
-  elements,
-  {
-    includeHomeEnd = true,
-  } = {}
-) {
-
+export default function focusWithArrows(elements, { includeHomeEnd = true } = {}) {
   const KEY_BEHAVIORS = {
     ArrowLeft: i => Math.max(0, i - 1),
     ArrowRight: i => Math.min(handledElements.length - 1, i + 1),
@@ -32,13 +26,13 @@ export default function focusWithArrows(
   const handledElements = []
 
   watchEffect(() => {
-    (toValue(elements) || [])
+    ;(toValue(elements) || [])
       .filter(elem => !handledElements.includes(elem))
       .forEach(elem => {
         elem.addEventListener('keydown', handleKeydown)
         elem.addEventListener('focus', event => {
           focus.value = event.target
-          event.target.addEventListener('blur', () => focus.value = null, { once: true })
+          event.target.addEventListener('blur', () => (focus.value = null), { once: true })
         })
         handledElements.push(elem)
 

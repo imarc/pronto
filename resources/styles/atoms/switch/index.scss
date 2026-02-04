@@ -4,7 +4,8 @@
   display: inline grid;
   height: 2em;
   padding: 3px;
-  transition: background-color var(--root-ease-out-fast),
+  transition:
+    background-color var(--root-ease-out-fast),
     box-shadow var(--root-ease-out-fast);
   width: 4em;
 
@@ -15,7 +16,8 @@
     height: 100%;
     justify-self: start;
     mask: unset;
-    transition: translate var(--root-ease-out-fast),
+    transition:
+      translate var(--root-ease-out-fast),
       background-color var(--root-ease-out-fast),
       box-shadow var(--root-ease-out-fast);
   }

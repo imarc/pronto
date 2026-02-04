@@ -1,4 +1,4 @@
-@use "@/core" as *;
+@use '@/core' as *;
 
 .hero {
   $b: &;
@@ -48,48 +48,29 @@
       grid-row: 1 / 2;
     }
 
-    img { 
+    img {
       max-height: 100cqh;
       width: 100%;
       object-fit: cover;
     }
 
-
     &.-fade::after {
-      background: radial-gradient(
-        circle farthest-side at 50% 25%,
-        #0000 35vw,
-        #0002 45vw,
-        #0004
-      );
+      background: radial-gradient(circle farthest-side at 50% 25%, #0000 35vw, #0002 45vw, #0004);
       content: '';
       z-index: 1;
 
       @include at(md) {
-        background: radial-gradient(
-          circle farthest-side at calc(50vw + min(25vw, 325px)),
-          #0004 min(15vw, 195px),
-          #0008 min(25vw, 325px),
-          #000c
-        );
+        background: radial-gradient(circle farthest-side at calc(50vw + min(25vw, 325px)), #0004 min(15vw, 195px), #0008 min(25vw, 325px), #000c);
       }
     }
 
     &.-vignette::after {
-      background: radial-gradient(
-        ellipse closest-side at 50% 35%,
-        #0002 40vw,
-        #0004
-      );
+      background: radial-gradient(ellipse closest-side at 50% 35%, #0002 40vw, #0004);
       content: '';
       z-index: 1;
 
       @include at(md) {
-        background: radial-gradient(
-          ellipse at center,
-          #0004 40%,
-          #000c 80%
-        );
+        background: radial-gradient(ellipse at center, #0004 40%, #000c 80%);
       }
     }
 
@@ -148,7 +129,6 @@
   .container > &__content {
     grid-column: main / main;
   }
-
 
   // Natural content order for mobile
   &__image {

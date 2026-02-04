@@ -5,13 +5,14 @@
 
   display: grid;
   gap: var(--gap);
-  grid: auto /
+  grid:
+    auto /
     [wide-start]
-      1fr
+    1fr
     [main-start]
-      repeat(var(--columns), minmax(0, calc((var(--container-width) - (var(--columns) - 1) * var(--gap)) / var(--columns))))
+    repeat(var(--columns), minmax(0, calc((var(--container-width) - (var(--columns) - 1) * var(--gap)) / var(--columns))))
     [main-end]
-      1fr
+    1fr
     [wide-end];
 
   @for $i from 2 through 12 {

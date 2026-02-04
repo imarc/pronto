@@ -1,4 +1,4 @@
-@use "@/core" as *;
+@use '@/core' as *;
 
 .basicSection {
   $b: &;
@@ -11,9 +11,9 @@
     gap: var(--gap);
     grid-template-columns: repeat(var(--columns, 1), minmax(0, 1fr));
 
-  @include at(md) {
-    --columns: 2;
-  }
+    @include at(md) {
+      --columns: 2;
+    }
 
     > * {
       min-width: 0;
@@ -32,7 +32,6 @@
   .container > &__content {
     grid-column: main / main;
   }
-
 
   // Natural content order for mobile
   &__image {

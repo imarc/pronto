@@ -13,7 +13,7 @@
   --accent-color-800: color-mix(in srgb, var(--accent-color), #000 60%);
   --accent-color-900: color-mix(in srgb, var(--accent-color), #000 80%);
   --accent-color-950: color-mix(in srgb, var(--accent-color), #000 90%);
-  
+
   /**
    * This variable is either black or white - whichever has the highest contrast
    * with the accent color. This uses CIELAB perceptual lightness, a close but
@@ -33,17 +33,11 @@
 
   /* This @supports rule targets only Safari 18 and Chrome */
   @supports (selector(::view-transition)) {
-    --accent-color-text: rgb(
-      from color-mix( in srgb, var(--accent-color-contrast), var(--accent-color-dark))
-      calc(2*r) calc(2*g) calc(2*b)
-    );
+    --accent-color-text: rgb(from color-mix(in srgb, var(--accent-color-contrast), var(--accent-color-dark)) calc(2 * r) calc(2 * g) calc(2 * b));
   }
 
   /* This @supports rule targets Firefox */
   @supports (selector(::view-transition)) {
-    --accent-color-text: rgb(
-      from color-mix( in srgb, var(--accent-color-contrast), var(--accent-color-dark))
-      calc(2*r) calc(2*g) calc(2*b)
-    );
+    --accent-color-text: rgb(from color-mix(in srgb, var(--accent-color-contrast), var(--accent-color-dark)) calc(2 * r) calc(2 * g) calc(2 * b));
   }
 }

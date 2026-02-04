@@ -1,6 +1,6 @@
-@use "sass:map";
-@use "sass:math";
-@use "sass:meta";
+@use 'sass:map';
+@use 'sass:math';
+@use 'sass:meta';
 
 /**
  * Default breakpoints. Make sure to set setBreakpoints when changing these.
@@ -8,7 +8,7 @@
 $breakpoints: (
   sm: 320px,
   md: 744px,
-  lg: 1300px
+  lg: 1300px,
 ) !default;
 
 /**
@@ -93,7 +93,7 @@ $breakpoints: (
     $size: $name;
     $name: null;
   }
-  
+
   @container #{$name} (#{$property}: #{$size}) {
     @content;
   }

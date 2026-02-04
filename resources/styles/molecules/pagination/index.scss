@@ -1,4 +1,4 @@
-@use "@/core" as *;
+@use '@/core' as *;
 
 .pagination {
   display: flex;
@@ -10,13 +10,13 @@
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    gap: fluid-rems(.5, 1);
+    gap: fluid-rems(0.5, 1);
     width: fit-content;
   }
 
   &__icon {
     aspect-ratio: 1.5;
-    block-size: fluid-rems(.5, 1);
+    block-size: fluid-rems(0.5, 1);
     color: inherit;
   }
 
@@ -33,7 +33,7 @@
     border-radius: 0.25rem;
     color: var(--accent-color-text);
     display: grid;
-    font-size: fluid-rems(.5, 1);
+    font-size: fluid-rems(0.5, 1);
     font-weight: 700;
     line-height: 1;
     width: fluid-rems(2, 2.5);
@@ -44,7 +44,8 @@
   &__link {
     --accent-color: inherit;
     text-decoration: none;
-    transition: background-color var(--duration-fast) var(--ease-out),
+    transition:
+      background-color var(--duration-fast) var(--ease-out),
       color var(--duration-fast) var(--ease-out);
 
     &:hover {

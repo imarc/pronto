@@ -16,7 +16,8 @@
     transition: background-color var(--root-ease-out-fast);
   }
 
-  td, th {
+  td,
+  th {
     padding: 1em 1.5em;
   }
 
@@ -91,13 +92,13 @@
  * They are closely related to --max-table-fade, that sets the fade size.
  */
 @property --table-fade {
-  syntax: "<length>";
+  syntax: '<length>';
   inherits: false;
   initial-value: 0;
 }
 
 @property --table-starting-fade {
-  syntax: "<length>";
+  syntax: '<length>';
   inherits: false;
   initial-value: 0;
 }

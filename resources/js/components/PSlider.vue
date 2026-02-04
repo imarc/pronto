@@ -1,17 +1,17 @@
 <script setup>
-  import { register } from 'swiper/element/bundle'
-  import { computed, ref, useTemplateRef, watchEffect } from 'vue'
+import { register } from 'swiper/element/bundle'
+import { computed, ref, useTemplateRef, watchEffect } from 'vue'
 
-  register()
+register()
 
-  const swiper = ref(null)
-  const slides = ref([])
-  const swiperEl = useTemplateRef('swiper')
+const swiper = ref(null)
+const slides = ref([])
+const swiperEl = useTemplateRef('swiper')
 
-  const init = e => {
-    slides.value = e.target.swiper?.slides
-    console.log(e.target, e.target?.swiper, swiperEl.value)
-  }
+const init = e => {
+  slides.value = e.target.swiper?.slides
+  console.log(e.target, e.target?.swiper, swiperEl.value)
+}
 </script>
 <template>
   <swiper-container ref="swiper" v-bind="$attrs" @swiperafterinit="init">

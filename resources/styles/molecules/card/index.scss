@@ -1,4 +1,4 @@
-@use "@/core" as *;
+@use '@/core' as *;
 
 .card {
   $b: &;
@@ -52,7 +52,7 @@
     display: inline-block;
     height: 1.25em;
     width: 1.25em;
-    margin-right: .5em;
+    margin-right: 0.5em;
     aspect-ratio: 1;
     vertical-align: text-bottom;
   }
@@ -63,7 +63,7 @@
 
   &__title {
     font-size: fluid-rems(1.5, 2);
-    margin: .5rem 0;
+    margin: 0.5rem 0;
   }
 
   &__description {

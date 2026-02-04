@@ -36,6 +36,12 @@
     "browserslist": [
         "defaults"
     ],
+    "prettier": {
+        "arrowParens": "avoid",
+        "printWidth": 999,
+        "semi": false,
+        "singleQuote": true
+    },
     "eslintConfig": {
         "env": {
             "browser": true,

@@ -77,7 +77,7 @@ const augmentElementRects = (nodeList, origin) => {
  * focusable elements and handles directional arrow moves between. Also
  * supports Home and End.
  */
-export default function useDirectionalKeys (element) {
+export default function useDirectionalKeys(element) {
   const findTarget = (el, key) => {
     const elements = augmentElementRects(focusableElements(element), el)
     if (key in KEY_FILTERS) {
@@ -85,7 +85,7 @@ export default function useDirectionalKeys (element) {
         (closest, el) => {
           return el.distance < closest.distance ? el : closest
         },
-        { distance: Infinity }
+        { distance: Infinity },
       )
     }
     return null

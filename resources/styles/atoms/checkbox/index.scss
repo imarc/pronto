@@ -1,4 +1,4 @@
-:where(input[type=checkbox]),
+:where(input[type='checkbox']),
 .checkbox {
   appearance: none;
   background: var(--color-gray-50);
@@ -6,7 +6,9 @@
   border: 2px solid var(--color-gray-500);
   display: inline grid;
   height: 1.5em;
-  transition: background var(--root-ease-out-fast), border-color var(--root-ease-out-fast);
+  transition:
+    background var(--root-ease-out-fast),
+    border-color var(--root-ease-out-fast);
   width: 1.5em;
 
   &::before {
