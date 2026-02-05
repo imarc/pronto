@@ -3,7 +3,7 @@ const openableGroups = {}
 </script>
 
 <script setup>
-import { ref, nextTick, useSlots, useTemplateRef } from 'vue'
+import { ref, nextTick, useTemplateRef } from 'vue'
 
 import focusableElements from '../composables/FocusableElements.js'
 
@@ -16,7 +16,6 @@ const { closeOnBlur, refocus, label, name, openOnHover, hoverOrClick } = defineP
   hoverOrClick: { type: Boolean, default: false },
 })
 const emit = defineEmits(['open', 'close'])
-const slots = useSlots()
 const button = useTemplateRef('button')
 const openable = useTemplateRef('openable')
 const open = ref(false)
@@ -33,8 +32,6 @@ const pressEscape = evt => {
     toggle()
   }
 }
-
-let escapeHandler = null
 
 const updateGroup = open => {
   if (!name) {
@@ -128,7 +125,9 @@ if (hoverOrClick) {
 
 <template>
   <button v-bind="$attrs" ref="button" v-on="bindings">
-    <slot name="toggle" v-bind="bindings">{{ label }}</slot>
+    <slot name="toggle" v-bind="bindings">
+      {{ label }}
+    </slot>
   </button>
   <div ref="openable" v-on="openOnHover || hoverOrClick ? { mouseover, mouseout } : {}">
     <slot v-if="open" v-bind="bindings" />

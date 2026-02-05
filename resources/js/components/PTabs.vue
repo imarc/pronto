@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref, useTemplateRef, isRef, isReactive, watchEffect } from 'vue'
+import { computed, ref, useTemplateRef, watchEffect } from 'vue'
 import focusWithArrows from '/resources/js/composables/focusWithArrows'
 
 const props = defineProps({
@@ -50,14 +50,14 @@ const next = () => {
         <span class="srOnly">previous</span>
         <svg class="button__icon"><use href="/main-icons-sprite.svg#chevron-left" /></svg>
       </button>
-      <button class="tabs__button" :class="{ '-selected': tab.selected }" v-for="tab in tabs" role="tab" :aria-selected="tab.selected" :aria-controls="tab.panelId" :id="tab.buttonId" ref="tablist" :tabindex="tab.tabindex" v-text="tab.title"></button>
+      <button v-for="tab in tabs" :id="tab.buttonId" :key="tab.buttonId" ref="tablist" class="tabs__button" :class="{ '-selected': tab.selected }" role="tab" :aria-selected="tab.selected" :aria-controls="tab.panelId" :tabindex="tab.tabindex" v-text="tab.title" />
       <button class="tabs__next button -circle" @click="next">
         <span class="srOnly">next</span>
         <svg class="button__icon"><use href="/main-icons-sprite.svg#chevron-right" /></svg>
       </button>
     </div>
 
-    <div class="tabs__panel" v-for="tab in tabs" role="tabpanel" :tabindex="tab.tabindex" :id="tab.panelId" :aria-labelledby="tab.buttonId" :hidden="!tab.selected">
+    <div v-for="tab in tabs" :id="tab.panelId" :key="tab.panelId" class="tabs__panel" role="tabpanel" :tabindex="tab.tabindex" :aria-labelledby="tab.buttonId" :hidden="!tab.selected">
       <slot :name="tab.panelId" />
     </div>
   </div>

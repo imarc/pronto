@@ -56,9 +56,9 @@ const load = async () => {
 
 <template>
   <div ref="content">
-    <slot name="default"></slot>
+    <slot name="default" />
   </div>
-  <slot name="placeholder" v-bind="{ load, loaded, modifier }"></slot>
+  <slot name="placeholder" v-bind="{ load, loaded, modifier }" />
 </template>
 
 <style scoped>

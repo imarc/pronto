@@ -1,6 +1,6 @@
 <script setup>
 import { register } from 'swiper/element/bundle'
-import { computed, ref, useTemplateRef, watchEffect } from 'vue'
+import { ref, useTemplateRef } from 'vue'
 
 register()
 
@@ -19,6 +19,8 @@ const init = e => {
   </swiper-container>
 
   <ul>
-    <li v-for="(slide, i) of slides">{{ i }}</li>
+    <li v-for="(slide, i) of slides" :key="i">
+      {{ i }}
+    </li>
   </ul>
 </template>

@@ -24,7 +24,9 @@ const playPause = () => {
 </script>
 
 <template>
-  <div ref="video"><slot name="default" /></div>
+  <div ref="video">
+    <slot name="default" />
+  </div>
   <slot name="placeholder" v-bind="{ playPause, loaded, modifier }">
     <button @click="playPause">play</button>
   </slot>

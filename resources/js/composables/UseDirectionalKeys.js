@@ -1,5 +1,3 @@
-import { toValue, onMounted } from 'vue'
-
 import focusableElements from './FocusableElements.js'
 
 /**

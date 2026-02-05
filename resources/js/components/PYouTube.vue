@@ -7,7 +7,7 @@ window.onYouTubeIframeAPIReady = () => (YT_API_LOADED.value = true)
 </script>
 
 <script setup>
-import { computed, onMounted, ref, useTemplateRef, watchEffect } from 'vue'
+import { computed, onMounted, watchEffect } from 'vue'
 
 let player = null
 const mediaEl = useTemplateRef('video')
@@ -24,7 +24,7 @@ if (typeof window?.YT?.Player === 'undefined') {
 onMounted(() => (mounted.value = true))
 watchEffect(() => {
   if (mounted.value && YT_API_LOADED.value) {
-    player = new YT.Player(mediaEl.value.querySelector('iframe'))
+    player = new window.YT.Player(mediaEl.value.querySelector('iframe'))
   }
 })
 
@@ -45,7 +45,9 @@ const playPause = () => {
 </script>
 
 <template>
-  <div ref="video"><slot name="default" /></div>
+  <div ref="video">
+    <slot name="default" />
+  </div>
   <slot name="placeholder" v-bind="{ playPause, loaded, modifier }">
     <button @click="playPause">play</button>
   </slot>
