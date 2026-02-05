@@ -1,3 +1,4 @@
+import path from 'node:path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vitrine from '@imarc/vitrine'
@@ -31,9 +32,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      // Note that this alias is only used for development of pronto itself.
-      '@imarc/pronto': __dirname,
-
+      '@': path.resolve(__dirname, 'resources/styles'),
       'vue': 'vue/dist/vue.esm-bundler.js'
     }
   }
