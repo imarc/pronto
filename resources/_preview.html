@@ -9,11 +9,7 @@
   <body>
     <div
       id="app"
-      style="
-        $ {
-          component.url?.match(/atoms|molecules/)?'padding: 2rem': '';
-        }
-      "
+      style="${component.url?.match(/atoms|molecules/)?'padding: 2rem':''}"
     >
       ${code}
     </div>
