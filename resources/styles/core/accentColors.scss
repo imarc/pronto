@@ -16,11 +16,10 @@
 
   /**
    * This variable is either black or white - whichever has the highest contrast
-   * with the accent color. This uses CIELAB perceptual lightness, a close but
-   * different way to check contrast to the WCAG 2.1 contrast ratio. turns out
-   * that 58% is a closer cut off to WCAG than 50%.
+   * with the accent color. This uses CIELAB perceptual lightness to approximate
+   * contrast and more closely matches APCA than WCAG.
    */
-  --accent-color-contrast: lab(from var(--accent-color) round(108 - l, 100) 0 0);
+  --accent-color-contrast: oklch(from var(--accent-color) round(1.21 - L) 0 0);
 
   /**
    * This variable based on AccentColorText is either var(--accent-color-dark)
