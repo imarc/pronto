@@ -19,7 +19,7 @@
    * with the accent color. This uses CIELAB perceptual lightness to approximate
    * contrast and more closely matches APCA than WCAG.
    */
-  --accent-color-contrast: oklch(from var(--accent-color) round(1.21 - L) 0 0);
+  --accent-color-contrast: oklch(from var(--accent-color) round(1.21 - l) 0 0deg);
 
   /**
    * This variable based on AccentColorText is either var(--accent-color-dark)

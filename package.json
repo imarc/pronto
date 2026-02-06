@@ -21,7 +21,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "prettier -c \"resources/**/*.{js,vue,scss,css,md}\" && eslint \"resources/js/**/*.{js,vue}\" && stylelint \"resources/**/*.scss\"",
-    "lint:fix": "prettier -w \"resources/**/*.{js,vue,scss,css,md}\" && eslint \"resources/js/**/*.{js,vue}\" && stylelint \"resources/**/*.scss\""
+    "lint:fix": "prettier -w \"resources/**/*.{js,vue,scss,css,md}\" && eslint \"resources/js/**/*.{js,vue}\" && stylelint \"resources/**/*.scss\" --fix"
   },
   "dependencies": {
     "@clack/prompts": "^0.9.1",
