@@ -1,7 +1,7 @@
 .media {
   $b: &;
 
-  background-color: rgb(from currentColor r g b / .25);
+  background-color: rgb(from currentcolor r g b / 0.25);
   display: inline grid;
   margin-bottom: 2rem;
   width: 267px;
@@ -9,7 +9,7 @@
   aspect-ratio: 267 / 150;
   overflow: hidden;
 
-  @media (min-width: 768px) {
+  @media (width >= 768px) {
     width: 300px;
     aspect-ratio: 300 / 150;
   }
@@ -20,7 +20,7 @@
   }
 
   /* Ensure wrapper divs from components fill the grid cell */
-  > div:not(.media__mask):not(.media__trigger) {
+  > div:not(.media__mask, .media__trigger) {
     width: 100%;
     height: 100%;
     min-width: 0;
@@ -68,16 +68,16 @@
 
   &__trigger {
     appearance: none;
-    background: #0000;
+    background: #00000000;
     border: 0;
     border-radius: max(50cqmin, 6rem);
     padding: 0;
-    align-self: center;
-    justify-self: center;
+    place-self: center center;
     color: var(--accent-color-200);
     container-type: size;
     position: relative;
-    transition: color var(-root-ease-out-fast),
+    transition:
+      color var(-root-ease-out-fast),
       opacity var(--root-ease-out-moderate);
     width: min(50cqmin, 6rem);
     height: min(50cqmin, 6rem);
@@ -87,17 +87,16 @@
     }
 
     &.-loaded {
-      align-self: start;
+      place-self: start end;
       height: min(25cqmin, 3rem);
-      justify-self: end;
-      margin: .5rem;
+      margin: 0.5rem;
       opacity: 0;
       pointer-events: none;
       transition: opacity var(--root-ease-out-fast);
       width: min(25cqmin, 3rem);
 
       &.-keepVisible {
-        opacity: .25;
+        opacity: 0.25;
         pointer-events: auto;
       }
 
@@ -110,16 +109,17 @@
 
   &__icon {
     --icon-stroke-color: var(--accent-color-200);
+
     filter: drop-shadow(var(--root-box-shadow-med));
     width: auto;
     height: auto;
 
     &.-circle {
-      padding: min(6cqmin, .75rem);
+      padding: min(6cqmin, 0.75rem);
       transition: padding var(--root-ease-out-fast);
 
       &:hover {
-        padding: min(4cqmin, .5rem);
+        padding: min(4cqmin, 0.5rem);
       }
     }
   }
@@ -127,7 +127,7 @@
   /**
    * hacks to target and better style iframes from youtube/vimeo embeds from CKEditor.
    */
-  &:has(> iframe):not(:has(p-wistia)):not(:has(p-lazy)):not(:has(p-you-tube-playlist)) {
+  &:has(> iframe):not(:has(p-wistia), :has(p-lazy), :has(p-you-tube-playlist)) {
     display: grid;
 
     /* these divs are using a padding-bottom hack for the aspect ratio. */
@@ -169,7 +169,7 @@
     height: 150px;
     width: 267px;
 
-    @media (min-width: 768px) {
+    @media (width >= 768px) {
       width: 300px;
     }
 

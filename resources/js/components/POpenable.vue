@@ -1,29 +1,21 @@
 <script>
-  const openableGroups = {}
+const openableGroups = {}
 </script>
 
 <script setup>
-import { ref, nextTick, useSlots, useTemplateRef } from 'vue'
+import { ref, nextTick, useTemplateRef } from 'vue'
 
 import focusableElements from '../composables/FocusableElements.js'
 
-const {
-  closeOnBlur,
-  refocus,
-  label,
-  name,
-  openOnHover,
-  hoverOrClick
-} = defineProps({
+const { closeOnBlur, refocus, label, name, openOnHover, hoverOrClick } = defineProps({
   closeOnBlur: { type: Boolean, default: true },
   refocus: { type: Boolean, default: true },
-  label: { type: String, default: "" },
-  name: { type: String, default: "global" },
+  label: { type: String, default: '' },
+  name: { type: String, default: 'global' },
   openOnHover: { type: Boolean, default: false },
   hoverOrClick: { type: Boolean, default: false },
 })
 const emit = defineEmits(['open', 'close'])
-const slots = useSlots()
 const button = useTemplateRef('button')
 const openable = useTemplateRef('openable')
 const open = ref(false)
@@ -41,9 +33,7 @@ const pressEscape = evt => {
   }
 }
 
-let escapeHandler = null
-
-const updateGroup = (open) => {
+const updateGroup = open => {
   if (!name) {
     return
   }
@@ -92,7 +82,6 @@ const toggle = (evt, { noFocus = false } = {}) => {
   })
 }
 
-
 let timeout = null
 
 const mouseover = () => {
@@ -128,17 +117,19 @@ const keypress = evt => {
 let bindings = { click: toggle }
 if (openOnHover) {
   bindings = { mouseover, mouseout, keypress }
-} if (hoverOrClick) {
+}
+if (hoverOrClick) {
   bindings = { click: toggle, mouseover, mouseout }
 }
-
 </script>
 
 <template>
   <button v-bind="$attrs" ref="button" v-on="bindings">
-    <slot name="toggle" v-bind="bindings">{{ label }}</slot>
+    <slot name="toggle" v-bind="bindings">
+      {{ label }}
+    </slot>
   </button>
-  <div ref="openable" v-on="(openOnHover || hoverOrClick) ? { mouseover, mouseout } : {}">
+  <div ref="openable" v-on="openOnHover || hoverOrClick ? { mouseover, mouseout } : {}">
     <slot v-if="open" v-bind="bindings" />
   </div>
 </template>

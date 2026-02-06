@@ -11,18 +11,18 @@
   &__link,
   &__button {
     border: 0;
-    background: #0000;
+    background: #00000000;
     color: var(--root-color);
     padding: 1.5rem;
   }
 
   &__button {
     display: flex;
-    gap: .5rem;
+    gap: 0.5rem;
 
     &::after {
       content: '';
-      width: .75rem;
+      width: 0.75rem;
       height: 1em;
       background: var(--accent-color);
       transition: rotate var(--root-ease-out-slow);
@@ -45,14 +45,13 @@
       }
 
       &:has(#{$b}__dropdown) {
-        box-shadow: 0 -.5rem 0 inset var(--accent-color);
+        box-shadow: 0 -0.5rem 0 inset var(--accent-color);
       }
     }
 
     &:has(#{$b}__dropdown) {
-
       #{$b}__button {
-        color: #000;
+        color: #000000;
 
         &::after {
           background: var(--color-gray-600);

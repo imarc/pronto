@@ -3,13 +3,14 @@
   width: 100%;
   overflow: hidden;
   display: grid;
-  grid-template-areas: "media";
+  grid-template-areas: 'media';
+
   --media-banner-aspect-ratio: 65 / 24;
 
   // Container instance - grid and border radius
   &__container {
     display: grid;
-    grid-template-areas: "media";
+    grid-template-areas: 'media';
     border-radius: var(--root-border-radius);
   }
 
@@ -24,7 +25,7 @@
     grid-area: media;
     position: relative;
     width: 100%;
-    
+
     video {
       width: 100%;
       height: auto;
@@ -32,15 +33,16 @@
       display: block;
     }
   }
-  
+
   // Media class (works for both full-width and container)
   .media,
   &__container .media {
     grid-area: media;
     display: grid;
     width: 100%;
-    margin-bottom: 0; 
+    margin-bottom: 0;
     aspect-ratio: var(--media-banner-aspect-ratio);
+
     // Override section's --accent-color: #fff to use default purple for icons
     --accent-color: var(--color-purple);
   }
@@ -66,30 +68,30 @@
       z-index: 2;
       background: none;
       object-fit: initial;
-      
+
       // Ensure all child elements inherit white color
       * {
         color: inherit;
       }
-      
+
       // Don't override container - let it work with Pronto grid system
       .container {
         // Only add minimal styles that don't break the grid
         width: 100%;
         row-gap: 0;
       }
-      
+
       // Text alignment modifiers
       &.-center {
         align-items: center;
         text-align: center;
       }
-      
+
       &.-left {
         align-items: flex-start;
         text-align: left;
       }
-      
+
       &.-right {
         align-items: flex-end;
         text-align: right;
@@ -108,19 +110,18 @@
 
   &__title {
     margin-bottom: 1.5rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
- }
+    text-shadow: 0 2px 4px rgb(0 0 0 / 0.3);
+  }
 
   &__actions {
     margin-top: 1rem;
   }
 
   &__mask {
-
     .media & {
       grid-area: 1 / 1;
     }
-    
+
     grid-area: media;
     position: relative;
     z-index: 1;
@@ -146,12 +147,11 @@
     // When inside media class, use media's grid system (media__trigger handles positioning)
     .media & {
       grid-area: 1 / 1;
-      align-self: center;
-      justify-self: center;
+      place-self: center center;
       z-index: 2; // Above the mask (z-index: 1)
       position: relative;
     }
-    
+
     appearance: none;
     background: transparent;
     border: 0;
@@ -161,7 +161,7 @@
 
   &__overlay {
     grid-area: media;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgb(0 0 0 / 0.3);
     pointer-events: none;
     z-index: 1;
   }
@@ -172,5 +172,4 @@
       opacity: 1;
     }
   }
-} 
-
+}
