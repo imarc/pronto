@@ -5,14 +5,27 @@
 
   --columns: 1;
   --gap: var(--root-gap, 16px);
+  --min-column: 240px;
 
   display: grid;
   gap: var(--gap);
   grid-template-columns: repeat(var(--columns), 1fr);
 
+  // Allow auto-fit wrapping before fixed columns kick in
+  @include at(sm) {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min(100%, var(--min-column)), 1fr)
+    );
+  }
+
   // Responsive defaults: 1 mobile, 2 tablet+
   @include at(md) {
     --columns: 2;
+  }
+
+  @include at(lg) {
+    grid-template-columns: repeat(var(--columns), 1fr);
   }
 
   // Column modifiers (2-5 columns on tablet+)
