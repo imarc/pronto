@@ -1,12 +1,13 @@
-@use "@/core" as *;
+@use '@/core' as *;
 
 .siteHeader {
   --gap: var(--root-gap, 16px);
+
   padding: var(--gap) 0;
 
   &__content {
     display: grid;
-    grid: "logo search mobile-nav" auto / auto 1fr auto;
+    grid: 'logo search mobile-nav' auto / auto 1fr auto;
     align-items: center;
     gap: 0 var(--gap);
     position: relative;
@@ -15,7 +16,7 @@
   &__logo {
     grid-area: logo;
     display: grid;
-    padding: .5rem 0;
+    padding: 0.5rem 0;
     align-self: stretch;
 
     svg {
@@ -26,7 +27,7 @@
   &__utilityNav {
     display: none;
     grid-area: utility-nav;
-    font-size: .75rem;
+    font-size: 0.75rem;
     justify-self: end;
     gap: 1.5rem;
   }
@@ -44,9 +45,10 @@
 
   @include at(md) {
     &__content {
-      grid: "logo utility-nav search" auto
-            "primary-nav primary-nav primary-nav" auto
-            / auto 1fr auto;
+      grid:
+        'logo utility-nav search' auto
+        'primary-nav primary-nav primary-nav' auto
+        / auto 1fr auto;
     }
 
     &__primaryNav,
@@ -62,10 +64,11 @@
 
   @include at(lg) {
     &__content {
-      grid: "logo utility-nav search" auto
-            "logo spacer spacer" auto
-            "logo primary-nav primary-nav" auto
-            / auto 1fr auto;
+      grid:
+        'logo utility-nav search' auto
+        'logo spacer spacer' auto
+        'logo primary-nav primary-nav' auto
+        / auto 1fr auto;
     }
   }
 }

@@ -33,3 +33,10 @@ The recommended way to work on Pronto is to work within Vitrine after cloning Pr
 1. Clone Pronto to a folder of your choosing.
 2. Within that folder, run `npm install` and `npm run dev`.
 3. Make sure to check any functional changes to Vitrine or Pronto also work properly with the build step `npm run prod` as well.
+
+#### Formatting and linting
+
+Formatting is handled by Prettier, while ESLint and Stylelint focus on linting. Use these commands during development:
+
+- `npm run lint` checks Prettier formatting without making changes, then runs ESLint and Stylelint.
+- `npm run lint:fix` tries to fix the code to match Prettier formatting, then runs ESLint and Stylelint.

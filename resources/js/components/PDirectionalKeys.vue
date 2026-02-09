@@ -8,7 +8,7 @@ const test = evt => {
   console.log('test', evt)
 }
 
-//useDirectionalKeys(...slots.default())
+useDirectionalKeys(...slots.default())
 </script>
 <template>
   <slot @keydown="test" @click="test" />

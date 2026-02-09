@@ -5,13 +5,14 @@
 
   display: grid;
   gap: var(--gap);
-  grid: auto /
+  grid:
+    auto /
     [wide-start]
-      1fr
+    1fr
     [main-start]
-      repeat(var(--columns), minmax(0, calc((var(--container-width) - (var(--columns) - 1) * var(--gap)) / var(--columns))))
+    repeat(var(--columns), minmax(0, calc((var(--container-width) - (var(--columns) - 1) * var(--gap)) / var(--columns))))
     [main-end]
-      1fr
+    1fr
     [wide-end];
 
   @for $i from 2 through 12 {
@@ -25,12 +26,12 @@
   }
 
   /* should be max mobile columns + tablet outer gutters */
-  @media (min-width: 368px) {
+  @media (width >= 368px) {
     --container-width: 744px;
   }
 
   /* should be max tablet columns + desktop outer gutters */
-  @media (min-width: 808px) {
+  @media (width >= 808px) {
     --container-width: 1300px;
   }
 }

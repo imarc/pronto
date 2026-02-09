@@ -6,11 +6,12 @@
   border: 2px solid var(--accent-color);
   color: var(--color-gray-800);
   display: inline-block;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   width: 100%;
 
   &:focus {
     --accent-color: inherit;
+
     outline: none;
   }
 
@@ -18,7 +19,7 @@
     color: var(--color-gray-400);
   }
 
-  &[aria-disabled="true"],
+  &[aria-disabled='true'],
   &[disabled],
   &.-disabled {
     border-color: var(--color-gray-200);
@@ -34,13 +35,12 @@
   }
 
   /* Normalize date input padding to match others. */
-  &[type=date] {
-    padding: calc(.5em - 1px) 1em;
+  &[type='date'] {
+    padding: calc(0.5em - 1px) 1em;
   }
 
-
   /* Normalize file input padding to match others. */
-  &[type=file] {
-    padding: calc(.5em - 3px) 1em;
+  &[type='file'] {
+    padding: calc(0.5em - 3px) 1em;
   }
 }

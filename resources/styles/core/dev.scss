@@ -1,5 +1,6 @@
 .accent-color-scale {
   --size: 1.5em;
+
   font-size: 1.5em;
   background:
     linear-gradient(var(--accent-color-50) 100%, tan) 0 / 10%,
@@ -21,11 +22,13 @@
 
 .placeholder {
   aspect-ratio: 1;
-  --placeholder-color: rgb(from var(--accent-color) r g b / .2);
+
+  --placeholder-color: rgb(from var(--accent-color) r g b / 0.2);
+
   border: 2px solid var(--placeholder-color);
-  background: linear-gradient(to top right, #0000 calc(50% - 2px), var(--placeholder-color), #0000 calc(50% + 2px)),
-    linear-gradient(to top left, #0000 calc(50% - 2px), var(--placeholder-color), #0000 calc(50% + 2px))
-    rgb(from var(--accent-color) r g b / .1);
+  background:
+    linear-gradient(to top right, #00000000 calc(50% - 2px), var(--placeholder-color), #00000000 calc(50% + 2px)),
+    linear-gradient(to top left, #00000000 calc(50% - 2px), var(--placeholder-color), #00000000 calc(50% + 2px)) rgb(from var(--accent-color) r g b / 0.1);
   align-content: center;
   text-align: center;
   color: var(--accent-color);
