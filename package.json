@@ -23,6 +23,9 @@
     "lint": "prettier -c \"resources/**/*.{js,vue,scss,css,md}\" && eslint \"resources/js/**/*.{js,vue}\" && stylelint \"resources/**/*.scss\"",
     "lint:fix": "prettier -w \"resources/**/*.{js,vue,scss,css,md}\" && eslint \"resources/js/**/*.{js,vue}\" && stylelint \"resources/**/*.scss\" --fix"
   },
+  "engines": {
+      "node": ">=24"
+  },
   "dependencies": {
     "@clack/prompts": "^0.9.1",
     "@imarc/vitrine": "^1.2.1",
