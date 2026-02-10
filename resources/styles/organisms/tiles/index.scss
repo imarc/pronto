@@ -141,12 +141,12 @@
             --_tile-size: 100cqi; // Mobile: full width
             grid-template-columns: 1fr;
 
-            @include at(md) {
+            @include at(sm) {
                 --_tile-size: calc((100cqi - var(--gap)) / 2);
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
             }
 
-            @include at(lg) {
+            @include at(md) {
                 --_tile-size: calc((100cqi - var(--gap) * 2) / 3);
                 grid-template-columns: repeat(3, 1fr);
             }
@@ -170,12 +170,13 @@
             --_tile-size: 100cqi; // Mobile: full width
             grid-template-columns: 1fr;
 
-            @include at(md) {
+            @include at(sm) {
                 --_tile-size: calc((100cqi - var(--gap)) / 2);
-                grid-template-columns: repeat(2, 1fr);
+                // Allow columns to shrink more before dropping
+                grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
             }
 
-            @include at(lg) {
+            @include at(md) {
                 --_tile-size: calc((100cqi - var(--gap) * 3) / 4);
                 grid-template-columns: repeat(4, 1fr);
             }
@@ -194,6 +195,12 @@
 
         // Featured: Large 2×2 tile at md+ (square on mobile)
         #{$b}__tile.-featured {
+            @include at(sm) {
+                // Span all available columns at sm to avoid implicit tracks.
+                grid-column: 1 / -1;
+                grid-row: span 2;
+            }
+
             @include at(md) {
                 grid-column: span 2;
                 grid-row: span 2;
@@ -202,17 +209,22 @@
 
         // Wide: Horizontal 2×1 tile at md+ (square on mobile)
         #{$b}__tile.-wide {
-            @include at(md) {
-                grid-column: span 2;
+            @include at(sm) {
+                // Span all available columns at md to avoid implicit tracks.
+                grid-column: 1 / -1;
                 aspect-ratio: auto;
                 align-self: stretch;
                 min-height: var(--_tile-size, 200px);
+            }
+
+            @include at(md) {
+                grid-column: span 2;
             }
         }
 
         // Tall: Vertical 1×2 tile at md+ (square on mobile)
         #{$b}__tile.-tall {
-            @include at(md) {
+            @include at(sm) {
                 grid-row: span 2;
                 aspect-ratio: auto;
                 align-self: stretch;
@@ -222,7 +234,7 @@
 
         // Short: 16:9 landscape tile at md+ (square on mobile)
         #{$b}__tile.-short {
-            @include at(md) {
+            @include at(sm) {
                 aspect-ratio: 16 / 9;
             }
         }
