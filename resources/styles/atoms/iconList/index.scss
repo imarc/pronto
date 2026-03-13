@@ -1,0 +1,63 @@
+.iconList {
+  display: grid;
+  gap: 1.5rem;
+  color: var(--root-color);
+
+  &__header {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  &__heading {
+    margin: 0;
+    font-size: var(--root-font-size-h4);
+    font-weight: 700;
+    color: var(--root-color-headings);
+  }
+
+  &__subheading {
+    margin: 0;
+    color: var(--color-gray-600);
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    gap: 1rem;
+    align-items: center;
+  }
+
+  &__icon.icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    align-self: start;
+    padding: 0.65rem;
+  }
+
+  &__content {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 700;
+    color: var(--root-color-headings);
+    line-height: 1.2;
+  }
+
+  &__description {
+    margin: 0;
+    color: var(--color-gray-600);
+    line-height: 1.4;
+    font-size: .875rem;
+  }
+}
