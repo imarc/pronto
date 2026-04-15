@@ -1,0 +1,12 @@
+@use "@/core" as *;
+
+$textBasedProseWideMax: 53.5rem; // ~856px — wide display title / headline measure (asideHeadline, offsetCopy title, etc.)
+$textBasedProseMediumMax: 42.375rem; // ~678px — centered intro / supporting line under wide titles
+
+@mixin textBasedStickyAside {
+  @include at(md) {
+    align-self: start;
+    position: sticky;
+    top: 2rem;
+  }
+}
