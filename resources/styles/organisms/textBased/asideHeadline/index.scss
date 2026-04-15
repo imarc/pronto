@@ -1,0 +1,33 @@
+@use "@/core" as *;
+@use "../_shared" as *;
+
+.asideHeadline {
+  &__layout {
+    align-items: start;
+    display: grid;
+    gap: 2rem;
+
+    @include at(md) {
+      gap: 6rem;
+      grid-template-columns: minmax(0, 18.75rem) minmax(0, 1fr);
+    }
+  }
+
+  &__aside {
+    @include textBasedStickyAside;
+  }
+
+  &__intro {
+    color: var(--color-gray-600);
+    font-size: var(--root-font-size-sm);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  &__headline {
+    font-size: var(--root-font-size-h1);
+    margin: 0;
+    max-width: $textBasedProseWideMax;
+    min-width: 0;
+  }
+}

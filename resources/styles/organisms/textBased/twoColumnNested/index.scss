@@ -1,0 +1,74 @@
+@use "@/core" as *;
+
+.twoColumnNested {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  &__split {
+    display: grid;
+    gap: 3rem;
+
+    @include at(md) {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+      margin-top: 3rem;
+    }
+
+    &.-alignEnd {
+      @include at(md) {
+        align-items: end;
+      }
+    }
+  }
+
+  &__headline {
+    --accent-color: var(--color-purple);
+
+    color: var(--accent-color-700);
+    margin: 0;
+    max-width: 32.6875rem;
+    font-size: var(--root-font-size-h1);
+  }
+
+  &__intro {
+    color: var(--color-gray-500);
+    font-size: var(--root-font-size-lg);
+    line-height: 1.5;
+    margin: 0;
+    max-width: 39.625rem;
+  }
+
+  &__primary {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: var(--color-gray-600);
+  }
+
+  &__features {
+    display: grid;
+    gap: 3rem 2rem;
+    grid-template-columns: 1fr;
+
+    @include at(md) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  &__feature {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-right: 2rem;
+  }
+
+  &__featureTitle {
+    margin: 0;
+  }
+
+  &__featureText {
+    color: var(--color-gray-600);
+    font-size: var(--root-font-size-sm);
+    margin: 0;
+  }
+}
