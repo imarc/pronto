@@ -1,11 +1,32 @@
 @use "@/core" as *;
+@use "../_shared" as *;
 
 .offsetCopy {
   display: flex;
   flex-direction: column;
   gap: 3rem;
 
-  &__columns.grid {
+  &__title {
+    margin: 0;
+    max-width: $textBasedProseWideMax;
+  }
+
+  &__columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: flex-end;
+    width: 100%;
     margin-top: 3rem;
+  }
+
+  &__column {
+    flex: 1 1 100%;
+
+    @include at(md) {
+      flex: 0 1 calc(33.333% - 1.334rem);
+      max-width: 18.8125rem;
+      min-width: min(100%, 15rem);
+    }
   }
 }

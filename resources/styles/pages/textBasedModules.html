@@ -84,24 +84,16 @@
 
 <section class="section twoColumnNested">
   <div class="container">
-    <header class="section__header">
-      <h2 class="h2">Headline band and nested split</h2>
-      <p>Headline and intro in one row (bottom-aligned on larger screens), then primary copy beside a two-column feature list. Uses <code>-cell-stack-md</code> so rows stack on small screens.</p>
-    </header>
-    <div class="twoColumnNested__split grid -columns-12 -cell-stack-md -alignEnd">
-      <div class="cell -span-5">
-        <h2 class="h2 twoColumnNested__headline">
-          Duis tellus ex, rutrum non tortor in, dolor vulputate iaculis est.
-        </h2>
-      </div>
-      <div class="cell -span-7">
-        <p class="twoColumnNested__intro">
-          Quis elementum libero nulla mollis lectus, proin consequat dui nec commodo iaculis magna:
-        </p>
-      </div>
+    <div class="twoColumnNested__split -alignEnd">
+      <h2 class="h2 twoColumnNested__headline">
+        Duis tellus ex, rutrum non tortor in, dolor vulputate iaculis est.
+      </h2>
+      <p class="twoColumnNested__intro">
+        Quis elementum libero nulla mollis lectus, proin consequat dui nec commodo iaculis magna:
+      </p>
     </div>
-    <div class="twoColumnNested__split grid -columns-12 -cell-stack-md">
-      <div class="cell -span-5 twoColumnNested__primary">
+    <div class="twoColumnNested__split">
+      <div class="twoColumnNested__primary">
         <p>
           Proin consequat dui nec cursus commodo. Proin non magna quam. Duis tellus ex, rutrum non tortor in, vulputate iaculis est. Integer pulvinar rhoncus lectus, sed sodales neque.
         </p>
@@ -113,70 +105,55 @@
           </a>
         </div>
       </div>
-      <div class="cell -span-7">
-        <div class="grid -columns-7">
-          <div class="cell -span-4">
-            <div class="twoColumnNested__stack">
-              <div class="twoColumnNested__feature">
-                <h4 class="h4 twoColumnNested__featureTitle">Integer pulvinar rhoncus neque</h4>
-                <p class="twoColumnNested__featureText">
-                  Proin consequat dui nec cursus commodo. Proin non magna quam. Duis tellus ex, rutrum non tortor in, vulputate iaculis est.
-                </p>
-              </div>
-              <div class="twoColumnNested__feature">
-                <h4 class="h4 twoColumnNested__featureTitle">Pulvinar rhoncus nec ipsum</h4>
-                <p class="twoColumnNested__featureText">
-                  Duis tellus ex, rutrum non tortor in, vulputate iaculis est. Integer pulvinar rhoncus lectus, sed sodales neque.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="cell -span-3">
-            <div class="twoColumnNested__stack">
-              <div class="twoColumnNested__feature">
-                <h4 class="h4 twoColumnNested__featureTitle">Pulvinar rhoncus nec ipsum</h4>
-                <p class="twoColumnNested__featureText">
-                  Duis tellus ex, rutrum non tortor in, vulputate iaculis est. Integer pulvinar rhoncus lectus, sed sodales neque.
-                </p>
-              </div>
-              <div class="twoColumnNested__feature">
-                <h4 class="h4 twoColumnNested__featureTitle">Integer pulvinar rhoncus neque</h4>
-                <p class="twoColumnNested__featureText">
-                  Proin consequat dui nec cursus commodo. Proin non magna quam. Duis tellus ex, rutrum non tortor in, vulputate iaculis est.
-                </p>
-              </div>
-            </div>
-          </div>
+      <div class="twoColumnNested__features">
+        <div class="twoColumnNested__feature">
+          <h4 class="h4 twoColumnNested__featureTitle">Integer pulvinar rhoncus neque</h4>
+          <p class="twoColumnNested__featureText">
+            Proin consequat dui nec cursus commodo. Proin non magna quam. Duis tellus ex, rutrum non tortor in, vulputate iaculis est. Integer pulvinar rhoncus lectus, sed sodales neque.
+          </p>
+        </div>
+        <div class="twoColumnNested__feature">
+          <h4 class="h4 twoColumnNested__featureTitle">Pulvinar rhoncus nec ipsum set adiscipit</h4>
+          <p class="twoColumnNested__featureText">
+            Duis tellus ex, rutrum non tortor in, vulputate iaculis est. Integer pulvinar rhoncus lectus, sed sodales neque. Proin consequat dui nec cursus commodo. Proin non magna quam.
+          </p>
+        </div>
+        <div class="twoColumnNested__feature">
+          <h4 class="h4 twoColumnNested__featureTitle">Pulvinar rhoncus nec ipsum set adiscipit</h4>
+          <p class="twoColumnNested__featureText">
+            Duis tellus ex, rutrum non tortor in, vulputate iaculis est. Integer pulvinar rhoncus lectus, sed sodales neque. Proin consequat dui nec cursus commodo. Proin non magna quam.
+          </p>
+        </div>
+        <div class="twoColumnNested__feature">
+          <h4 class="h4 twoColumnNested__featureTitle">Integer pulvinar rhoncus neque</h4>
+          <p class="twoColumnNested__featureText">
+            Proin consequat dui nec cursus commodo. Proin non magna quam. Duis tellus ex, rutrum non tortor in, vulputate iaculis est. Integer pulvinar rhoncus lectus, sed sodales neque.
+          </p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section offsetCopy">
   <div class="container">
-    <header class="section__header">
-      <h2 class="h2">Title and three columns</h2>
-      <p>Wide title line, then three equal columns with a leading offset—<code>-cell-stack-md</code> keeps the spacer and columns readable on mobile.</p>
-    </header>
-    <h3 class="h3 max-w-prose-wide">
+    <h3 class="h3 offsetCopy__title">
       Sed sed porttitor ante. Vivamus auctor mi nec laoreet vestibulum. Cras accumsan tempus tincidunt, aenean scelerisque at purus non varius.
     </h3>
-    <div class="grid -columns-12 -cell-stack-md">
-      <div class="cell -span-3" aria-hidden="true"></div>
-      <div class="cell -span-3">
+    <div class="offsetCopy__columns">
+      <div class="offsetCopy__column">
         <p>
           Donec pharetra mauris feugiat mi malesuada, nec fringilla quam fermentum. Pellentesque in odio quis turpis porttitor aliquet. Vivamus commodo efficitur turpis. Aliquam
         </p>
       </div>
-      <div class="cell -span-3">
+      <div class="offsetCopy__column">
         <p>
-          Pellentesque in odio quis turpis porttitor aliquet. Vivamus commodo efficitur turpis. Aliquam pharetra tellus in turpis commodo, non dapibus urna ultrices.
+          Pellentesque in odio quis turpis porttitor aliquet. Vivamus commodo efficitur turpis. Aliquam pharetra tellus in turpis commodo, non dapibus urna ultrices. Cras commodo vulputate
         </p>
       </div>
-      <div class="cell -span-3">
+      <div class="offsetCopy__column">
         <p>
-          Aliquam pharetra tellus in turpis commodo, non dapibus urna ultrices. Cras commodo vulputate ipsum sed iaculis. Etiam ac tristique arcu, eget vestibulum metus.
+          Aliquam pharetra tellus in turpis commodo, non dapibus urna ultrices. Cras commodo vulputate ipsum sed iaculis. Etiam ac tristique arcu, eget vestibulum metus. Aenean feugiat.
         </p>
       </div>
     </div>
