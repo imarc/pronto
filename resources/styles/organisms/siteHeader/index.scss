@@ -1,8 +1,35 @@
 @use "@/core" as *;
 
+/**
+ * `v-site-header-fixed` toggles `-fixed` on scroll (or forces it via `fixedOverride`).
+ * Expanded state uses `--siteHeader-min-height` so `min-height` can ease with
+ * padding + background. Fixed state is content-sized (no min-height floor) so
+ * the bar doesn’t leave empty space under the nav.
+ */
+
+$siteHeader-chrome-duration: 240ms;
+$siteHeader-chrome-ease: cubic-bezier(.64, 0, .78, 0);
+
 .siteHeader {
   --gap: var(--root-gap, 16px);
-  padding: var(--gap) 0;
+  background-color: transparent;
+  box-shadow: none;
+
+  /**
+   * Expanded bar only. Optional `--siteHeader-min-height-when-fixed` sets a floor
+   * when fixed if a project needs it (default: content height only).
+   */
+  --siteHeader-min-height: 12rem;
+
+  min-height: var(--siteHeader-min-height);
+  padding-block: var(--gap);
+  padding-inline: 0;
+  position: relative;
+  transition:
+    background-color $siteHeader-chrome-duration $siteHeader-chrome-ease,
+    box-shadow $siteHeader-chrome-duration $siteHeader-chrome-ease,
+    min-height $siteHeader-chrome-duration $siteHeader-chrome-ease,
+    padding-block $siteHeader-chrome-duration $siteHeader-chrome-ease;
 
   &__content {
     display: grid;
@@ -68,4 +95,71 @@
             / auto 1fr auto;
     }
   }
+
+  /**
+   * Fixed + compact bar. Utility nav keeps default sizing; open dropdown triggers
+   * restore full tap targets via :has().
+   */
+  &.-fixed {
+    background-color: var(--root-background-color, #fff);
+    inset-inline: 0;
+    min-height: var(--siteHeader-min-height-when-fixed, unset);
+    padding-block: calc(var(--gap) * .65);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 200;
+
+    .siteHeader__content {
+      align-items: start;
+    }
+
+    .siteHeader__logo {
+      align-self: start;
+      padding-block: .35rem;
+    }
+
+    .siteHeader__logo svg {
+      height: auto;
+      max-height: 2rem;
+    }
+
+    .siteHeader__search {
+      font-size: .94rem;
+    }
+
+    .siteHeader__primaryNav {
+
+      .navigation__link,
+      .navigation__button {
+        font-size: .9rem;
+        padding-block: 1rem;
+        padding-inline: 1.2rem;
+      }
+
+      .navigation__item:has(.navigation__dropdown) .navigation__button {
+        font-size: 1rem;
+        padding-block: 1.5rem;
+        padding-inline: 1.5rem;
+      }
+    }
+
+    .siteHeader__mobileNav .mobileNavigation__menu {
+      font-size: .9rem;
+    }
+
+    @include at(md) {
+      box-shadow: 0 .125rem .75rem rgb(0 0 0 / .06);
+    }
+  }
+}
+
+/** Reserves space only while `-fixed` is on (header is out of flow). */
+.siteHeader + .siteHeader__fixedSentinel {
+  min-height: 0;
+  pointer-events: none;
+}
+
+.siteHeader.-fixed + .siteHeader__fixedSentinel {
+  min-height: 9rem;
 }
