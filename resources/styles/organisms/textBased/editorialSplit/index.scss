@@ -1,0 +1,87 @@
+@use "@/core" as *;
+@use "../_shared" as *;
+
+.editorialSplit {
+  &__grid.grid {
+    min-width: 0;
+
+    > .editorialSplit__main.cell.-span-8 {
+      grid-column: 1 / -1;
+
+      @include at(md) {
+        grid-column: span var(--cell-span);
+      }
+    }
+
+    > .editorialSplit__aside.cell.-span-4,
+    > .editorialSplit__aside.cell.-span-3 {
+      grid-column: 1 / -1;
+
+      @include at(md) {
+        grid-column: span var(--cell-span);
+      }
+    }
+  }
+
+  &.-headline &__grid.grid > .cell[aria-hidden="true"] {
+    display: none;
+
+    @include at(md) {
+      display: block;
+    }
+  }
+
+  &__aside {
+    @include textBasedStickyAside;
+    min-width: 0;
+  }
+
+  &__main {
+    min-width: 0;
+  }
+
+  &__introText {
+    color: var(--color-gray-500);
+    font-size: var(--root-font-size-lg);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  &__body {
+    color: var(--color-gray-600);
+  }
+
+  &__lede {
+    color: var(--color-gray-600);
+    font-size: var(--root-font-size-sm);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  &__headline {
+    font-size: var(--root-font-size-h2);
+    margin: 0;
+    max-width: $textBasedProseWideMax;
+
+    @include at(md) {
+      font-size: var(--root-font-size-h1);
+    }
+  }
+
+  &.-withCards {
+    background: var(--color-gray-50);
+    color: var(--root-color);
+    padding-block: 4rem;
+
+    &.section {
+      --accent-color: var(--color-gray-50);
+    }
+  }
+
+  &.-withCards &__aside {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

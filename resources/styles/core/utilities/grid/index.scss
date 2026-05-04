@@ -1,3 +1,4 @@
+@use "@/core/mixins/breakpoints" as *;
 @use "cell";
 
 .grid {
@@ -20,5 +21,28 @@
 
   &.-tight {
     row-gap: 0;
+  }
+
+  /**
+   * .-cell-stack-md — opt-in: stack direct .cells full-width below md, then restore .cell.-span-* at md+.
+   *
+   * .cell[aria-hidden="true"] { display: none; … } is only for cells that are already treated as non-content (aria-hidden="true"): layout-only spacers. 
+   */
+  &.-cell-stack-md {
+    > .cell {
+      grid-column: 1 / -1;
+
+      @include at(md) {
+        grid-column: span var(--cell-span);
+      }
+    }
+
+    > .cell[aria-hidden="true"] {
+      display: none;
+
+      @include at(md) {
+        display: block;
+      }
+    }
   }
 }

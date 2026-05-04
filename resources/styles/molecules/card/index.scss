@@ -110,7 +110,7 @@
 
     @include at(md) {
       align-items: start;
-      // Fixed column ratio so a long title wraps inside its track instead of shrinking the body (matches introAsideCardList).
+      // Fixed column ratio so a long title wraps inside its track instead of shrinking the body (matches editorialSplit.-withCards).
       grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr);
     }
 

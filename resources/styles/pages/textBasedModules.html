@@ -1,0 +1,289 @@
+<section class="section">
+  <div class="container">
+    <h1 class="h1">Text based modules</h1>
+    <p>
+      Reference layouts for text-heavy modules: combine <code>.container</code> with Pronto’s <code>.grid</code> / <code>.cell</code>, and use the <code>editorialSplit</code> section variants where noted. Full markup for each variant lives under <code>organisms/textBased/</code>.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <header class="section__header">
+      <h2 class="h2">Equal two columns</h2>
+      <p>Simple two-column body copy using <code>.grid.-columns-2</code> and <code>.cell.text-root</code>.</p>
+    </header>
+    <div class="grid -columns-2">
+      <div class="cell text-root">
+        <p>
+          Nullam efficitur libero elit, consectetur commodo nulla rutrum ac. Suspendisse semper eleifend fringilla. Donec pharetra mauris feugiat mi malesuada, nec fringilla quam fermentum.
+        </p>
+        <p>
+          Etiam ac tristique arcu, eget vestibulum metus. Aenean feugiat, lorem sit amet varius condimentum, mauris velit fermentum ante.
+        </p>
+      </div>
+      <div class="cell text-root">
+        <p>
+          Praesent quis est dapibus, pretium mi at, cursus tellus. In eleifend, quam efficitur dapibus fermentum, odio eros scelerisque felis, sit amet posuere lectus ante vitae mauris.
+        </p>
+        <p>
+          Nam ullamcorper lobortis libero et laoreet. Duis nec varius ex, in convallis ante. Donec mollis sollicitudin ligula quis placerat.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section editorialSplit -introBody">
+  <div class="container">
+    <header class="section__header">
+      <h2 class="h2">Asymmetric intro and body</h2>
+      <p>Narrow intro column beside wider body copy. Uses <code>editorialSplit</code> with <code>-introBody</code></p>
+    </header>
+    <div class="editorialSplit__grid grid -columns-12">
+      <div class="cell -span-4 editorialSplit__aside">
+        <p class="editorialSplit__introText">
+          Elementum libero nulla mollis lectus, proin consequat dui nec commodo.
+        </p>
+      </div>
+      <div class="cell -span-8 editorialSplit__main">
+        <div class="editorialSplit__body">
+          <p>
+            Praesent quis est dapibus, pretium mi at, cursus tellus. In eleifend, quam efficitur dapibus fermentum, odio eros scelerisque felis, sit amet posuere lectus ante vitae mauris. Nam ullamcorper lobortis libero et laoreet. Duis nec varius ex, in convallis ante. Donec mollis sollicitudin ligula quis placerat. Vestibulum luctus lacus in justo ultrices, sed egestas orci ornare.
+          </p>
+          <p>
+            Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent quis est dapibus, pretium mi at, cursus tellus.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section editorialSplit -headline">
+  <div class="container">
+    <header class="section__header">
+      <h2 class="h2">Aside and display headline</h2>
+      <p>Supporting lede beside a large display headline. Section uses <code>-headline</code>; spacer column is hidden on small screens.</p>
+    </header>
+    <div class="editorialSplit__grid grid -columns-12">
+      <div class="cell -span-3 editorialSplit__aside">
+        <p class="editorialSplit__lede">
+          Nunc lorem erat, molestie vel turpis eget, vehicula cursus leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum dignissim urna quam, eu sollicitudin.
+        </p>
+      </div>
+      <div class="cell -span-1" aria-hidden="true"></div>
+      <div class="cell -span-8 editorialSplit__main">
+        <h2 class="h2 editorialSplit__headline">
+          Duis nec varius ex, in convallis ante. Donec mollis sollicitudin ligula quis placerat, vestibulum luctus lacus in justo ultrices; dolorem ipsum.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section twoColumnNested">
+  <div class="container">
+    <header class="section__header">
+      <h2 class="h2">Headline band and nested split</h2>
+      <p>Headline and intro in one row (bottom-aligned on larger screens), then primary copy beside a two-column feature list. Uses <code>-cell-stack-md</code> so rows stack on small screens.</p>
+    </header>
+    <div class="twoColumnNested__split grid -columns-12 -cell-stack-md -alignEnd">
+      <div class="cell -span-5">
+        <h2 class="h2 twoColumnNested__headline">
+          Duis tellus ex, rutrum non tortor in, dolor vulputate iaculis est.
+        </h2>
+      </div>
+      <div class="cell -span-7">
+        <p class="twoColumnNested__intro">
+          Quis elementum libero nulla mollis lectus, proin consequat dui nec commodo iaculis magna:
+        </p>
+      </div>
+    </div>
+    <div class="twoColumnNested__split grid -columns-12 -cell-stack-md">
+      <div class="cell -span-5 twoColumnNested__primary">
+        <p>
+          Proin consequat dui nec cursus commodo. Proin non magna quam. Duis tellus ex, rutrum non tortor in, vulputate iaculis est. Integer pulvinar rhoncus lectus, sed sodales neque.
+        </p>
+        <div class="actions">
+          <a class="button accent-primary" href="#">Default Button</a>
+          <a class="link" href="#">
+            Standalone Text Link
+            <svg viewBox="0 0 18 12"><use href="/main-icons-sprite.svg#arrow-right" /></svg>
+          </a>
+        </div>
+      </div>
+      <div class="cell -span-7">
+        <div class="grid -columns-7">
+          <div class="cell -span-4">
+            <div class="twoColumnNested__stack">
+              <div class="twoColumnNested__feature">
+                <h4 class="h4 twoColumnNested__featureTitle">Integer pulvinar rhoncus neque</h4>
+                <p class="twoColumnNested__featureText">
+                  Proin consequat dui nec cursus commodo. Proin non magna quam. Duis tellus ex, rutrum non tortor in, vulputate iaculis est.
+                </p>
+              </div>
+              <div class="twoColumnNested__feature">
+                <h4 class="h4 twoColumnNested__featureTitle">Pulvinar rhoncus nec ipsum</h4>
+                <p class="twoColumnNested__featureText">
+                  Duis tellus ex, rutrum non tortor in, vulputate iaculis est. Integer pulvinar rhoncus lectus, sed sodales neque.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="cell -span-3">
+            <div class="twoColumnNested__stack">
+              <div class="twoColumnNested__feature">
+                <h4 class="h4 twoColumnNested__featureTitle">Pulvinar rhoncus nec ipsum</h4>
+                <p class="twoColumnNested__featureText">
+                  Duis tellus ex, rutrum non tortor in, vulputate iaculis est. Integer pulvinar rhoncus lectus, sed sodales neque.
+                </p>
+              </div>
+              <div class="twoColumnNested__feature">
+                <h4 class="h4 twoColumnNested__featureTitle">Integer pulvinar rhoncus neque</h4>
+                <p class="twoColumnNested__featureText">
+                  Proin consequat dui nec cursus commodo. Proin non magna quam. Duis tellus ex, rutrum non tortor in, vulputate iaculis est.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <header class="section__header">
+      <h2 class="h2">Title and three columns</h2>
+      <p>Wide title line, then three equal columns with a leading offset—<code>-cell-stack-md</code> keeps the spacer and columns readable on mobile.</p>
+    </header>
+    <h3 class="h3 max-w-prose-wide">
+      Sed sed porttitor ante. Vivamus auctor mi nec laoreet vestibulum. Cras accumsan tempus tincidunt, aenean scelerisque at purus non varius.
+    </h3>
+    <div class="grid -columns-12 -cell-stack-md">
+      <div class="cell -span-3" aria-hidden="true"></div>
+      <div class="cell -span-3">
+        <p>
+          Donec pharetra mauris feugiat mi malesuada, nec fringilla quam fermentum. Pellentesque in odio quis turpis porttitor aliquet. Vivamus commodo efficitur turpis. Aliquam
+        </p>
+      </div>
+      <div class="cell -span-3">
+        <p>
+          Pellentesque in odio quis turpis porttitor aliquet. Vivamus commodo efficitur turpis. Aliquam pharetra tellus in turpis commodo, non dapibus urna ultrices.
+        </p>
+      </div>
+      <div class="cell -span-3">
+        <p>
+          Aliquam pharetra tellus in turpis commodo, non dapibus urna ultrices. Cras commodo vulputate ipsum sed iaculis. Etiam ac tristique arcu, eget vestibulum metus.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <header class="detailsAcross__header">
+      <h2 class="h2 detailsAcross__title">
+        Centered headline and four detail columns
+      </h2>
+      <p class="detailsAcross__intro">
+        Centered title and intro, then a responsive step grid: one column on phones, two from <code>md</code>, four from <code>lg</code>.
+      </p>
+    </header>
+    <div class="grid detailsAcross__grid">
+      <div class="cell">
+        <div class="detailsAcross__item">
+          <h3 class="detailsAcross__itemTitle">1. Lorem Ipsum</h3>
+          <p class="detailsAcross__itemText">
+            Donec pharetra mauris feugiat mi malesuada, nec fringilla quam fermentum. Pellentesque in odio quis turpis porttitor aliquet. Vivamus commodo efficitur turpis.
+          </p>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="detailsAcross__item">
+          <h3 class="detailsAcross__itemTitle">2. Dapibus Urna in Turpis</h3>
+          <p class="detailsAcross__itemText">
+            Pellentesque in odio quis turpis porttitor aliquet. Vivamus commodo efficitur turpis. Aliquam pharetra tellus in turpis commodo, non dapibus urna ultrices.
+          </p>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="detailsAcross__item">
+          <h3 class="detailsAcross__itemTitle">3. Portitor Turpius Adisciput</h3>
+          <p class="detailsAcross__itemText">
+            Aliquam pharetra tellus in turpis commodo, non dapibus urna ultrices. Cras commodo vulputate ipsum sed iaculis. Etiam ac tristique arcu, eget vestibulum metus.
+          </p>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="detailsAcross__item">
+          <h3 class="detailsAcross__itemTitle">4. Malesuada Mauris</h3>
+          <p class="detailsAcross__itemText">
+            Nam ullamcorper lobortis libero et laoreet. Duis nec varius ex, in convallis ante. Donec mollis sollicitudin ligula quis placerat.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section editorialSplit -withCards">
+  <div class="container">
+    <header class="section__header">
+      <h2 class="h2">Intro column and horizontal cards</h2>
+      <p>Muted band with intro column and horizontal cards. Section uses <code>-withCards</code> on <code>editorialSplit</code>.</p>
+    </header>
+    <div class="editorialSplit__grid grid -columns-12">
+      <div class="cell -span-4 editorialSplit__aside">
+        <div>
+          <h3 class="h3">Adisciput Nostra, per inceptos.</h3>
+          <p class="editorialSplit__lede">
+            Turpis eget, vehicula cursus leo ad litora torquent per conubia nostra, per inceptos himenaeos.
+          </p>
+        </div>
+        <a class="button accent-primary" href="#">Default Button</a>
+      </div>
+      <div class="cell -span-8 editorialSplit__main">
+        <div class="cardList">
+          <article class="card -horizontal">
+            <h4 class="h4 card__title">Convallis ante</h4>
+            <div class="card__body">
+              <div>
+                <p>
+                  Nunc lorem erat, molestie vel turpis eget, vehicula cursus leo ad litora torquent per conubia nostra, per inceptos himenaeos.
+                </p>
+                <p class="card__intro">
+                  Nunc lorem erat, molestie vel turpis eget, vehicula cursus leo.
+                </p>
+              </div>
+              <a class="link" href="#">
+                Standalone Text Link
+                <svg viewBox="0 0 18 12"><use href="/main-icons-sprite.svg#arrow-right" /></svg>
+              </a>
+            </div>
+          </article>
+          <article class="card -horizontal">
+            <h4 class="h4 card__title">Convallis ante</h4>
+            <div class="card__body">
+              <div>
+                <p>
+                  Nunc lorem erat, molestie vel turpis eget, vehicula cursus leo ad litora torquent per conubia nostra, per inceptos himenaeos.
+                </p>
+                <p class="card__intro">
+                  Nunc lorem erat, molestie vel turpis eget, vehicula cursus leo.
+                </p>
+              </div>
+              <a class="link" href="#">
+                Standalone Text Link
+                <svg viewBox="0 0 18 12"><use href="/main-icons-sprite.svg#arrow-right" /></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
