@@ -1,0 +1,12 @@
+@use "@/organisms/textBased/shared" as *;
+
+/** Body copy on themed sections: --root-color + min-width for grid items. */
+.text-root {
+  color: var(--root-color);
+  min-width: 0;
+}
+
+/** Wide editorial title measure (see $textBasedProseWideMax). */
+.max-w-prose-wide {
+  max-width: $textBasedProseWideMax;
+}

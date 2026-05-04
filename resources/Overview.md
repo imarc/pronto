@@ -10,12 +10,13 @@ Pronto uses [Vite](https://vite.dev/) and [Vitrine](https://github.com/imarc/vit
 
 Pronto's components are organized following [Atomic Design](https://atomicdesign.bradfrost.com/):
 
-- **Atoms** are the smallest components, and should not contain any other components. _Examples: buttons, inputs, tags, headings._
-- **Molecules** are the next smallest, and should only depend on atoms. _Examples: banners, accordions, lists, pagination._
-- **Organisms** can depend on both atoms and molecules. These often represent a full slice across the page. _Examples: hero, section, site header, site footer._
-- Pronto currently doesn't ship with any **Templates** or **Pages**, but these groups should be created as appropriate.
-- **Utilities** are components that are meant to be used with other components and primarily provide functionality.
-- **Imported** components are not copied into your project by default. They are meant to be consistent across projects.
+* **Atoms** are the smallest components, and should not contain any other components. *Examples: buttons, inputs, tags, headings.*
+* **Molecules** are the next smallest, and should only depend on atoms. *Examples: banners, accordions, lists, pagination.*
+* **Organisms** can depend on both atoms and molecules. These often represent a full slice across the page. *Examples: hero, section, site header, site footer.*
+* **Pages** are full example compositions (for example under `resources/styles/pages/`) built from existing primitives. They are listed in the pattern library like other HTML examples.
+* Pronto does not ship **Templates** as a separate layer yet; but these groups should be created as appropriate.
+* **Utilities** are components that are meant to be used with other components and primarily provide functionality.
+* **Imported** components are not copied into your project by default. They are meant to be consistent across projects.
 
 Every visual component should have its folder. Vue components, composables and directives have folders within resources/js/. The folder name for a component should match the blockName, in lowerCamelCase, as should the naming of example HTML files.
 
