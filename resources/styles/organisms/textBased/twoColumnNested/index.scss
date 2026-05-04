@@ -5,17 +5,19 @@
   flex-direction: column;
   gap: 3rem;
 
-  .grid.-columns-7 > .cell {
-    grid-column: 1 / -1;
+  &__split {
+    display: grid;
+    gap: 3rem;
 
     @include at(md) {
-      grid-column: span var(--cell-span);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+      margin-top: 3rem;
     }
-  }
 
-  &__split.grid.-alignEnd {
-    @include at(md) {
-      align-items: end;
+    &.-alignEnd {
+      @include at(md) {
+        align-items: end;
+      }
     }
   }
 
@@ -25,11 +27,7 @@
     color: var(--accent-color-700);
     margin: 0;
     max-width: 32.6875rem;
-    font-size: var(--root-font-size-h2);
-
-    @include at(md) {
-      font-size: var(--root-font-size-h1);
-    }
+    font-size: var(--root-font-size-h1);
   }
 
   &__intro {
@@ -41,16 +39,20 @@
   }
 
   &__primary {
-    color: var(--color-gray-600);
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    color: var(--color-gray-600);
   }
 
-  &__stack {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
+  &__features {
+    display: grid;
+    gap: 3rem 2rem;
+    grid-template-columns: 1fr;
+
+    @include at(md) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
   &__feature {
