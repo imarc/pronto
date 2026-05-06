@@ -37,10 +37,10 @@
             </div>
 
             <!-- 
-                3-column grid with staggered -short and -fill modifiers
-                -fill spans 2 grid rows, -short spans 1 row: 
+                3-column staggered: DOM order below is for md+ placement.
+                Mobile-first CSS order: fill|fill / short|short / fill|short; at md+ order resets so DOM matches desktop stagger.
 
-                Grid rows:    Col 1      Col 2      Col 3
+                Grid rows (md+):    Col 1      Col 2      Col 3
                 Row 1:      [fill-top] [short]  [fill-top]
                 Row 2:      [fill-bot] [fill-top] [fill-bot]
                 Row 3:      [short] [fill-bot] [short]
@@ -48,7 +48,7 @@
 
             <h2>Staggered</h2>
             <div class="tiles__set -thirds -staggered">
-                <!-- Tile order: fill, short, fill, fill, short, short -->
+                <!-- Tile order (desktop DOM): fill, short, fill, fill, short, short -->
                 <div class="tiles__tile -fill">
                     <div class="tiles__media">
                         <img src="https://images.unsplash.com/photo-1557683316-973673baf926?w=400&h=600&fit=crop" alt="">

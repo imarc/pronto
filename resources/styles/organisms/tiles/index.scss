@@ -154,6 +154,11 @@
             // Staggered layout: uses -short (1 row) and -fill (2 rows) tiles
             // No explicit row heights - tiles define their own heights via aspect-ratio/min-height
             &.-staggered {
+                // Row-major flow: dense backfills holes and can strand late tiles in implicit/zero-sized tracks
+                // with rowspan + mixed spans (last items “missing” in some engines).
+                grid-auto-columns: minmax(0, 1fr);
+                grid-auto-flow: row;
+
                 // Short height = tile-width × 9/16
                 --_short-height: calc(var(--_tile-size) * 0.5625);
                 
@@ -161,6 +166,57 @@
                     // Fill = 2 shorts + 1 gap
                     min-height: calc(var(--_short-height) * 2 + var(--gap));
                     aspect-ratio: auto;
+                }
+
+                // Absolute .tiles__media gives no in-flow height — tile needs intrinsic block size.
+                // aspect-ratio:auto + height:100% below md was cyclic → 0× height in some rows.
+                #{$b}__tile.-short {
+                    align-self: stretch;
+                    aspect-ratio: 16 / 9;
+                    height: auto;
+                    justify-self: stretch;
+                    min-height: 0;
+                    width: 100%;
+
+                    @include at(md) {
+                        align-self: start;
+                    }
+                }
+
+                // Sandwich last two -short tiles between fills (demo = 6 tiles). md+ uses DOM order.
+                > .tiles__tile:nth-child(1) {
+                    order: 1;
+                }
+
+                > .tiles__tile:nth-child(2) {
+                    order: 6;
+                }
+
+                > .tiles__tile:nth-child(3) {
+                    order: 2;
+                }
+
+                > .tiles__tile:nth-child(4) {
+                    order: 5;
+                }
+
+                > .tiles__tile:nth-child(5) {
+                    order: 3;
+                }
+
+                > .tiles__tile:nth-child(6) {
+                    order: 4;
+                }
+
+                @include at(md) {
+                    > .tiles__tile:nth-child(1),
+                    > .tiles__tile:nth-child(2),
+                    > .tiles__tile:nth-child(3),
+                    > .tiles__tile:nth-child(4),
+                    > .tiles__tile:nth-child(5),
+                    > .tiles__tile:nth-child(6) {
+                        order: 0;
+                    }
                 }
             }
         }
@@ -232,7 +288,7 @@
             }
         }
 
-        // Short: 16:9 landscape tile at md+ (square on mobile)
+        // Short: default compact landscape from sm (square below sm via &__tile); staggered overrides below md
         #{$b}__tile.-short {
             @include at(sm) {
                 aspect-ratio: 16 / 9;
