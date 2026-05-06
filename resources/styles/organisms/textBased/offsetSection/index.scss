@@ -1,7 +1,7 @@
 @use "@/core" as *;
 @use "../_shared" as *;
 
-.offsetCopy {
+.offsetSection {
   display: flex;
   flex-direction: column;
   gap: 3rem;
