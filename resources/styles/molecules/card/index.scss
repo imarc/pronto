@@ -105,14 +105,13 @@
     box-shadow: 0 1rem 4rem rgb(0 0 0 / 0.05);
     display: grid;
     gap: 1.5rem;
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: 1fr;
     overflow: visible;
     padding: 1.5rem 2rem;
 
     @include at(md) {
       align-items: start;
-      // Fixed column ratio so a long title wraps inside its track instead of shrinking the body (matches editorialSplit.-withCards).
-      grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr);
+      grid-template-columns: 300px 1fr;
     }
 
     #{$b}__title {
@@ -136,10 +135,4 @@
       margin: 0;
     }
   }
-}
-
-.cardList {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
 }
