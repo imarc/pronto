@@ -12,21 +12,21 @@
   }
 
   &__columns {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     gap: 2rem;
-    justify-content: flex-end;
-    width: 100%;
+    grid-template-columns: 1fr;
     margin-top: 3rem;
-  }
-
-  &__column {
-    flex: 1 1 100%;
 
     @include at(md) {
-      flex: 0 1 calc(33.333% - 1.334rem);
-      max-width: 18.8125rem;
-      min-width: min(100%, 15rem);
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include at(lg) {
+      grid-template-columns: repeat(4, 1fr);
+
+      > .offsetSection__column:first-child {
+        grid-column-start: 2;
+      }
     }
   }
 }
