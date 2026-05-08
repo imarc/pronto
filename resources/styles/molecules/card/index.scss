@@ -124,7 +124,7 @@
       gap: 1.5rem;
       min-width: 0;
 
-      .link {
+      #{$b}__link {
         font-weight: 700;
       }
     }

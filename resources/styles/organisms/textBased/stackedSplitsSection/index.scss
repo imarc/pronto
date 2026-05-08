@@ -2,20 +2,22 @@
 
 .stackedSplitsSection {
   /*
-    Splits live inside `.container`; only that child receives this block’s gap.
-    Row spacing between splits comes from the container grid — bump it here.
+    Outer `.container` holds the page grid; inner `__container` stacks splits.
   */
-  .container {
+  &__container {
+    display: grid;
+    grid-column: main / main;
     row-gap: 4rem;
   }
 
   &__split {
     display: grid;
-    gap: 3rem;
+    gap: 1rem;
 
     /* Primary + features row: two columns from lg only. */
     @include at(md) {
       grid-template-columns: 1fr 1fr;
+      gap: 3rem;
     }
 
     /*
@@ -59,10 +61,6 @@
     align-self: start;
     color: var(--color-gray-600);
     display: grid;
-
-    .actions {
-      align-items: center;
-    }
   }
 
   &__features {
