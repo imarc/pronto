@@ -1,4 +1,4 @@
-@use "@/core/mixins/breakpoints" as *;
+@use "cell";
 
 .grid {
   --columns: 1;

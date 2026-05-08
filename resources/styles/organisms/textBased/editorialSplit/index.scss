@@ -2,29 +2,20 @@
 @use "../_shared" as *;
 
 .editorialSplit {
-  &__grid.grid {
+  &__grid {
     min-width: 0;
 
-    > .editorialSplit__main.cell.-span-8,
-    > .editorialSplit__main.cell.-span-9 {
+    > .editorialSplit__main.cell,
+    > .editorialSplit__aside.cell {
       grid-column: 1 / -1;
 
-      @include at(md) {
-        grid-column: span var(--span, 1);
-      }
-    }
-
-    > .editorialSplit__aside.cell.-span-4,
-    > .editorialSplit__aside.cell.-span-3 {
-      grid-column: 1 / -1;
-
-      @include at(md) {
-        grid-column: span var(--span, 1);
+      @include at(lg) {
+        grid-column: span var(--cell-span);
       }
     }
   }
 
-  &.-headline &__grid.grid > .cell[aria-hidden="true"] {
+  &.-headline &__grid > .cell[aria-hidden="true"] {
     display: none;
 
     @include at(md) {
