@@ -5,11 +5,12 @@
   &__grid.grid {
     min-width: 0;
 
-    > .editorialSplit__main.cell.-span-8 {
+    > .editorialSplit__main.cell.-span-8,
+    > .editorialSplit__main.cell.-span-9 {
       grid-column: 1 / -1;
 
       @include at(md) {
-        grid-column: span var(--cell-span);
+        grid-column: span var(--span, 1);
       }
     }
 
@@ -18,7 +19,7 @@
       grid-column: 1 / -1;
 
       @include at(md) {
-        grid-column: span var(--cell-span);
+        grid-column: span var(--span, 1);
       }
     }
   }
@@ -69,13 +70,10 @@
   }
 
   &.-withCards {
+    --accent-color: var(--color-gray-50);
     background: var(--color-gray-50);
     color: var(--root-color);
     padding-block: 4rem;
-
-    &.section {
-      --accent-color: var(--color-gray-50);
-    }
   }
 
   &.-withCards &__aside {
