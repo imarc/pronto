@@ -4,7 +4,7 @@ $textBasedProseWideMax: 53.5rem; // ~856px — wide display title / headline mea
 $textBasedProseMediumMax: 42.375rem; // ~678px — centered intro / supporting line under wide titles
 
 @mixin textBasedStickyAside {
-  @include at(md) {
+  @include at(lg) {
     align-self: start;
     position: sticky;
     top: 2rem;
