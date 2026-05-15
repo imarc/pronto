@@ -1,0 +1,32 @@
+resources/styles/molecules/popoverMenu/index.scss
+  s_c8a89a327c947f::t_d4f8b9d9944458 1-10,12,15-20,30-57,60-61,65,68-74,77-79,81-83,90-92
+  s_c8a89a327c947f::t_c0931ba395f3c1 21-29
+resources/styles/atoms/userTooltip/index.scss
+  s_c8a89a327c947f::t_e4d7442bc7a37b 1-14,17-32,34,36-38,47-90
+  s_c8a89a327c947f::t_0cb497b96b0733 39-46
+resources/styles/atoms/userTooltip/userTooltip.html
+  s_c8a89a327c947f::t_ede4e15d8b6d88 1-3,6-8,10-11,13-19,22-24,26-27,29-35,38-40,42-43,45-51
+resources/styles/molecules/popoverMenu/popoverMenu.html
+  s_c8a89a327c947f::t_f1c23082d83efe 2-5,8-16,18-22,24-32,35-49,51-57
+  s_c8a89a327c947f::t_e3fcbcb2891506 1
+resources/styles/atoms/index.scss
+  s_c8a89a327c947f::t_91a25fe308f00b 23
+resources/styles/molecules/index.scss
+  s_c8a89a327c947f::t_b0d25e3ee14df1 13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "83bf791a50af1676be4c2c2e80afcf7ae1b422ca",
+  "prompts": {},
+  "sessions": {
+    "s_c8a89a327c947f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2c92724c-d29a-4045-aed5-a45b5337030c",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Kevin Hamer <kevin@imarc.com>"
+    }
+  }
+}
