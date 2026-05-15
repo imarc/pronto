@@ -1,0 +1,57 @@
+<div style="display: flex; justify-content: space-between; align-items: flex-start; padding: 2rem">
+
+    <div>
+        <p style="margin: 0 0 0.5rem; font-size: 0.75rem; color: #888">End aligned (default)</p>
+        <div class="popoverMenu">
+            <button type="button" class="popoverMenu__trigger button -circle -small -ghost" popovertarget="demo-popover-1" aria-controls="demo-popover-1" aria-haspopup="menu" aria-label="Open menu" style="anchor-name: --demo-popover-1">
+                <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512" aria-hidden="true">
+                    <path d="M64 144a56 56 0 1 1 0-112 56 56 0 1 1 0 112zm0 224c30.9 0 56 25.1 56 56s-25.1 56-56 56-56-25.1-56-56 25.1-56 56-56zm56-112c0 30.9-25.1 56-56 56s-56-25.1-56-56 25.1-56 56-56 56 25.1 56 56z" />
+                </svg>
+            </button>
+            <div id="demo-popover-1" class="popoverMenu__panel -endAligned" popover="auto">
+                <ul class="popoverMenu__list" role="menu">
+                    <li class="popoverMenu__item">
+                        <button type="button" class="popoverMenu__action">Edit</button>
+                    </li>
+                    <li class="popoverMenu__item">
+                        <button type="button" disabled class="popoverMenu__action">Duplicate</button>
+                    </li>
+                    <li class="popoverMenu__item">
+                        <a href="#" class="popoverMenu__action">View details</a>
+                    </li>
+                    <li class="popoverMenu__item">
+                        <button type="button" class="popoverMenu__action danger">Delete</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <p style="margin: 0 0 0.5rem; font-size: 0.75rem; color: #888">Start aligned</p>
+        <div class="popoverMenu">
+            <button type="button" class="popoverMenu__trigger button -circle -small -ghost" popovertarget="demo-popover-2" aria-controls="demo-popover-2" aria-haspopup="menu" aria-label="Open menu" style="anchor-name: --demo-popover-2">
+                <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512" aria-hidden="true">
+                    <path d="M64 144a56 56 0 1 1 0-112 56 56 0 1 1 0 112zm0 224c30.9 0 56 25.1 56 56s-25.1 56-56 56-56-25.1-56-56 25.1-56 56-56zm56-112c0 30.9-25.1 56-56 56s-56-25.1-56-56 25.1-56 56-56 56 25.1 56 56z" />
+                </svg>
+            </button>
+            <div id="demo-popover-2" class="popoverMenu__panel -startAligned" popover="auto">
+                <ul class="popoverMenu__list" role="menu">
+                    <li class="popoverMenu__item">
+                        <button type="button" class="popoverMenu__action">Edit</button>
+                    </li>
+                    <li class="popoverMenu__item">
+                        <button type="button" class="popoverMenu__action">Duplicate</button>
+                    </li>
+                    <li class="popoverMenu__item -disabled">
+                        <button type="button" class="popoverMenu__action" disabled>Archive (disabled)</button>
+                    </li>
+                    <li class="popoverMenu__item">
+                        <button type="button" class="popoverMenu__action danger">Delete</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -38,6 +38,7 @@
   --accent-color-950: rgb(0 0 0 / .1);
 }
 
+.danger,
 .error {
   --accent-color-50: var(--root-color-error-50);
   --accent-color: var(--root-color-error);

@@ -1,0 +1,92 @@
+@use '@/core' as *;
+
+/**
+ * Compact action menu built on the native popover API.
+ * Trigger is a vertical ellipsis; consumers provide menu items via slots.
+ */
+.popoverMenu {
+    $b: &;
+
+    &__panel {
+        background: var(--root-background-color);
+        border-radius: 0.75rem;
+        border: 1px solid var(--root-border-color);
+        box-shadow: var(--root-box-shadow-med);
+        color: var(--root-color-headings);
+        margin: 0;
+        padding: 0.25rem;
+
+        &:popover-open {
+            display: block;
+            opacity: 1;
+            transition: opacity var(--root-ease-out-moderate),
+              display var(--root-ease-out-moderate) allow-discrete;
+        }
+
+        @starting-style {
+            &:popover-open {
+                opacity: 0;
+            }
+        }
+
+        @supports (position-anchor: --popover-menu-trigger) {
+            left: anchor(left);
+            position: absolute;
+            top: calc(anchor(bottom) + 0.5rem);
+            position-try-fallbacks:
+                flip-inline,
+                flip-block,
+                flip-inline flip-block;
+
+            &.-endAligned {
+                left: auto;
+                right: anchor(right);
+            }
+
+            &.-startAligned {
+                left: anchor(left);
+                right: auto;
+            }
+        }
+    }
+
+    &__list {
+        display: grid;
+        gap: 0.125rem;
+        list-style: none;
+        margin: 0;
+        min-width: 10rem;
+        padding: 0;
+    }
+
+    &__action {
+        --accent-color: var(--root-color);
+        background: transparent;
+        border-radius: 0.5rem;
+        border: 0;
+        color: var(--accent-color);
+        cursor: pointer;
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 600;
+        padding: .5rem .75rem;
+        text-align: left;
+        text-decoration: none;
+        transition: background var(--root-ease-out-fast);
+        width: 100%;
+
+        &:hover,
+        &:focus-visible {
+            background: var(--accent-color-50);
+            outline: none;
+        }
+
+        &[aria-disabled="true"],
+        &[disabled],
+        &.-disabled {
+            color: var(--root-background-color-inactive);
+            cursor: initial;
+            pointer-events: none;
+        }
+    }
+}

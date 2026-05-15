@@ -1,0 +1,90 @@
+@use '@/core' as *;
+
+/**
+ * User identity tooltip built on the native popover API.
+ * Shows avatar, name, organization, and email on click.
+ */
+.userTooltip {
+    &__avatar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.75rem;
+        height: 1.75rem;
+        border-radius: 50%;
+        background: var(--accent-color);
+        color: var(--accent-color-text);
+        font-size: 0.8125rem;
+        font-weight: 700;
+        flex-shrink: 0;
+
+        &--large {
+            width: 2.5rem;
+            height: 2.5rem;
+            font-size: 1rem;
+        }
+    }
+
+    &__panel {
+        margin: 0;
+        padding: 1rem;
+        border: 1px solid var(--root-border-color);
+        border-radius: 0.75rem;
+        background: var(--root-background-color);
+        box-shadow: var(--root-box-shadow-med);
+        min-width: 16rem;
+
+        &:popover-open {
+            display: block;
+            opacity: 1;
+            transition: opacity var(--root-ease-out-moderate), display var(--root-ease-out-moderate) allow-discrete;
+        }
+
+        @starting-style {
+            &:popover-open {
+                opacity: 0;
+            }
+        }
+
+        @supports (position-anchor: --user-tooltip-trigger) {
+            position: absolute;
+            top: calc(anchor(bottom) + 0.5rem);
+            left: anchor(left);
+            position-try-fallbacks:
+                flip-inline,
+                flip-block,
+                flip-inline flip-block;
+        }
+    }
+
+    &__card {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    &__info {
+        display: grid;
+        gap: 0.125rem;
+        min-width: 0;
+    }
+
+    &__name {
+        margin: 0;
+        font-size: 0.875rem;
+        font-weight: 600;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__organization,
+    &__email {
+        margin: 0;
+        font-size: 0.75rem;
+        color: var(--color-gray-500, #888888);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
