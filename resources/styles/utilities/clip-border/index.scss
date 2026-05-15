@@ -22,12 +22,6 @@
   initial-value: 0px;
 }
 
-@property --clip-border-radius {
-  syntax: "<length>";
-  inherits: true;
-  initial-value: 0px;
-}
-
 .clip-border {
   --clip-border-inner-radius: max(0px, calc(var(--clip-border-radius) - var(--clip-border-width)));
   --clip-border-inset: max(var(--clip-border-radius), var(--clip-border-width));
@@ -42,7 +36,7 @@
     position: absolute;
     pointer-events: none;
     inset: calc(-1 * var(--clip-border-width));
-    background: var(--clip-border-background);
+    background: var(--clip-border-background, var(--accent-color));
 
     border-radius: var(--clip-border-radius);
     clip-path: shape(evenodd from 0 0, hline to 100%, vline to 100%, hline to 0,
