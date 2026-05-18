@@ -27,16 +27,15 @@
    * Note: This sibling element is only needed for static HTML demos using the `open` attribute.
    * For production, use showModal() to open the dialog and the ::backdrop pseudo-element above
    * will provide the blur effect. The .overlay__backdrop element can be omitted.
+   *
+   * Wrap static open demos in .overlayDemo.-open so the backdrop is shown explicitly (styleguide-only).
    */
   &__backdrop {
     backdrop-filter: blur(12px);
     background: rgba(13, 0, 26, 0.70);
+    display: none;
     inset: 0;
     position: fixed;
-
-    &:not(:has(+ .overlay[open])) {
-      display: none;
-    }
   }
 
   &__close {
@@ -90,6 +89,12 @@
     color: rgba(255, 255, 255, 0.9);
     font-size: 1rem;
     text-align: center;
+  }
+}
+
+.overlayDemo.-open {
+  .overlay__backdrop {
+    display: block;
   }
 }
 
