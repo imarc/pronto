@@ -1,5 +1,4 @@
 @use "@/core" as *;
-@use "../_shared" as *;
 
 .offsetSection {
   display: flex;
@@ -8,7 +7,7 @@
 
   &__title {
     margin: 0;
-    max-width: $textBasedProseWideMax;
+    max-width: var(--root-prose-wide-max);
   }
 
   &__columns {
