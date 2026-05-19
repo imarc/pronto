@@ -1,5 +1,4 @@
 @use "@/core" as *;
-@use "../_shared" as *;
 
 .detailsSection {
   display: flex;
@@ -17,7 +16,7 @@
   &__title {
     font-size: var(--root-font-size-h1);
     margin: 0;
-    max-width: $textBasedProseWideMax;
+    max-width: var(--root-prose-wide-max);
   }
 
   &__intro {
@@ -25,7 +24,7 @@
     font-size: var(--root-font-size-lg);
     line-height: 1.5;
     margin: 0;
-    max-width: $textBasedProseMediumMax;
+    max-width: 42.375rem; // ~678px — centered intro under wide titles
   }
 
   &__grid {
