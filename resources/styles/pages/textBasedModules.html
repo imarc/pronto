@@ -1,3 +1,242 @@
+<header class="siteHeader">
+  <div class="container">
+    <div class="siteHeader__content">
+    <a class="siteHeader__logo" href="">
+      <svg viewBox="0 0 300 133" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="300" height="133" fill="currentColor"/>
+      </svg>
+    </a>
+    <nav class="siteHeader__utilityNav navigation">
+      <ul class="navigation__list">
+        <li class="navigation__item">
+          <p-openable class="navigation__button" label="Utility Dropdown" :close-on-blur="false">
+            <template #default>
+              <div class="navigation__dropdown dropdown">
+                <ul class="dropdown__list">
+                  <li class="dropdown__item">
+                    <a class="dropdown__link" href=""><span>Elit?</span></a>
+                  </li>
+                  <li class="dropdown__item">
+                    <a class="dropdown__link" href=""><span>Dolor.</span></a>
+                  </li>
+                  <li class="dropdown__item">
+                    <a class="dropdown__link" href=""><span>Adipisicing!</span></a>
+                  </li>
+                  <li class="dropdown__item">
+                    <a class="dropdown__link" href=""><span>Amet</span></a>
+                  </li>
+                  <li class="dropdown__item">
+                    <a class="dropdown__link" href=""><span>Adipisicing</span></a>
+                  </li>
+                </ul>
+              </div>
+            </template>
+          </p-openable>
+        </li>
+        <li class="navigation__item">
+          <a class="navigation__link" href="#">Contact</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="siteHeader__search search">
+      <svg class="search__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M232.49,215.51,185,168a92.12,92.12,0,1,0-17,17l47.53,47.54a12,12,0,0,0,17-17ZM44,112a68,68,0,1,1,68,68A68.07,68.07,0,0,1,44,112Z"></path></svg>
+      <input class="search__input input" type="search" placeholder="Search">
+    </div>
+    <nav class="siteHeader__mobileNav mobileNavigation">
+      <p-openable class="mobileNavigation__menu button -circle -ghost" label="menu">
+        <template #toggle>
+            <svg class="button__icon icon"><use href="/main-icons-sprite.svg#bars" /></svg>
+        </template>
+        <template v-slot="{ click }">
+          <div class="mobileNavigation__pane" v-scrolllock>
+            <div class="mobileNavigation__title">
+              Menu
+            </div>
+            <ul class="mobileNavigation__list" v-directionals>
+              <li class="dropdown__item">
+                <p-openable class="mobileNavigation__button" name="submenu">
+                  <template #toggle>
+                    Submenu
+                    <svg class="icon"><use href="/main-icons-sprite.svg#chevron-right" /></svg>
+                  </template>
+                  <template v-slot="{ click }">
+                    <div class="mobileNavigation__pane">
+                      <div class="mobileNavigation__title">
+                        <div class="mobileNavigation__actions">
+                          <button class="button -circle -ghost" @click.stopPropagation="click" tabindex="-1">
+                            <svg class="icon"><use href="/main-icons-sprite.svg#chevron-left" /></svg>
+                          </button>
+                        </div>
+                        Menu
+                      </div>
+                      <ul class="mobileNavigation__list" v-directionals>
+                        <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link">Consectetur asperiores</a></li>
+                        <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link">Consectetur asperiores</a></li>
+                        <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link">Amet porro.</a></li>
+                        <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link">Ipsum dolorem</a></li>
+                      </ul>
+                    </div>
+                  </template>
+                </p-openable>
+              </li>
+              <li class="dropdown__item">
+                <p-openable class="mobileNavigation__button" name="submenu">
+                  <template #toggle>
+                    STUFF
+                    <svg class="icon"><use href="/main-icons-sprite.svg#chevron-right" /></svg>
+                  </template>
+                  <template v-slot="{ click }">
+                    <div class="mobileNavigation__pane">
+                      <div class="mobileNavigation__title">
+                        <div class="mobileNavigation__actions">
+                          <button class="button -circle -ghost" @click.stopPropagation="click" tabindex="-1">
+                            <svg class="icon"><use href="/main-icons-sprite.svg#chevron-left" /></svg>
+                          </button>
+                        </div>
+                        Menu
+                      </div>
+                      <ul class="mobileNavigation__list" v-directionals>
+                        <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link">Consectetur asperiores</a></li>
+                        <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link">Consectetur asperiores</a></li>
+                        <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link">Amet porro.</a></li>
+                        <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link">Ipsum dolorem</a></li>
+                      </ul>
+                    </div>
+                  </template>
+                </p-openable>
+              </li>
+              <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link">Consectetur asperiores</a></li>
+              <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link">Amet porro.</a></li>
+              <li class="mobileNavigation__item"><a href="" class="mobileNavigation__link">Ipsum dolorem</a></li>
+              <li class="mobileNavigation__item">
+                <a class="mobileNavigation__link" href="">Amet impedit cumque</a>
+              </li>
+              <li class="mobileNavigation__item">
+                <a class="mobileNavigation__link" href="">Consectetur vitae temporibus!</a>
+              </li>
+              <li class="mobileNavigation__item">
+                <a class="mobileNavigation__link" href="">Consectetur doloremque reiciendis</a>
+              </li>
+              <li class="mobileNavigation__item">
+                <a class="mobileNavigation__link" href="">Dolor pariatur rerum.</a>
+              </li>
+              <li class="mobileNavigation__item">
+                <a class="mobileNavigation__link" href="">Ipsum a officiis.</a>
+              </li>
+              <li class="mobileNavigation__item">
+                <a class="mobileNavigation__link" href="">Dolor unde debitis.</a>
+              </li>
+              <li class="mobileNavigation__item">
+                <a class="mobileNavigation__link" href="">Adipisicing delectus velit</a>
+              </li>
+              <li class="mobileNavigation__item">
+                <a class="mobileNavigation__link" href="">Amet aliquam voluptates</a>
+              </li>
+            </ul>
+          </div>
+          <div class="mobileNavigation__closeButton">
+            <button class="button -circle -ghost" @click="click">
+              <svg class="icon"><use href="/main-icons-sprite.svg#close" /></svg>
+            </button>
+          </div>
+        </template>
+      </p-openable>
+    </nav>
+
+    <nav class="siteHeader__primaryNav navigation" v-directionals>
+      <ul class="navigation__list">
+        <li class="navigation__item" v-directionals>
+          <p-openable class="navigation__button" label="Default Dropdown" :close-on-blur="false">
+            <template #default>
+              <div class="navigation__dropdown dropdown">
+                <ul class="dropdown__list">
+                  <li class="dropdown__item"><a class="dropdown__link" href=""><span>Consectetur asperiores</span></a></li>
+                  <li class="dropdown__item"><a class="dropdown__link" href=""><span>Consectetur asperiores</span></a></li>
+                  <li class="dropdown__item"><a class="dropdown__link" href=""><span>Amet porro.</span></a></li>
+                  <li class="dropdown__item"><a class="dropdown__link" href=""><span>Ipsum dolorem</span></a></li>
+                </ul>
+              </div>
+            </template>
+          </p-openable>
+        </li>
+        <li class="navigation__item" v-directionals>
+          <p-openable class="navigation__button" label="Centered Dropdown" :close-on-blur="false">
+            <template #default>
+              <div class="navigation__dropdown dropdown -center">
+                <ul class="dropdown__list">
+                  <li class="dropdown__item"><a class="dropdown__link" href=""><span>Consectetur asperiores</span></a></li>
+                  <li class="dropdown__item"><a class="dropdown__link" href=""><span>Consectetur asperiores</span></a></li>
+                  <li class="dropdown__item"><a class="dropdown__link" href=""><span>Amet porro.</span></a></li>
+                  <li class="dropdown__item"><a class="dropdown__link" href=""><span>Ipsum dolorem</span></a></li>
+                </ul>
+              </div>
+            </template>
+          </p-openable>
+        </li>
+        <li class="navigation__item -wide" v-directionals>
+          <p-openable class="navigation__button" label="Full-width Dropdown" :close-on-blur="false">
+            <template #default>
+              <div class="navigation__dropdown dropdown grid -columns-3">
+                <div class="cell">
+                  <h3>Heading</h3>
+                  <p>
+                    Adipisicing obcaecati tempora qui ullam voluptates beatae? Assumenda soluta quae
+                  </p>
+                  <ul class="dropdown__list">
+                    <li class="dropdown__item"><a class="dropdown__link" href=""><span>Consectetur asperiores</span></a></li>
+                    <li class="dropdown__item"><a class="dropdown__link" href=""><span>Consectetur asperiores</span></a></li>
+                    <li class="dropdown__item"><a class="dropdown__link" href=""><span>Amet porro.</span></a></li>
+                    <li class="dropdown__item"><a class="dropdown__link" href=""><span>Ipsum dolorem</span></a></li>
+                  </ul>
+                </div>
+                <div class="cell">
+                  <h3>Heading</h3>
+                  <p>
+                    Adipisicing obcaecati tempora qui ullam voluptates beatae? Assumenda soluta quae
+                  </p>
+                  <ul class="dropdown__list">
+                    <li class="dropdown__item"><a class="dropdown__link" href=""><span>Consectetur asperiores</span></a></li>
+                    <li class="dropdown__item"><a class="dropdown__link" href=""><span>Consectetur asperiores</span></a></li>
+                    <li class="dropdown__item"><a class="dropdown__link" href=""><span>Amet porro.</span></a></li>
+                    <li class="dropdown__item"><a class="dropdown__link" href=""><span>Ipsum dolorem</span></a></li>
+                  </ul>
+                </div>
+                <div class="cell">
+                  <h3>Heading</h3>
+                  <p>
+                    Adipisicing obcaecati tempora qui ullam voluptates beatae? Assumenda soluta quae
+                  </p>
+                  <ul class="dropdown__list">
+                    <li class="dropdown__item"><a class="dropdown__link" href=""><span>Consectetur asperiores</span></a></li>
+                    <li class="dropdown__item"><a class="dropdown__link" href=""><span>Consectetur asperiores</span></a></li>
+                    <li class="dropdown__item"><a class="dropdown__link" href=""><span>Amet porro.</span></a></li>
+                    <li class="dropdown__item"><a class="dropdown__link" href=""><span>Ipsum dolorem</span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </template>
+          </p-openable>
+        </li>
+        <li class="navigation__item" v-directionals>
+          <p-openable class="navigation__button" label="Right Aligned Dropdown" :close-on-blur="false">
+            <template #default>
+              <div class="navigation__dropdown dropdown -rightAligned">
+                <ul class="dropdown__list">
+                  <li class="dropdown__item"><a class="dropdown__link" href=""><span>Consectetur asperiores</span></a></li>
+                  <li class="dropdown__item"><a class="dropdown__link" href=""><span>Consectetur asperiores</span></a></li>
+                  <li class="dropdown__item"><a class="dropdown__link" href=""><span>Amet porro.</span></a></li>
+                  <li class="dropdown__item"><a class="dropdown__link" href=""><span>Ipsum dolorem</span></a></li>
+                </ul>
+              </div>
+            </template>
+          </p-openable>
+        </li>
+      </ul>
+    </nav>
+    </div>
+  </div>
+</header>
+
 <section class="section">
   <div class="container">
     <h1 class="h1">Text based modules</h1>
@@ -11,10 +250,10 @@
   <div class="container">
     <header class="section__header">
       <h2 class="h2">Equal two columns</h2>
-      <p>Simple two-column body copy using <code>.grid.-columns-2</code> and <code>.cell.text-root</code>.</p>
+      <p>Simple two-column body copy using <code>.grid.-columns-2</code> and <code>.cell</code>.</p>
     </header>
     <div class="grid -columns-2">
-      <div class="cell text-root">
+      <div class="cell">
         <p>
           Nullam efficitur libero elit, consectetur commodo nulla rutrum ac. Suspendisse semper eleifend fringilla. Donec pharetra mauris feugiat mi malesuada, nec fringilla quam fermentum.
         </p>
@@ -22,7 +261,7 @@
           Etiam ac tristique arcu, eget vestibulum metus. Aenean feugiat, lorem sit amet varius condimentum, mauris velit fermentum ante.
         </p>
       </div>
-      <div class="cell text-root">
+      <div class="cell">
         <p>
           Praesent quis est dapibus, pretium mi at, cursus tellus. In eleifend, quam efficitur dapibus fermentum, odio eros scelerisque felis, sit amet posuere lectus ante vitae mauris.
         </p>
@@ -41,12 +280,12 @@
       <p>Narrow intro column beside wider body copy. Uses <code>editorialSplit</code> with <code>-introBody</code></p>
     </header>
     <div class="editorialSplit__grid grid -columns-12">
-      <div class="cell -span-4 editorialSplit__aside">
+      <div class="editorialSplit__aside -stickyAside">
         <p class="editorialSplit__introText">
           Elementum libero nulla mollis lectus, proin consequat dui nec commodo.
         </p>
       </div>
-      <div class="cell -span-8 editorialSplit__main">
+      <div class="editorialSplit__main">
         <div class="editorialSplit__body">
           <p>
             Praesent quis est dapibus, pretium mi at, cursus tellus. In eleifend, quam efficitur dapibus fermentum, odio eros scelerisque felis, sit amet posuere lectus ante vitae mauris. Nam ullamcorper lobortis libero et laoreet. Duis nec varius ex, in convallis ante. Donec mollis sollicitudin ligula quis placerat. Vestibulum luctus lacus in justo ultrices, sed egestas orci ornare.
@@ -67,13 +306,13 @@
       <p>Supporting lede beside a large display headline. Section uses <code>-headline</code>; spacer column is hidden on small screens.</p>
     </header>
     <div class="editorialSplit__grid grid -columns-12">
-      <div class="cell -span-3 editorialSplit__aside">
+      <div class="editorialSplit__aside -stickyAside">
         <p class="editorialSplit__lede">
           Nunc lorem erat, molestie vel turpis eget, vehicula cursus leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum dignissim urna quam, eu sollicitudin.
         </p>
       </div>
-      <div class="cell -span-1" aria-hidden="true"></div>
-      <div class="cell -span-8 editorialSplit__main">
+      <div class="editorialSplit__spacer" aria-hidden="true"></div>
+      <div class="editorialSplit__main">
         <h2 class="h2 editorialSplit__headline">
           Duis nec varius ex, in convallis ante. Donec mollis sollicitudin ligula quis placerat, vestibulum luctus lacus in justo ultrices; dolorem ipsum.
         </h2>
@@ -206,7 +445,7 @@
       <p>Muted band with intro column and horizontal cards stacked in <code>.cardList</code> (<code>molecules/cardList/</code>). Section uses <code>-withCards</code> on <code>editorialSplit</code>.</p>
     </header>
     <div class="editorialSplit__grid grid -columns-12">
-      <div class="cell -span-3 editorialSplit__aside">
+      <div class="editorialSplit__aside">
         <div>
           <h3 class="h3">Adisciput Nostra, per inceptos.</h3>
           <p class="editorialSplit__lede">
@@ -215,7 +454,7 @@
         </div>
         <a class="button accent-primary" href="#">Default Button</a>
       </div>
-      <div class="cell -span-9 editorialSplit__main">
+      <div class="editorialSplit__main">
         <div class="cardList">
           <article class="card -horizontal">
             <h4 class="h4 card__title">Convallis ante</h4>
@@ -256,3 +495,196 @@
     </div>
   </div>
 </section>
+
+editorialSplit -withCards with sticky aside
+<section class="section editorialSplit -withCards">
+  <div class="container">
+    <header class="section__header">
+      <h2 class="h2">Intro column and horizontal cards</h2>
+      <p>Muted band with intro column and horizontal cards stacked in <code>.cardList</code> (<code>molecules/cardList/</code>). Section uses <code>-withCards</code> on <code>editorialSplit</code>.</p>
+    </header>
+    <div class="editorialSplit__grid grid -columns-12">
+      <div class="editorialSplit__aside -stickyAside">
+        <div>
+          <h3 class="h3">Adisciput Nostra, per inceptos.</h3>
+          <p class="editorialSplit__lede">
+            Turpis eget, vehicula cursus leo ad litora torquent per conubia nostra, per inceptos himenaeos.
+          </p>
+        </div>
+        <a class="button accent-primary" href="#">Default Button</a>
+      </div>
+      <div class="editorialSplit__main">
+        <div class="cardList">
+          <article class="card -horizontal">
+            <h4 class="h4 card__title">Convallis ante</h4>
+            <div class="card__body">
+              <div>
+                <p>
+                  Nunc lorem erat, molestie vel turpis eget, vehicula cursus leo ad litora torquent per conubia nostra, per inceptos himenaeos.
+                </p>
+                <p class="card__intro">
+                  Nunc lorem erat, molestie vel turpis eget, vehicula cursus leo.
+                </p>
+              </div>
+              <a class="card__link" href="#">
+                Standalone Text Link
+                <svg viewBox="0 0 18 12"><use href="/main-icons-sprite.svg#arrow-right" /></svg>
+              </a>
+            </div>
+          </article>
+          <article class="card -horizontal">
+            <h4 class="h4 card__title">Sed do eiusmod tempor incididunt.</h4>
+            <div class="card__body">
+              <div>
+                <p>
+                  Nunc lorem erat, molestie vel turpis eget, vehicula cursus leo ad litora torquent per conubia nostra, per inceptos himenaeos.
+                </p>
+                <p class="card__intro">
+                  Nunc lorem erat, molestie vel turpis eget, vehicula cursus leo.
+                </p>
+              </div>
+              <a class="card__link" href="#">
+                Standalone Text Link
+                <svg viewBox="0 0 18 12"><use href="/main-icons-sprite.svg#arrow-right" /></svg>
+              </a>
+            </div>
+          </article>
+          <article class="card -horizontal">
+            <h4 class="h4 card__title">Consectetur adipiscing elit.</h4>
+            <div class="card__body">
+              <div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <p class="card__intro">
+                  Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+              <a class="card__link" href="#">
+                Standalone Text Link
+                <svg viewBox="0 0 18 12"><use href="/main-icons-sprite.svg#arrow-right" /></svg>
+              </a>
+            </div>
+          </article>
+          <article class="card -horizontal">
+            <h4 class="h4 card__title">Consectetur adipiscing elit.</h4>
+            <div class="card__body">
+              <div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <p class="card__intro">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+              <a class="card__link" href="#">
+                Standalone Text Link
+                <svg viewBox="0 0 18 12"><use href="/main-icons-sprite.svg#arrow-right" /></svg>
+              </a>
+            </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="siteFooter">
+  <div class="container">
+    <div class="siteFooter__content">
+      <aside class="siteFooter__info">
+        <a class="siteFooter__logo" href="">
+          <svg viewBox="0 0 300 133" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="133" fill="currentColor"/>
+          </svg>
+        </a>
+        <div class="siteFooter__address">
+          <div class="h5">Address</div>
+          <address>
+            123 West Main Street<br>
+            Second Floor<br>
+            Townsville, MA 01234
+          </address>
+          <a href="">Get Directions</a>
+        </div>
+        <div class="siteFooter__contact">
+          <a href="tel:1234567890">(123) 546 - 7890</a><br>
+          <a href="mailto:contact@companycorp.com">contact@companycorp.com</a>
+        </div>
+      </aside>
+      <div class="siteFooter__navigation sitemap">
+        <ul class="sitemap__list">
+          <li class="sitemap__item">
+            <div class="sitemap__heading">Link Heading</div>
+            <ul class="sitemap__sublist">
+              <li><a href="">Plain Text Link</a></li>
+              <li><a href="">Plain Text Link</a></li>
+              <li><a href="">Plain Text Link</a></li>
+              <li><a href="">Plain Text Link</a></li>
+              <li><a href="">Plain Text Link</a></li>
+              <li><a href="">Plain Text Link</a></li>
+            </ul>
+          </li>
+          <li class="sitemap__item">
+            <div class="sitemap__heading">Link Heading</div>
+            <ul class="sitemap__sublist">
+              <li><a href="">Plain Text Link</a></li>
+              <li><a href="">Plain Text Link</a></li>
+              <li><a href="">Plain Text Link</a></li>
+              <li><a href="">Plain Text Link</a></li>
+              <li><a href="">Plain Text Link</a></li>
+              <li><a href="">Plain Text Link</a></li>
+            </ul>
+          </li>
+          <li class="sitemap__item">
+            <div class="sitemap__heading">Link Heading</div>
+            <ul class="sitemap__sublist">
+              <li><a href="">Plain Text Link</a></li>
+              <li><a href="">Plain Text Link</a></li>
+              <li><a href="">Plain Text Link</a></li>
+              <li><a href="">Plain Text Link</a></li>
+              <li><a href="">Plain Text Link</a></li>
+              <li><a href="">Plain Text Link</a></li>
+            </ul>
+          </li>
+          <li class="sitemap__item">
+            <div class="sitemap__heading">Link Heading</div>
+            <ul class="sitemap__sublist">
+              <li><a href="">Plain Text Link</a></li>
+              <li><a href="">Plain Text Link</a></li>
+              <li><a href="">Plain Text Link</a></li>
+              <li><a href="">Plain Text Link</a></li>
+              <li><a href="">Plain Text Link</a></li>
+              <li><a href="">Plain Text Link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <nav class="siteFooter__social actions">
+        <a class="button -square -ghost" href="#">
+            <span class="srOnly">On Facebook</span>
+            <svg class="button__icon -large"><use href="/main-icons-sprite.svg#facebook" /></svg>
+        </a>
+        <a class="button -square -ghost" href="#">
+            <span class="srOnly">On Instagram</span>
+            <svg class="button__icon -large"><use href="/main-icons-sprite.svg#instagram" /></svg>
+        </a>
+        <a class="button -square -ghost" href="#">
+            <span class="srOnly">On LinkedIn</span>
+            <svg class="button__icon -large"><use href="/main-icons-sprite.svg#linkedin" /></svg>
+        </a>
+        <a class="button -square -ghost" href="#">
+            <span class="srOnly">On YouTube</span>
+            <svg class="button__icon -large"><use href="/main-icons-sprite.svg#youtube" /></svg>
+        </a>
+      </nav>
+      <nav class="siteFooter__utility">
+        <span class="siteFooter__copyright">© 2025 CompanyCorp LLC</span>
+        <a href="">Privacy Policy</a>
+        <a href="">Terms of Service</a>
+        <a href="">Cookie Policy</a>
+      </nav>
+    </div>
+  </div>
+</footer>
