@@ -1,11 +1,14 @@
 <div class="slider">
   <div class="slider__content">
+    <!-- aria-label should be customized for each carousel, and should not contain the word "carousel" -->
+    <!-- aria-labelledby should be used instead, if the carousel has a heading element that describes the carousel, please customize for that use case -->
     <p-slider
       slides-per-view="auto"
       space-between="16"
       navigation="true"
       pagination-clickable="true"
       loop="true"
+      aria-label="This should be customized for each carousel"
       :breakpoints="{
       768: 
         {
