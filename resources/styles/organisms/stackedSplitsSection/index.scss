@@ -1,0 +1,90 @@
+@use "@/core" as *;
+
+.stackedSplitsSection {
+  /*
+    Outer `.container` holds the page grid; inner `__container` stacks splits.
+  */
+  &__container {
+    display: grid;
+    grid-column: main / main;
+    row-gap: 4rem;
+  }
+
+  &__split {
+    display: grid;
+    gap: 1rem;
+
+    /* Primary + features row: two columns from lg only. */
+    @include at(md) {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    /*
+      `-lead`: two columns from `md` (“desktop”) until below `lg`, then single column (`1fr`) from `lg`.
+    */
+    &.-lead {
+      @include at(md) {
+        grid-template-columns: 1fr;
+      }
+
+      @include at(lg) {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    &.-alignEnd {
+      @include at(md) {
+        align-items: end;
+      }
+    }
+  }
+
+  &__headline {
+    --accent-color: var(--color-purple);
+
+    color: var(--accent-color-700);
+    margin: 0;
+    max-width: 32.6875rem;
+    font-size: var(--root-font-size-h1);
+  }
+
+  &__intro {
+    color: var(--color-gray-500);
+    font-size: var(--root-font-size-lg);
+    line-height: 1.5;
+    margin: 0;
+    max-width: 39.625rem;
+  }
+
+  &__primary {
+    align-self: start;
+    color: var(--color-gray-600);
+    display: grid;
+  }
+
+  &__features {
+    display: grid;
+    gap: 3rem 2rem;
+    grid-template-columns: 1fr;
+
+    @include at(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__feature {
+    display: grid;
+    gap: 1rem;
+  }
+
+  &__featureTitle {
+    margin: 0;
+  }
+
+  &__featureText {
+    color: var(--color-gray-600);
+    font-size: var(--root-font-size-sm);
+    margin: 0;
+  }
+}

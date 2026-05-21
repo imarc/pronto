@@ -1,0 +1,31 @@
+@use "@/core" as *;
+
+.offsetSection {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  &__title {
+    margin: 0;
+    max-width: var(--root-prose-wide-max);
+  }
+
+  &__columns {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    margin-top: 3rem;
+
+    @include at(md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include at(lg) {
+      grid-template-columns: repeat(4, 1fr);
+
+      > .offsetSection__column:first-child {
+        grid-column-start: 2;
+      }
+    }
+  }
+}

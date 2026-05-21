@@ -99,4 +99,40 @@
   &.-flipped {
     flex-direction: column;
   }
+
+  &.-horizontal {
+    background: var(--root-background-color);
+    box-shadow: 0 1rem 4rem rgb(0 0 0 / 0.05);
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    overflow: visible;
+    padding: 1.5rem 2rem;
+
+    @include at(md) {
+      align-items: start;
+      grid-template-columns: 300px 1fr;
+    }
+
+    #{$b}__title {
+      margin: 0;
+      min-width: 0;
+    }
+
+    #{$b}__body {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      min-width: 0;
+
+      #{$b}__link {
+        font-weight: 700;
+      }
+    }
+
+    #{$b}__intro {
+      font-size: var(--root-font-size-sm);
+      margin: 0;
+    }
+  }
 }
