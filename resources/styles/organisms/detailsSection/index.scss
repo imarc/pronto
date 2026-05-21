@@ -1,4 +1,4 @@
-@use "@/core" as *;
+@use '@/core' as *;
 
 .detailsSection {
   display: flex;
@@ -29,15 +29,18 @@
 
   &__grid {
     --gap: 1rem;
+
     margin-top: 3rem;
 
     @include at(md) {
       --columns: 2;
+
       grid-template-rows: repeat(4, auto);
     }
 
     @include at(lg) {
       --columns: 4;
+
       grid-template-rows: auto auto;
     }
   }
