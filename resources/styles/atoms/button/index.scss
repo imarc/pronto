@@ -77,6 +77,11 @@
     padding: 0;
     place-content: center;
     width: 3em;
+
+    &.-small {
+      height: 2em;
+      width: 2em;
+    }
   }
 
   &.-square {
