@@ -101,6 +101,7 @@
     &.-columns-5 {
       @include at(lg) {
         grid-template-columns: repeat(10, 1fr);
+
         // Center 1-4 orphans in a 5-column layout (works for any count)
         > .card:nth-child(5n + 1):nth-last-child(1) {
           grid-column: 5 / 7;
