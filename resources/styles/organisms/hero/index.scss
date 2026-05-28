@@ -1,4 +1,4 @@
-@use "@/core" as *;
+@use '@/core' as *;
 
 .hero {
   $b: &;
@@ -22,12 +22,12 @@
     }
 
     /* should be max mobile columns + tablet outer gutters */
-    @media (min-width: 368px) {
+    @media (width >= 368px) {
       --container-width: 744px;
     }
 
     /* should be max tablet columns + desktop outer gutters */
-    @media (min-width: 808px) {
+    @media (width >= 808px) {
       --container-width: 1300px;
     }
   }
@@ -48,48 +48,29 @@
       grid-row: 1 / 2;
     }
 
-    img { 
+    img {
       max-height: 100cqh;
       width: 100%;
       object-fit: cover;
     }
 
-
     &.-fade::after {
-      background: radial-gradient(
-        circle farthest-side at 50% 25%,
-        #0000 35vw,
-        #0002 45vw,
-        #0004
-      );
+      background: radial-gradient(circle farthest-side at 50% 25%, #00000000 35vw, #00000022 45vw, #00000044);
       content: '';
       z-index: 1;
 
       @include at(md) {
-        background: radial-gradient(
-          circle farthest-side at calc(50vw + min(25vw, 325px)),
-          #0004 min(15vw, 195px),
-          #0008 min(25vw, 325px),
-          #000c
-        );
+        background: radial-gradient(circle farthest-side at calc(50vw + min(25vw, 325px)), #00000044 min(15vw, 195px), #00000088 min(25vw, 325px), #000000cc);
       }
     }
 
     &.-vignette::after {
-      background: radial-gradient(
-        ellipse closest-side at 50% 35%,
-        #0002 40vw,
-        #0004
-      );
+      background: radial-gradient(ellipse closest-side at 50% 35%, #00000022 40vw, #00000044);
       content: '';
       z-index: 1;
 
       @include at(md) {
-        background: radial-gradient(
-          ellipse at center,
-          #0004 40%,
-          #000c 80%
-        );
+        background: radial-gradient(ellipse at center, #00000044 40%, #000000cc 80%);
       }
     }
 
@@ -98,7 +79,7 @@
       z-index: 1;
 
       @include at(md) {
-        background: linear-gradient(to right, #0008 50%, #0000 calc(50% + 1px));
+        background: linear-gradient(to right, #00000088 50%, #00000000 calc(50% + 1px));
       }
     }
 
@@ -111,6 +92,7 @@
 
     &.-multiply {
       background: white;
+
       &::before {
         content: '';
         background: var(--accent-color);
@@ -149,21 +131,24 @@
     grid-column: main / main;
   }
 
-
   // Natural content order for mobile
   &__image {
     order: 1;
   }
+
   &__testimonial {
     order: 2;
   }
+
   &__media {
     order: 3;
   }
+
   &__text {
     order: 4;
     padding: 2rem 0;
   }
+
   &__cta {
     order: 5;
   }

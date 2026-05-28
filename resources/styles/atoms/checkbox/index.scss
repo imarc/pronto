@@ -1,4 +1,4 @@
-:where(input[type=checkbox]),
+:where(input[type='checkbox']),
 .checkbox {
   appearance: none;
   background: var(--color-gray-50);
@@ -6,12 +6,15 @@
   border: 2px solid var(--color-gray-500);
   display: inline grid;
   height: 1.5em;
-  transition: background var(--root-ease-out-fast), border-color var(--root-ease-out-fast);
+  transition:
+    background var(--root-ease-out-fast),
+    border-color var(--root-ease-out-fast);
   width: 1.5em;
 
   &::before {
     content: '';
     background: var(--accent-color-contrast);
+
     /* Using mask as this is the only way to make the color of the checkmark dynamic */
     mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M18 8L9.75 16.25L6 12.5' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
     display: none;
@@ -51,6 +54,7 @@
   &:disabled {
     background: var(--color-gray-50);
     border-color: var(--color-gray-200);
+
     // cursor: not-allowed;
 
     &::before {
