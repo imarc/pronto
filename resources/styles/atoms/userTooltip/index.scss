@@ -5,6 +5,8 @@
  * Shows avatar, name, organization, and email on click.
  */
 .userTooltip {
+    display: inline flex;
+
     &__avatar {
         display: flex;
         align-items: center;
