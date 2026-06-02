@@ -2,7 +2,7 @@
 
 /**
  * Compact action menu built on the native popover API.
- * Trigger is a vertical ellipsis; consumers provide menu items via slots.
+ * Trigger is a vertical ellipsis; consumers render menu items inside the panel/list markup.
  */
 .popoverMenu {
     $b: &;
