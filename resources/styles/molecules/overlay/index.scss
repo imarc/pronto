@@ -1,5 +1,5 @@
 .overlay {
-  background: rgba(13, 0, 26, 0.70);
+  background: rgb(13 0 26 / 0.7);
   border: 0;
   border-radius: 0;
   box-shadow: none;
@@ -16,7 +16,7 @@
 
   &::backdrop {
     backdrop-filter: blur(12px);
-    background: rgba(13, 0, 26, 0.70);
+    background: rgb(13 0 26 / 0.7);
   }
 
   &:not([open]) {
@@ -27,14 +27,15 @@
     appearance: none;
     background: transparent;
     border: 0;
-    color: #fff;
+    color: #ffffff;
     cursor: pointer;
     height: 5.25rem;
     padding: 0;
     position: absolute;
     right: 1rem;
     top: 1rem;
-    transition: opacity var(--root-ease-out-fast),
+    transition:
+      opacity var(--root-ease-out-fast),
       transform var(--root-ease-out-fast);
     width: 5.25rem;
     z-index: 1;
@@ -71,9 +72,8 @@
   }
 
   &__caption {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgb(255 255 255 / 0.9);
     font-size: 1rem;
     text-align: center;
   }
 }
-
