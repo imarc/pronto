@@ -27,7 +27,7 @@
   --clip-border-inset: max(var(--clip-border-radius), var(--clip-border-width));
 
   position: relative;
-  border: var(--clip-border-width) solid #0000;
+  border: var(--clip-border-width) solid var(--clip-border-color, var(--accent-color));
   border-radius: var(--clip-border-radius);
   background-clip: padding-box;
 
@@ -37,18 +37,26 @@
     pointer-events: none;
     inset: calc(-1 * var(--clip-border-width));
     background: var(--clip-border-background, var(--accent-color));
-
     border-radius: var(--clip-border-radius);
-    clip-path: shape(evenodd from 0 0, hline to 100%, vline to 100%, hline to 0,
-      move to var(--clip-border-width) var(--clip-border-inset),
-      arc by var(--clip-border-inner-radius) calc(-1 * var(--clip-border-inner-radius)) of var(--clip-border-inner-radius) cw,
-      hline to calc(100% - var(--clip-border-inset)),
-      arc by var(--clip-border-inner-radius) var(--clip-border-inner-radius) of var(--clip-border-inner-radius) cw,
-      vline to calc(100% - var(--clip-border-inset)),
-      arc by calc(-1 * var(--clip-border-inner-radius)) var(--clip-border-inner-radius) of var(--clip-border-inner-radius) cw,
-      hline to var(--clip-border-inset),
-      arc by calc(-1 * var(--clip-border-inner-radius)) calc(-1 * var(--clip-border-inner-radius)) of var(--clip-border-inner-radius) cw
-    );
+    display: none;
+  }
+
+  @supports (clip-path: shape(from 0 0, hline to 100%)) {
+    border-color: #0000;
+
+    &::before {
+      display: block;
+      clip-path: shape(evenodd from 0 0, hline to 100%, vline to 100%, hline to 0,
+        move to var(--clip-border-width) var(--clip-border-inset),
+        arc by var(--clip-border-inner-radius) calc(-1 * var(--clip-border-inner-radius)) of var(--clip-border-inner-radius) cw,
+        hline to calc(100% - var(--clip-border-inset)),
+        arc by var(--clip-border-inner-radius) var(--clip-border-inner-radius) of var(--clip-border-inner-radius) cw,
+        vline to calc(100% - var(--clip-border-inset)),
+        arc by calc(-1 * var(--clip-border-inner-radius)) var(--clip-border-inner-radius) of var(--clip-border-inner-radius) cw,
+        hline to var(--clip-border-inset),
+        arc by calc(-1 * var(--clip-border-inner-radius)) calc(-1 * var(--clip-border-inner-radius)) of var(--clip-border-inner-radius) cw
+      );
+    }
   }
 }
 
