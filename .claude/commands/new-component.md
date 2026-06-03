@@ -48,15 +48,18 @@ The file content:
 
 ## 4. Wire into Layer Index
 
+**Note:** `resources/styles/pages/` has no `index.scss`. If the chosen layer is `pages`, skip this step and inform the user: "The `pages` layer has no index.scss — wire it manually if needed."
+
 Append to `resources/styles/<layer>/index.scss`:
 
-```scss
-@forward '<name>';
-```
+- For layer `utilities`, use: `@forward './<name>';`
+- For all other layers, use: `@forward '<name>';`
 
 Add it at the end of the file, after all existing `@forward` lines.
 
 ## 5. Optional Vue Component
+
+**Note:** The `P` prefix is reserved for Pronto's own built-in components. Project-specific components intentionally omit it.
 
 Ask the user:
 > "Add a Vue component? (y/n)"
