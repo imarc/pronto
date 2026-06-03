@@ -38,8 +38,12 @@ Create `resources/styles/<layer>/<name>/index.scss`:
 
 Create `resources/styles/<layer>/<name>/<name>.html`:
 
+To generate the label, split `name` on uppercase letters, title-case each word, join with spaces (e.g. `myButton` → `My Button`, `heroSection` → `Hero Section`). Call this `label`.
+
+The file content:
+
 ```html
-<div class="<name>"><name></div>
+<div class="<name>"><label></div>
 ```
 
 ## 4. Wire into Layer Index
