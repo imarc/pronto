@@ -1,0 +1,19 @@
+.claude/commands/new-component.md
+  s_9dd7aaa3ea4ad0::t_b35423a6d2e3af 1-81
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "4681b2fd7542b9334976b9a2a087786167445628",
+  "prompts": {},
+  "sessions": {
+    "s_9dd7aaa3ea4ad0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0bd84dca-a27f-407e-84c0-d274a0aeb30b",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Kevin Hamer <kevin@imarc.com>"
+    }
+  }
+}
