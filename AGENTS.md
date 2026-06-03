@@ -1,12 +1,42 @@
 # AGENTS.md
 
+## Project
+
+Pronto is a package of front-end components built by Imarc. The components in Pronto are built to be changed over configured, with an emphasis on the code being simple to read and adapt to individual project needs.
+
+Documentation: https://pronto.imarc.com/components/Overview/
+
+Components: https://pronto.imarc.com/components/
+
 ## Architecture
 
-Pronto is a Vue 3 + Vite frontend framework with component library, built for copying into projects (not configuring). It uses **Vitrine** (`@imarc/vitrine`) as a component documentation server — `npm run dev` launches the Vitrine UI, which reads HTML examples from component folders.
+Pronto is a Vue 3 + Vite frontend framework with a component library, built for copying into projects instead of configuring from `node_modules`. It uses **Vitrine** (`@imarc/vitrine`) as a component documentation server. `npm run dev` launches the Vitrine UI, which reads HTML examples from component folders.
 
 Build entrypoints: `resources/styles/index.scss` and `resources/js/index.js`. CSS is imported from JS (Vite convention).
 
 Vue components load asynchronously via `defineAsyncComponent`. The Vue app mounts to `#app`.
+
+## Pronto Skill
+
+Reusable Pronto usage guidance lives in `.agents/skills/pronto/SKILL.md`. Use that skill when working on components, SCSS/JS conventions, Vitrine examples, or guidance intended to be copied into consuming projects.
+
+## Installation Flow
+
+The package installer is exposed through `bin.js` and can be run with:
+
+```bash
+npx @imarc/pronto@latest
+```
+
+There is also a non-interactive installation mode. Expect this interface to change in future versions:
+
+```bash
+npx @imarc/pronto@latest --non-interactive <copy components> <copy path> <add dependency> <create vite.config.js> <copy sprite sheet> <sprite sheet path> <copy agent files>
+```
+
+Other than `<copy path>` and `<sprite sheet path>`, each argument should be `y` or `n`, and correspond to the interactive prompts.
+
+Agent-facing Pronto usage guidance should live under `.agents/`, with reusable Pronto usage instructions in `.agents/skills/pronto/SKILL.md`. Installer work should offer to copy relevant `.agents/` content into the parent project rather than depending on agents reading inside `node_modules`.
 
 ## Commands
 
@@ -20,54 +50,10 @@ npm run lint:fix  # auto-fix formatting + lint
 
 Node >= 24 required.
 
-## Principles
+The recommended development workflow is to work within Vitrine after cloning Pronto. Run `npm install`, run `npm run dev`, and verify functional changes with `npm run build` before considering them done. `npm run prod` is an alias for `npm run build`.
 
-Components should be accessible and use semantic tags. Prefer simple code that is easy to change over configuration. Components should aim to extend and work with native browser functionality instead of recreating it: prefer CSS animations, dialog, popover, anchor API. No unthrottled JS.
+Formatting is handled by Prettier, while ESLint and Stylelint focus on linting. Use `npm run lint` to check formatting and linting without changes, and `npm run lint:fix` to apply automatic fixes.
 
+## Contributing
 
-## SCSS Structure
-
-`resources/styles/` follows Atomic Design:
-
-- `atoms/` — buttons, inputs, labels, icons
-- `molecules/` — cards, form fields, navigation
-- `organisms/` — headers, footers, page sections, sliders
-- `utilities/` — container, colors, srOnly
-- `config/` — Pronto CSS custom property configuration
-- `core/` — mixins, functions, shared properties
-
-Each component lives in its own folder with `index.scss` + a `componentName.html` example file.
-
-### Naming
-
-ABEM conventions:
-
-```
-.blockName .-blockModifier
-.blockName .-blockModifier .-blockModifier-modifierValue
-.blockName__elementName .-elementModifier
-```
-
-Custom property conventions:
-- Root: `--root-property-name`
-- Overrideable: `--property-name`
-- Component-private: `--componentName-property-name`
-
-## JS Structure
-
-`resources/js/` contains:
-- `components/` — Vue components. Pronto's own components prefixed with `P` (e.g. `PAccordion`, `POpenable`, `PTabs`), do not prefix other components with `P`.
-- `composables/` — shared Vue composables
-- `directives/` — Vue directives, named in `lowerCamelCase` prefixed with `v` (e.g. `vScrolllock`, `vDirectionals`)
-
-Use `const` instead of `function` keyword for function definitions.
-
-## Adding a Component
-
-When available, use the /new-component command for component creation.
-
-1. Create `resources/styles/<layer>/<componentName>/index.scss`
-2. Create `resources/styles/<layer>/<componentName>/<componentName>.html` (Vitrine example)
-3. Add `@forward` reference to the layer's `index.scss`
-
-Vue components go in `resources/js/components/` and must be registered in `resources/js/index.js`.
+Pronto is developed as an open source project and welcomes contributions. Be judicious about adding new dependencies. Pronto may leverage Vue, Vite, and Pinia, but new dependencies should have a clear maintainability or functionality benefit.

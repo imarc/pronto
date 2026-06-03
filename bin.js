@@ -51,6 +51,20 @@ const copyComponents = copyPath => {
   }
 }
 
+const copyAgentFiles = () => {
+  log.info('Copying Pronto agent files into .agents...')
+
+  try {
+    copyFolderSync(
+      path.join(import.meta.dirname, '.agents'),
+      path.join(process.cwd(), '.agents')
+    )
+  } catch (error) {
+    console.error(`Failed to copy agent files: ${error.message}`)
+    process.exit(1)
+  }
+}
+
 const addDependency = () => {
   log.info(`Adding dependency to package.json...`)
 
@@ -106,6 +120,7 @@ if (process.argv.includes('--non-interactive')) {
   if (yes(args[2])) addDependency()
   if (yes(args[3])) createViteConfig(args[1], args[5])
   if (yes(args[4])) copySpriteSheet(args[5])
+  if (yes(args[6])) copyAgentFiles()
 
   process.exit()
 }
@@ -156,6 +171,16 @@ const askSpritePath = askCopySpriteSheet ? await text({
 
 if (askCopySpriteSheet && askSpritePath) {
   copySpriteSheet(askSpritePath)
+}
+
+const askCopyAgentFiles = await confirm({
+  message: 'Should I copy Pronto agent files into your project?'
+})
+
+checkCancel(askCopyAgentFiles)
+
+if (askCopyAgentFiles) {
+  copyAgentFiles()
 }
 
 const viteConfig = path.join(process.cwd(), 'vite.config.js')
