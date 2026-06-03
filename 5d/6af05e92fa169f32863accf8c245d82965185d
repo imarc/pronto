@@ -1,0 +1,19 @@
+docs/superpowers/specs/2026-06-03-pronto-new-component-command-design.md
+  s_9dd7aaa3ea4ad0::t_d808dd0a1fea79 1-60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "5d6af05e92fa169f32863accf8c245d82965185d",
+  "prompts": {},
+  "sessions": {
+    "s_9dd7aaa3ea4ad0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0bd84dca-a27f-407e-84c0-d274a0aeb30b",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Kevin Hamer <kevin@imarc.com>"
+    }
+  }
+}
