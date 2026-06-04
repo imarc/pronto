@@ -1,4 +1,4 @@
-@use "@/core" as *;
+@use '@/core' as *;
 
 /**
  * `v-site-header-fixed` toggles `-fixed` on scroll (or forces it via `fixedOverride`).
@@ -33,7 +33,7 @@ $siteHeader-chrome-ease: cubic-bezier(.64, 0, .78, 0);
 
   &__content {
     display: grid;
-    grid: "logo search mobile-nav" auto / auto 1fr auto;
+    grid: 'logo search mobile-nav' auto / auto 1fr auto;
     align-items: center;
     gap: 0 var(--gap);
     position: relative;
@@ -42,7 +42,7 @@ $siteHeader-chrome-ease: cubic-bezier(.64, 0, .78, 0);
   &__logo {
     grid-area: logo;
     display: grid;
-    padding: .5rem 0;
+    padding: 0.5rem 0;
     align-self: stretch;
 
     svg {
@@ -53,7 +53,7 @@ $siteHeader-chrome-ease: cubic-bezier(.64, 0, .78, 0);
   &__utilityNav {
     display: none;
     grid-area: utility-nav;
-    font-size: .75rem;
+    font-size: 0.75rem;
     justify-self: end;
     gap: 1.5rem;
   }
@@ -71,9 +71,10 @@ $siteHeader-chrome-ease: cubic-bezier(.64, 0, .78, 0);
 
   @include at(md) {
     &__content {
-      grid: "logo utility-nav search" auto
-            "primary-nav primary-nav primary-nav" auto
-            / auto 1fr auto;
+      grid:
+        'logo utility-nav search' auto
+        'primary-nav primary-nav primary-nav' auto
+        / auto 1fr auto;
     }
 
     &__primaryNav,
@@ -89,10 +90,11 @@ $siteHeader-chrome-ease: cubic-bezier(.64, 0, .78, 0);
 
   @include at(lg) {
     &__content {
-      grid: "logo utility-nav search" auto
-            "logo spacer spacer" auto
-            "logo primary-nav primary-nav" auto
-            / auto 1fr auto;
+      grid:
+        'logo utility-nav search' auto
+        'logo spacer spacer' auto
+        'logo primary-nav primary-nav' auto
+        / auto 1fr auto;
     }
   }
 

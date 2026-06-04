@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 
 /**
  * Returns a calc() formula for REMs that fluidly scale from $size-sm to
@@ -22,10 +22,10 @@
  *
  */
 @function fluid-rems($size-sm, $size-md, $size-lg: null) {
-  @if ($size-lg == null) {
-    @return calc(#{$size-sm * 1rem} + var(--fluid-rem-sm-lg) * #{$size-md - $size-sm});
-  } @else {
+  @if $size-lg {
     @return calc(#{$size-sm * 1rem} + var(--fluid-rem-sm-md) * #{$size-md - $size-sm} + var(--fluid-rem-md-lg) * #{$size-lg - $size-md});
+  } @else {
+    @return calc(#{$size-sm * 1rem} + var(--fluid-rem-sm-lg) * #{$size-md - $size-sm});
   }
 }
 
@@ -51,10 +51,10 @@
  *
  */
 @function fluid-pxs($size-sm, $size-md, $size-lg: null) {
-  @if $size-lg == null {
-    @return calc(#{$size-sm * 1px} + var(--fluid-sm-lg) * #{$size-md - $size-sm});
-  } @else {
+  @if $size-lg {
     @return calc(#{$size-sm * 1px} + var(--fluid-sm-md) * #{$size-md - $size-sm} + var(--fluid-md-lg) * #{$size-lg - $size-md});
+  } @else {
+    @return calc(#{$size-sm * 1px} + var(--fluid-sm-lg) * #{$size-md - $size-sm});
   }
 }
 

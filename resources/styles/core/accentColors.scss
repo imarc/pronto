@@ -2,24 +2,24 @@
   /**
    * A scale of accent colors, using color-mix, from 90% white to 90% black.
    */
-  --accent-color-50: color-mix(in srgb, var(--accent-color), #fff 90%);
-  --accent-color-100: color-mix(in srgb, var(--accent-color), #fff 80%);
-  --accent-color-200: color-mix(in srgb, var(--accent-color), #fff 60%);
-  --accent-color-300: color-mix(in srgb, var(--accent-color), #fff 40%);
-  --accent-color-400: color-mix(in srgb, var(--accent-color), #fff 20%);
+  --accent-color-50: color-mix(in srgb, var(--accent-color), #ffffff 90%);
+  --accent-color-100: color-mix(in srgb, var(--accent-color), #ffffff 80%);
+  --accent-color-200: color-mix(in srgb, var(--accent-color), #ffffff 60%);
+  --accent-color-300: color-mix(in srgb, var(--accent-color), #ffffff 40%);
+  --accent-color-400: color-mix(in srgb, var(--accent-color), #ffffff 20%);
   --accent-color-500: var(--accent-color);
-  --accent-color-600: color-mix(in srgb, var(--accent-color), #000 20%);
-  --accent-color-700: color-mix(in srgb, var(--accent-color), #000 40%);
-  --accent-color-800: color-mix(in srgb, var(--accent-color), #000 60%);
-  --accent-color-900: color-mix(in srgb, var(--accent-color), #000 80%);
-  --accent-color-950: color-mix(in srgb, var(--accent-color), #000 90%);
-  
+  --accent-color-600: color-mix(in srgb, var(--accent-color), #000000 20%);
+  --accent-color-700: color-mix(in srgb, var(--accent-color), #000000 40%);
+  --accent-color-800: color-mix(in srgb, var(--accent-color), #000000 60%);
+  --accent-color-900: color-mix(in srgb, var(--accent-color), #000000 80%);
+  --accent-color-950: color-mix(in srgb, var(--accent-color), #000000 90%);
+
   /**
    * This variable is either black or white - whichever has the highest contrast
    * with the accent color. This uses CIELAB perceptual lightness to approximate
    * contrast and more closely matches APCA than WCAG.
    */
-  --accent-color-contrast: oklch(from var(--accent-color) round(1.21 - L) 0 0);
+  --accent-color-contrast: oklch(from var(--accent-color) round(1.21 - l) 0 0deg);
 
   /**
    * This variable based on AccentColorText is either var(--accent-color-dark)
@@ -32,17 +32,11 @@
 
   /* This @supports rule targets only Safari 18 and Chrome */
   @supports (selector(::view-transition)) {
-    --accent-color-text: rgb(
-      from color-mix( in srgb, var(--accent-color-contrast), var(--accent-color-dark))
-      calc(2*r) calc(2*g) calc(2*b)
-    );
+    --accent-color-text: rgb(from color-mix(in srgb, var(--accent-color-contrast), var(--accent-color-dark)) calc(2 * r) calc(2 * g) calc(2 * b));
   }
 
   /* This @supports rule targets Firefox */
   @supports (selector(::view-transition)) {
-    --accent-color-text: rgb(
-      from color-mix( in srgb, var(--accent-color-contrast), var(--accent-color-dark))
-      calc(2*r) calc(2*g) calc(2*b)
-    );
+    --accent-color-text: rgb(from color-mix(in srgb, var(--accent-color-contrast), var(--accent-color-dark)) calc(2 * r) calc(2 * g) calc(2 * b));
   }
 }

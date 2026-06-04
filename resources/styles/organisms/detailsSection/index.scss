@@ -1,0 +1,71 @@
+@use '@/core' as *;
+
+.detailsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  &__header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: var(--root-font-size-h1);
+    margin: 0;
+    max-width: var(--root-prose-wide-max);
+  }
+
+  &__intro {
+    color: var(--color-gray-600);
+    font-size: var(--root-font-size-lg);
+    line-height: 1.5;
+    margin: 0;
+    max-width: 42.375rem; // ~678px — centered intro under wide titles
+  }
+
+  &__grid {
+    --gap: 1rem;
+
+    margin-top: 3rem;
+
+    @include at(md) {
+      --columns: 2;
+
+      grid-template-rows: repeat(4, auto);
+    }
+
+    @include at(lg) {
+      --columns: 4;
+
+      grid-template-rows: auto auto;
+    }
+  }
+
+  &__item {
+    display: grid;
+    gap: 1rem;
+    min-width: 0;
+
+    @include at(md) {
+      grid-row: span 2;
+      grid-template-rows: subgrid;
+    }
+  }
+
+  &__itemTitle {
+    color: var(--color-purple);
+    font-size: var(--root-font-size);
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  &__itemText {
+    color: var(--color-gray-600);
+    margin: 0;
+  }
+}

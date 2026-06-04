@@ -19,7 +19,7 @@ const KEY_BINDINGS = {
  */
 const getElementRects = el => {
   if (!el) {
-    console.error("Unable to determine location of element", el);
+    console.error('Unable to determine location of element', el)
     return null
   }
 
@@ -78,7 +78,7 @@ const findTarget = (el, key, root) => {
       (closest, el) => {
         return el.distance < closest.distance ? el : closest
       },
-      { distance: Infinity }
+      { distance: Infinity },
     )
 
     return el
