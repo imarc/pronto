@@ -139,7 +139,7 @@
    * Breakpoints
    */
 
-  @include setBreakpoints(
+  @include set-breakpoints(
     (
       sm: 320px,
       md: 744px,
