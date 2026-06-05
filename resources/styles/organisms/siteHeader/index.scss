@@ -1,17 +1,18 @@
 @use '@/core' as *;
 
 /**
- * `v-site-header-fixed` toggles `-fixed` on scroll (or forces it via `fixedOverride`).
- * Expanded state uses `--siteHeader-min-height` so `min-height` can ease with
- * padding + background. Fixed state is content-sized (no min-height floor) so
- * the bar doesn’t leave empty space under the nav.
+ * `v-scroll-header` toggles `-active` on `-fixed` and `-hidden` on `-hideOnScroll`.
+ * Variant modifiers stay on the block; JS only toggles state classes.
  */
 
-$siteHeader-chrome-duration: 240ms;
-$siteHeader-chrome-ease: cubic-bezier(.64, 0, .78, 0);
-
 .siteHeader {
+  $b: &;
+
   --gap: var(--root-gap, 16px);
+  --siteHeader-chrome-duration: 240ms;
+  --siteHeader-chrome-ease: cubic-bezier(0.64, 0, 0.78, 0);
+  --siteHeader-spacer-min-height: 9rem;
+
   background-color: transparent;
   box-shadow: none;
 
@@ -26,10 +27,10 @@ $siteHeader-chrome-ease: cubic-bezier(.64, 0, .78, 0);
   padding-inline: 0;
   position: relative;
   transition:
-    background-color $siteHeader-chrome-duration $siteHeader-chrome-ease,
-    box-shadow $siteHeader-chrome-duration $siteHeader-chrome-ease,
-    min-height $siteHeader-chrome-duration $siteHeader-chrome-ease,
-    padding-block $siteHeader-chrome-duration $siteHeader-chrome-ease;
+    background-color var(--siteHeader-chrome-duration) var(--siteHeader-chrome-ease),
+    box-shadow var(--siteHeader-chrome-duration) var(--siteHeader-chrome-ease),
+    min-height var(--siteHeader-chrome-duration) var(--siteHeader-chrome-ease),
+    padding-block var(--siteHeader-chrome-duration) var(--siteHeader-chrome-ease);
 
   &__content {
     display: grid;
@@ -99,42 +100,40 @@ $siteHeader-chrome-ease: cubic-bezier(.64, 0, .78, 0);
   }
 
   /**
-   * Fixed + compact bar. Utility nav keeps default sizing; open dropdown triggers
-   * restore full tap targets via :has().
+   * Compact pinned bar when `-active` is set (`v-scroll-header`).
    */
-  &.-fixed {
-    background-color: var(--root-background-color, #fff);
+  &.-fixed.-active {
+    background-color: var(--root-background-color, #ffffff);
     inset-inline: 0;
     min-height: var(--siteHeader-min-height-when-fixed, unset);
-    padding-block: calc(var(--gap) * .65);
+    padding-block: calc(var(--gap) * 0.65);
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 200;
 
-    .siteHeader__content {
+    #{$b}__content {
       align-items: start;
     }
 
-    .siteHeader__logo {
+    #{$b}__logo {
       align-self: start;
-      padding-block: .35rem;
+      padding-block: 0.35rem;
+
+      svg {
+        height: auto;
+        max-height: 2rem;
+      }
     }
 
-    .siteHeader__logo svg {
-      height: auto;
-      max-height: 2rem;
+    #{$b}__search {
+      font-size: 0.94rem;
     }
 
-    .siteHeader__search {
-      font-size: .94rem;
-    }
-
-    .siteHeader__primaryNav {
-
+    #{$b}__primaryNav {
       .navigation__link,
       .navigation__button {
-        font-size: .9rem;
+        font-size: 0.9rem;
         padding-block: 1rem;
         padding-inline: 1.2rem;
       }
@@ -146,22 +145,46 @@ $siteHeader-chrome-ease: cubic-bezier(.64, 0, .78, 0);
       }
     }
 
-    .siteHeader__mobileNav .mobileNavigation__menu {
-      font-size: .9rem;
+    #{$b}__mobileNav .mobileNavigation__menu {
+      font-size: 0.9rem;
     }
 
     @include at(md) {
-      box-shadow: 0 .125rem .75rem rgb(0 0 0 / .06);
+      box-shadow: 0 0.125rem 0.75rem rgb(0 0 0 / 0.06);
     }
   }
-}
 
-/** Reserves space only while `-fixed` is on (header is out of flow). */
-.siteHeader + .siteHeader__fixedSentinel {
-  min-height: 0;
-  pointer-events: none;
-}
+  /**
+   * Full-size pinned bar; `-hidden` slides off on scroll down.
+   */
+  &.-hideOnScroll {
+    background-color: var(--root-background-color, #ffffff);
+    inset-inline: 0;
+    min-height: unset;
+    position: fixed;
+    top: 0;
+    transition: transform var(--siteHeader-chrome-duration) var(--siteHeader-chrome-ease);
+    width: 100%;
+    z-index: 200;
 
-.siteHeader.-fixed + .siteHeader__fixedSentinel {
-  min-height: 9rem;
+    &.-hidden {
+      pointer-events: none;
+      transform: translateY(-100%);
+    }
+  }
+
+  /** Reserves space while pinned headers are visible (sibling follows header). */
+  & + &__spacer {
+    min-height: 0;
+    pointer-events: none;
+  }
+
+  &.-fixed.-active + &__spacer,
+  &.-hideOnScroll:not(.-hidden) + &__spacer {
+    min-height: var(--siteHeader-spacer-min-height);
+  }
+
+  &.-hideOnScroll.-hidden + &__spacer {
+    min-height: 0;
+  }
 }
