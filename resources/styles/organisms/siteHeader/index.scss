@@ -41,13 +41,15 @@
   }
 
   &__logo {
+    align-self: start;
+    color: var(--accent-color);
     grid-area: logo;
-    display: grid;
     padding: 0.5rem 0;
-    align-self: stretch;
 
     svg {
-      height: 100%;
+      display: block;
+      height: auto;
+      width: 100%;
     }
   }
 
@@ -117,12 +119,11 @@
     }
 
     #{$b}__logo {
-      align-self: start;
       padding-block: 0.35rem;
 
       svg {
-        height: auto;
         max-height: 2rem;
+        width: auto;
       }
     }
 
