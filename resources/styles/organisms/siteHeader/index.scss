@@ -9,9 +9,8 @@
   $b: &;
 
   --gap: var(--root-gap, 16px);
-  --siteHeader-chrome-duration: 240ms;
-  --siteHeader-chrome-ease: cubic-bezier(0.64, 0, 0.78, 0);
-  --siteHeader-spacer-min-height: 9rem;
+  --siteHeader-chrome-duration: 320ms;
+  --siteHeader-chrome-ease: cubic-bezier(0.33, 1, 0.68, 1);
 
   background-color: transparent;
   box-shadow: none;
@@ -44,7 +43,9 @@
     align-self: start;
     color: var(--accent-color);
     grid-area: logo;
+    max-width: 301px;
     padding: 0.5rem 0;
+    width: 100%;
 
     svg {
       display: block;
@@ -104,6 +105,13 @@
   /**
    * Compact pinned bar when `-active` is set (`v-scroll-header`).
    */
+  &.-fixed {
+    #{$b}__logo svg {
+      max-height: calc(301px * 133 / 300);
+      transition: max-height var(--siteHeader-chrome-duration) var(--siteHeader-chrome-ease);
+    }
+  }
+
   &.-fixed.-active {
     background-color: var(--root-background-color, #ffffff);
     inset-inline: 0;
@@ -119,11 +127,11 @@
     }
 
     #{$b}__logo {
+      align-self: start;
       padding-block: 0.35rem;
 
       svg {
-        max-height: 2rem;
-        width: auto;
+        max-height: 2.4rem;
       }
     }
 
@@ -178,11 +186,12 @@
   & + &__spacer {
     min-height: 0;
     pointer-events: none;
+    transition: min-height var(--siteHeader-chrome-duration) var(--siteHeader-chrome-ease);
   }
 
   &.-fixed.-active + &__spacer,
   &.-hideOnScroll:not(.-hidden) + &__spacer {
-    min-height: var(--siteHeader-spacer-min-height);
+    min-height: 9rem;
   }
 
   &.-hideOnScroll.-hidden + &__spacer {
