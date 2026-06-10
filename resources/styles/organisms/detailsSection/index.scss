@@ -57,7 +57,7 @@
   }
 
   &__itemTitle {
-    color: var(--color-purple);
+    color: var(--accent-color);
     font-size: var(--root-font-size);
     font-weight: 700;
     line-height: 1.5;
@@ -65,7 +65,7 @@
   }
 
   &__itemText {
-    color: var(--color-gray-600);
+    color: var(--accent-color-text);
     margin: 0;
   }
 }
