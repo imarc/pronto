@@ -1,19 +1,25 @@
 <script setup>
 import { register } from 'swiper/element/bundle'
-import { computed, ref, useAttrs } from 'vue'
+import { ref } from 'vue'
 
 register()
-
-const attrs = useAttrs()
-const hasAutoplay = computed(() => !!attrs.autoplay)
-const isPlaying = ref(true)
 
 const props = defineProps({
   ariaLabel: {
     type: String,
-    required: true,
+    default: undefined,
+  },
+  ariaLabelledby: {
+    type: String,
+    default: undefined,
+  },
+  autoplay: {
+    type: [Boolean, Object],
+    default: undefined,
   },
 })
+
+const isPlaying = ref(!!props.autoplay)
 
 let swiperInstance = null
 
@@ -30,66 +36,69 @@ const toggleAutoplay = () => {
   isPlaying.value = !isPlaying.value
 }
 
+const updateActiveBullet = (swiper) => {
+  if (!swiper.pagination?.bullets) return
+  swiper.pagination.bullets.forEach((bullet) => {
+    bullet.setAttribute('aria-disabled', bullet.classList.contains('swiper-pagination-bullet-active') ? 'true' : 'false')
+  })
+}
+
 const init = e => {
   swiperInstance = e.detail[0]
-  const slides = swiperInstance?.slides
 
-  // The following code is for slider accessibility
+  // The following code is for slider accessibility not covered by Swiper's a11y module.
   // Please see the slider README.md or the W3C carousel pattern for more information:
   // README: ../../../styles/organisms/slider/README.md
   // W3C: https://www.w3.org/WAI/ARIA/apg/patterns/carousel/
 
-  // Main swiper container
-  e.target.setAttribute('role', 'group')
-  e.target.setAttribute('aria-roledescription', 'carousel')
-  // This should be customized for each carousel via props
-  e.target.setAttribute('aria-label', props.ariaLabel)
+  // Swiper has no param for aria-labelledby; set it on the inner .swiper container
+  // (swiperInstance.el), matching where the a11y module applies aria-label
+  if (props.ariaLabelledby) {
+    swiperInstance.el.setAttribute('aria-labelledby', props.ariaLabelledby)
+    swiperInstance.el.removeAttribute('aria-label')
+  }
 
-  // Swiper wrapper - aria-live is "off" while autoplaying to avoid interrupting the user
   swiperInstance.wrapperEl.setAttribute('aria-atomic', 'false')
-  swiperInstance.wrapperEl.setAttribute('aria-live', hasAutoplay.value ? 'off' : 'polite')
 
-  // Pause autoplay the first time keyboard focus enters the carousel
-  // { once: true } removes the listener after it fires so subsequent focus events
-  // (e.g. tabbing to the play button and continuing) don't re-stop user-initiated playback
-  if (hasAutoplay.value) {
-    e.target.addEventListener('focusin', () => {
-      if (isPlaying.value) {
-        swiperInstance.autoplay.stop()
-        swiperInstance.wrapperEl.setAttribute('aria-live', 'polite')
-        isPlaying.value = false
-      }
-    }, { once: true })
+  // Pause autoplay whenever keyboard focus moves within the carousel while playing.
+  // Listens on both the host (slotted play button) and swiper.el (shadow DOM controls).
+  // Skips the play/pause button so clicking it to resume does not immediately re-pause.
+  if (props.autoplay) {
+    const pauseAutoplayOnFocus = (event) => {
+      if (event.target.closest?.('.slider__playPause')) return
+      if (!isPlaying.value) return
+      swiperInstance.autoplay.stop()
+      swiperInstance.wrapperEl.setAttribute('aria-live', 'polite')
+      isPlaying.value = false
+    }
+
+    e.target.addEventListener('focusin', pauseAutoplayOnFocus)
+    swiperInstance.el.addEventListener('focusin', pauseAutoplayOnFocus)
   }
 
-  // Swiper correctly sets role="group" per slide and aria-label to index/total slides
-  // we still need to set aria-roledescription to "slide"
-  slides.forEach((slide) => {
-    slide.setAttribute('aria-roledescription', 'slide')
-  })
-
-  // Swiper pagination wrapper
-  swiperInstance.pagination.el.setAttribute('role', 'group')
-  swiperInstance.pagination.el.setAttribute('aria-label', 'Choose a slide')
-
-  // Swiper pagination bullets
-  // set active bullet to aria-disabled="true", this updates with each slide change
-  const updateActiveBullet = (swiper) => {
-    swiper.pagination.bullets.forEach((bullet) => {
-      bullet.setAttribute('aria-disabled', bullet.classList.contains('swiper-pagination-bullet-active') ? 'true' : 'false')
-    })
+  if (swiperInstance.pagination?.el) {
+    swiperInstance.pagination.el.setAttribute('role', 'group')
+    swiperInstance.pagination.el.setAttribute('aria-label', 'Choose a slide')
   }
 
+  // Active bullet aria-disabled per W3C carousel pattern (Swiper sets aria-current only)
   updateActiveBullet(swiperInstance)
   swiperInstance.on('slideChange', updateActiveBullet)
-
+  swiperInstance.on('paginationUpdate', updateActiveBullet)
 }
 </script>
 <template>
-  <swiper-container v-bind="$attrs" @swiperafterinit="init">
-    <!-- eslint-disable-next-line vue/no-deprecated-slot-attribute -- native web component slot, not Vue 2 slot syntax -->
+  <swiper-container
+    v-bind="$attrs"
+    :autoplay="autoplay"
+    a11y-container-role="group"
+    a11y-container-role-description-message="carousel"
+    :a11y-container-message="ariaLabel"
+    a11y-item-role-description-message="slide"
+    @swiperafterinit="init"
+  >
     <button
-      v-if="hasAutoplay"
+      v-if="autoplay"
       slot="container-start"
       class="slider__playPause button -circle"
       :aria-label="isPlaying ? 'Stop slide rotation' : 'Start slide rotation'"

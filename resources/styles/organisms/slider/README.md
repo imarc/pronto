@@ -1,67 +1,41 @@
-# Accessibility Guidelines for Carousel Elements
+# Accessibility Guidelines for PSlider
 
-Please see the [W3C carousel pattern](https://www.w3.org/WAI/ARIA/apg/patterns/carousel/) for more detail.
+Please see the [W3C carousel pattern](https://www.w3.org/WAI/ARIA/apg/patterns/carousel/) for more detail. We also have full guidelines for carousel attributes and functionality in [Outline](https://imarc.getoutline.com/doc/carousel-accessibility-SB2GKM2wJt).
 
-Swiper's web component instance currently contains some, but not all, of the accessibility features needed for carousels.
+`PSlider` wraps Swiper's `swiper-container` web component. Swiper's a11y module is enabled by default and handles most carousel accessibility automatically. `PSlider` configures the remaining Swiper options and adds a few attributes Swiper does not support.
 
-The rest are added in `PSlider.vue`, but here we are documenting the full requirements for reference when updating older sliders or creating new ones with different libraries.
+## Swiper a11y Options
 
-## Basic Slider — Not Autoplaying
+These are the configurable options Swiper's a11y module provides. On `<p-slider>`, they are passed as `a11y-*` kebab-case attributes (e.g. `a11y-prev-slide-message="Go back"`). Options configured by `PSlider` should not be overridden on individual carousels.
 
-### Main Carousel Container
+- `a11y-enabled` — Swiper default: `true`
+- `a11y-container-role` — Swiper default: none; PSlider default: `"group"`
+- `a11y-container-role-description-message` — Swiper default: none; PSlider default: `"carousel"`
+- `a11y-container-message` — Swiper default: none; PSlider: set from `ariaLabel` prop
+- `a11y-item-role-description-message` — Swiper default: none; PSlider default: `"slide"`
+- `a11y-slide-role` — Swiper default: `"group"`
+- `a11y-slide-label-message` — Swiper default: `"{{index}} / {{slidesLength}}"`
+- `a11y-prev-slide-message` — Swiper default: `"Previous slide"`
+- `a11y-next-slide-message` — Swiper default: `"Next slide"`
+- `a11y-first-slide-message` — Swiper default: `"This is the first slide"`
+- `a11y-last-slide-message` — Swiper default: `"This is the last slide"`
+- `a11y-pagination-bullet-message` — Swiper default: `"Go to slide {{index}}"`
+- `a11y-id` — Swiper default: none (auto-generated on the slide wrapper)
+- `a11y-scroll-on-focus` — Swiper default: `true`
 
-The element that contains all slides and controls:
+## Using PSlider
 
-- Must have `role="group"` — or `role="region"` if it contains vital page information (e.g. a product slider)
-- Must have `aria-roledescription="carousel"`
-- Must have `aria-label` or `aria-labelledby` — use `aria-labelledby="headingID"` if the carousel has a primary heading. The label should not contain the word "carousel", as it is already conveyed by `aria-roledescription`
+### Required
 
-### Direct Wrapper Parent of Slides
+- `aria-label` or `aria-labelledby` — every carousel must have an accessible name. Use `aria-labelledby` if the carousel has a primary heading — see `testimonialSlider.html`. Use `aria-label` if there is no heading — see `slider.html`. The label should not contain the word "carousel", as it is already conveyed by `aria-roledescription`.
+- `navigation="true"` — required for prev/next controls
+- `pagination-clickable="true"` — required for pagination bullets
 
-- `aria-atomic="false"` — directs the live region to announce only the node that changed, not the entire container
-- `aria-live="polite"` — directs the carousel to announce changing slides to screen readers without interrupting ongoing speech
+### Autoplaying Sliders
 
-### Slide
+- `autoplay` prop — enables the play/pause button, focus-pause behavior, and `aria-live` management
+- `pauseOnMouseEnter: true` in the autoplay config — see `slider--autoplaying.html` for a full example
 
-- Must have `role="group"`
-- Must have `aria-roledescription="slide"`
-- Must have `aria-label="index / total slides"` or `aria-labelledby="slide heading ID"`
 
-### Previous Slide / Next Slide Buttons
+`:autoplay="{ speed: 500, pauseOnMouseEnter: true }"`
 
-- Should be native `&lt;button&gt;` elements — if not, must have:
-  - `role="button"`
-  - `aria-label="Next slide"` / `aria-label="Previous slide"`
-- Optional: `aria-controls="ID of the direct wrapper of slides"`
-
-### Pagination Bullet Wrapper
-
-- Must have `role="group"`
-- Must have `aria-label="Choose a slide"`
-
-### Pagination Bullets
-
-- Must have `aria-label="Go to slide {index}"` — label must match or contain the corresponding slide label
-- The active bullet must have:
-  - `aria-current="true"`
-  - `aria-disabled="true"` (preferred over the HTML `disabled` attribute, so the button remains in the tab sequence)
-
-> **Note:** Pagination bullets and previous/next slide controls should ideally be `&lt;button&gt;` elements. If they are not, they must have `role="button"` and an `aria-label`. They must be activatable with `Enter` or `Space` and must be reachable via keyboard tab navigation.
-
-## Additional Instructions for Autoplaying Sliders
-
-### Rotation Control (Play/Pause Button)
-
-- Must be the first element within the carousel/slider container
-- Should be a native `&lt;button&gt;` element — if not, must have `role="button"`
-- Must have an accessible label provided by either its inner text or `aria-label`. The label changes to match the action the button will perform, e.g., "Stop slide rotation" or "Start slide rotation". A label that changes when the button is activated clearly communicates both that slide content can change automatically and when it is doing so. Note that since the label changes, the rotation control does not have any states, e.g., `aria-pressed`, specified.
-
-### Autoplay Behavior
-
-- Autoplay pauses when keyboard focus enters the carousel and does not resume unless the play button is engaged by the user
-- Autoplay pauses on mouse hover of the carousel, but may resume when the cursor moves away
-
-### Direct Wrapper Parent of Slides (Autoplaying)
-
-- `aria-live="off"` — while the carousel is autoplaying, suppresses slide change announcements to avoid interrupting the user
-- `aria-live="polite"` — updates to `polite` when autoplay is stopped, so slide changes are announced to screen readers without interrupting ongoing speech
