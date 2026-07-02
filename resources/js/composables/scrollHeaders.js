@@ -1,4 +1,3 @@
-/* eslint-env browser */
 /**
  * Toggles `-active` on `-fixed` headers and `-hidden` on `-hideOnScroll` headers.
  * CSS in `siteHeader/index.scss` owns layout and motion.

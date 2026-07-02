@@ -1,4 +1,3 @@
-/* eslint-env browser */
 import { registerScrollHeader, unregisterScrollHeader, updateScrollHeaderBinding } from '../composables/scrollHeaders.js'
 
 /**
