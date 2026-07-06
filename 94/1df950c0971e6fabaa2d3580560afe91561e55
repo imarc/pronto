@@ -1,0 +1,38 @@
+resources/styles/atoms/userDisclosure/userDisclosure.html
+  s_fc2ba339b436d3::t_b7016a90147d95 1-51
+resources/styles/molecules/popoverActions/index.scss
+  s_9452eec2a52212::t_a02847578671f6 33
+  s_9452eec2a52212::t_91064e35ca359e 4-6,8,37-38
+resources/styles/molecules/popoverActions/popoverActions.html
+  s_9452eec2a52212::t_91064e35ca359e 1,4-5,10-24,30-31,36-55
+  s_9452eec2a52212::t_05b190168b2173 56-58
+resources/styles/molecules/index.scss
+  s_9452eec2a52212::t_1d32a02fde4cab 13
+resources/styles/atoms/userDisclosure/index.scss
+  s_fc2ba339b436d3::t_b7016a90147d95 1-3,5-92
+  s_fc2ba339b436d3::t_5e45eabf363165 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "941df950c0971e6fabaa2d3580560afe91561e55",
+  "prompts": {},
+  "sessions": {
+    "s_9452eec2a52212": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b7e54b4b-3473-4cdf-ac16-9506aac2e862",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Kevin Hamer <kevin@imarc.com>"
+    },
+    "s_fc2ba339b436d3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b0f40157-63ee-4298-a88a-480ada265cd3",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Kevin Hamer <kevin@imarc.com>"
+    }
+  }
+}
