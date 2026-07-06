@@ -1,10 +1,11 @@
 @use "@/core" as *;
 
 /**
- * Compact action menu built on the native popover API.
- * Trigger is a vertical ellipsis; consumers render menu items inside the panel/list markup.
+ * Compact action list built on the native popover API (disclosure pattern).
+ * Items keep native button/link semantics — no menu roles or keyboard model.
+ * Trigger is a vertical ellipsis; consumers render items inside the panel/list markup.
  */
-.popoverMenu {
+.popoverActions {
     $b: &;
 
     &__panel {
@@ -29,24 +30,17 @@
             }
         }
 
-        @supports (position-anchor: --popover-menu-trigger) {
+        @supports (position-anchor: --popover-actions-trigger) {
             left: anchor(left);
             position: absolute;
             top: calc(anchor(bottom) + 0.5rem);
+            right: auto;
+            bottom: auto;
             position-try-fallbacks:
                 flip-inline,
                 flip-block,
                 flip-inline flip-block;
 
-            &.-endAligned {
-                left: auto;
-                right: anchor(right);
-            }
-
-            &.-startAligned {
-                left: anchor(left);
-                right: auto;
-            }
         }
     }
 

@@ -1,10 +1,10 @@
 @use "@/core" as *;
 
 /**
- * User identity tooltip built on the native popover API.
+ * User identity card built on the native popover API (disclosure pattern).
  * Shows avatar, name, organization, and email on click.
  */
-.userTooltip {
+.userDisclosure {
     display: inline flex;
 
     &__avatar {
@@ -48,7 +48,7 @@
             }
         }
 
-        @supports (position-anchor: --user-tooltip-trigger) {
+        @supports (position-anchor: --user-disclosure-trigger) {
             position: absolute;
             top: calc(anchor(bottom) + 0.5rem);
             left: anchor(left);
