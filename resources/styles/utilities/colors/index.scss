@@ -38,25 +38,30 @@
   --accent-color-950: rgb(0 0 0 / .1);
 }
 
+.accent-danger,
 .danger,
+.accent-error,
 .error {
   --accent-color-50: var(--root-color-error-50);
   --accent-color: var(--root-color-error);
   --accent-color-900: var(--root-color-error-900);
 }
 
+.accent-warning,
 .warning {
   --accent-color-50: var(--root-color-warning-50);
   --accent-color: var(--root-color-warning);
   --accent-color-900: var(--root-color-warning-900);
 }
 
+.accent-success,
 .success {
   --accent-color-50: var(--root-color-success-50);
   --accent-color: var(--root-color-success);
   --accent-color-900: var(--root-color-success-900);
 }
 
+.accent-info,
 .info {
   --accent-color-50: var(--root-color-info-50);
   --accent-color: var(--root-color-info);
