@@ -1,0 +1,19 @@
+resources/styles/atoms/index.scss
+  s_fc2ba339b436d3::t_b7016a90147d95 23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "bfdf6cfac02352d3c1df6f8be7c4f411e1f3aab3",
+  "prompts": {},
+  "sessions": {
+    "s_fc2ba339b436d3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b0f40157-63ee-4298-a88a-480ada265cd3",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Kevin Hamer <kevin@imarc.com>"
+    }
+  }
+}
