@@ -60,20 +60,31 @@ const init = e => {
 
   swiperInstance.wrapperEl.setAttribute('aria-atomic', 'false')
 
-  // Pause autoplay whenever keyboard focus moves within the carousel while playing.
+  // Pause autoplay on user interaction (focus or intentional click) while playing.
   // Listens on both the host (slotted play button) and swiper.el (shadow DOM controls).
   // Skips the play/pause button so clicking it to resume does not immediately re-pause.
   if (props.autoplay) {
-    const pauseAutoplayOnFocus = (event) => {
-      if (event.target.closest?.('.slider__playPause')) return
+    const stopAutoplay = () => {
       if (!isPlaying.value) return
       swiperInstance.autoplay.stop()
       swiperInstance.wrapperEl.setAttribute('aria-live', 'polite')
       isPlaying.value = false
     }
 
+    const pauseAutoplayOnFocus = (event) => {
+      if (event.target.closest?.('.slider__playPause')) return
+      stopAutoplay()
+    }
+
+    // Pause on click of a slide, pagination bullet, or prev/next nav button.
+    const pauseAutoplayOnClick = (event) => {
+      if (!event.target.closest('.swiper-slide, .swiper-pagination-bullet, .swiper-button-prev, .swiper-button-next')) return
+      stopAutoplay()
+    }
+
     e.target.addEventListener('focusin', pauseAutoplayOnFocus)
     swiperInstance.el.addEventListener('focusin', pauseAutoplayOnFocus)
+    swiperInstance.el.addEventListener('click', pauseAutoplayOnClick)
   }
 
   if (swiperInstance.pagination?.el) {
