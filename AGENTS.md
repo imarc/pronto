@@ -48,7 +48,7 @@ npm run lint      # check formatting + lint (no changes)
 npm run lint:fix  # auto-fix formatting + lint
 ```
 
-Node >= 24 required.
+Node >= 24 required (pinned via [mise](https://mise.jdx.dev/) in `.mise.toml`).
 
 The recommended development workflow is to work within Vitrine after cloning Pronto. Run `npm install`, run `npm run dev`, and verify functional changes with `npm run build` before considering them done. `npm run prod` is an alias for `npm run build`.
 
