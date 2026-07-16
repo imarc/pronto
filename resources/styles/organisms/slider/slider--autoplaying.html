@@ -2,6 +2,7 @@
   <div class="slider__content">
     <!-- aria-label should be customized for each carousel, and should not contain the word "carousel" -->
     <!-- aria-labelledby should be used instead, if the carousel has a heading element that describes the carousel, see testimonialSlider.html for an example -->
+    <!-- when autoplaying, pause on mouse enter is required for accessibility -->
     <p-slider
       slides-per-view="auto"
       space-between="16"
@@ -9,6 +10,10 @@
       pagination-clickable="true"
       loop="true"
       aria-label="This should be customized for each carousel"
+      :autoplay="{
+        speed: 500,
+        pauseOnMouseEnter: true,
+      }"
       :breakpoints="{
       768: 
         {
