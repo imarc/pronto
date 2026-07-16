@@ -1,9 +1,46 @@
 @use '@/core' as *;
 
-.siteHeader {
-  --gap: var(--root-gap, 16px);
+/**
+ * Drives `-fixed` compact ↔ expanded chrome in sync (one transition, no layout fights).
+ */
+@property --siteheader-compact {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
 
-  padding: var(--gap) 0;
+/**
+ * `v-scroll-header` toggles `-active` on `-fixed` and `-hidden` on `-hideOnScroll`.
+ * Variant modifiers stay on the block; JS only toggles state classes.
+ */
+
+.siteHeader {
+  $b: &;
+
+  --gap: var(--root-gap, 16px);
+  --siteHeader-chrome-duration: 320ms;
+  --siteHeader-chrome-ease: cubic-bezier(0.33, 1, 0.68, 1);
+  --siteHeader-logo-max-height: calc(301px * 133 / 300);
+  --siteHeader-primaryNav-row-height: calc(3rem + 1rem * var(--root-line-height, 1.5));
+
+  background-color: transparent;
+  box-shadow: none;
+
+  /**
+   * Expanded bar only. Optional `--siteHeader-min-height-when-fixed` sets a floor
+   * when compact if a project needs it (default: content height only).
+   */
+  --siteHeader-min-height: 12rem;
+
+  min-height: var(--siteHeader-min-height);
+  padding-block: var(--gap);
+  padding-inline: 0;
+  position: relative;
+  transition:
+    background-color var(--siteHeader-chrome-duration) var(--siteHeader-chrome-ease),
+    box-shadow var(--siteHeader-chrome-duration) var(--siteHeader-chrome-ease),
+    min-height var(--siteHeader-chrome-duration) var(--siteHeader-chrome-ease),
+    padding-block var(--siteHeader-chrome-duration) var(--siteHeader-chrome-ease);
 
   &__content {
     display: grid;
@@ -14,13 +51,17 @@
   }
 
   &__logo {
+    align-self: start;
+    color: var(--accent-color);
     grid-area: logo;
-    display: grid;
+    max-width: 301px;
     padding: 0.5rem 0;
-    align-self: stretch;
+    width: 100%;
 
     svg {
-      height: 100%;
+      display: block;
+      height: auto;
+      width: 100%;
     }
   }
 
@@ -70,5 +111,97 @@
         'logo primary-nav primary-nav' auto
         / auto 1fr auto;
     }
+  }
+
+  /**
+   * Sticky + `--siteheader-compact` keeps layout in flow and animates all chrome
+   * from one value so nav, logo, and bar height move together.
+   */
+  &.-fixed {
+    --siteheader-compact: 0;
+
+    background-color: color-mix(in srgb, var(--root-background-color, #ffffff) calc(var(--siteheader-compact) * 100%), transparent);
+    min-height: calc((1 - var(--siteheader-compact)) * var(--siteHeader-min-height) + var(--siteheader-compact) * var(--siteHeader-min-height-when-fixed, 5.5rem));
+    padding-block: var(--gap);
+    position: sticky;
+    top: 0;
+    transition:
+      --siteheader-compact var(--siteHeader-chrome-duration) var(--siteHeader-chrome-ease),
+      box-shadow var(--siteHeader-chrome-duration) var(--siteHeader-chrome-ease);
+    z-index: 200;
+
+    #{$b}__content {
+      align-items: start;
+    }
+
+    #{$b}__logo {
+      align-self: end;
+      padding: 0;
+
+      svg {
+        max-height: calc(var(--siteHeader-primaryNav-row-height) + (var(--siteHeader-logo-max-height) - var(--siteHeader-primaryNav-row-height)) * (1 - var(--siteheader-compact)));
+      }
+    }
+
+    #{$b}__search {
+      font-size: calc(0.94rem + 0.06rem * (1 - var(--siteheader-compact)));
+    }
+
+    #{$b}__primaryNav {
+      .navigation__link,
+      .navigation__button {
+        font-size: calc(0.9rem + 0.1rem * (1 - var(--siteheader-compact)));
+      }
+
+      .navigation__item:has(.navigation__dropdown) .navigation__button {
+        font-size: 1rem;
+      }
+    }
+
+    #{$b}__mobileNav .mobileNavigation__menu {
+      font-size: calc(0.9rem + 0.1rem * (1 - var(--siteheader-compact)));
+    }
+  }
+
+  &.-fixed.-active {
+    --siteheader-compact: 1;
+
+    @include at(md) {
+      box-shadow: 0 0.125rem 0.75rem rgb(0 0 0 / 0.06);
+    }
+  }
+
+  /**
+   * Full-size pinned bar; `-hidden` slides off on scroll down.
+   */
+  &.-hideOnScroll {
+    background-color: var(--root-background-color, #ffffff);
+    inset-inline: 0;
+    min-height: unset;
+    position: fixed;
+    top: 0;
+    transition: transform var(--siteHeader-chrome-duration) var(--siteHeader-chrome-ease);
+    width: 100%;
+    z-index: 200;
+
+    &.-hidden {
+      pointer-events: none;
+      transform: translateY(-100%);
+    }
+  }
+
+  /** Reserves space while pinned headers are visible (sibling follows header). */
+  & + &__spacer {
+    min-height: 0;
+    pointer-events: none;
+  }
+
+  &.-hideOnScroll:not(.-hidden) + &__spacer {
+    min-height: 9rem;
+    transition: min-height var(--siteHeader-chrome-duration) var(--siteHeader-chrome-ease);
+  }
+
+  &.-hideOnScroll.-hidden + &__spacer {
+    min-height: 0;
   }
 }
