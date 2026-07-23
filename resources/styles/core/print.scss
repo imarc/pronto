@@ -1,0 +1,241 @@
+@media print {
+  /**
+   * Prevent single-page print collapse from height/overflow constraints.
+   */
+  html,
+  body {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /**
+   * Drop container side gutters so wide content isn't pushed inward / off-center.
+   */
+  .container {
+    display: block !important;
+    max-width: 100% !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #000000 !important;
+    text-shadow: none !important;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .siteHeader,
+  .siteHeader__spacer,
+  .siteFooter,
+  .mobileNavigation,
+  .overlay,
+  dialog,
+  .pagination,
+  .banner__close,
+  .dialog__close,
+  .overlay__close,
+  .tabs__prev,
+  .tabs__next,
+  swiper-container::part(pagination),
+  swiper-container::part(button-prev),
+  swiper-container::part(button-next) {
+    display: none !important;
+  }
+
+  .siteHeader.-fixed,
+  .siteHeader.-hideOnScroll,
+  .editorialSplit__aside.-stickyAside,
+  .table thead,
+  .table th,
+  .table td {
+    position: static !important;
+  }
+
+  /**
+   * Unclip scrollable tables without crushing columns (fixed + anywhere
+   * caused one-character-wide cells). Keep natural table width; container
+   * gutters are already removed so content stays left-aligned.
+   */
+  .table.-scrollable {
+    animation: none !important;
+    mask-image: none !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  /**
+   * Accordion uses ::details-content with height:0 when closed.
+   */
+  .accordion::details-content,
+  details:not([open])::details-content {
+    height: auto !important;
+  }
+
+  details:not([open]) > :not(summary) {
+    display: block !important;
+  }
+
+  /**
+   * Stack Swiper slides and keep them page-sized (not viewport-square).
+   */
+  .slider__content {
+    overflow: visible !important;
+    padding: 0 !important;
+  }
+
+  .slider swiper-container,
+  .slider swiper-container::part(container) {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .slider swiper-container::part(wrapper) {
+    display: block !important;
+    height: auto !important;
+    transform: none !important;
+  }
+
+  .slider swiper-slide {
+    aspect-ratio: auto !important;
+    height: auto !important;
+    margin: 0 0 1rem !important;
+    max-width: 100% !important;
+    transform: none !important;
+    width: 100% !important;
+  }
+
+  /**
+   * Demo placeholder slides only — empty .placeholder icons (e.g. stats) should
+   * not pick up a visible box in print.
+   */
+  swiper-slide.placeholder {
+    aspect-ratio: 16 / 9 !important;
+    background: #eeeeee !important;
+    border-color: #666666 !important;
+  }
+
+  .placeholder:empty {
+    display: none !important;
+  }
+
+  /**
+   * Testimonials use 1fr on the quote row; inside stretched slides that opens a
+   * huge gap above the author. Keep content height intrinsic in print.
+   */
+  .testimonial {
+    grid-template-rows: auto auto !important;
+    height: auto !important;
+  }
+
+  /**
+   * Cards collapse to 1 column on print-sized pages. auto-fit matches screen
+   * behavior and covers 2–5 column variants without hardcoding a count.
+   * -centered orphan math is skipped in print; cards flow left-to-right.
+   */
+  .cards {
+    align-items: start !important;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)) !important;
+  }
+
+  .cards.-centered > .card {
+    grid-column: auto !important;
+  }
+
+  .card {
+    break-inside: avoid;
+    height: auto !important;
+  }
+
+  .card__content {
+    height: auto !important;
+  }
+
+  .card__cta {
+    margin-top: 0.5rem !important;
+  }
+
+  /**
+   * Stats collapse to 1 column on print-sized pages. auto-fit keeps 3 or 4
+   * stats on one row when they fit, without hardcoding a column count.
+   */
+  .stats__content {
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)) !important;
+  }
+
+  /**
+   * Print pages are narrow, so breakpoint grids collapse to 1 column.
+   * Force desktop column counts and correct --_tile-size (mobile value is
+   * 100cqi, which inflates -tall/-fill min-heights when columns are forced).
+   */
+  .tiles__set.-thirds {
+    --_tile-size: calc((100cqi - var(--gap) * 2) / 3);
+
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .tiles__set.-halves {
+    --_tile-size: calc((100cqi - var(--gap) * 3) / 4);
+
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+
+  .tiles__set .tiles__tile.-featured {
+    grid-column: span 2 !important;
+    grid-row: span 2 !important;
+  }
+
+  .tiles__set .tiles__tile.-wide {
+    aspect-ratio: auto !important;
+    grid-column: span 2 !important;
+    min-height: var(--_tile-size, 200px) !important;
+  }
+
+  .tiles__set .tiles__tile.-tall {
+    aspect-ratio: auto !important;
+    grid-row: span 2 !important;
+    min-height: calc(var(--_tile-size, 200px) * 2 + var(--gap)) !important;
+  }
+
+  .tiles__set .tiles__tile.-fill {
+    aspect-ratio: auto !important;
+    grid-row: span 2 !important;
+    min-height: calc(var(--_tile-size) * 0.5625 * 2 + var(--gap)) !important;
+  }
+
+  .tiles__set.-thirds.-staggered > .tiles__tile {
+    order: 0 !important;
+  }
+
+  pre,
+  blockquote,
+  tr,
+  img,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  @page {
+    margin: 0.5cm;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+}
