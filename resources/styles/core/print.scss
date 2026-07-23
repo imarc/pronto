@@ -133,20 +133,17 @@
   }
 
   /**
-   * Cards collapse to 1 column on print-sized pages. Keep a compact grid and
-   * prevent flex stretch from pushing CTAs to the bottom of tall cards.
+   * Cards collapse to 1 column on print-sized pages. auto-fit matches screen
+   * behavior and covers 2–5 column variants without hardcoding a count.
+   * -centered orphan math is skipped in print; cards flow left-to-right.
    */
   .cards {
     align-items: start !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-  }
-
-  .cards.-centered {
-    grid-template-columns: repeat(6, 1fr) !important;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)) !important;
   }
 
   .cards.-centered > .card {
-    grid-column: span 2 !important;
+    grid-column: auto !important;
   }
 
   .card {
