@@ -1,0 +1,5 @@
+# Pin Node to satisfy package.json "engines.node".
+# Run `mise install` from the repo root after cloning (see README).
+
+[tools]
+node = "24"
