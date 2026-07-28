@@ -15,6 +15,13 @@
     }
   }
 
+  &__playPause {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 2;
+  }
+
   swiper-slide {
     width: 100cqw;
     height: auto;
