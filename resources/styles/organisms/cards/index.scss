@@ -145,4 +145,9 @@
       }
     }
   }
+
+  @media print {
+    align-items: start;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  }
 }

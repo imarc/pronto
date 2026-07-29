@@ -34,4 +34,13 @@
   @media (width >= 808px) {
     --container-width: 1300px;
   }
+
+  @media print {
+    display: block;
+    max-width: 100%;
+
+    > * {
+      max-width: 100%;
+    }
+  }
 }

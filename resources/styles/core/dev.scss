@@ -32,4 +32,10 @@
   align-content: center;
   text-align: center;
   color: var(--accent-color);
+
+  @media print {
+    &:empty {
+      display: none;
+    }
+  }
 }

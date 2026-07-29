@@ -1,0 +1,64 @@
+@media print {
+  /**
+   * Global print reset only. Component-specific print layout rules live in
+   * each component's index.scss.
+   *
+   * Hide chrome / interactive UI with the `.webOnly` utility on markup
+   * (see core/utilities/webOnly). Shadow-DOM controls (e.g. Swiper parts)
+   * still need a component `@media print` rule because they can't take a class.
+   */
+
+  html,
+  body {
+    height: auto;
+    overflow: visible;
+  }
+
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #000000 !important;
+    text-shadow: none !important;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  /**
+   * Expand native disclosure content so closed details/accordions print.
+   */
+  details:not([open])::details-content {
+    height: auto;
+  }
+
+  details:not([open]) > :not(summary) {
+    display: block;
+  }
+
+  pre,
+  blockquote,
+  tr,
+  img,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    break-inside: avoid;
+  }
+
+  @page {
+    margin: 0.5cm;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+}

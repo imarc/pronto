@@ -83,6 +83,19 @@
       }
     }
   }
+
+  @media print {
+    &.-scrollable {
+      animation: none;
+      max-height: none;
+      overflow: visible;
+
+      &.-fadeRight,
+      &.-fadeBoth {
+        mask-image: none;
+      }
+    }
+  }
 }
 
 /**
