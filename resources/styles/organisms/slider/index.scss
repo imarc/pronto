@@ -176,4 +176,50 @@
       }
     }
   }
+
+  @media print {
+    &__content {
+      overflow: visible;
+      padding: 0;
+    }
+
+    swiper-container,
+    swiper-container::part(container) {
+      height: auto;
+      overflow: visible;
+    }
+
+    swiper-container::part(wrapper) {
+      display: block;
+      height: auto;
+
+      /* Swiper sets an inline transform on the wrapper. */
+      transform: none !important;
+    }
+
+    swiper-container::part(pagination),
+    swiper-container::part(button-prev),
+    swiper-container::part(button-next) {
+      display: none;
+    }
+
+    swiper-slide {
+      aspect-ratio: auto;
+      height: auto;
+      max-width: 100%;
+
+      /* Swiper sets inline width / margin / transform on slides. */
+      margin: 0 0 1rem !important;
+      transform: none !important;
+      width: 100% !important;
+    }
+
+    swiper-slide.placeholder {
+      aspect-ratio: 16 / 9;
+
+      /* Beat the global print `*` background reset. */
+      background: #eeeeee !important;
+      border-color: #666666 !important;
+    }
+  }
 }

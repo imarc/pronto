@@ -46,12 +46,12 @@ const next = () => {
 <template>
   <div class="tabs">
     <div class="tabs__tablist" role="tablist" aria-label="Sample Tabs">
-      <button class="tabs__prev button -circle" @click="prev">
+      <button class="tabs__prev button -circle webOnly" @click="prev">
         <span class="srOnly">previous</span>
         <svg class="button__icon"><use href="/main-icons-sprite.svg#chevron-left" /></svg>
       </button>
       <button v-for="tab in tabs" :id="tab.buttonId" :key="tab.buttonId" ref="tablist" class="tabs__button" :class="{ '-selected': tab.selected }" role="tab" :aria-selected="tab.selected" :aria-controls="tab.panelId" :tabindex="tab.tabindex" v-text="tab.title" />
-      <button class="tabs__next button -circle" @click="next">
+      <button class="tabs__next button -circle webOnly" @click="next">
         <span class="srOnly">next</span>
         <svg class="button__icon"><use href="/main-icons-sprite.svg#chevron-right" /></svg>
       </button>
