@@ -1,0 +1,19 @@
+package.json
+  s_1c4862a652751d::t_33c0513af71b96 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.19",
+  "base_commit_sha": "4fa65fa794308eada27e53033a6dee6bb468ec38",
+  "prompts": {},
+  "sessions": {
+    "s_1c4862a652751d": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_04745825cffemqpu5vvKUvImPJ",
+        "model": "gpt-5.6-terra"
+      },
+      "human_author": "Kevin Hamer <kevin@imarc.com>"
+    }
+  }
+}
