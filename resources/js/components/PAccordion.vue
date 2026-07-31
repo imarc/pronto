@@ -5,12 +5,12 @@ import { useTemplateRef } from 'vue'
  * PAccordion is a vue component for the <details> element. It uses the native <details> element
  * state to determine whether it's open or closed, and merely handles updating CSS properties
  * to allow the element to use transitions between dynamic closed and [open] heights.
- * 
+ *
  * @param {string} summary - selector for the summary element.
  *                           Default: 'summary:first-of-type'
  */
 const props = defineProps({
-  summary: { type: String, default: 'summary:first-of-type' }
+  summary: { type: String, default: 'summary:first-of-type' },
 })
 const details = useTemplateRef('details')
 

@@ -10,6 +10,7 @@ ul {
 
 .list {
   --list-line-height: 1.125;
+
   line-height: var(--list-line-height);
   margin-bottom: 1rem;
   padding-left: 3rem;
@@ -25,22 +26,22 @@ ul {
       border-radius: 1em;
       content: '';
       display: inline grid;
-      height: .5em;
+      height: 0.5em;
       width: 1em;
-      translate: -1.5em calc(.5em * (var(--list-line-height) - .5));
+      translate: -1.5em calc(0.5em * (var(--list-line-height) - 0.5));
     }
-
   }
 
-  ul, ol {
+  ul,
+  ol {
     margin-top: 1rem;
     padding-left: 3rem;
   }
 
   &:where(ul ul) {
     & > li::before {
-      height: .25em;
-      translate: -1.5em calc(.5em * (var(--list-line-height) - .25));
+      height: 0.25em;
+      translate: -1.5em calc(0.5em * (var(--list-line-height) - 0.25));
       background: var(--accent-color-200);
     }
   }

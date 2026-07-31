@@ -1,6 +1,7 @@
 import { createApp, defineAsyncComponent } from 'vue'
 import directionals from './directives/vDirectionals.js'
 import scrolllock from './directives/vScrolllock.js'
+import scrollHeader from './directives/vScrollHeader.js'
 
 /**
  * Vite heavily recommends importing your CSS from your JS.
@@ -25,5 +26,6 @@ createApp({
   directives: {
     directionals,
     scrolllock,
+    scrollHeader,
   },
 }).mount('#app')

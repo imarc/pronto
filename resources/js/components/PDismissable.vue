@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 
-const { name } = defineProps({ name: { type: String } })
+const { name } = defineProps({ name: { type: String, required: true } })
 
 const open = ref(name ? sessionStorage[name] !== 'dismissed' : true)
 
