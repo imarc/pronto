@@ -52,6 +52,8 @@
             position: absolute;
             top: calc(anchor(bottom) + 0.5rem);
             left: anchor(left);
+            right: auto;
+            bottom: auto;
             position-try-fallbacks:
                 flip-inline,
                 flip-block,
@@ -84,7 +86,7 @@
     &__email {
         margin: 0;
         font-size: 0.75rem;
-        color: var(--color-gray-500, #888888);
+        color: var(--color-gray-600);
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
