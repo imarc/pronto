@@ -1,0 +1,23 @@
+resources/styles/molecules/popoverActions/popoverActions.html
+  s_6c942e38b541e8::t_6f57b2fa0b6b2e 5,31,45,57,62,83
+resources/styles/atoms/userDisclosure/userDisclosure.html
+  s_6c942e38b541e8::t_6f57b2fa0b6b2e 4,20,36
+resources/styles/atoms/userDisclosure/index.scss
+  s_6c942e38b541e8::t_6f57b2fa0b6b2e 55-56
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.19",
+  "base_commit_sha": "2131ad59486623a2654a45cb0ae80ea8f6900ef5",
+  "prompts": {},
+  "sessions": {
+    "s_6c942e38b541e8": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_04788c80dffeXp863y90NB9dtR",
+        "model": "gpt-5.6-terra"
+      },
+      "human_author": "Kevin Hamer <kevin@imarc.com>"
+    }
+  }
+}
