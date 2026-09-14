@@ -247,6 +247,12 @@
   initial-value: 400ms;
 }
 
+@property --root-duration-cinematic {
+  syntax: '<time>';
+  inherits: true;
+  initial-value: 650ms;
+}
+
 /**
  * Easings (timing functions)
  */
