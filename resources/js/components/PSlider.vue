@@ -36,9 +36,9 @@ const toggleAutoplay = () => {
   isPlaying.value = !isPlaying.value
 }
 
-const updateActiveBullet = (swiper) => {
+const updateActiveBullet = swiper => {
   if (!swiper.pagination?.bullets) return
-  swiper.pagination.bullets.forEach((bullet) => {
+  swiper.pagination.bullets.forEach(bullet => {
     bullet.setAttribute('aria-disabled', bullet.classList.contains('swiper-pagination-bullet-active') ? 'true' : 'false')
   })
 }
@@ -71,13 +71,13 @@ const init = e => {
       isPlaying.value = false
     }
 
-    const pauseAutoplayOnFocus = (event) => {
+    const pauseAutoplayOnFocus = event => {
       if (event.target.closest?.('.slider__playPause')) return
       stopAutoplay()
     }
 
     // Pause on click of a slide, pagination bullet, or prev/next nav button.
-    const pauseAutoplayOnClick = (event) => {
+    const pauseAutoplayOnClick = event => {
       if (!event.target.closest('.swiper-slide, .swiper-pagination-bullet, .swiper-button-prev, .swiper-button-next')) return
       stopAutoplay()
     }
@@ -99,22 +99,8 @@ const init = e => {
 }
 </script>
 <template>
-  <swiper-container
-    v-bind="$attrs"
-    :autoplay="autoplay"
-    a11y-container-role="group"
-    a11y-container-role-description-message="carousel"
-    :a11y-container-message="ariaLabel"
-    a11y-item-role-description-message="slide"
-    @swiperafterinit="init"
-  >
-    <button
-      v-if="autoplay"
-      slot="container-start"
-      class="slider__playPause button -circle"
-      :aria-label="isPlaying ? 'Stop slide rotation' : 'Start slide rotation'"
-      @click="toggleAutoplay"
-    >
+  <swiper-container v-bind="$attrs" :autoplay="autoplay" a11y-container-role="group" a11y-container-role-description-message="carousel" :a11y-container-message="ariaLabel" a11y-item-role-description-message="slide" @swiperafterinit="init">
+    <button v-if="autoplay" slot="container-start" class="slider__playPause button -circle" :aria-label="isPlaying ? 'Stop slide rotation' : 'Start slide rotation'" @click="toggleAutoplay">
       <svg class="button__icon" aria-hidden="true">
         <use :href="isPlaying ? '/main-icons-sprite.svg#pause' : '/main-icons-sprite.svg#play'" />
       </svg>
