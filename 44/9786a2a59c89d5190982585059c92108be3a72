@@ -1,0 +1,18 @@
+resources/js/components/PSlider.vue
+  h_fa30cb431001ee 39,41,74,80,102-103
+resources/styles/atoms/index.scss
+  h_fa30cb431001ee 22
+resources/styles/molecules/index.scss
+  h_fa30cb431001ee 16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "449786a2a59c89d5190982585059c92108be3a72",
+  "prompts": {},
+  "humans": {
+    "h_fa30cb431001ee": {
+      "author": "Kevin Hamer <kevin@imarc.com>"
+    }
+  }
+}
