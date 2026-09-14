@@ -1,0 +1,40 @@
+resources/styles/atoms/media/index.scss
+  s_0a52b44ad94fe1::t_d8a43fef01157e 80
+resources/styles/organisms/accordionGroup/accordionGroup.html
+  s_0a52b44ad94fe1::t_e032ad4c89181a 1-41
+eslint.config.js
+  s_0a52b44ad94fe1::t_ff7cb6c3391e3e 36-42
+resources/styles/molecules/popoverActions/index.scss
+  s_0a52b44ad94fe1::t_5cfc1edd55659c 1,9,11-18,20-26,28-31,34-40,42,44-51,53-73,75-80,82
+package.json
+  s_0a52b44ad94fe1::t_f34c802ffea029 31
+  s_0a52b44ad94fe1::t_a5bd659a7a57a3 37-42,44-46,49-50
+  s_0a52b44ad94fe1::t_7fcfea2135f324 30,33-34
+vite.config.js
+  s_0a52b44ad94fe1::t_3cc97ecb445962 11,20-21,27-29
+  s_0a52b44ad94fe1::t_203acebff81166 26
+resources/styles/organisms/index.scss
+  s_0a52b44ad94fe1::t_e032ad4c89181a 2
+resources/styles/organisms/accordionGroup/index.scss
+  s_0a52b44ad94fe1::t_e032ad4c89181a 1-13
+resources/styles/molecules/accordion/index.scss
+  s_0a52b44ad94fe1::t_0783d60c9bebbc 91-93,95,97-114,117,122,129-130
+resources/styles/atoms/userDisclosure/index.scss
+  s_0a52b44ad94fe1::t_5cfc1edd55659c 1,8,10-21,23-26,28,30-37,39-44,47-50,53-59,61,63-67,69-92
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "7c87b8d8db7bc9ef0ed3fee290452ff92292ede5",
+  "prompts": {},
+  "sessions": {
+    "s_0a52b44ad94fe1": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_f5f07ae17ffesNLL40OVT7OPAV",
+        "model": "gpt-5.6-terra"
+      },
+      "human_author": "Kevin Hamer <kevin@imarc.com>"
+    }
+  }
+}
