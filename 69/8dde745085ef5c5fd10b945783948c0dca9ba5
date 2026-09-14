@@ -1,0 +1,31 @@
+resources/styles/molecules/accordion/accordion.html
+  s_ed36089fd53d4a::t_a07bc20fc1a22c 76-137
+resources/styles/molecules/accordion/index.scss
+  s_ed36089fd53d4a::t_a07bc20fc1a22c 1-2,89-131,133,138
+  s_ed36089fd53d4a::t_b5ac6806c75792 132,134-137
+  s_4e12ee40c2c137::t_5b367afdf38404 139-141
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "698dde745085ef5c5fd10b945783948c0dca9ba5",
+  "prompts": {},
+  "sessions": {
+    "s_4e12ee40c2c137": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0f953f79-bc48-4716-ba45-eb237ce09152",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Kevin Hamer <kevin@imarc.com>"
+    },
+    "s_ed36089fd53d4a": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_f5f026a96ffejyOe70Fxt7Jvgs",
+        "model": "gpt-5.6-terra"
+      },
+      "human_author": "Kevin Hamer <kevin@imarc.com>"
+    }
+  }
+}
