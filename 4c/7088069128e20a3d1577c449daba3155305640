@@ -1,0 +1,23 @@
+resources/styles/organisms/editorialCards/editorialCards.html
+  s_2868f57c3390eb::t_96c32df6c01686 1-40
+resources/styles/organisms/index.scss
+  s_2868f57c3390eb::t_96c32df6c01686 19
+resources/styles/organisms/editorialCards/index.scss
+  s_2868f57c3390eb::t_96c32df6c01686 1-9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "4c7088069128e20a3d1577c449daba3155305640",
+  "prompts": {},
+  "sessions": {
+    "s_2868f57c3390eb": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_f5f046ad4ffeCXsW8LsHq0ZVk9",
+        "model": "gpt-5.6-terra"
+      },
+      "human_author": "Kevin Hamer <kevin@imarc.com>"
+    }
+  }
+}
