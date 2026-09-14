@@ -7,6 +7,8 @@
 @import 'https://fonts.googleapis.com/css2?family=Gloock&family=Inter:wght@100..900&display=swap';
 
 :root {
+  container-name: root;
+
   /**
    * Typography
    */
@@ -160,13 +162,21 @@
   }
 
   /**
-   * Prefers Reduced Motion
+   * Motion
    */
+  --root-motion: unset;
+
   @media (prefers-reduced-motion: reduce) {
+    --root-motion: reduce;
+  }
+
+  // Configure other --root- properties here.
+}
+
+@container root style(--root-motion: reduce) {
+  body {
     --root-duration-fast: 0;
     --root-duration-moderate: 0;
     --root-duration-slow: 0;
   }
-
-  // Configure other --root- properties here.
 }

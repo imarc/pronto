@@ -1,0 +1,70 @@
+@use '@/core' as *;
+
+.featureCarousel {
+  --featureCarousel-gap: var(--root-gap, 16px);
+  --featureCarousel-card-width: min(20rem, calc(100vw - (var(--root-gap, 16px) * 2)));
+  --featureCarousel-duration: 36s;
+
+  overflow: hidden;
+
+  &__viewport {
+    overflow: hidden;
+
+    &:hover {
+      .featureCarousel__track {
+        animation-play-state: paused;
+      }
+    }
+  }
+
+  &__track {
+    display: flex;
+    gap: var(--featureCarousel-gap);
+    width: max-content;
+    animation: feature-carousel-scroll var(--featureCarousel-duration) linear infinite;
+  }
+
+  &__list {
+    display: flex;
+    gap: var(--featureCarousel-gap);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__card {
+    display: grid;
+    gap: 0.5rem;
+    width: var(--featureCarousel-card-width);
+    padding: var(--featureCarousel-gap);
+    border: 1px solid var(--root-border-color);
+    color: var(--root-color);
+  }
+
+  &__eyebrow {
+    margin-bottom: 0;
+    color: var(--accent-color);
+  }
+
+  &__headline {
+    margin: 0;
+    color: var(--root-color-headings);
+    font-size: var(--root-font-size-h4);
+  }
+
+  &__subheadline {
+    margin: 0;
+  }
+
+  @container root style(--root-motion: reduce) {
+    &__track {
+      animation: none;
+    }
+  }
+}
+
+@keyframes feature-carousel-scroll {
+  to {
+    transform: translateX(calc(-50% - (var(--featureCarousel-gap) / 2)));
+  }
+}
