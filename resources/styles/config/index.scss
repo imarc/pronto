@@ -164,16 +164,16 @@
   /**
    * Motion
    */
-  --root-motion: unset;
+  --reduce-motion: unset;
 
   @media (prefers-reduced-motion: reduce) {
-    --root-motion: reduce;
+    --reduce-motion: reduce;
   }
 
   // Configure other --root- properties here.
 }
 
-@container root style(--root-motion: reduce) {
+@container root style(--reduce-motion: reduce) {
   body {
     --root-duration-fast: 0;
     --root-duration-moderate: 0;

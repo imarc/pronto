@@ -3,8 +3,6 @@
 .accordionGroup {
   &.-horizontal {
     @include breakpoint(md) {
-      --accordionGroup-logo-width: 7rem;
-
       display: flex;
       gap: 1rem;
       aspect-ratio: 3;
