@@ -227,6 +227,15 @@
 }
 
 /**
+ * Browser Preferences
+ */
+@property --reduce-motion {
+  syntax: '*';
+  inherits: true;
+  initial-value: unset;
+}
+
+/**
  * Durations 
  */
 @property --root-duration-fast {

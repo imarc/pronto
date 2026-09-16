@@ -5,7 +5,7 @@ const props = defineProps({
   target: {
     type: String,
     default: ':root',
-  }
+  },
 })
 
 const target = computed(() => document.querySelector(props.target))
@@ -15,16 +15,12 @@ const reduceMotion = ref(getComputedStyle(target.value).getPropertyValue('--redu
 const toggleMotion = () => {
   reduceMotion.value = !reduceMotion.value
   target.value.style.setProperty('--reduce-motion', reduceMotion.value ? 'reduce' : null)
+  target.value.dispatchEvent(new CustomEvent('reduce-motion-change', { bubbles: true }))
 }
 </script>
 
 <template>
-  <button
-    type="button"
-    class="button -circle -small"
-    :aria-pressed="reduceMotion"
-    @click="toggleMotion"
-  >
+  <button type="button" class="button -circle -small" :aria-pressed="reduceMotion" @click="toggleMotion">
     <slot>
       <svg class="button__icon" aria-hidden="true">
         <use :href="reduceMotion ? '/main-icons-sprite.svg#play' : '/main-icons-sprite.svg#pause'" />

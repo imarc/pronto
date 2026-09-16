@@ -1,6 +1,6 @@
 <script setup>
 import { register } from 'swiper/element/bundle'
-import { ref } from 'vue'
+import { onBeforeUnmount, ref } from 'vue'
 
 register()
 
@@ -20,11 +20,36 @@ const props = defineProps({
 })
 
 const isPlaying = ref(!!props.autoplay)
+const reduceMotion = ref(false)
 
 let swiperInstance = null
+let sliderElement = null
+let sliderSpeed = null
+
+const stopAutoplay = () => {
+  if (!isPlaying.value || !swiperInstance) return
+  swiperInstance.autoplay.stop()
+  swiperInstance.wrapperEl.setAttribute('aria-live', 'polite')
+  isPlaying.value = false
+}
+
+const syncMotion = target => {
+  reduceMotion.value = getComputedStyle(target).getPropertyValue('--reduce-motion').trim() === 'reduce'
+  swiperInstance.params.speed = reduceMotion.value ? 0 : sliderSpeed
+
+  if (reduceMotion.value) stopAutoplay()
+}
+
+const handleMotionChange = event => {
+  if (!sliderElement || !event.target?.contains(sliderElement)) return
+  syncMotion(sliderElement)
+}
+
+window.addEventListener('reduce-motion-change', handleMotionChange)
+onBeforeUnmount(() => window.removeEventListener('reduce-motion-change', handleMotionChange))
 
 const toggleAutoplay = () => {
-  if (!swiperInstance) return
+  if (!swiperInstance || reduceMotion.value) return
 
   if (isPlaying.value) {
     swiperInstance.autoplay.stop()
@@ -45,6 +70,9 @@ const updateActiveBullet = swiper => {
 
 const init = e => {
   swiperInstance = e.detail[0]
+  sliderElement = e.target
+  sliderSpeed = swiperInstance.params.speed
+  syncMotion(sliderElement)
 
   // The following code is for slider accessibility not covered by Swiper's a11y module.
   // Please see the slider README.md or the W3C carousel pattern for more information:
@@ -64,13 +92,6 @@ const init = e => {
   // Listens on both the host (slotted play button) and swiper.el (shadow DOM controls).
   // Skips the play/pause button so clicking it to resume does not immediately re-pause.
   if (props.autoplay) {
-    const stopAutoplay = () => {
-      if (!isPlaying.value) return
-      swiperInstance.autoplay.stop()
-      swiperInstance.wrapperEl.setAttribute('aria-live', 'polite')
-      isPlaying.value = false
-    }
-
     const pauseAutoplayOnFocus = event => {
       if (event.target.closest?.('.slider__playPause')) return
       stopAutoplay()
@@ -100,7 +121,7 @@ const init = e => {
 </script>
 <template>
   <swiper-container v-bind="$attrs" :autoplay="autoplay" a11y-container-role="group" a11y-container-role-description-message="carousel" :a11y-container-message="ariaLabel" a11y-item-role-description-message="slide" @swiperafterinit="init">
-    <button v-if="autoplay" slot="container-start" class="slider__playPause button -circle" :aria-label="isPlaying ? 'Stop slide rotation' : 'Start slide rotation'" @click="toggleAutoplay">
+    <button v-if="autoplay" slot="container-start" class="slider__playPause button -circle" :aria-label="isPlaying ? 'Stop slide rotation' : 'Start slide rotation'" :disabled="reduceMotion" @click="toggleAutoplay">
       <svg class="button__icon" aria-hidden="true">
         <use :href="isPlaying ? '/main-icons-sprite.svg#pause' : '/main-icons-sprite.svg#play'" />
       </svg>
