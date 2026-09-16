@@ -1,0 +1,30 @@
+resources/js/components/PToggleMotion.vue
+  s_b9f31a627515e2::t_10a9ceeb9a7e79 23
+  s_b9f31a627515e2::t_f077f986d04bbf 8,18
+resources/js/components/PToggleMotion.html
+  s_b9f31a627515e2::t_a295edc733b157 1-5,16,67,69-70,72-103
+  s_b9f31a627515e2::t_f077f986d04bbf 7-15,17-38,40-46,50-54,56-62,66,68
+  s_b9f31a627515e2::t_1c34290b70df99 6,39,55,71
+  s_b9f31a627515e2::t_94a8a8907e3eba 47-49,63-65
+resources/js/components/PSlider.vue
+  s_b9f31a627515e2::t_f077f986d04bbf 3,23,29-37,39-43,46-49,52,124
+  s_b9f31a627515e2::t_ff9729e3c6a752 27,38,74
+  s_b9f31a627515e2::t_3573b85c3eb6cf 26,44-45,73,75
+  s_b9f31a627515e2::t_47132688f436bb 28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "9cadc54e9ea741e2417112ea033337ed69d0c032",
+  "prompts": {},
+  "sessions": {
+    "s_b9f31a627515e2": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_f5552ccd4ffeFaahYrFjK5pHkH",
+        "model": "gpt-5.6-terra"
+      },
+      "human_author": "Kevin Hamer <kevin@imarc.com>"
+    }
+  }
+}
