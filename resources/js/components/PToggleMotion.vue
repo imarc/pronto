@@ -21,7 +21,7 @@ const toggleMotion = () => {
 <template>
   <button
     type="button"
-    class="button"
+    class="button -circle -small"
     :aria-pressed="reduceMotion"
     @click="toggleMotion"
   >

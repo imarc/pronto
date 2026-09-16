@@ -1,11 +1,6 @@
-<h2>Feature Slider</h2>
-<p>The <code>.featureSlider</code> loops feature cards continuously. Duplicate the first list exactly in the second list, keeping that duplicate <code>aria-hidden</code>.</p>
-
-<p-toggle-motion></p-toggle-motion>
-<p-toggle-motion target=".js-foo"></p-toggle-motion>
-
-<section class="section js-foo">
+<section class="js-foo">
   <div class="featureSlider">
+    <p-toggle-motion class="featureSlider__playPause" target=".js-foo"></p-toggle-motion>
     <div class="featureSlider__viewport">
       <div class="featureSlider__track">
         <ul class="featureSlider__list">
