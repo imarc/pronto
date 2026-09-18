@@ -1,0 +1,55 @@
+<div class="container">
+  <h2>Background Content</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+  <div class="actions">
+    <button class="button" @click="$refs.overlay.showModal()">Open Overlay Card</button>
+  </div>
+</div>
+
+<dialog class="overlay -card webOnly" ref="overlay">
+  <div class="overlay__panel">
+    <button class="overlay__close webOnly" aria-label="Close" @click="$refs.overlay.close()">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="3.75" width="1" height="16" rx="0.5" transform="rotate(-45 3 3.75)" fill="currentColor" />
+        <rect x="14.25" y="3" width="1" height="16" rx="0.5" transform="rotate(45 14.25 3)" fill="currentColor" />
+      </svg>
+    </button>
+    <div class="overlay__imageWrapper">
+      <img class="overlay__image" src="https://picsum.photos/800/800" alt="Portrait of Michael Creator" />
+    </div>
+    <div class="overlay__body">
+      <div class="overlay__intro">
+        <h2 class="overlay__title">Some human name</h2>
+        <p class="overlay__subtitle">Website Developer</p>
+        <p class="overlay__description">Donec sit amet vestibulum turpis. Ut eget nibh pretium ipsum auctor pharetra. Curabitur maximus tristique pellentesque. Etiam pulvinar, tortor sed finibus scelerisque, neque libero vehicula neque, ut molestie mauris risus ac dui. Quisque vel imperdiet leo. Eget nibh pretium ipsum auctor pharetra.</p>
+        <nav class="overlay__social actions" aria-label="Social links">
+          <a class="button -square -ghost" href="#">
+            <span class="srOnly">On Instagram</span>
+            <svg class="button__icon" viewBox="0 0 29 29" aria-hidden="true">
+              <use href="/main-icons-sprite.svg#instagram" />
+            </svg>
+          </a>
+          <a class="button -square -ghost" href="#">
+            <span class="srOnly">On LinkedIn</span>
+            <svg class="button__icon" viewBox="0 0 28 29" aria-hidden="true">
+              <use href="/main-icons-sprite.svg#linkedin" />
+            </svg>
+          </a>
+          <a class="button -square -ghost" href="#">
+            <span class="srOnly">On YouTube</span>
+            <svg class="button__icon" viewBox="0 0 36 24" aria-hidden="true">
+              <use href="/main-icons-sprite.svg#youtube" />
+            </svg>
+          </a>
+        </nav>
+      </div>
+      <blockquote class="overlay__quote">
+        <svg class="overlay__quoteIcon icon" role="presentation">
+          <use href="/main-icons-sprite.svg#quote" />
+        </svg>
+        <p class="overlay__quoteText">Suspendisse ac blandit nisi, non tempor purus. Pellentesque ornare tellus molestie quam pretium!</p>
+      </blockquote>
+    </div>
+  </div>
+</dialog>
