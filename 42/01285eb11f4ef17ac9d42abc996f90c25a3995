@@ -1,0 +1,20 @@
+resources/styles/molecules/filters/filters--aside.html
+  h_fa30cb431001ee 1-85
+resources/styles/molecules/filters/filters.html
+  h_fa30cb431001ee 1-74
+resources/styles/molecules/filters/index.scss
+  h_fa30cb431001ee 1-60
+resources/styles/molecules/index.scss
+  h_fa30cb431001ee 9,17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "4201285eb11f4ef17ac9d42abc996f90c25a3995",
+  "prompts": {},
+  "humans": {
+    "h_fa30cb431001ee": {
+      "author": "Kevin Hamer <kevin@imarc.com>"
+    }
+  }
+}
