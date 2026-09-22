@@ -1,0 +1,24 @@
+resources/styles/molecules/index.scss
+  h_fa30cb431001ee 16-17
+resources/styles/molecules/result/index.scss
+  h_fa30cb431001ee 1-25
+resources/styles/molecules/result/result.html
+  h_fa30cb431001ee 1-5
+resources/styles/organisms/index.scss
+  h_fa30cb431001ee 9
+resources/styles/organisms/results/index.scss
+  h_fa30cb431001ee 1-39
+resources/styles/organisms/results/results.html
+  h_fa30cb431001ee 1-36
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "1aa922b1593f48b85ec3656ff8f55ec3e1be82a1",
+  "prompts": {},
+  "humans": {
+    "h_fa30cb431001ee": {
+      "author": "Kevin Hamer <kevin@imarc.com>"
+    }
+  }
+}
