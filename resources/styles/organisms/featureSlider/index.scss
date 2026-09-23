@@ -1,9 +1,9 @@
 @use '@/core' as *;
 
 .featureSlider {
-  --featureSlider-gap: var(--root-gap, 16px);
-  --featureSlider-card-width: min(20rem, calc(100vw - (var(--root-gap, 16px) * 2)));
-  --featureSlider-duration: 36s;
+  --feature-slider-gap: var(--root-gap, 16px);
+  --feature-slider-card-width: min(20rem, calc(100vw - (var(--root-gap, 16px) * 2)));
+  --feature-slider-duration: 15s;
 
   overflow: hidden;
   position: relative;
@@ -27,14 +27,14 @@
 
   &__track {
     display: flex;
-    gap: var(--featureSlider-gap);
+    gap: var(--feature-slider-gap);
     width: max-content;
-    animation: feature-slider-scroll var(--featureSlider-duration) linear infinite;
+    animation: feature-slider-scroll var(--feature-slider-duration) linear infinite;
   }
 
   &__list {
     display: flex;
-    gap: var(--featureSlider-gap);
+    gap: var(--feature-slider-gap);
     margin: 0;
     padding: 0;
     list-style: none;
@@ -43,8 +43,8 @@
   &__card {
     display: grid;
     gap: 0.5rem;
-    width: var(--featureSlider-card-width);
-    padding: var(--featureSlider-gap);
+    width: var(--feature-slider-card-width);
+    padding: var(--feature-slider-gap);
     border: 1px solid var(--root-border-color);
     color: var(--root-color);
   }
@@ -73,6 +73,6 @@
 
 @keyframes feature-slider-scroll {
   to {
-    transform: translateX(calc(-50% - (var(--featureSlider-gap) / 2)));
+    transform: translateX(calc(-50% - (var(--feature-slider-gap) / 2)));
   }
 }
