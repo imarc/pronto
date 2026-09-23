@@ -1,0 +1,11 @@
+@use '@/core' as *;
+
+.accordionGroup {
+  &.-horizontal {
+    @include breakpoint(md) {
+      display: flex;
+      gap: 1rem;
+      aspect-ratio: 3;
+    }
+  }
+}
