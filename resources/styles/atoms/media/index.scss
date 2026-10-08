@@ -77,7 +77,7 @@
     container-type: size;
     position: relative;
     transition:
-      color var(-root-ease-out-fast),
+      color var(--root-ease-out-fast),
       opacity var(--root-ease-out-moderate);
     width: min(50cqmin, 6rem);
     height: min(50cqmin, 6rem);

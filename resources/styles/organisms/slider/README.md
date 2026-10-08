@@ -36,6 +36,4 @@ These are the configurable options Swiper's a11y module provides. On `<p-slider>
 - `autoplay` prop — enables the play/pause button, focus-pause behavior, and `aria-live` management
 - `pauseOnMouseEnter: true` in the autoplay config — see `slider--autoplaying.html` for a full example
 
-
 `:autoplay="{ speed: 500, pauseOnMouseEnter: true }"`
-

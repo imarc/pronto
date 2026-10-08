@@ -1,3 +1,5 @@
+@use '@/core' as *;
+
 /**
  * @uses PAccordion
  */
@@ -81,6 +83,53 @@
       --icon-color: #000000;
 
       transform: rotate(90deg);
+    }
+  }
+
+  &.-horizontal {
+    @include breakpoint(md) {
+      flex: 0 1 7rem;
+      min-width: 0;
+      transition: flex var(--root-duration-cinematic) var(--root-ease-out);
+
+      &[open] {
+        flex: 1 1 0;
+        place-content: center;
+
+        #{$b}__summary {
+          grid-template-columns: auto 1fr auto;
+          height: auto;
+          justify-content: start;
+          display: none;
+        }
+
+        #{$b}__heading {
+          display: block;
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        #{$b}__iconWrapper {
+          display: grid;
+        }
+      }
+
+      #{$b}__summary {
+        height: 100%;
+        justify-content: center;
+      }
+
+      #{$b}__logo {
+        display: block;
+        max-height: 5rem;
+        width: 100%;
+        object-fit: contain;
+      }
+
+      #{$b}__heading,
+      #{$b}__iconWrapper {
+        display: none;
+      }
     }
   }
 }

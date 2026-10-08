@@ -16,35 +16,26 @@ const checkCancel = value => {
 }
 
 const copyFolderSync = (from, to) => {
-  fs.mkdirSync(to, { recursive: true });
+  fs.mkdirSync(to, { recursive: true })
   fs.readdirSync(from).forEach(element => {
-    const fromPath = path.join(from, element);
-    const toPath = path.join(to, element);
+    const fromPath = path.join(from, element)
+    const toPath = path.join(to, element)
     if (fs.lstatSync(fromPath).isFile()) {
-      fs.copyFileSync(fromPath, toPath);
+      fs.copyFileSync(fromPath, toPath)
     } else {
-      copyFolderSync(fromPath, toPath);
+      copyFolderSync(fromPath, toPath)
     }
-  });
+  })
 }
 
 const copyComponents = copyPath => {
   log.info(`Copying components into ${copyPath}...`)
 
   try {
-    copyFolderSync(
-      path.join(import.meta.dirname, 'resources', 'styles'),
-      path.join(copyPath, 'styles')
-    )
-    copyFolderSync(
-      path.join(import.meta.dirname, 'resources', 'js'),
-      path.join(copyPath, 'js')
-    )
+    copyFolderSync(path.join(import.meta.dirname, 'resources', 'styles'), path.join(copyPath, 'styles'))
+    copyFolderSync(path.join(import.meta.dirname, 'resources', 'js'), path.join(copyPath, 'js'))
 
-    fs.copyFileSync(
-      path.join(import.meta.dirname, 'resources', 'index.md'),
-      path.join(copyPath, 'index.md')
-    )
+    fs.copyFileSync(path.join(import.meta.dirname, 'resources', 'index.md'), path.join(copyPath, 'index.md'))
   } catch (error) {
     console.error(`Failed to copy files: ${error.message}`)
     process.exit(1)
@@ -55,10 +46,7 @@ const copyAgentFiles = () => {
   log.info('Copying Pronto agent files into .agents...')
 
   try {
-    copyFolderSync(
-      path.join(import.meta.dirname, '.agents'),
-      path.join(process.cwd(), '.agents')
-    )
+    copyFolderSync(path.join(import.meta.dirname, '.agents'), path.join(process.cwd(), '.agents'))
   } catch (error) {
     console.error(`Failed to copy agent files: ${error.message}`)
     process.exit(1)
@@ -71,7 +59,7 @@ const addDependency = () => {
   const packageJson = path.join(process.cwd(), 'package.json')
 
   if (!fs.existsSync(packageJson)) {
-    console.error("No package.json found in the current directory.")
+    console.error('No package.json found in the current directory.')
     process.exit(1)
   }
 
@@ -91,8 +79,7 @@ const createViteConfig = (componentPath, spritePath) => {
 
   const configPath = path.join(import.meta.dirname, 'vite.config.template.js')
   let config = fs.readFileSync(configPath, 'utf8')
-  config = config.replace(/{RESOURCES_PATH}/g, componentPath)
-                 .replace(/{PUBLIC_PATH}/g, spritePath)
+  config = config.replace(/{RESOURCES_PATH}/g, componentPath).replace(/{PUBLIC_PATH}/g, spritePath)
   fs.writeFileSync('./vite.config.js', config)
 }
 
@@ -105,7 +92,6 @@ const copySpriteSheet = spritePath => {
   const dest = path.join(spritePath, 'main-icons-sprite.svg')
   fs.copyFileSync(spriteFile, dest)
 }
-
 
 /******************************************************************************
  * Non-interactive
@@ -132,15 +118,17 @@ if (process.argv.includes('--non-interactive')) {
 intro('@imarc/pronto')
 
 const askCopy = await confirm({
-  message: 'Should I copy components from Pronto into your project?'
+  message: 'Should I copy components from Pronto into your project?',
 })
 
 checkCancel(askCopy)
 
-const askCopyPath = askCopy ? await text({
-    message: 'Where to?',
-    initialValue: './resources',
-  }) : false
+const askCopyPath = askCopy
+  ? await text({
+      message: 'Where to?',
+      initialValue: './resources',
+    })
+  : false
 
 checkCancel(askCopyPath)
 
@@ -149,7 +137,7 @@ if (askCopy && askCopyPath) {
 }
 
 const askAddDependency = await confirm({
-  message: 'Should I add @imarc/pronto as a dependency for you?'
+  message: 'Should I add @imarc/pronto as a dependency for you?',
 })
 
 checkCancel(askAddDependency)
@@ -159,22 +147,24 @@ if (askAddDependency) {
 }
 
 const askCopySpriteSheet = await confirm({
-  message: 'Should I copy the SVG spritesheet into your project?'
+  message: 'Should I copy the SVG spritesheet into your project?',
 })
 
 checkCancel(askCopySpriteSheet)
 
-const askSpritePath = askCopySpriteSheet ? await text({
-  message: 'Where to?',
-  initialValue: './public',
-}) : false
+const askSpritePath = askCopySpriteSheet
+  ? await text({
+      message: 'Where to?',
+      initialValue: './public',
+    })
+  : false
 
 if (askCopySpriteSheet && askSpritePath) {
   copySpriteSheet(askSpritePath)
 }
 
 const askCopyAgentFiles = await confirm({
-  message: 'Should I copy Pronto agent files into your project?'
+  message: 'Should I copy Pronto agent files into your project?',
 })
 
 checkCancel(askCopyAgentFiles)
@@ -187,7 +177,7 @@ const viteConfig = path.join(process.cwd(), 'vite.config.js')
 
 if (!fs.existsSync(viteConfig)) {
   const askCreateViteConfig = await confirm({
-    message: 'Should I create a vite.config.js for you?'
+    message: 'Should I create a vite.config.js for you?',
   })
 
   if (askCreateViteConfig) {
@@ -196,6 +186,5 @@ if (!fs.existsSync(viteConfig)) {
 } else {
   log.info(`You already have a vite.config.js, skipping creating one for you...`)
 }
-
 
 outro(`You're all set!`)

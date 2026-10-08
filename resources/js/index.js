@@ -15,6 +15,7 @@ createApp({
     PLazy: defineAsyncComponent(() => import('./components/PLazy.vue')),
     POpenable: defineAsyncComponent(() => import('./components/POpenable.vue')),
     PTabs: defineAsyncComponent(() => import('./components/PTabs.vue')),
+    PToggleMotion: defineAsyncComponent(() => import('./components/PToggleMotion.vue')),
     PDirectionalKeys: defineAsyncComponent(() => import('./components/PDirectionalKeys.vue')),
 
     PSelect: defineAsyncComponent(() => import('@vueform/multiselect/themes/default.css') && import('@vueform/multiselect')),
