@@ -1,0 +1,22 @@
+vite.config.js
+  s_f4baa5c28e42de::t_0f76e2c5e16496 5,23
+  s_f4baa5c28e42de::t_1a0ef03b0ff756 36
+vite.config.template.js
+  s_f4baa5c28e42de::t_0f76e2c5e16496 4,27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "cfd30a7c3efbf2eb8ba4eeae929a911d869270d0",
+  "prompts": {},
+  "sessions": {
+    "s_f4baa5c28e42de": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ec725088-73d5-43b6-a95e-d720553d7068",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Kevin Hamer <kevin@imarc.com>"
+    }
+  }
+}
