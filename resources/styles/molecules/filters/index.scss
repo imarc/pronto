@@ -1,0 +1,60 @@
+@use '@/core' as *;
+
+.filters {
+  --filters-gap: 1rem;
+
+  background-color: var(--color-gray-50);
+  display: grid;
+  gap: var(--filters-gap);
+  padding: 1.5rem;
+
+  &__search,
+  &__field,
+  .select,
+  .select__input {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .search {
+    display: grid;
+  }
+
+  .select {
+    margin: 0;
+  }
+
+  .select__input {
+    margin: 0;
+  }
+
+  @include at(md) {
+    grid-template-columns: minmax(14rem, 2fr) repeat(3, minmax(10rem, 1fr));
+  }
+
+  &.-aside {
+    align-content: start;
+    grid-template-columns: 1fr;
+
+    @include at(md) {
+      position: sticky;
+      top: 1rem;
+    }
+  }
+}
+
+.filtersLayout {
+  display: grid;
+  gap: 2rem;
+
+  @include at(md) {
+    align-items: start;
+    grid-template-columns: minmax(14rem, 18rem) minmax(0, 1fr);
+  }
+}
+
+.filtersResults {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
