@@ -22,6 +22,7 @@ const toggleMotion = () => {
 <template>
   <button type="button" class="button -circle -small" :aria-pressed="reduceMotion" @click="toggleMotion">
     <slot>
+      <span class="srOnly">Reduce motion</span>
       <svg class="button__icon" aria-hidden="true">
         <use :href="reduceMotion ? '/main-icons-sprite.svg#play' : '/main-icons-sprite.svg#pause'" />
       </svg>
