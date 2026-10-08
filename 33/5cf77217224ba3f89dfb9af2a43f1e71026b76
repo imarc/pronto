@@ -1,0 +1,19 @@
+resources/js/components/PToggleMotion.vue
+  s_8cc730b3c15b7e::t_ce20e50b70b2db 25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "335cf77217224ba3f89dfb9af2a43f1e71026b76",
+  "prompts": {},
+  "sessions": {
+    "s_8cc730b3c15b7e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11bb6-4304-7490-ac9e-f1592388c44b",
+        "model": "gpt-5.6-terra"
+      },
+      "human_author": "Kevin Hamer <kevin@imarc.com>"
+    }
+  }
+}
