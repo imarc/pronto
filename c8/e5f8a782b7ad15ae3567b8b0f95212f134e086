@@ -1,0 +1,242 @@
+src/components/Overlay/index.ts
+  s_6c6669fdd16d6d::t_a41ec9e73da90a 1
+src/components/Sitemap/Sitemap.scss
+  s_6c6669fdd16d6d::t_a41ec9e73da90a 3-19
+  s_6c6669fdd16d6d::t_06348ead39c9bb 1-2
+src/components/Overlay/Overlay.scss
+  s_6c6669fdd16d6d::t_a41ec9e73da90a 1-260,263-269,271-415
+  s_6c6669fdd16d6d::t_97df0f880ba87c 261-262,270
+src/components/BasicSection/BasicSection.tsx
+  s_6c6669fdd16d6d::t_8382d5b3e5483a 1-38
+src/components/Tiles/index.ts
+  s_6c6669fdd16d6d::t_56128f83808a21 1
+src/components/Form/Form.stories.tsx
+  s_6c6669fdd16d6d::t_05c4511da13cdf 1-82
+src/components/FeatureVideo/FeatureVideo.stories.tsx
+  s_6c6669fdd16d6d::t_d9f06715b57c38 28
+  s_6c6669fdd16d6d::t_b3fdb21a76fe7b 1-27,29-45
+src/components/Cards/Cards.tsx
+  s_6c6669fdd16d6d::t_05988877744970 1-18
+src/components/OffsetSection/OffsetSection.stories.tsx
+  s_6c6669fdd16d6d::t_45de035af61ce4 1-22
+src/components/Hero/Hero.scss
+  s_6c6669fdd16d6d::t_182923747ba82b 1-200
+src/components/Sitemap/index.ts
+  s_6c6669fdd16d6d::t_a41ec9e73da90a 1
+src/components/EditorialSplit/EditorialSplit.stories.tsx
+  s_6c6669fdd16d6d::t_cc05ec54460d4a 1-79
+src/components/Dialog/index.ts
+  s_6c6669fdd16d6d::t_a41ec9e73da90a 1
+src/components/FeatureVideo/FeatureVideo.scss
+  s_6c6669fdd16d6d::t_a41ec9e73da90a 1-72
+src/components/Dialog/Dialog.scss
+  s_6c6669fdd16d6d::t_a41ec9e73da90a 3-18
+  s_6c6669fdd16d6d::t_06348ead39c9bb 1-2
+src/components/Cards/Cards.stories.tsx
+  s_6c6669fdd16d6d::t_bb1147a4a688f7 5,27-31
+  s_6c6669fdd16d6d::t_f9c505292ba5df 1-4,6-26,32-162
+src/components/RichText/RichText.stories.tsx
+  s_6c6669fdd16d6d::t_688338da566aa5 1-12,14-28,30-41,43-52,54-57,59-88
+  s_6c6669fdd16d6d::t_45de035af61ce4 13,29,42,53,58
+src/components/RichText/index.ts
+  s_6c6669fdd16d6d::t_688338da566aa5 1
+src/components/RichText/RichText.tsx
+  s_6c6669fdd16d6d::t_688338da566aa5 1-29
+src/components/Sitemap/Sitemap.tsx
+  s_6c6669fdd16d6d::t_a2bf355728cd11 1-39
+src/components/Hero/Hero.tsx
+  s_6c6669fdd16d6d::t_84c8e3eafd195a 1-46
+src/components/StackedSplitsSection/StackedSplitsSection.scss
+  s_6c6669fdd16d6d::t_ee598a0ccf673e 1-90
+src/components/Navigation/Navigation.stories.tsx
+  s_6c6669fdd16d6d::t_e35905546a7893 1-85
+src/components/Table/Table.stories.tsx
+  s_6c6669fdd16d6d::t_45de035af61ce4 9-18,66
+  s_6c6669fdd16d6d::t_57a634de03674c 1-8,19-65,67-101
+src/components/Overlay/Overlay.stories.tsx
+  s_6c6669fdd16d6d::t_91c7aca00ea773 1-30,32-128
+  s_6c6669fdd16d6d::t_97df0f880ba87c 31
+src/components/OffsetSection/OffsetSection.scss
+  s_6c6669fdd16d6d::t_ee598a0ccf673e 1-31
+src/components/Navigation/index.ts
+  s_6c6669fdd16d6d::t_a41ec9e73da90a 1
+src/components/Table/Table.scss
+  s_6c6669fdd16d6d::t_57a634de03674c 1-142
+src/components/Banner/Banner.tsx
+  s_6c6669fdd16d6d::t_4118c1bca41235 1-45
+src/components/Dialog/Dialog.tsx
+  s_6c6669fdd16d6d::t_e920c18f7de8d2 1-59
+src/components/Dialog/Dialog.stories.tsx
+  s_6c6669fdd16d6d::t_dae4a6b4fa57f6 1-60
+src/components/Table/index.ts
+  s_6c6669fdd16d6d::t_57a634de03674c 1
+src/components/Cards/Cards.scss
+  s_6c6669fdd16d6d::t_182923747ba82b 1-153
+src/components/PopoverActions/index.ts
+  s_6c6669fdd16d6d::t_a41ec9e73da90a 1
+src/components/MobileNavigation/MobileNavigation.tsx
+  s_6c6669fdd16d6d::t_d2f4b10bf33c79 1-10,12-67,70-76,78-104,106-112,114-127
+  s_6c6669fdd16d6d::t_97df0f880ba87c 11
+  s_6c6669fdd16d6d::t_9800c0d88b7e12 68-69,77,105,113
+src/components/Stats/index.ts
+  s_6c6669fdd16d6d::t_ace7451337c24a 1
+src/components/EditorialSplit/EditorialSplit.scss
+  s_6c6669fdd16d6d::t_182923747ba82b 1-122
+src/components/StackedSplitsSection/StackedSplitsSection.tsx
+  s_6c6669fdd16d6d::t_ace7451337c24a 1-52
+src/components/Tiles/Tiles.tsx
+  s_6c6669fdd16d6d::t_45de035af61ce4 66
+  s_6c6669fdd16d6d::t_56128f83808a21 1-65,67-97
+src/components/PopoverActions/PopoverActions.tsx
+  s_6c6669fdd16d6d::t_19579aff5b641c 1-44,46
+  s_6c6669fdd16d6d::t_97df0f880ba87c 45
+src/components/List/List.scss
+  s_6c6669fdd16d6d::t_f40459280b2c45 11-13
+src/components/Accordion/Accordion.tsx
+  s_6c6669fdd16d6d::t_5da8c1b64509be 8-13,27,59,61-68
+src/components/Table/Table.tsx
+  s_6c6669fdd16d6d::t_57a634de03674c 1-29,31-34
+  s_6c6669fdd16d6d::t_45de035af61ce4 30
+src/components/Banner/index.ts
+  s_6c6669fdd16d6d::t_a41ec9e73da90a 1
+src/components/Navigation/Navigation.scss
+  s_6c6669fdd16d6d::t_06348ead39c9bb 1-2
+  s_6c6669fdd16d6d::t_a41ec9e73da90a 3-65
+src/components/PopoverActions/PopoverActions.scss
+  s_6c6669fdd16d6d::t_a41ec9e73da90a 1-83
+src/components/BasicSection/BasicSection.scss
+  s_6c6669fdd16d6d::t_182923747ba82b 1-83
+src/components/AccordionGroup/AccordionGroup.scss
+  s_6c6669fdd16d6d::t_182923747ba82b 1-11
+src/components/OffsetSection/OffsetSection.tsx
+  s_6c6669fdd16d6d::t_05c4511da13cdf 1-37
+src/components/Hero/Hero.stories.tsx
+  s_6c6669fdd16d6d::t_84c8e3eafd195a 1-203
+src/components/Callout/Callout.stories.tsx
+  s_6c6669fdd16d6d::t_05988877744970 1-55
+src/components/MobileNavigation/index.ts
+  s_6c6669fdd16d6d::t_a41ec9e73da90a 1
+src/components/StackedSplitsSection/index.ts
+  s_6c6669fdd16d6d::t_ace7451337c24a 1
+src/components/MobileNavigation/MobileNavigation.scss
+  s_6c6669fdd16d6d::t_a41ec9e73da90a 3-74
+  s_6c6669fdd16d6d::t_06348ead39c9bb 1-2
+src/components/FeatureVideo/index.ts
+  s_6c6669fdd16d6d::t_a41ec9e73da90a 1
+src/components/FeatureVideo/FeatureVideo.tsx
+  s_6c6669fdd16d6d::t_5beba3dc3f4300 1-30
+src/components/Tiles/Tiles.scss
+  s_6c6669fdd16d6d::t_ee598a0ccf673e 1-353
+src/components/Stats/Stats.scss
+  s_6c6669fdd16d6d::t_ee598a0ccf673e 1-110
+src/components/StackedSplitsSection/StackedSplitsSection.stories.tsx
+  s_6c6669fdd16d6d::t_45de035af61ce4 8-9
+  s_6c6669fdd16d6d::t_ace7451337c24a 1-7,10-47
+src/components/Banner/Banner.scss
+  s_6c6669fdd16d6d::t_06348ead39c9bb 1-2
+  s_6c6669fdd16d6d::t_a41ec9e73da90a 3-55
+src/components/Callout/Callout.tsx
+  s_6c6669fdd16d6d::t_05988877744970 1-44
+src/components/MobileNavigation/MobileNavigation.stories.tsx
+  s_6c6669fdd16d6d::t_8d7cac71bcdd53 1-63
+src/components/Callout/Callout.scss
+  s_6c6669fdd16d6d::t_182923747ba82b 3-39
+  s_6c6669fdd16d6d::t_7282d6cc9d98b7 1-2
+src/components/Banner/Banner.stories.tsx
+  s_6c6669fdd16d6d::t_9cf80614058f19 1-38,40-41
+  s_6c6669fdd16d6d::t_97df0f880ba87c 39
+src/components/Sitemap/Sitemap.stories.tsx
+  s_6c6669fdd16d6d::t_9efe4c0c333524 1-24
+src/components/Tiles/Tiles.stories.tsx
+  s_6c6669fdd16d6d::t_45de035af61ce4 1-118
+src/components/DetailsSection/DetailsSection.scss
+  s_6c6669fdd16d6d::t_182923747ba82b 1-71
+src/components/Form/Form.tsx
+  s_6c6669fdd16d6d::t_05c4511da13cdf 1-12
+src/components/PopoverActions/PopoverActions.stories.tsx
+  s_6c6669fdd16d6d::t_47d44e8cf6a77b 1-58
+src/components/LogoCloud/LogoCloud.scss
+  s_6c6669fdd16d6d::t_ee598a0ccf673e 1-26
+src/components/BasicSection/BasicSection.stories.tsx
+  s_6c6669fdd16d6d::t_8382d5b3e5483a 1-190
+src/components/Overlay/Overlay.tsx
+  s_6c6669fdd16d6d::t_c4e7526ace2b7f 1-45,59-125
+  s_6c6669fdd16d6d::t_128446fb47ff60 46-58
+src/components/Stats/Stats.tsx
+  s_6c6669fdd16d6d::t_ace7451337c24a 1-37,39-49
+  s_6c6669fdd16d6d::t_05c4511da13cdf 38
+src/components/Navigation/Navigation.tsx
+  s_6c6669fdd16d6d::t_731eac7a3c6b9a 1-62,64-115
+  s_6c6669fdd16d6d::t_97df0f880ba87c 63
+src/components/Stats/Stats.stories.tsx
+  s_6c6669fdd16d6d::t_ace7451337c24a 1-16,18-28,30-34,36-45
+  s_6c6669fdd16d6d::t_45de035af61ce4 17,29,35
+src/components/EditorialCards/EditorialCards.scss
+  s_6c6669fdd16d6d::t_182923747ba82b 1-9
+src/components/AccordionGroup/AccordionGroup.stories.tsx
+  s_6c6669fdd16d6d::t_6abc4643475208 1-34
+src/components/AccordionGroup/AccordionGroup.tsx
+  s_6c6669fdd16d6d::t_19cd2f220e3514 1-16
+src/components/AccordionGroup/index.ts
+  s_6c6669fdd16d6d::t_ac45db64f4380f 1
+src/components/BasicSection/index.ts
+  s_6c6669fdd16d6d::t_135bdd5e609de1 1
+src/components/Callout/index.ts
+  s_6c6669fdd16d6d::t_b00111a993ca36 1
+src/components/Cards/index.ts
+  s_6c6669fdd16d6d::t_3dc04ad6aef826 1
+src/components/DetailsSection/DetailsSection.stories.tsx
+  s_6c6669fdd16d6d::t_ae1b65cff30d97 1-39
+src/components/DetailsSection/DetailsSection.tsx
+  s_6c6669fdd16d6d::t_e744de493c0ed5 1-42
+src/components/DetailsSection/index.ts
+  s_6c6669fdd16d6d::t_219167099894ec 1
+src/components/EditorialCards/EditorialCards.stories.tsx
+  s_6c6669fdd16d6d::t_d8a3ac58417324 1-29
+src/components/EditorialCards/EditorialCards.tsx
+  s_6c6669fdd16d6d::t_6646c5049d1341 1-4,6,8-18
+src/components/EditorialCards/index.ts
+  s_6c6669fdd16d6d::t_d350f84e3e1f5f 1
+src/components/EditorialSplit/EditorialSplit.tsx
+  s_6c6669fdd16d6d::t_f5e38ff5b8d71e 1-38
+src/components/EditorialSplit/index.ts
+  s_6c6669fdd16d6d::t_6e8cb4cf688f9c 1
+src/components/Form/index.ts
+  s_6c6669fdd16d6d::t_79f4be642f7d39 1
+src/components/Hero/index.ts
+  s_6c6669fdd16d6d::t_02c33ffe5ecba4 1
+src/components/LogoCloud/LogoCloud.stories.tsx
+  s_6c6669fdd16d6d::t_09cf86b543c535 1-40
+src/components/LogoCloud/LogoCloud.tsx
+  s_6c6669fdd16d6d::t_2b013068e2c28c 1-34
+src/components/LogoCloud/index.ts
+  s_6c6669fdd16d6d::t_b87c034615180d 1
+src/components/OffsetSection/index.ts
+  s_6c6669fdd16d6d::t_5a6ef9b6f06b7b 1
+.playwright-mcp/console-2026-10-19T18-39-54-093Z.log
+  s_17874b4cb1b7bc::t_0b5b0812e94d26 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c8e5f8a782b7ad15ae3567b8b0f95212f134e086",
+  "prompts": {},
+  "sessions": {
+    "s_17874b4cb1b7bc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a87923c141535c14c",
+        "model": "unknown"
+      },
+      "human_author": "Kevin Hamer <kevin@imarc.com>"
+    },
+    "s_6c6669fdd16d6d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6bdf9c14-e1f5-4c77-8c75-1c490cdb1440",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Kevin Hamer <kevin@imarc.com>"
+    }
+  }
+}
