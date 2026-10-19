@@ -1,0 +1,23 @@
+src/components/Section/Section.stories.tsx
+  s_6c6669fdd16d6d::t_7bbb2b21b31f30 1-43
+src/components/Section/Section.tsx
+  s_6c6669fdd16d6d::t_06fa77bf8fa47f 1-34
+src/components/Section/index.ts
+  s_6c6669fdd16d6d::t_45e069ff47864b 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e2b28e00c813d1b14a743302576dfea0f985ef10",
+  "prompts": {},
+  "sessions": {
+    "s_6c6669fdd16d6d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6bdf9c14-e1f5-4c77-8c75-1c490cdb1440",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Kevin Hamer <kevin@imarc.com>"
+    }
+  }
+}
