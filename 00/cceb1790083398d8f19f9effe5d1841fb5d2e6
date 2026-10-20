@@ -1,0 +1,92 @@
+src/components/FeaturedTestimonials/FeaturedTestimonials.scss
+  s_6c6669fdd16d6d::t_a4924024697d8a 1-26
+src/components/MediaBanner/MediaBanner.stories.tsx
+  s_6c6669fdd16d6d::t_388f798d8094e2 1-70,72-84
+  s_6c6669fdd16d6d::t_e42a3db7d3cf50 71
+src/components/Message/Message.stories.tsx
+  s_6c6669fdd16d6d::t_47969900cdec6d 1-10,18-53
+  s_6c6669fdd16d6d::t_de3b70238cb7f3 11-17
+stylelint.config.mjs
+  s_6c6669fdd16d6d::t_74f0b682846186 9
+src/components/SiteHeader/index.ts
+  s_6c6669fdd16d6d::t_5d2ecb8d200dc5 1
+src/components/SiteHeader/SiteHeader.stories.tsx
+  s_6c6669fdd16d6d::t_a1e4aead29084f 1-97
+src/components/EditorialSplit/EditorialSplit.tsx
+  s_6c6669fdd16d6d::t_de3b70238cb7f3 7
+src/components/FeaturedTestimonials/FeaturedTestimonials.stories.tsx
+  s_6c6669fdd16d6d::t_e345c63b302864 1-29
+src/components/Message/index.ts
+  s_6c6669fdd16d6d::t_5d2ecb8d200dc5 1
+src/components/FeatureSlider/FeatureSlider.stories.tsx
+  s_6c6669fdd16d6d::t_dcb9add1025ae7 1-39
+src/components/SiteFooter/index.ts
+  s_6c6669fdd16d6d::t_5d2ecb8d200dc5 1
+src/components/MediaBanner/index.ts
+  s_6c6669fdd16d6d::t_388f798d8094e2 1
+src/components/FeaturedTestimonials/index.ts
+  s_6c6669fdd16d6d::t_e345c63b302864 1
+.agents/commands/new-component.md
+  s_6c6669fdd16d6d::t_96a684245bf8f1 2,7,13,15,18,20-21,23,25,27,30-32,37,39-42,44,46-48,51,53-55,57-61,63-64,66-67,69,71,73-74,77,79-81,83
+src/components/SiteHeader/SiteHeader.scss
+  s_6c6669fdd16d6d::t_24f224a1de3dce 83,86-89
+  s_6c6669fdd16d6d::t_5d2ecb8d200dc5 1-82,84-85,90-212
+src/components/FeatureSlider/FeatureSlider.tsx
+  s_6c6669fdd16d6d::t_dcb9add1025ae7 1-54
+src/components/MediaBanner/MediaBanner.tsx
+  s_6c6669fdd16d6d::t_388f798d8094e2 1-4,6-60
+  s_6c6669fdd16d6d::t_e2fbd6538c9795 5
+src/components/Message/Message.tsx
+  s_6c6669fdd16d6d::t_fc7090aaeaf88f 1-47
+src/components/SiteFooter/SiteFooter.tsx
+  s_6c6669fdd16d6d::t_642e076bb16215 1-86
+src/pages/TextBasedModules.stories.tsx
+  s_6c6669fdd16d6d::t_3be4a827113967 109,142
+  s_6c6669fdd16d6d::t_4257e5c7185c91 1-108,110-141,143-190
+src/index.ts
+  s_6c6669fdd16d6d::t_1dc46ae0481d5a 4-8,10-31,33-78,80-81
+src/components/Slider/Slider.tsx
+  s_6c6669fdd16d6d::t_74f0b682846186 1-2,15-16
+src/components/SiteFooter/SiteFooter.scss
+  s_6c6669fdd16d6d::t_4a798f5946fec3 69-74
+  s_6c6669fdd16d6d::t_5d2ecb8d200dc5 1-68,75-83
+src/components/FeatureSlider/index.ts
+  s_6c6669fdd16d6d::t_dcb9add1025ae7 1
+src/components/SiteHeader/SiteHeader.tsx
+  s_6c6669fdd16d6d::t_8aebb9a0140c52 1,3-43,45,47-66
+  s_6c6669fdd16d6d::t_6c87729a7bd154 2,44,46
+src/components/SiteFooter/SiteFooter.stories.tsx
+  s_6c6669fdd16d6d::t_04f695813d26c3 1-66
+src/components/FeatureSlider/FeatureSlider.scss
+  s_6c6669fdd16d6d::t_a4924024697d8a 1-78
+.agents/skills/pronto/SKILL.md
+  s_6c6669fdd16d6d::t_96a684245bf8f1 3,7,11-13,15-18,20,25-30,39-54,56,58,60-68,88
+src/components/FeaturedTestimonials/FeaturedTestimonials.tsx
+  s_6c6669fdd16d6d::t_e345c63b302864 1-40
+src/components/MediaBanner/MediaBanner.scss
+  s_6c6669fdd16d6d::t_c335a080a1d548 43
+src/components/TestimonialSlider/TestimonialSlider.stories.tsx
+  s_6c6669fdd16d6d::t_f1c46643a1b7eb 1-40
+src/components/TestimonialSlider/TestimonialSlider.tsx
+  s_6c6669fdd16d6d::t_efa40029661eea 1-54
+src/components/TestimonialSlider/index.ts
+  s_6c6669fdd16d6d::t_fff5b59ea66ce1 1
+src/components/ToggleMotion/ToggleMotion.stories.tsx
+  s_6c6669fdd16d6d::t_fab1be8505c2ec 2-4,19-27,40-51,81-85
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "00cceb1790083398d8f19f9effe5d1841fb5d2e6",
+  "prompts": {},
+  "sessions": {
+    "s_6c6669fdd16d6d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6bdf9c14-e1f5-4c77-8c75-1c490cdb1440",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Kevin Hamer <kevin@imarc.com>"
+    }
+  }
+}
