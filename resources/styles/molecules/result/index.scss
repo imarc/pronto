@@ -17,9 +17,13 @@
   }
 
   &__url {
-    color: var(--color-gray-500);
+    color: var(--color-gray-600);
     font-size: fluid-rems(0.75, 0.875);
     margin: 0.5rem 0 0;
     overflow-wrap: anywhere;
+
+    a {
+      color: inherit;
+    }
   }
 }
