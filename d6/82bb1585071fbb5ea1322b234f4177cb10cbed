@@ -1,0 +1,72 @@
+resources/styles/organisms/accordionGroup/accordionGroup.html
+  s_bbb04a7191c40e::t_cf9f3bd6da5eba 1-41
+resources/styles/organisms/editorialCards/editorialCards.html
+  s_bbb04a7191c40e::t_cf9f3bd6da5eba 1-40
+resources/styles/organisms/editorialCards/index.scss
+  s_bbb04a7191c40e::t_cf9f3bd6da5eba 1-9
+resources/styles/organisms/featureSlider/index.scss
+  s_bbb04a7191c40e::t_cf9f3bd6da5eba 1-78
+resources/styles/atoms/media/index.scss
+  s_bbb04a7191c40e::t_cf9f3bd6da5eba 80
+resources/js/components/PToggleMotion.vue
+  s_bbb04a7191c40e::t_cf9f3bd6da5eba 1-31
+resources/styles/organisms/featureSlider/featureSlider.html
+  s_bbb04a7191c40e::t_cf9f3bd6da5eba 1-106
+vite.config.js
+  s_bbb04a7191c40e::t_cf9f3bd6da5eba 11,20-21,26-29
+resources/js/components/PToggleMotion.html
+  s_bbb04a7191c40e::t_cf9f3bd6da5eba 1-103
+eslint.config.js
+  s_bbb04a7191c40e::t_cf9f3bd6da5eba 36-42
+resources/styles/molecules/popoverActions/index.scss
+  s_bbb04a7191c40e::t_cf9f3bd6da5eba 1,9,11-18,20-26,28-31,34-40,42,44-51,53-73,75-80,82
+bin.js
+  s_bbb04a7191c40e::t_cf9f3bd6da5eba 19,21-22,24,26,28,35-38,49,62,82,121,126-131,140,150,155-160,167,180
+resources/styles/config/index.scss
+  s_bbb04a7191c40e::t_cf9f3bd6da5eba 10-11,165,168,173-183
+  s_bbb04a7191c40e::t_99c2bead426696 184
+resources/styles/organisms/index.scss
+  s_bbb04a7191c40e::t_cf9f3bd6da5eba 2,21-22
+resources/styles/atoms/index.scss
+  s_bbb04a7191c40e::t_cf9f3bd6da5eba 22
+vite.config.template.js
+  s_bbb04a7191c40e::t_cf9f3bd6da5eba 12,44-45,48,50-57
+resources/js/components/PSlider.vue
+  s_bbb04a7191c40e::t_cf9f3bd6da5eba 3,23,26-49,52,64,66,73-75,95,101,123-124
+resources/styles/atoms/userDisclosure/index.scss
+  s_bbb04a7191c40e::t_cf9f3bd6da5eba 1,8,10-21,23-26,28,30-37,39-44,47-50,53-59,61,63-67,69-92
+resources/styles/organisms/accordionGroup/index.scss
+  s_bbb04a7191c40e::t_cf9f3bd6da5eba 1-11
+package.json
+  s_bbb04a7191c40e::t_cf9f3bd6da5eba 30-31,33-34,37-42,44-46,49-50
+resources/styles/core/properties.scss
+  s_bbb04a7191c40e::t_cf9f3bd6da5eba 230-237,259-263
+  s_bbb04a7191c40e::t_e363c464f3e3c1 229,264
+.editorconfig
+  s_bbb04a7191c40e::t_cf9f3bd6da5eba 1-10
+resources/styles/atoms/userDisclosure/userDisclosure.html
+  s_bbb04a7191c40e::t_cf9f3bd6da5eba 9,25,41
+resources/js/index.js
+  s_bbb04a7191c40e::t_cf9f3bd6da5eba 18
+index.js
+  s_bbb04a7191c40e::t_cf9f3bd6da5eba 1
+resources/styles/molecules/accordion/index.scss
+  s_bbb04a7191c40e::t_cf9f3bd6da5eba 1-2,88-132
+  s_bbb04a7191c40e::t_7abeb50f9c3a3c 133-134
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d682bb1585071fbb5ea1322b234f4177cb10cbed",
+  "prompts": {},
+  "sessions": {
+    "s_bbb04a7191c40e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a19e41-23f0-7803-a24b-4b040e2433bc",
+        "model": "gpt-6.1-terra"
+      },
+      "human_author": "Kevin Hamer <kevin@imarc.com>"
+    }
+  }
+}
