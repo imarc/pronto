@@ -227,6 +227,15 @@
 }
 
 /**
+ * Browser Preferences
+ */
+@property --reduce-motion {
+  syntax: '*';
+  inherits: true;
+  initial-value: unset;
+}
+
+/**
  * Durations 
  */
 @property --root-duration-fast {
@@ -245,6 +254,12 @@
   syntax: '<time>';
   inherits: true;
   initial-value: 400ms;
+}
+
+@property --root-duration-cinematic {
+  syntax: '<time>';
+  inherits: true;
+  initial-value: 650ms;
 }
 
 /**
