@@ -1,0 +1,103 @@
+<h2>Toggle Motion</h2>
+<p>Toggle reduced motion for all examples below.</p>
+
+<p-toggle-motion></p-toggle-motion>
+
+<section>
+  <h3>Horizontal Accordion</h3>
+  <div class="accordionGroup -horizontal">
+    <details name="motion-accordion" class="accordion -horizontal" open>
+      <summary class="accordion__summary">
+        <img class="accordion__logo" alt="Aster" src="https://placehold.co/160x100/9933ff/fff?text=Aster" />
+      </summary>
+      <div class="accordion__content">
+        <h4 class="accordion__heading">Aster</h4>
+        <p>The shared motion setting controls this panel's expansion transition.</p>
+      </div>
+    </details>
+    <details name="motion-accordion" class="accordion -horizontal">
+      <summary class="accordion__summary">
+        <img class="accordion__logo" alt="Briar" src="https://placehold.co/160x100/9933ff/fff?text=Briar" />
+      </summary>
+      <div class="accordion__content">
+        <h4 class="accordion__heading">Briar</h4>
+        <p>Shared names preserve the native one-open-panel behavior.</p>
+      </div>
+    </details>
+    <details name="motion-accordion" class="accordion -horizontal">
+      <summary class="accordion__summary">
+        <img class="accordion__logo" alt="Cinder" src="https://placehold.co/160x100/9933ff/fff?text=Cinder" />
+      </summary>
+      <div class="accordion__content">
+        <h4 class="accordion__heading">Cinder</h4>
+        <p>At smaller viewports, these panels use the usual stacked layout.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section>
+  <h3>Slider</h3>
+  <div class="slider">
+    <div class="slider__content">
+      <p-slider slides-per-view="auto" space-between="16" navigation="true" pagination-clickable="true" loop="true" aria-label="Slider example">
+        <swiper-slide loading="lazy" class="placeholder">Slide 1</swiper-slide>
+        <swiper-slide loading="lazy" class="placeholder">Slide 2</swiper-slide>
+        <swiper-slide loading="lazy" class="placeholder">Slide 3</swiper-slide>
+        <swiper-slide loading="lazy" class="placeholder">Slide 4</swiper-slide>
+        <swiper-slide loading="lazy" class="placeholder" style="aspect-ratio: 16 / 9">Wide</swiper-slide>
+        <swiper-slide loading="lazy" class="placeholder">Slide 6</swiper-slide>
+      </p-slider>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Autoplaying Slider</h3>
+  <div class="slider">
+    <div class="slider__content">
+      <p-slider slides-per-view="auto" space-between="16" navigation="true" pagination-clickable="true" loop="true" aria-label="Autoplaying slider example" :autoplay="{ delay: 500, pauseOnMouseEnter: true }">
+        <swiper-slide loading="lazy" class="placeholder">Slide 1</swiper-slide>
+        <swiper-slide loading="lazy" class="placeholder">Slide 2</swiper-slide>
+        <swiper-slide loading="lazy" class="placeholder">Slide 3</swiper-slide>
+        <swiper-slide loading="lazy" class="placeholder">Slide 4</swiper-slide>
+        <swiper-slide loading="lazy" class="placeholder" style="aspect-ratio: 16 / 9">Wide</swiper-slide>
+        <swiper-slide loading="lazy" class="placeholder">Slide 6</swiper-slide>
+      </p-slider>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Feature Slider</h3>
+  <div class="featureSlider">
+    <div class="featureSlider__viewport">
+      <div class="featureSlider__track">
+        <ul class="featureSlider__list">
+          <li class="featureSlider__card">
+            <span class="featureSlider__eyebrow eyebrow">How it works</span>
+            <h4 class="featureSlider__headline">Human review</h4>
+            <p class="featureSlider__subheadline">Manually QA and approve suggestions.</p>
+          </li>
+          <li class="featureSlider__card">
+            <span class="featureSlider__eyebrow eyebrow">How it works</span>
+            <h4 class="featureSlider__headline">Deploy updates</h4>
+            <p class="featureSlider__subheadline">Launch changes to controlled slices.</p>
+          </li>
+        </ul>
+        <ul class="featureSlider__list" aria-hidden="true">
+          <li class="featureSlider__card">
+            <span class="featureSlider__eyebrow eyebrow">How it works</span>
+            <h4 class="featureSlider__headline">Human review</h4>
+            <p class="featureSlider__subheadline">Manually QA and approve suggestions.</p>
+          </li>
+          <li class="featureSlider__card">
+            <span class="featureSlider__eyebrow eyebrow">How it works</span>
+            <h4 class="featureSlider__headline">Deploy updates</h4>
+            <p class="featureSlider__subheadline">Launch changes to controlled slices.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
