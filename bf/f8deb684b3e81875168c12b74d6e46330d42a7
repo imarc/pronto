@@ -1,0 +1,20 @@
+resources/js/components/PAnimatedLogoColumns.vue
+  s_366637739967a6::t_1bb778ab0c0075 27,41-44,64
+  s_366637739967a6::t_61e2edb8e61e17 20-24,31,51-53,58
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "bff8deb684b3e81875168c12b74d6e46330d42a7",
+  "prompts": {},
+  "sessions": {
+    "s_366637739967a6": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1a84f-70a4-7d12-9100-26f3461d2f56",
+        "model": "gpt-6.1-terra"
+      },
+      "human_author": "Kevin Hamer <kevin@imarc.com>"
+    }
+  }
+}
