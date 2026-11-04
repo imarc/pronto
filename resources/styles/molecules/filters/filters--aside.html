@@ -1,0 +1,85 @@
+<h2>Resource filters: aside</h2>
+<p>The <code>.-aside</code> modifier stacks controls and keeps the keyword search first. Use <code>.filtersLayout</code> to place it beside results.</p>
+
+<div class="filtersLayout">
+  <aside>
+    <form class="filters -aside" aria-label="Filter resources">
+      <div class="filters__search search">
+        <svg class="search__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M232.49,215.51,185,168a92.12,92.12,0,1,0-17,17l47.53,47.54a12,12,0,0,0,17-17ZM44,112a68,68,0,1,1,68,68A68.07,68.07,0,0,1,44,112Z"></path></svg>
+        <input class="search__input input" type="search" name="keyword" placeholder="Search resources" aria-label="Search resources" />
+      </div>
+      <label class="filters__field select"
+        ><span class="srOnly">Topic</span
+        ><select class="select__input" name="topic">
+          <option value="">All topics</option>
+          <option>Strategy</option>
+          <option>Design</option>
+        </select></label
+      >
+      <label class="filters__field select"
+        ><span class="srOnly">Resource type</span
+        ><select class="select__input" name="type">
+          <option value="">All resource types</option>
+          <option>Article</option>
+          <option>Guide</option>
+        </select></label
+      >
+      <label class="filters__field select"
+        ><span class="srOnly">Industry</span
+        ><select class="select__input" name="industry">
+          <option value="">All industries</option>
+          <option>Healthcare</option>
+          <option>Technology</option>
+        </select></label
+      >
+    </form>
+  </aside>
+  <section aria-label="Resource results">
+    <ul class="cards -columns-2 filtersResults">
+      <li>
+        <article class="card">
+          <div class="card__content">
+            <h3 class="card__title">Planning a successful redesign</h3>
+            <p class="card__description">A practical guide to aligning your team around a shared vision.</p>
+            <a href="#" class="card__cta link -wide" aria-label="Read article: Planning a successful redesign"
+              >Read article <svg class="card__ctaIcon link__icon"><use href="/main-icons-sprite.svg#arrow-right" /></svg
+            ></a>
+          </div>
+        </article>
+      </li>
+      <li>
+        <article class="card">
+          <div class="card__content">
+            <h3 class="card__title">A better content model</h3>
+            <p class="card__description">How structured content makes publishing more flexible and durable.</p>
+            <a href="#" class="card__cta link -wide" aria-label="Read guide: A better content model"
+              >Read guide <svg class="card__ctaIcon link__icon"><use href="/main-icons-sprite.svg#arrow-right" /></svg
+            ></a>
+          </div>
+        </article>
+      </li>
+      <li>
+        <article class="card">
+          <div class="card__content">
+            <h3 class="card__title">Designing for complex systems</h3>
+            <p class="card__description">Lessons from building a scalable design system.</p>
+            <a href="#" class="card__cta link -wide" aria-label="Read article: Designing for complex systems"
+              >Read article <svg class="card__ctaIcon link__icon"><use href="/main-icons-sprite.svg#arrow-right" /></svg
+            ></a>
+          </div>
+        </article>
+      </li>
+      <li>
+        <article class="card">
+          <div class="card__content">
+            <h3 class="card__title">Making the most of analytics</h3>
+            <p class="card__description">Start with questions that lead to decisions your team can act on.</p>
+            <a href="#" class="card__cta link -wide" aria-label="Read article: Making the most of analytics"
+              >Read article <svg class="card__ctaIcon link__icon"><use href="/main-icons-sprite.svg#arrow-right" /></svg
+            ></a>
+          </div>
+        </article>
+      </li>
+    </ul>
+  </section>
+</div>
