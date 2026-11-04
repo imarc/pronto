@@ -17,63 +17,51 @@
   Markup lives in HTML/CMS. This component only handles motion prefs and ARIA toggling.
 -->
 <script setup>
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, ref, useAttrs } from 'vue'
 
-// Accessible name for the logo group. Pass the section heading id via aria-labelledby.
-const props = defineProps({
-  ariaLabel: {
-    type: String,
-    default: undefined,
-  },
-  ariaLabelledby: {
-    type: String,
-    default: undefined,
-  },
-  // Id of the #company-list <ul>. Used as aria-describedby during flipper mode only.
-  ariaDescribedby: {
-    type: String,
-    default: undefined,
-  },
-})
+defineOptions({ inheritAttrs: false })
+
+const attrs = useAttrs()
 
 const isPlaying = ref(true)
+const playPauseButton = ref(null)
 
 const prefersReducedMotion = ref(false)
 
-// Default: flipper for sighted users, visually hiddencompany list for screen readers.
+// Default: flipper for sighted users, visually hidden company list for screen readers.
 const isFlipperMode = computed(() => !prefersReducedMotion.value)
 
 // Reduced motion: static grid for everyone
 const isGridMode = computed(() => prefersReducedMotion.value)
 
-// Links the group to #company-list during flipper mode only.
-const ariaDescribedbyInFlipperMode = computed(() => (isFlipperMode.value ? props.ariaDescribedby : undefined))
-
 const togglePlay = () => {
   isPlaying.value = !isPlaying.value
 }
 
-// WCAG / ARIA carousel pattern: stop auto-rotation when focus enters the component.
-// Rotation only resumes if the user clicks play.
-const onFocusIn = () => {
-  if (!prefersReducedMotion.value) {
+// Pause when focus enters the content, but let the play/pause button control itself.
+// Rotation only resumes if the user activates play.
+const onFocusIn = event => {
+  if (isPlaying.value && event.target !== playPauseButton.value) {
     isPlaying.value = false
   }
 }
 
 onMounted(() => {
   prefersReducedMotion.value = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  if (prefersReducedMotion.value) {
+    isPlaying.value = false
+  }
 })
 </script>
 
 <template>
-  <div class="animatedLogoColumns__wrapper" :class="{ '-paused': !isPlaying }" role="group" :aria-label="ariaLabel" :aria-labelledby="ariaLabelledby" :aria-describedby="ariaDescribedbyInFlipperMode" @focusin="onFocusIn">
+  <div v-bind="attrs" class="animatedLogoColumns__wrapper" :class="{ '-paused': !isPlaying }" role="group" :aria-describedby="isFlipperMode ? attrs['aria-describedby'] : undefined" @focusin="onFocusIn">
     <!-- Company list: screen reader fallback during flipper mode -->
     <div :aria-hidden="isGridMode">
       <slot name="company-list" />
     </div>
 
-    <button v-if="isFlipperMode" class="animatedLogoColumns__playPause button -circle accent-primary" :aria-label="isPlaying ? 'Stop logo rotation' : 'Start logo rotation'" @click="togglePlay">
+    <button v-if="isFlipperMode" ref="playPauseButton" type="button" class="animatedLogoColumns__playPause button -circle accent-primary" :aria-label="isPlaying ? 'Stop logo rotation' : 'Start logo rotation'" @click="togglePlay">
       <svg class="button__icon" aria-hidden="true">
         <use :href="isPlaying ? '/main-icons-sprite.svg#pause' : '/main-icons-sprite.svg#play'" />
       </svg>
