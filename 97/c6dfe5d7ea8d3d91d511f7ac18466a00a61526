@@ -1,0 +1,19 @@
+package.json
+  s_366637739967a6::t_abc095bf9d13a6 39,41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "97c6dfe5d7ea8d3d91d511f7ac18466a00a61526",
+  "prompts": {},
+  "sessions": {
+    "s_366637739967a6": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1a84f-70a4-7d12-9100-26f3461d2f56",
+        "model": "gpt-6.1-terra"
+      },
+      "human_author": "Kevin Hamer <kevin@imarc.com>"
+    }
+  }
+}
