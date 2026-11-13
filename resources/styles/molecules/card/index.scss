@@ -3,14 +3,78 @@
 .card {
   $b: &;
 
+  --card-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 0.1);
+  --card-shadow-hover: 0 0.75rem 1.5rem rgb(0 0 0 / 0.12);
+
   background-color: #ffffff;
   border-radius: 1rem;
-  box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 0.1);
+  box-shadow: var(--card-shadow);
   display: flex;
   flex-direction: column-reverse;
+  isolation: isolate;
   justify-content: flex-end;
   overflow: hidden;
   max-width: 100%;
+  position: relative;
+  transition: box-shadow var(--root-ease-out-moderate);
+
+  // The title link stretches over the whole card with ::after, so the card
+  // has a single link whose accessible name is the title.
+  &__link {
+    color: inherit;
+    display: inline;
+    transition: color var(--root-ease-out-fast);
+
+    &::after {
+      content: '';
+      inset: 0;
+      position: absolute;
+      z-index: 1;
+    }
+
+    &:hover {
+      color: inherit;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  // Any other interactive elements need to sit above the stretched link.
+  a:not(#{$b}__link),
+  button {
+    position: relative;
+    z-index: 2;
+  }
+
+  &:has(#{$b}__link:focus-visible) {
+    outline: 2px solid var(--link-color, var(--color-blue));
+    outline-offset: 4px;
+  }
+
+  &:has(#{$b}__link:hover),
+  &:has(#{$b}__link:focus-visible) {
+    box-shadow: var(--card-shadow-hover);
+
+    #{$b}__link,
+    #{$b}__cta {
+      color: var(--accent-color);
+    }
+
+    #{$b}__ctaIcon {
+      translate: 0.25rem 0;
+    }
+
+    #{$b}__button {
+      background-color: var(--accent-color-700);
+      border-color: var(--accent-color-700);
+    }
+
+    #{$b}__image {
+      scale: 1.03;
+    }
+  }
 
   &__imageWrapper {
     aspect-ratio: 1.78;
@@ -19,6 +83,8 @@
 
   &__image {
     @include image-fit(cover);
+
+    transition: scale var(--root-ease-out-slow);
   }
 
   &__tagList {
@@ -35,6 +101,10 @@
     display: flex;
     width: 100%;
     font-weight: 700;
+  }
+
+  &__ctaIcon {
+    transition: translate var(--root-ease-out-fast);
   }
 
   &__meta {
@@ -101,8 +171,10 @@
   }
 
   &.-horizontal {
+    --card-shadow: 0 1rem 4rem rgb(0 0 0 / 0.05);
+    --card-shadow-hover: 0 1rem 4rem rgb(0 0 0 / 0.12);
+
     background: var(--root-background-color);
-    box-shadow: 0 1rem 4rem rgb(0 0 0 / 0.05);
     display: grid;
     gap: 1.5rem;
     grid-template-columns: 1fr;
@@ -124,10 +196,6 @@
       flex-direction: column;
       gap: 1.5rem;
       min-width: 0;
-
-      #{$b}__link {
-        font-weight: 700;
-      }
     }
 
     #{$b}__intro {
