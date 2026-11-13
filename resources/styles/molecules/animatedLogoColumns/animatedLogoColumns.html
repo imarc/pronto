@@ -1,0 +1,90 @@
+<!--
+  Animated Logo Columns
+
+  Accessibility checklist:
+  - Section heading id → aria-labelledby on <p-animated-logo-columns>
+  - Company list id → aria-describedby on <p-animated-logo-columns> (must match)
+  - List item text must match each logo's alt attribute exactly
+-->
+<section class="section animatedLogoColumns -center">
+  <div class="container">
+    <h2 id="animated-logo-columns-heading" class="animatedLogoColumns__title">Animated Logo Columns</h2>
+    <p class="animatedLogoColumns__description">Base layout for 12 or fewer logos. Each column alternates between two logos.</p>
+
+    <!-- aria-describedby is used during flipper mode only to point to the company list -->
+    <p-animated-logo-columns aria-labelledby="animated-logo-columns-heading" aria-describedby="animated-logo-columns-companies">
+      <!--
+        Text fallback for assistive tech while logos animate.
+        id must match aria-describedby on <p-animated-logo-columns>.
+      -->
+      <template #company-list>
+        <ul id="animated-logo-columns-companies" class="animatedLogoColumns__companyList srOnly">
+          <li>Company 1</li>
+          <li>Company 2</li>
+          <li>Company 3</li>
+          <li>Company 4</li>
+          <li>Company 5</li>
+          <li>Company 6</li>
+          <li>Company 7</li>
+          <li>Company 8</li>
+          <li>Company 9</li>
+          <li>Company 10</li>
+          <li>Company 11</li>
+          <li>Company 12</li>
+        </ul>
+      </template>
+      <div class="animatedLogoColumns__grid" style="--num-logos: 12">
+        <!-- Each column holds two logos that alternate via CSS animation. -->
+        <div class="animatedLogoColumns__column" style="--column-id: 0">
+          <div class="animatedLogoColumns__logoWrapper">
+            <!-- alt text must show company name for accessibility -->
+            <img class="animatedLogoColumns__logo" alt="Company 1" src="https://placehold.co/260x150/9933ff/FFF?text=Company+1" />
+          </div>
+          <div class="animatedLogoColumns__logoWrapper">
+            <img class="animatedLogoColumns__logo" alt="Company 2" src="https://placehold.co/260x150/9933ff/FFF?text=Company+2" />
+          </div>
+        </div>
+        <div class="animatedLogoColumns__column" style="--column-id: 1">
+          <div class="animatedLogoColumns__logoWrapper">
+            <img class="animatedLogoColumns__logo" alt="Company 3" src="https://placehold.co/260x150/9933ff/FFF?text=Company+3" />
+          </div>
+          <div class="animatedLogoColumns__logoWrapper">
+            <img class="animatedLogoColumns__logo" alt="Company 4" src="https://placehold.co/260x150/9933ff/FFF?text=Company+4" />
+          </div>
+        </div>
+        <div class="animatedLogoColumns__column" style="--column-id: 2">
+          <div class="animatedLogoColumns__logoWrapper">
+            <img class="animatedLogoColumns__logo" alt="Company 5" src="https://placehold.co/260x150/9933ff/FFF?text=Company+5" />
+          </div>
+          <div class="animatedLogoColumns__logoWrapper">
+            <img class="animatedLogoColumns__logo" alt="Company 6" src="https://placehold.co/260x150/9933ff/FFF?text=Company+6" />
+          </div>
+        </div>
+        <div class="animatedLogoColumns__column" style="--column-id: 3">
+          <div class="animatedLogoColumns__logoWrapper">
+            <img class="animatedLogoColumns__logo" alt="Company 7" src="https://placehold.co/260x150/9933ff/FFF?text=Company+7" />
+          </div>
+          <div class="animatedLogoColumns__logoWrapper">
+            <img class="animatedLogoColumns__logo" alt="Company 8" src="https://placehold.co/260x150/9933ff/FFF?text=Company+8" />
+          </div>
+        </div>
+        <div class="animatedLogoColumns__column" style="--column-id: 4">
+          <div class="animatedLogoColumns__logoWrapper">
+            <img class="animatedLogoColumns__logo" alt="Company 9" src="https://placehold.co/260x150/9933ff/FFF?text=Company+9" />
+          </div>
+          <div class="animatedLogoColumns__logoWrapper">
+            <img class="animatedLogoColumns__logo" alt="Company 10" src="https://placehold.co/260x150/9933ff/FFF?text=Company+10" />
+          </div>
+        </div>
+        <div class="animatedLogoColumns__column" style="--column-id: 5">
+          <div class="animatedLogoColumns__logoWrapper">
+            <img class="animatedLogoColumns__logo" alt="Company 11" src="https://placehold.co/260x150/9933ff/FFF?text=Company+11" />
+          </div>
+          <div class="animatedLogoColumns__logoWrapper">
+            <img class="animatedLogoColumns__logo" alt="Company 12" src="https://placehold.co/260x150/9933ff/FFF?text=Company+12" />
+          </div>
+        </div>
+      </div>
+    </p-animated-logo-columns>
+  </div>
+</section>

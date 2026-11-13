@@ -1,0 +1,246 @@
+@use '@/core' as *;
+
+// Animated logo columns: CSS-driven flip animation with a static reduced-motion fallback.
+// Accessibility toggling (aria-hidden, play/pause) lives in PAnimatedLogoColumns.vue.
+.animatedLogoColumns {
+  $b: &;
+
+  &.-center {
+    #{$b}__title,
+    #{$b}__description {
+      text-align: center;
+    }
+  }
+
+  &__title,
+  &__description {
+    margin-bottom: 0;
+  }
+
+  &__wrapper {
+    position: relative;
+    padding: 2rem 0;
+
+    // Paused via JS (play button or focus). Stops CSS animations without removing them.
+    &.-paused #{$b}__logoWrapper {
+      animation-play-state: paused;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      padding-top: 2rem;
+
+      #{$b}__playPause.button {
+        display: none;
+      }
+    }
+  }
+
+  &__playPause.button.-circle {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 2;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  // Text-only company list for assistive tech while logos animate.
+  // List names must match each img alt attribute (see animatedLogoColumns.html).
+  &__companyList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include at(md) {
+      grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+    }
+  }
+
+  // Fixed-height viewport; two logo wrappers stack and animate inside.
+  &__column {
+    width: 100%;
+    position: relative;
+    overflow: clip;
+    height: 150px;
+    max-width: 200px;
+    margin: auto;
+  }
+
+  &__logoWrapper {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    animation: 9s ease-in-out infinite logo-slide;
+    padding: 1.5rem;
+    position: relative;
+    isolation: isolate;
+
+    // Hover glow behind the logo.
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity var(--root-duration-moderate) var(--root-ease-out);
+      background-color: transparent;
+      background-image: radial-gradient(ellipse 40% 60% at 50% 50%, rgb(153 51 255 / 0.35) 0%, rgb(153 51 255 / 0.22) 35%, rgb(153 51 255 / 0.12) 58%, rgb(153 51 255 / 0.04) 82%, rgb(153 51 255 / 0) 100%);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100% 100%;
+      width: 100%;
+      height: 100%;
+    }
+
+    &:hover {
+      &::before {
+        opacity: 1;
+      }
+
+      #{$b}__logo {
+        opacity: 1;
+      }
+    }
+
+    // Stagger each column's animation start.
+    &:where(:first-child) {
+      animation-delay: calc(var(--column-id) * 0.15s);
+    }
+
+    // Second logo in each column: positioned below, runs the reverse keyframe.
+    &:where(:last-child):not(:only-child) {
+      inset: calc(var(--spacing, 0.25rem) * 0);
+      animation-name: logo-slide-reverse;
+      animation-delay: calc(var(--column-id) * 0.15s);
+      position: absolute;
+      transform: translateY(100%);
+    }
+  }
+
+  &__logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+    opacity: 0.75;
+    transition: opacity var(--root-duration-moderate) var(--root-ease-out);
+    place-content: center;
+
+    img {
+      object-fit: contain;
+      width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  // First logo in a column: visible, slides up and out at the midpoint.
+  @keyframes logo-slide {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    46% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    50% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+
+    51% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+
+    96% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  // Second logo in a column: hidden below, slides in at the midpoint.
+  @keyframes logo-slide-reverse {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+
+    46% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+
+    50% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    96% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+  }
+
+  // Static grid fallback when the user prefers reduced motion.
+  // Flattens columns so every logo is visible at once (matches img alt text in AT).
+  @media (prefers-reduced-motion: reduce) {
+    #{$b}__grid {
+      grid-template-columns: repeat(2, 1fr);
+
+      @include at(md) {
+        grid-template-columns: repeat(calc(var(--num-logos) / 2), minmax(115px, 1fr));
+      }
+    }
+
+    // Remove column stacking; each logo wrapper becomes a direct grid cell.
+    #{$b}__column {
+      display: contents;
+      height: auto;
+      max-width: none;
+      overflow: visible;
+    }
+
+    #{$b}__logoWrapper {
+      animation: none;
+      height: fluid-rems(5, 7.5);
+      inset: auto;
+      isolation: auto;
+      margin: auto;
+      max-width: 150px;
+      opacity: 1;
+      position: static;
+      transform: none;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    #{$b}__logo {
+      opacity: 1;
+    }
+  }
+}
