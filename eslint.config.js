@@ -33,4 +33,11 @@ export default [
       },
     },
   },
+  {
+    // Swiper's custom element requires its native slot attribute.
+    files: ['resources/js/components/PSlider.vue'],
+    rules: {
+      'vue/no-deprecated-slot-attribute': 'off',
+    },
+  },
 ]

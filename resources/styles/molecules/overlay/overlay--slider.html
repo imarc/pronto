@@ -1,0 +1,92 @@
+<div class="container">
+  <h2>Background Content</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+  <div class="actions">
+    <button
+      class="button"
+      @click="
+        $refs.overlay.showModal();
+        $nextTick(() => $refs.overlay.querySelector('swiper-container')?.swiper?.update());
+      "
+    >
+      Open Overlay Slider
+    </button>
+  </div>
+</div>
+
+<dialog
+  class="overlay -slider webOnly"
+  ref="overlay"
+  @toggle="
+    if ($event.target.open) {
+      $nextTick(() => $event.target.querySelector('swiper-container')?.swiper?.update());
+    }
+  "
+>
+  <button class="overlay__close webOnly" aria-label="Close" @click="$refs.overlay.close()">
+    <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="32" y="34" width="2" height="48" rx="1" transform="rotate(-45 32 34)" fill="#F2E5FF" />
+      <rect x="66" y="32" width="2" height="48" rx="1" transform="rotate(45 66 32)" fill="#F2E5FF" />
+    </svg>
+  </button>
+  <div class="overlay__slider">
+    <button type="button" class="overlay__nav button -circle -prev" aria-label="Previous slide" @click="$refs.overlay.querySelector('swiper-container')?.swiper?.slidePrev()">
+      <svg class="button__icon" viewBox="0 0 18 18" aria-hidden="true">
+        <use href="/main-icons-sprite.svg#chevron-left" />
+      </svg>
+    </button>
+    <p-slider slides-per-view="1" space-between="0" keyboard="true" watch-overflow="false" loop="true" aria-label="Feature options">
+      <swiper-slide>
+        <article class="overlay__panel">
+          <div class="overlay__body">
+            <div class="overlay__intro">
+              <p class="overlay__eyebrow">Feature</p>
+              <h2 class="overlay__title">Component Options</h2>
+              <p class="overlay__description">Donec sit amet vestibulum turpis. Ut eget nibh pretium ipsum auctor pharetra. Curabitur maximus tristique pellentesque. Etiam pulvinar, tortor sed finibus scelerisque, neque libero vehicula neque, ut molestie mauris risus ac dui. Quisque vel imperdiet leo. Eget nibh pretium ipsum auctor pharetra.</p>
+            </div>
+            <a class="overlay__cta button" href="#">Default Button</a>
+          </div>
+          <div class="overlay__imageWrapper">
+            <img class="overlay__image" src="https://picsum.photos/seed/overlay-slide-1/800/800" alt="" />
+          </div>
+        </article>
+      </swiper-slide>
+      <swiper-slide>
+        <article class="overlay__panel">
+          <div class="overlay__body">
+            <div class="overlay__intro">
+              <p class="overlay__eyebrow">Feature</p>
+              <h2 class="overlay__title">Flexible Layouts</h2>
+              <p class="overlay__description">Suspendisse ac blandit nisi, non tempor purus. Pellentesque ornare tellus molestie quam pretium aliquet. Mauris eu est at velit cursus rutrum non sit amet turpis.</p>
+            </div>
+            <a class="overlay__cta button" href="#">Learn More</a>
+          </div>
+          <div class="overlay__imageWrapper">
+            <img class="overlay__image" src="https://picsum.photos/seed/overlay-slide-2/800/800" alt="" />
+          </div>
+        </article>
+      </swiper-slide>
+      <swiper-slide>
+        <article class="overlay__panel">
+          <div class="overlay__body">
+            <div class="overlay__intro">
+              <p class="overlay__eyebrow">Feature</p>
+              <h2 class="overlay__title">Accessible Controls</h2>
+              <p class="overlay__description">Quisque vel imperdiet leo. Eget nibh pretium ipsum auctor pharetra. Curabitur maximus tristique pellentesque. Etiam pulvinar, tortor sed finibus scelerisque.</p>
+            </div>
+            <a class="overlay__cta button" href="#">Get Started</a>
+          </div>
+          <div class="overlay__imageWrapper">
+            <img class="overlay__image" src="https://picsum.photos/seed/overlay-slide-3/800/800" alt="" />
+          </div>
+        </article>
+      </swiper-slide>
+    </p-slider>
+    <button type="button" class="overlay__nav button -circle -next" aria-label="Next slide" @click="$refs.overlay.querySelector('swiper-container')?.swiper?.slideNext()">
+      <svg class="button__icon" viewBox="0 0 18 18" aria-hidden="true">
+        <use href="/main-icons-sprite.svg#chevron-right" />
+      </svg>
+    </button>
+  </div>
+</dialog>

@@ -1,0 +1,78 @@
+@use '@/core' as *;
+
+.featureSlider {
+  --feature-slider-gap: var(--root-gap, 16px);
+  --feature-slider-card-width: min(20rem, calc(100vw - (var(--root-gap, 16px) * 2)));
+  --feature-slider-duration: 15s;
+
+  overflow: hidden;
+  position: relative;
+
+  &__playPause {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1;
+  }
+
+  &__viewport {
+    overflow: hidden;
+
+    &:hover {
+      .featureSlider__track {
+        animation-play-state: paused;
+      }
+    }
+  }
+
+  &__track {
+    display: flex;
+    gap: var(--feature-slider-gap);
+    width: max-content;
+    animation: feature-slider-scroll var(--feature-slider-duration) linear infinite;
+  }
+
+  &__list {
+    display: flex;
+    gap: var(--feature-slider-gap);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__card {
+    display: grid;
+    gap: 0.5rem;
+    width: var(--feature-slider-card-width);
+    padding: var(--feature-slider-gap);
+    border: 1px solid var(--root-border-color);
+    color: var(--root-color);
+  }
+
+  &__eyebrow {
+    margin-bottom: 0;
+    color: var(--accent-color);
+  }
+
+  &__headline {
+    margin: 0;
+    color: var(--root-color-headings);
+    font-size: var(--root-font-size-h4);
+  }
+
+  &__subheadline {
+    margin: 0;
+  }
+
+  @container style(--reduce-motion: reduce) {
+    &__track {
+      animation-play-state: paused;
+    }
+  }
+}
+
+@keyframes feature-slider-scroll {
+  to {
+    transform: translateX(calc(-50% - (var(--feature-slider-gap) / 2)));
+  }
+}

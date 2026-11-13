@@ -1,4 +1,8 @@
+@use '@/core' as *;
+
 .overlay {
+  $b: &;
+
   background: rgb(13 0 26 / 0.7);
   border: 0;
   border-radius: 0;
@@ -75,5 +79,337 @@
     color: rgb(255 255 255 / 0.9);
     font-size: 1rem;
     text-align: center;
+  }
+
+  /**
+   * Two-column bio / profile card variant (image + text).
+   * Keeps the fullscreen dark overlay; the white card lives in __panel.
+   */
+  &.-card {
+    #{$b}__panel {
+      --overlay-card-max-height: calc(100vh - var(--root-gap) * 2);
+      --overlay-card-width: min(81.25rem, calc(100vw - var(--root-gap) * 2), calc(var(--overlay-card-max-height) * 2));
+
+      background: var(--root-background-color);
+      border-radius: 1rem;
+      box-shadow: var(--root-box-shadow-med);
+      color: var(--root-color);
+      display: grid;
+      grid-template-columns: 1fr;
+      max-height: var(--overlay-card-max-height);
+      overflow: auto;
+      position: relative;
+      width: min(100%, var(--overlay-card-width));
+
+      @include at(md) {
+        grid-template-columns: 1fr 1fr;
+        height: min(calc(var(--overlay-card-width) / 2), var(--overlay-card-max-height));
+        overflow: hidden;
+        width: var(--overlay-card-width);
+      }
+    }
+
+    #{$b}__close {
+      color: var(--color-blue);
+      height: 1.125rem;
+      right: 1.5rem;
+      top: 1.5rem;
+      width: 1.125rem;
+
+      svg {
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    #{$b}__imageWrapper {
+      background: var(--accent-color-50);
+      min-height: 0;
+      padding: 2rem;
+
+      @include at(md) {
+        display: grid;
+      }
+    }
+
+    #{$b}__image {
+      aspect-ratio: 1;
+      box-shadow: none;
+      display: block;
+      height: auto;
+      max-height: 100%;
+      object-fit: cover;
+      width: 100%;
+
+      @include at(md) {
+        height: 100%;
+      }
+    }
+
+    #{$b}__body {
+      display: grid;
+      gap: 1.5rem;
+      min-height: 0;
+      padding: 1.5rem 2rem 2rem;
+
+      @include at(md) {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        overflow: hidden auto;
+      }
+    }
+
+    #{$b}__intro {
+      display: grid;
+      gap: 1rem;
+
+      @include at(md) {
+        margin-top: auto;
+      }
+    }
+
+    #{$b}__title {
+      font-size: var(--root-font-size-h1);
+      font-weight: 700;
+      line-height: 1.125;
+      margin: 0;
+    }
+
+    #{$b}__subtitle {
+      color: var(--root-color-headings);
+      font-size: var(--root-font-size-lg);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    #{$b}__title,
+    #{$b}__subtitle {
+      --root-color-headings: #333333;
+    }
+
+    #{$b}__description {
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    #{$b}__social {
+      --accent-color: var(--color-blue);
+
+      align-items: center;
+      gap: 3rem;
+      margin-bottom: 0;
+
+      .button.-square {
+        height: 2rem;
+        width: 2rem;
+      }
+
+      .button__icon {
+        display: block;
+        height: 2rem;
+        margin: 0;
+        width: 2rem;
+      }
+    }
+
+    #{$b}__quote {
+      box-shadow: none;
+      display: grid;
+      gap: 1rem;
+      margin: 0;
+      padding-left: 0;
+    }
+
+    #{$b}__quoteIcon {
+      --icon-color: var(--accent-color);
+
+      display: block;
+      height: 2.75rem;
+      width: 3rem;
+    }
+
+    #{$b}__quoteText {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      margin: 0;
+
+      @include at(md) {
+        font-size: var(--root-font-size-lg);
+      }
+    }
+  }
+
+  /**
+   * Slider variant: centered feature card with side prev/next controls.
+   * Each slide is text + CTA | square image (image fills card height).
+   */
+  &.-slider {
+    --overlay-slider-nav-size: 3rem;
+    --overlay-slider-nav-gap: 1.5rem;
+
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: hidden;
+
+    #{$b}__slider {
+      box-sizing: border-box;
+      display: grid;
+      gap: 0.75rem;
+      grid-template-areas:
+        "slide slide slide"
+        ". prev next";
+      grid-template-columns: 1fr auto auto;
+      max-width: 100%;
+      width: min(100%, calc(67.375rem + (var(--overlay-slider-nav-size) + var(--overlay-slider-nav-gap)) * 2));
+
+      @include at(md) {
+        align-items: center;
+        gap: var(--overlay-slider-nav-gap);
+        grid-template-areas: "prev slide next";
+        grid-template-columns: var(--overlay-slider-nav-size) minmax(0, 1fr) var(--overlay-slider-nav-size);
+      }
+    }
+
+    #{$b}__nav {
+      --accent-color: var(--color-blue);
+      --accent-color-text: #ffffff;
+
+      align-items: center;
+      display: inline-flex;
+      flex-shrink: 0;
+      height: var(--overlay-slider-nav-size);
+      justify-content: center;
+      padding: 0;
+      width: var(--overlay-slider-nav-size);
+
+      .button__icon {
+        height: 0.75rem;
+        margin: 0;
+        width: 0.75rem;
+      }
+
+      &.-prev {
+        grid-area: prev;
+      }
+
+      &.-next {
+        grid-area: next;
+      }
+    }
+
+    swiper-container {
+      display: block;
+      grid-area: slide;
+      max-width: 100%;
+      min-width: 0;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    swiper-container::part(container) {
+      overflow: hidden;
+    }
+
+    swiper-slide {
+      box-sizing: border-box;
+      height: auto;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    swiper-container::part(pagination),
+    swiper-container::part(button-prev),
+    swiper-container::part(button-next) {
+      display: none;
+    }
+
+    #{$b}__panel {
+      background: var(--root-background-color);
+      border-radius: 1rem;
+      box-shadow: var(--root-box-shadow-med);
+      color: var(--root-color);
+      display: grid;
+      grid-template-columns: 1fr;
+      max-height: calc(100vh - var(--root-gap) * 2);
+      max-width: 100%;
+      overflow: hidden;
+      width: 100%;
+
+      @include at(lg) {
+        grid-template-columns: 1fr auto;
+        height: min(26.75rem, calc(100vh - var(--root-gap) * 2));
+      }
+    }
+
+    #{$b}__body {
+      display: grid;
+      gap: 2rem;
+      padding: 2rem;
+
+      @include at(md) {
+        align-content: center;
+        overflow: hidden auto;
+      }
+    }
+
+    #{$b}__intro {
+      display: grid;
+      gap: 1rem;
+    }
+
+    #{$b}__eyebrow {
+      color: var(--accent-color);
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    #{$b}__title {
+      color: var(--root-color-headings);
+      font-size: var(--root-font-size-h2);
+      font-weight: 700;
+      line-height: 1.125;
+      margin: 0;
+    }
+
+    #{$b}__description {
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    #{$b}__cta {
+      --accent-color: var(--color-blue);
+
+      justify-self: start;
+    }
+
+    #{$b}__imageWrapper {
+      min-height: 0;
+
+      @include at(lg) {
+        aspect-ratio: 1;
+        height: 100%;
+        width: auto;
+      }
+    }
+
+    #{$b}__image {
+      aspect-ratio: 1;
+      border-radius: 0;
+      box-shadow: none;
+      display: block;
+      height: auto;
+      object-fit: cover;
+      width: 100%;
+
+      @include at(lg) {
+        height: 100%;
+        width: 100%;
+      }
+    }
   }
 }
