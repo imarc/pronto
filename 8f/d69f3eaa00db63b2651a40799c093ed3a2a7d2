@@ -1,0 +1,92 @@
+.editorconfig
+  h_fa30cb431001ee 1-10
+bin.js
+  h_fa30cb431001ee 19,21-22,24,26,28,35-38,49,62,82,121,126-131,140,150,155-160,167,180
+eslint.config.js
+  h_fa30cb431001ee 36-42
+index.js
+  h_fa30cb431001ee 1
+package.json
+  h_fa30cb431001ee 3,30-31,33-34,37-42,44-46,49-50
+resources/js/components/PSlider.vue
+  h_fa30cb431001ee 3,23,26-49,52,64,66,73-75,95,101,123-124
+resources/js/components/PTabs.vue
+  h_fa30cb431001ee 2,7-13,16,20-30,45-47,68-78,90-92
+resources/js/components/PToggleMotion.html
+  h_fa30cb431001ee 1-103
+resources/js/components/PToggleMotion.vue
+  h_fa30cb431001ee 1-31
+resources/js/index.js
+  h_fa30cb431001ee 18
+resources/styles/atoms/index.scss
+  h_fa30cb431001ee 22
+resources/styles/atoms/media/index.scss
+  h_fa30cb431001ee 80
+resources/styles/atoms/userDisclosure/index.scss
+  h_fa30cb431001ee 1,8,10-21,23-26,28,30-37,39-44,47-50,53-59,61,63-67,69-92
+resources/styles/atoms/userDisclosure/userDisclosure.html
+  h_fa30cb431001ee 9,25,41
+resources/styles/config/index.scss
+  h_fa30cb431001ee 10-11,165,168,173-184
+resources/styles/core/properties.scss
+  h_fa30cb431001ee 229-237,259-264
+resources/styles/molecules/accordion/index.scss
+  h_fa30cb431001ee 1-2,88-134
+resources/styles/molecules/filters/filters--aside.html
+  h_fa30cb431001ee 1-85
+resources/styles/molecules/filters/filters.html
+  h_fa30cb431001ee 1-74
+resources/styles/molecules/filters/index.scss
+  h_fa30cb431001ee 1-60
+resources/styles/molecules/index.scss
+  h_fa30cb431001ee 10,19
+resources/styles/molecules/overlay/index.scss
+  h_fa30cb431001ee 1-2,4-5,83-414
+resources/styles/molecules/overlay/overlay--card.html
+  h_fa30cb431001ee 1-55
+resources/styles/molecules/overlay/overlay--slider.html
+  h_fa30cb431001ee 1-92
+resources/styles/molecules/popoverActions/index.scss
+  h_fa30cb431001ee 1,9,11-18,20-26,28-31,34-40,42,44-51,53-73,75-80,82
+resources/styles/molecules/result/index.scss
+  h_fa30cb431001ee 1-29
+resources/styles/molecules/result/result.html
+  h_fa30cb431001ee 1-7
+resources/styles/molecules/tabs/index.scss
+  h_fa30cb431001ee 71-81
+resources/styles/molecules/tabs/tabs--select.html
+  h_fa30cb431001ee 1-28
+resources/styles/organisms/accordionGroup/accordionGroup.html
+  h_fa30cb431001ee 1-41
+resources/styles/organisms/accordionGroup/index.scss
+  h_fa30cb431001ee 1-11
+resources/styles/organisms/editorialCards/editorialCards.html
+  h_fa30cb431001ee 1-40
+resources/styles/organisms/editorialCards/index.scss
+  h_fa30cb431001ee 1-9
+resources/styles/organisms/featureSlider/featureSlider.html
+  h_fa30cb431001ee 1-106
+resources/styles/organisms/featureSlider/index.scss
+  h_fa30cb431001ee 1-78
+resources/styles/organisms/index.scss
+  h_fa30cb431001ee 2,10,21-22
+resources/styles/organisms/results/index.scss
+  h_fa30cb431001ee 1-39
+resources/styles/organisms/results/results.html
+  h_fa30cb431001ee 1-36
+vite.config.js
+  h_fa30cb431001ee 11,20-21,26-29
+vite.config.template.js
+  h_fa30cb431001ee 12,44-45,48,50-57
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8fd69f3eaa00db63b2651a40799c093ed3a2a7d2",
+  "prompts": {},
+  "humans": {
+    "h_fa30cb431001ee": {
+      "author": "Kevin Hamer <kevin@imarc.com>"
+    }
+  }
+}
